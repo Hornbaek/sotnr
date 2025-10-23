@@ -4,7 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import { AdminLayout } from "./components/admin/AdminLayout";
 import Index from "./pages/Index";
+import Auth from "./pages/Auth";
 import Game from "./pages/Game";
 import Lore from "./pages/Lore";
 import Workshop from "./pages/Workshop";
@@ -12,6 +15,14 @@ import Campaign from "./pages/Campaign";
 import Community from "./pages/Community";
 import Journal from "./pages/Journal";
 import Vault from "./pages/Vault";
+import Dashboard from "./pages/admin/Dashboard";
+import Subscribers from "./pages/admin/Subscribers";
+import Characters from "./pages/admin/Characters";
+import Scenarios from "./pages/admin/Scenarios";
+import DevJournal from "./pages/admin/DevJournal";
+import Statistics from "./pages/admin/Statistics";
+import AdminWorkshop from "./pages/admin/AdminWorkshop";
+import AdminSettings from "./pages/admin/AdminSettings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +34,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Public routes */}
+          <Route path="/auth" element={<Auth />} />
+          
+          {/* Main site routes */}
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
             <Route path="/game" element={<Game />} />
@@ -32,8 +47,28 @@ const App = () => (
             <Route path="/community" element={<Community />} />
             <Route path="/journal" element={<Journal />} />
             <Route path="/vault" element={<Vault />} />
-            <Route path="*" element={<NotFound />} />
           </Route>
+
+          {/* Admin routes - protected */}
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute requireAdmin>
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="subscribers" element={<Subscribers />} />
+            <Route path="characters" element={<Characters />} />
+            <Route path="scenarios" element={<Scenarios />} />
+            <Route path="dev-journal" element={<DevJournal />} />
+            <Route path="statistics" element={<Statistics />} />
+            <Route path="workshop" element={<AdminWorkshop />} />
+            <Route path="settings" element={<AdminSettings />} />
+          </Route>
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
