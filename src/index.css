@@ -15,6 +15,8 @@ All colors MUST be HSL.
     /* Card surfaces - Dark warm brown */
     --card: 25 22% 16%;
     --card-foreground: 35 20% 82%;
+    --card-brown: 25 24% 17%;
+    --tertiary-brown: 30 25% 22%;
 
     --popover: 25 22% 16%;
     --popover-foreground: 35 20% 82%;

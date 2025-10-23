@@ -24,7 +24,10 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm text-foreground/80">
               <li><Link to="/game" className="hover:text-primary transition-colors">The Game</Link></li>
               <li><Link to="/lore" className="hover:text-primary transition-colors">Lore Codex</Link></li>
+              <li><Link to="/journal" className="hover:text-primary transition-colors">Dev Journal</Link></li>
               <li><Link to="/workshop" className="hover:text-primary transition-colors">Workshop</Link></li>
+              <li><Link to="/campaign" className="hover:text-primary transition-colors">Campaign Hub</Link></li>
+              <li><Link to="/community" className="hover:text-primary transition-colors">Community Hall</Link></li>
               <li><Link to="/vault" className="hover:text-primary transition-colors">Relic Vault</Link></li>
             </ul>
           </div>
@@ -66,7 +69,10 @@ export const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-border text-center">
+        <div className="mt-8 pt-8 border-t border-border text-center space-y-2">
+          <p className="text-xs text-primary/60 italic font-serif">
+            Forged in myth. Guided by runes. Shadows of the Nine Realms.
+          </p>
           <p className="text-sm text-foreground/60">
             © {currentYear} Shadows of the Nine Realms. All rights reserved.
           </p>

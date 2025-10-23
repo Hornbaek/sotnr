@@ -1,61 +1,153 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail } from "lucide-react";
+import { Scroll } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { motion } from "framer-motion";
 
 export const Newsletter = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    setIsLoading(true);
+
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([{ name: name || null, email }]);
+
+      if (error) {
+        if (error.code === '23505') {
+          toast({
+            title: "Already among us",
+            description: "This email is already etched in our runes.",
+            variant: "destructive",
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "Your name is etched among the runes",
+          description: "Welcome to the descent. Prepare for your journey through the Nine Realms.",
+        });
+        setName("");
+        setEmail("");
+      }
+    } catch (error) {
+      console.error('Waitlist error:', error);
       toast({
-        title: "Welcome to the Nine Realms!",
-        description: "You've been added to our waitlist. Prepare for your journey.",
+        title: "The runes resist",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
       });
-      setEmail("");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+    <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-background to-tertiary-brown">
+      {/* Mystical background effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(196,166,97,0.1),transparent_70%)]" />
+      <motion.div
+        className="absolute inset-0"
+        animate={{
+          backgroundPosition: ['0% 0%', '100% 100%'],
+        }}
+        transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(196,166,97,0.03) 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+        }}
+      />
       
       <div className="container mx-auto relative z-10">
-        <div className="max-w-3xl mx-auto text-center animate-fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/20 mb-6 animate-glow-pulse">
-            <Mail className="w-10 h-10 text-primary" />
-          </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          {/* Icon */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/20 border-2 border-primary/40 mb-6 shadow-lg shadow-primary/20"
+          >
+            <Scroll className="w-10 h-10 text-primary" />
+          </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Begin Your <span className="text-primary">Saga</span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-primary">
+            Relic Vault
           </h2>
           
-          <p className="text-lg text-muted-foreground mb-8">
-            Join our waitlist to receive exclusive updates, early bird discounts, and be among the first to experience Shadows of the Nine Realms when we launch.
+          <p className="text-lg text-foreground/80 mb-2 italic">
+            Claim your place among the first to descend
+          </p>
+          
+          <p className="text-base text-foreground/70 mb-8 max-w-2xl mx-auto">
+            Join our waitlist for exclusive updates, early bird access, and be among the first to experience Shadows of the Nine Realms when the gates open.
           </p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
             <Input 
-              type="email" 
-              placeholder="Enter your email" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="bg-card/50 border-border focus:border-primary"
+              type="text" 
+              placeholder="Your name (optional)" 
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="bg-card-brown/50 border-border focus:border-primary text-foreground"
+              disabled={isLoading}
             />
-            <Button type="submit" size="lg" className="whitespace-nowrap">
-              Join Waitlist
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Input 
+                type="email" 
+                placeholder="Your email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="bg-card-brown/50 border-border focus:border-primary text-foreground"
+                disabled={isLoading}
+              />
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="whitespace-nowrap"
+                disabled={isLoading}
+              >
+                {isLoading ? "Inscribing..." : "Join Waitlist"}
+              </Button>
+            </div>
           </form>
 
-          <p className="text-sm text-muted-foreground mt-4">
-            We respect your privacy. Unsubscribe at any time.
+          <p className="text-sm text-foreground/60 mt-4">
+            Your journey is sacred. Unsubscribe at any time.
           </p>
-        </div>
+
+          {/* Decorative runes */}
+          <div className="flex items-center justify-center gap-4 mt-8 text-primary/30 text-2xl font-rune">
+            <motion.span
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              ᚠ
+            </motion.span>
+            <span>◆</span>
+            <motion.span
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+            >
+              ᚦ
+            </motion.span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
