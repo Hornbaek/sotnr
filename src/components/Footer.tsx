@@ -1,121 +1,53 @@
-import { Link } from 'react-router-dom';
-import { Github, Youtube, Instagram, Twitter } from 'lucide-react';
+import { Facebook, Twitter, Instagram } from "lucide-react";
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-[#1a1410] border-t border-[#d4a259]/20 stone-texture mt-20">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* About */}
+    <footer className="py-12 px-4 border-t border-border">
+      <div className="container mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          {/* Brand */}
           <div>
-            <h3 className="text-[#d4a259] mb-4">Shadows of the Nine Realms</h3>
-            <p className="text-[#a89274] text-sm">
-              A cooperative dungeon crawler inspired by Norse mythology and the nine realms.
+            <h3 className="text-2xl font-bold mb-3">
+              <span className="text-primary">Shadows</span> of the Nine Realms
+            </h3>
+            <p className="text-muted-foreground text-sm">
+              An epic board game journey through Norse mythology
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[#d4a259] mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/game" className="text-[#a89274] hover:text-[#d4a259] transition-colors text-sm">
-                  The Game
-                </Link>
-              </li>
-              <li>
-                <Link to="/lore" className="text-[#a89274] hover:text-[#d4a259] transition-colors text-sm">
-                  Lore Codex
-                </Link>
-              </li>
-              <li>
-                <Link to="/workshop" className="text-[#a89274] hover:text-[#d4a259] transition-colors text-sm">
-                  Workshop
-                </Link>
-              </li>
-              <li>
-                <Link to="/vault" className="text-[#a89274] hover:text-[#d4a259] transition-colors text-sm">
-                  Relic Vault
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Community */}
-          <div>
-            <h4 className="text-[#d4a259] mb-4">Community</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/community" className="text-[#a89274] hover:text-[#d4a259] transition-colors text-sm">
-                  Community Hall
-                </Link>
-              </li>
-              <li>
-                <Link to="/journal" className="text-[#a89274] hover:text-[#d4a259] transition-colors text-sm">
-                  Developer Journal
-                </Link>
-              </li>
-              <li>
-                <Link to="/campaign" className="text-[#a89274] hover:text-[#d4a259] transition-colors text-sm">
-                  Campaign Hub
-                </Link>
-              </li>
+            <h4 className="font-semibold mb-3">Quick Links</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
+              <li><a href="#features" className="hover:text-primary transition-colors">Features</a></li>
+              <li><a href="#realms" className="hover:text-primary transition-colors">The Realms</a></li>
+              <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </div>
 
           {/* Social */}
           <div>
-            <h4 className="text-[#d4a259] mb-4">Follow Us</h4>
+            <h4 className="font-semibold mb-3">Follow Us</h4>
             <div className="flex gap-4">
-              <a
-                href="https://discord.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-[#3a2f1f] hover:bg-[#d4a259] transition-colors group"
-                aria-label="Discord"
-              >
-                <Github className="w-5 h-5 text-[#e8dcc4] group-hover:text-[#1a1410]" />
+              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                <Facebook className="w-5 h-5" />
               </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-[#3a2f1f] hover:bg-[#d4a259] transition-colors group"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-5 h-5 text-[#e8dcc4] group-hover:text-[#1a1410]" />
+              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                <Twitter className="w-5 h-5" />
               </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-[#3a2f1f] hover:bg-[#d4a259] transition-colors group"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5 text-[#e8dcc4] group-hover:text-[#1a1410]" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-[#3a2f1f] hover:bg-[#d4a259] transition-colors group"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5 text-[#e8dcc4] group-hover:text-[#1a1410]" />
+              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-[#d4a259]/20 flex flex-col sm:flex-row items-center justify-between text-[#a89274] text-sm gap-4">
-          <p>&copy; 2025 Shadows of the Nine Realms. All rights reserved.</p>
-          <Link 
-            to="/admin/login" 
-            className="text-[#a89274]/50 hover:text-[#d4a259] transition-colors text-xs"
-            title="Admin Access"
-          >
-            ⚔️ Admin
-          </Link>
+        {/* Copyright */}
+        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+          <p>&copy; {currentYear} Shadows of the Nine Realms. All rights reserved.</p>
         </div>
       </div>
     </footer>

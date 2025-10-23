@@ -17,7 +17,7 @@ export const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 text-center animate-fade-in">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-glow-pulse">
           <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-            Shadows of the Nine Realms
+            Shadows of the Nine Realmzzzz
           </span>
         </h1>
         
