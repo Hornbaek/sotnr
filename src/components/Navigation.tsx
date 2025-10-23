@@ -22,42 +22,41 @@ export const Navigation = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="sticky top-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
+    <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <motion.div
-              animate={{ 
-                filter: [
-                  "drop-shadow(0 0 8px hsl(40 100% 60% / 0.3))",
-                  "drop-shadow(0 0 16px hsl(40 100% 60% / 0.6))",
-                  "drop-shadow(0 0 8px hsl(40 100% 60% / 0.3))"
-                ]
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
             >
-              <Flame className="w-8 h-8 text-primary" />
+              <Flame className="w-7 h-7 text-primary" />
             </motion.div>
-            <span className="text-xl font-display font-bold">
-              <span className="text-primary">Shadows</span>
-              <span className="text-muted-foreground"> of the Nine Realms</span>
+            <span className="text-lg font-display font-bold text-foreground group-hover:text-primary transition-colors">
+              Nine Realms
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`text-sm font-medium transition-colors relative group ${
                   location.pathname === link.path
-                    ? "bg-primary/20 text-primary"
-                    : "text-foreground/80 hover:text-primary hover:bg-muted"
+                    ? "text-primary"
+                    : "text-foreground/90 hover:text-primary"
                 }`}
               >
                 {link.label}
+                {location.pathname === link.path && (
+                  <motion.span 
+                    layoutId="underline"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                  />
+                )}
               </Link>
             ))}
           </div>

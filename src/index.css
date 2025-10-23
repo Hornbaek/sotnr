@@ -8,70 +8,66 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base Colors - Deep Norse night sky */
-    --background: 220 30% 6%;
-    --foreground: 45 15% 92%;
+    /* Base Colors - Deep charcoal brown */
+    --background: 25 18% 8%;
+    --foreground: 35 20% 82%;
 
-    /* Card surfaces - Carved stone */
-    --card: 220 25% 10%;
-    --card-foreground: 45 15% 92%;
+    /* Card surfaces - Dark warm brown */
+    --card: 25 22% 16%;
+    --card-foreground: 35 20% 82%;
 
-    --popover: 220 25% 10%;
-    --popover-foreground: 45 15% 92%;
+    --popover: 25 22% 16%;
+    --popover-foreground: 35 20% 82%;
 
-    /* Primary - Mystic Gold (torchlight) */
-    --primary: 40 100% 60%;
-    --primary-foreground: 220 30% 10%;
+    /* Primary - Muted warm gold */
+    --primary: 40 45% 58%;
+    --primary-foreground: 25 18% 8%;
 
-    /* Secondary - Frost Blue */
-    --secondary: 200 70% 45%;
-    --secondary-foreground: 45 15% 92%;
+    /* Secondary - Darker gold */
+    --secondary: 38 35% 42%;
+    --secondary-foreground: 35 20% 82%;
 
-    /* Muted - Stone Gray */
-    --muted: 220 20% 18%;
-    --muted-foreground: 30 10% 55%;
+    /* Muted - Medium dark brown */
+    --muted: 25 24% 20%;
+    --muted-foreground: 35 15% 60%;
 
-    /* Accent - Amber Glow */
-    --accent: 35 90% 55%;
-    --accent-foreground: 220 30% 10%;
+    /* Accent - Silver blue */
+    --accent: 200 15% 58%;
+    --accent-foreground: 25 18% 8%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 45 15% 92%;
+    --destructive-foreground: 35 20% 82%;
 
-    /* Borders - Carved edges */
-    --border: 220 25% 15%;
-    --input: 220 25% 15%;
-    --ring: 40 100% 60%;
+    /* Borders - Muted gold-brown */
+    --border: 35 28% 35%;
+    --input: 35 28% 35%;
+    --ring: 40 45% 58%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
     
-    /* Norse Theme Colors */
-    --norse-gold: 40 100% 60%;
-    --norse-amber: 35 90% 55%;
-    --norse-frost: 200 70% 45%;
-    --norse-ice: 190 80% 60%;
-    --norse-stone: 30 15% 30%;
-    --norse-iron: 220 15% 25%;
-    --norse-night: 220 30% 6%;
-    --norse-fog: 210 20% 85%;
+    /* Norse Theme Colors - Refined palette */
+    --norse-gold: 40 45% 58%;
+    --norse-gold-dark: 38 35% 42%;
+    --norse-brown-tertiary: 30 25% 22%;
+    --norse-silver: 200 15% 58%;
+    --norse-border: 35 28% 35%;
+    --norse-charcoal: 25 18% 8%;
+    --norse-cream: 35 20% 82%;
     
-    /* Gradients - Mystical atmospheres */
-    --gradient-hero: linear-gradient(180deg, hsl(220 30% 6%) 0%, hsl(220 25% 8%) 40%, hsl(220 20% 12%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(40 100% 60%) 0%, hsl(35 90% 55%) 100%);
-    --gradient-frost: linear-gradient(135deg, hsl(200 70% 45%) 0%, hsl(190 80% 60%) 100%);
-    --gradient-mist: linear-gradient(180deg, transparent 0%, hsl(220 30% 6% / 0.8) 100%);
-    --gradient-torch: radial-gradient(circle, hsl(40 100% 60% / 0.3) 0%, transparent 70%);
+    /* Gradients - Subtle and grounded */
+    --gradient-hero: linear-gradient(180deg, hsl(25 18% 8%) 0%, hsl(25 20% 10%) 50%, hsl(25 22% 14%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(25 22% 16%) 0%, hsl(25 24% 18%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40 45% 58%) 0%, hsl(38 35% 42%) 100%);
+    --gradient-metallic: radial-gradient(circle, hsl(40 45% 58% / 0.2) 0%, transparent 70%);
     
-    /* Shadows - Depth and atmosphere */
-    --shadow-glow: 0 0 40px hsl(40 100% 60% / 0.4);
-    --shadow-frost: 0 0 30px hsl(200 70% 45% / 0.3);
-    --shadow-card: 0 10px 50px hsl(220 30% 6% / 0.7);
-    --shadow-deep: 0 20px 60px hsl(220 30% 6% / 0.9);
-    --shadow-torch: 0 0 60px hsl(40 100% 60% / 0.2);
+    /* Shadows - Subtle depth */
+    --shadow-card: 0 4px 20px hsl(25 18% 8% / 0.5);
+    --shadow-deep: 0 8px 30px hsl(25 18% 8% / 0.7);
+    --shadow-subtle: 0 2px 10px hsl(25 18% 8% / 0.3);
     
-    /* Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Animations - Refined and elegant */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-elegant: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -107,6 +103,19 @@ All colors MUST be HSL.
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+    @apply font-display text-primary;
+    letter-spacing: 0.05em;
+  }
+  
+  h1 {
+    @apply text-primary;
+  }
+  
+  h2 {
+    @apply text-primary;
+  }
+  
+  h3 {
+    @apply text-foreground;
   }
 }

@@ -47,7 +47,7 @@ export const Newsletter = () => {
               required
               className="bg-card/50 border-border focus:border-primary"
             />
-            <Button type="submit" variant="hero" size="lg" className="whitespace-nowrap">
+            <Button type="submit" size="lg" className="whitespace-nowrap">
               Join Waitlist
             </Button>
           </form>
