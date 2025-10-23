@@ -5,6 +5,13 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { motion } from "framer-motion";
+import { z } from "zod";
+
+// Input validation schema
+const waitlistSchema = z.object({
+  name: z.string().trim().max(100, "Name must be less than 100 characters").optional(),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters")
+});
 
 export const Newsletter = () => {
   const [name, setName] = useState("");
@@ -17,9 +24,30 @@ export const Newsletter = () => {
     setIsLoading(true);
 
     try {
+      // Validate input data
+      const result = waitlistSchema.safeParse({ 
+        name: name || undefined, 
+        email 
+      });
+      
+      if (!result.success) {
+        toast({
+          title: "Invalid input",
+          description: result.error.errors[0].message,
+          variant: "destructive",
+        });
+        setIsLoading(false);
+        return;
+      }
+
+      const { data: validatedData } = result;
+
       const { error } = await supabase
         .from('waitlist')
-        .insert([{ name: name || null, email }]);
+        .insert([{ 
+          name: validatedData.name || null, 
+          email: validatedData.email 
+        }]);
 
       if (error) {
         if (error.code === '23505') {
@@ -40,7 +68,10 @@ export const Newsletter = () => {
         setEmail("");
       }
     } catch (error) {
-      console.error('Waitlist error:', error);
+      // Only log detailed errors in development
+      if (import.meta.env.DEV) {
+        console.error('Waitlist error:', error);
+      }
       toast({
         title: "The runes resist",
         description: "Something went wrong. Please try again.",
