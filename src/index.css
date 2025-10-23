@@ -8,54 +8,70 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 25% 8%;
-    --foreground: 210 20% 95%;
+    /* Base Colors - Deep Norse night sky */
+    --background: 220 30% 6%;
+    --foreground: 45 15% 92%;
 
-    --card: 220 20% 12%;
-    --card-foreground: 210 20% 95%;
+    /* Card surfaces - Carved stone */
+    --card: 220 25% 10%;
+    --card-foreground: 45 15% 92%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 45 15% 92%;
 
-    --primary: 45 90% 55%;
-    --primary-foreground: 220 25% 8%;
+    /* Primary - Mystic Gold (torchlight) */
+    --primary: 40 100% 60%;
+    --primary-foreground: 220 30% 10%;
 
-    --secondary: 210 50% 45%;
-    --secondary-foreground: 210 20% 95%;
+    /* Secondary - Frost Blue */
+    --secondary: 200 70% 45%;
+    --secondary-foreground: 45 15% 92%;
 
-    --muted: 220 15% 20%;
-    --muted-foreground: 210 15% 60%;
+    /* Muted - Stone Gray */
+    --muted: 220 20% 18%;
+    --muted-foreground: 30 10% 55%;
 
-    --accent: 200 80% 50%;
-    --accent-foreground: 210 20% 95%;
+    /* Accent - Amber Glow */
+    --accent: 35 90% 55%;
+    --accent-foreground: 220 30% 10%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 210 20% 95%;
+    --destructive-foreground: 45 15% 92%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 45 90% 55%;
+    /* Borders - Carved edges */
+    --border: 220 25% 15%;
+    --input: 220 25% 15%;
+    --ring: 40 100% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
     
-    /* Custom Norse theme colors */
-    --norse-gold: 45 90% 55%;
-    --norse-ice: 200 80% 50%;
-    --norse-stone: 220 15% 25%;
-    --norse-night: 220 25% 8%;
+    /* Norse Theme Colors */
+    --norse-gold: 40 100% 60%;
+    --norse-amber: 35 90% 55%;
+    --norse-frost: 200 70% 45%;
+    --norse-ice: 190 80% 60%;
+    --norse-stone: 30 15% 30%;
+    --norse-iron: 220 15% 25%;
+    --norse-night: 220 30% 6%;
+    --norse-fog: 210 20% 85%;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 25% 8%) 0%, hsl(220 30% 12%) 50%, hsl(210 40% 15%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 90% 55%) 0%, hsl(38 85% 50%) 100%);
-    --gradient-frost: linear-gradient(135deg, hsl(200 80% 50%) 0%, hsl(210 70% 60%) 100%);
+    /* Gradients - Mystical atmospheres */
+    --gradient-hero: linear-gradient(180deg, hsl(220 30% 6%) 0%, hsl(220 25% 8%) 40%, hsl(220 20% 12%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40 100% 60%) 0%, hsl(35 90% 55%) 100%);
+    --gradient-frost: linear-gradient(135deg, hsl(200 70% 45%) 0%, hsl(190 80% 60%) 100%);
+    --gradient-mist: linear-gradient(180deg, transparent 0%, hsl(220 30% 6% / 0.8) 100%);
+    --gradient-torch: radial-gradient(circle, hsl(40 100% 60% / 0.3) 0%, transparent 70%);
     
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(45 90% 55% / 0.3);
-    --shadow-frost: 0 0 30px hsl(200 80% 50% / 0.3);
-    --shadow-card: 0 10px 40px hsl(220 25% 8% / 0.5);
+    /* Shadows - Depth and atmosphere */
+    --shadow-glow: 0 0 40px hsl(40 100% 60% / 0.4);
+    --shadow-frost: 0 0 30px hsl(200 70% 45% / 0.3);
+    --shadow-card: 0 10px 50px hsl(220 30% 6% / 0.7);
+    --shadow-deep: 0 20px 60px hsl(220 30% 6% / 0.9);
+    --shadow-torch: 0 0 60px hsl(40 100% 60% / 0.2);
     
-    /* Animation */
+    /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 

@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Cinzel', 'serif'],
+        rune: ['Cinzel', 'serif'], // Norse-style headings
       },
       colors: {
         border: "hsl(var(--border))",

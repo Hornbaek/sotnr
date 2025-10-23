@@ -1,20 +1,16 @@
 import { Hero } from "@/components/Hero";
-import { GameOverview } from "@/components/GameOverview";
-import { RealmsShowcase } from "@/components/RealmsShowcase";
-import { Features } from "@/components/Features";
-import { Newsletter } from "@/components/Newsletter";
-import { Footer } from "@/components/Footer";
+import { motion } from "framer-motion";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="min-h-screen"
+    >
       <Hero />
-      <GameOverview />
-      <RealmsShowcase />
-      <Features />
-      <Newsletter />
-      <Footer />
-    </div>
+    </motion.div>
   );
 };
 
