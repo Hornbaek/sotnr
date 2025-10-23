@@ -28,33 +28,45 @@ export const Home = () => {
   const realms = [
     {
       name: "Asgard",
-      position: "top-20 left-1/2",
+      position: "top-[15%] left-1/2",
       color: "#d4a259",
+      size: "w-20 h-20",
+      innerSize: "w-16 h-16",
     },
     {
       name: "Midgard",
       position: "top-1/2 left-1/2",
       color: "#8b6f47",
+      size: "w-20 h-20",
+      innerSize: "w-16 h-16",
     },
     {
       name: "Jotunheim",
-      position: "top-1/4 right-1/4",
+      position: "top-[20%] right-[28%]",
       color: "#c9e4f5",
+      size: "w-24 h-24",
+      innerSize: "w-20 h-20",
     },
     {
       name: "Alfheim",
-      position: "top-1/3 left-1/4",
+      position: "top-[32%] left-[22%]",
       color: "#f5a623",
+      size: "w-20 h-20",
+      innerSize: "w-16 h-16",
     },
     {
       name: "Svartalfheim",
-      position: "bottom-1/4 left-1/3",
-      color: "#5a5a5a",
+      position: "bottom-[28%] left-[35%]",
+      color: "#787165",
+      size: "w-16 h-16",
+      innerSize: "w-12 h-12",
     },
     {
       name: "Niflheim",
-      position: "bottom-1/4 right-1/3",
+      position: "bottom-[28%] right-[35%]",
       color: "#787165",
+      size: "w-16 h-16",
+      innerSize: "w-12 h-12",
     },
   ];
 
@@ -183,28 +195,35 @@ export const Home = () => {
             </p>
           </motion.div>
 
-          <div className="relative h-96 max-w-4xl mx-auto bg-[#2a2218] rounded-lg border-2 border-[#d4a259]/30 stone-texture overflow-hidden">
+          <div className="relative h-[400px] max-w-3xl mx-auto bg-[#1a1410]/60 rounded-lg border border-[#d4a259]/20 overflow-hidden backdrop-blur-sm">
             {realms.map((realm, index) => (
               <motion.div
                 key={realm.name}
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.2 }}
+                transition={{ delay: index * 0.15, duration: 0.5 }}
+                whileHover={{ scale: 1.15 }}
                 className={`absolute ${realm.position} transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group`}
               >
                 <div
-                  className="w-16 h-16 rounded-full border-2 flex items-center justify-center transition-all"
-                  style={{ borderColor: realm.color }}
+                  className={`${realm.size} rounded-full border-[3px] flex items-center justify-center transition-all shadow-lg`}
+                  style={{ 
+                    borderColor: realm.color,
+                    boxShadow: `0 0 20px ${realm.color}40`
+                  }}
                 >
                   <div
-                    className="w-12 h-12 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"
-                    style={{ backgroundColor: realm.color }}
+                    className={`${realm.innerSize} rounded-full transition-all`}
+                    style={{ 
+                      backgroundColor: realm.color,
+                      opacity: 0.5,
+                      boxShadow: `inset 0 2px 8px rgba(0,0,0,0.5)`
+                    }}
                   />
                 </div>
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                  <span className="text-sm px-3 py-1 bg-[#2a2218] rounded-full border border-[#d4a259]/30">
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+                  <span className="text-xs px-3 py-1.5 bg-[#1a1410] text-[#d4a259] rounded-full border border-[#d4a259]/50 shadow-lg">
                     {realm.name}
                   </span>
                 </div>
