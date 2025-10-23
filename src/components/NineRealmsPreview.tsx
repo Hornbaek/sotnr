@@ -1,18 +1,90 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
+
+// Import realm images
+import niflheimImg from "@/assets/realms/niflheim.jpg";
+import muspelheimImg from "@/assets/realms/muspelheim.jpg";
+import asgardImg from "@/assets/realms/asgard.jpg";
+import midgardImg from "@/assets/realms/midgard.jpg";
+import vanaheimImg from "@/assets/realms/vanaheim.jpg";
+import alfheimImg from "@/assets/realms/alfheim.jpg";
+import svartalfheimImg from "@/assets/realms/svartalfheim.jpg";
+import jotunheimImg from "@/assets/realms/jotunheim.jpg";
+import helheimImg from "@/assets/realms/helheim.jpg";
 
 const realms = [
-  { name: "Niflheim", description: "The frozen winds whisper songs of the dead", color: "from-blue-400/20 to-cyan-300/20", position: "top-1/4 left-1/4" },
-  { name: "Muspelheim", description: "Flames dance eternal in the realm of fire", color: "from-orange-500/20 to-red-600/20", position: "top-1/4 right-1/4" },
-  { name: "Asgard", description: "Golden halls where gods hold court", color: "from-yellow-400/20 to-amber-500/20", position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" },
-  { name: "Midgard", description: "The mortal realm, crossroads of destiny", color: "from-green-600/20 to-emerald-500/20", position: "bottom-1/4 left-1/3" },
-  { name: "Jotunheim", description: "Where giants stride through ancient stone", color: "from-gray-500/20 to-slate-600/20", position: "bottom-1/3 right-1/4" },
-  { name: "Helheim", description: "Shadows gather in the realm of the dishonored", color: "from-purple-900/20 to-indigo-800/20", position: "bottom-1/4 left-1/2" },
+  { 
+    name: "Niflheim", 
+    icon: "❄️", 
+    description: "The frozen realm of mist and ice, where frost giants dwell.", 
+    image: niflheimImg 
+  },
+  { 
+    name: "Muspelheim", 
+    icon: "🔥", 
+    description: "The realm of fire and chaos, home to the fire giants.", 
+    image: muspelheimImg 
+  },
+  { 
+    name: "Asgard", 
+    icon: "⚡", 
+    description: "The golden realm of the gods, where legends are born.", 
+    image: asgardImg 
+  },
+  { 
+    name: "Midgard", 
+    icon: "🌍", 
+    description: "The realm of mortals, bound between heaven and hell.", 
+    image: midgardImg 
+  },
+  { 
+    name: "Vanaheim", 
+    icon: "🌿", 
+    description: "The realm of fertility and peace, home to the Vanir gods.", 
+    image: vanaheimImg 
+  },
+  { 
+    name: "Alfheim", 
+    icon: "✨", 
+    description: "The radiant realm of light elves and eternal dawn.", 
+    image: alfheimImg 
+  },
+  { 
+    name: "Svartalfheim", 
+    icon: "🪨", 
+    description: "The shadowed realm of the dwarves, masters of forge and stone.", 
+    image: svartalfheimImg 
+  },
+  { 
+    name: "Jotunheim", 
+    icon: "🗻", 
+    description: "The wild land of giants, untamed and perilous.", 
+    image: jotunheimImg 
+  },
+  { 
+    name: "Helheim", 
+    icon: "☠️", 
+    description: "The cold underworld ruled by Hel, daughter of Loki.", 
+    image: helheimImg 
+  },
 ];
 
 export const NineRealmsPreview = () => {
+  const plugin = useRef(
+    Autoplay({ delay: 7000, stopOnInteraction: true, stopOnMouseEnter: true })
+  );
+
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-background to-tertiary-brown relative overflow-hidden">
       {/* Background texture */}
@@ -26,56 +98,70 @@ export const NineRealmsPreview = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary mb-4">
-            Explore the Nine Realms
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            Explore the <span className="text-primary">Nine Realms</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Journey through interconnected worlds of Norse mythology, each realm holding its own secrets, dangers, and glory.
+            Venture through the realms of Norse myth — each one forged by the elements, gods, and ancient fate.
           </p>
         </motion.div>
 
-        {/* Realms Constellation */}
-        <div className="relative w-full max-w-4xl mx-auto h-[500px] mb-12">
-          {realms.map((realm, index) => (
-            <motion.div
-              key={realm.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ scale: 1.1, filter: "brightness(1.3)" }}
-              className={`absolute ${realm.position} group cursor-pointer`}
-            >
-              {/* Realm Circle */}
-              <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${realm.color} border-2 border-primary/40 shadow-lg backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(196,166,97,0.5)]`}>
-                <span className="text-sm font-display font-bold text-foreground text-center px-2">
-                  {realm.name}
-                </span>
-              </div>
-              
-              {/* Hover Tooltip */}
-              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-48 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <p className="text-xs text-center italic text-foreground/80 bg-card/90 backdrop-blur-sm rounded px-3 py-2 border border-primary/20">
-                  {realm.description}
-                </p>
-              </div>
+        {/* Carousel */}
+        <div className="relative w-full max-w-7xl mx-auto mb-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          >
+            <CarouselContent className="-ml-4">
+              {realms.map((realm, index) => (
+                <CarouselItem key={realm.name} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05, duration: 0.5 }}
+                    className="group"
+                  >
+                    <div className="relative overflow-hidden rounded-2xl shadow-lg h-[400px]">
+                      {/* Realm Image */}
+                      <img
+                        src={realm.image}
+                        alt={realm.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                      />
+                      
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                      
+                      {/* Realm Info */}
+                      <div className="absolute bottom-0 inset-x-0 p-6">
+                        <div className="text-4xl mb-2">{realm.icon}</div>
+                        <h3 className="text-xl font-display font-bold text-primary mb-2">
+                          {realm.name}
+                        </h3>
+                        <p className="text-sm text-foreground/80 italic">
+                          {realm.description}
+                        </p>
+                      </div>
 
-              {/* Connecting lines (optional decorative element) */}
-              {index > 0 && (
-                <div className="absolute top-1/2 left-1/2 w-32 h-0.5 bg-gradient-to-r from-primary/20 to-transparent -z-10 rotate-45" />
-              )}
-            </motion.div>
-          ))}
-
-          {/* Center decorative element */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-primary/10 rounded-full -z-20"
-          />
+                      {/* Hover Glow Effect */}
+                      <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/40 transition-all duration-500 rounded-2xl pointer-events-none" />
+                    </div>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            {/* Navigation Arrows */}
+            <CarouselPrevious className="hidden md:flex -left-12 h-12 w-12 border-primary/40 bg-card/80 backdrop-blur-sm hover:bg-primary/20 hover:border-primary" />
+            <CarouselNext className="hidden md:flex -right-12 h-12 w-12 border-primary/40 bg-card/80 backdrop-blur-sm hover:bg-primary/20 hover:border-primary" />
+          </Carousel>
         </div>
 
         <motion.div
