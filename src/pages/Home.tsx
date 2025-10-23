@@ -209,16 +209,14 @@ export const Home = () => {
                 <div
                   className={`${realm.size} rounded-full border-[3px] flex items-center justify-center transition-all shadow-lg`}
                   style={{ 
-                    borderColor: realm.color,
-                    boxShadow: `0 0 20px ${realm.color}40`
+                    borderColor: realm.color
                   }}
                 >
                   <div
                     className={`${realm.innerSize} rounded-full transition-all`}
                     style={{ 
                       backgroundColor: realm.color,
-                      opacity: 0.5,
-                      boxShadow: `inset 0 2px 8px rgba(0,0,0,0.5)`
+                      opacity: 0.5
                     }}
                   />
                 </div>
