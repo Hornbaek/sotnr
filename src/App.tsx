@@ -20,6 +20,8 @@ import Subscribers from "./pages/admin/Subscribers";
 import Characters from "./pages/admin/Characters";
 import Scenarios from "./pages/admin/Scenarios";
 import DevJournal from "./pages/admin/DevJournal";
+import JournalEditorPage from "./pages/admin/JournalEditorPage";
+import JournalDetail from "./pages/JournalDetail";
 import Statistics from "./pages/admin/Statistics";
 import AdminWorkshop from "./pages/admin/AdminWorkshop";
 import AdminSettings from "./pages/admin/AdminSettings";
@@ -46,6 +48,7 @@ const App = () => (
             <Route path="/campaign" element={<Campaign />} />
             <Route path="/community" element={<Community />} />
             <Route path="/journal" element={<Journal />} />
+            <Route path="/journal/:slug" element={<JournalDetail />} />
             <Route path="/vault" element={<Vault />} />
           </Route>
 
@@ -63,6 +66,8 @@ const App = () => (
             <Route path="characters" element={<Characters />} />
             <Route path="scenarios" element={<Scenarios />} />
             <Route path="dev-journal" element={<DevJournal />} />
+            <Route path="dev-journal/new" element={<JournalEditorPage />} />
+            <Route path="dev-journal/edit/:id" element={<JournalEditorPage />} />
             <Route path="statistics" element={<Statistics />} />
             <Route path="workshop" element={<AdminWorkshop />} />
             <Route path="settings" element={<AdminSettings />} />
