@@ -1,22 +1,25 @@
 import { Card, CardContent } from "@/components/ui/card";
 import realmsImage from "@/assets/realms-showcase.jpg";
+import niflheimIcon from "@/assets/icons/niflheim.png";
+import muspelheimIcon from "@/assets/icons/muspelheim.png";
+import asgardIcon from "@/assets/icons/asgard.png";
 
 export const RealmsShowcase = () => {
   const realms = [
     {
       name: "Niflheim",
       description: "The frozen realm of mist and ice, where frost giants dwell",
-      icon: "❄️"
+      icon: niflheimIcon
     },
     {
       name: "Muspelheim",
       description: "The realm of fire and chaos, home to the fire giants",
-      icon: "🔥"
+      icon: muspelheimIcon
     },
     {
       name: "Asgard",
       description: "The golden realm of the gods, where legends are born",
-      icon: "⚡"
+      icon: asgardIcon
     }
   ];
 
@@ -52,7 +55,11 @@ export const RealmsShowcase = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-6 text-center">
-                <div className="text-5xl mb-4">{realm.icon}</div>
+                <img 
+                  src={realm.icon} 
+                  alt={`${realm.name} icon`}
+                  className="w-20 h-20 mb-4 mx-auto object-contain drop-shadow-[0_0_10px_rgba(196,166,97,0.5)]"
+                />
                 <h3 className="text-2xl font-bold mb-2 text-primary">{realm.name}</h3>
                 <p className="text-muted-foreground">{realm.description}</p>
               </CardContent>

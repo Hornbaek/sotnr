@@ -23,58 +23,69 @@ import svartalfheimImg from "@/assets/realms/svartalfheim.jpg";
 import jotunheimImg from "@/assets/realms/jotunheim.jpg";
 import helheimImg from "@/assets/realms/helheim.jpg";
 
+// Import realm icons
+import niflheimIcon from "@/assets/icons/niflheim.png";
+import muspelheimIcon from "@/assets/icons/muspelheim.png";
+import asgardIcon from "@/assets/icons/asgard.png";
+import midgardIcon from "@/assets/icons/midgard.png";
+import vanaheimIcon from "@/assets/icons/vanaheim.png";
+import alfheimIcon from "@/assets/icons/alfheim.png";
+import svartalfheimIcon from "@/assets/icons/svartalfheim.png";
+import jotunheimIcon from "@/assets/icons/jotunheim.png";
+import helheimIcon from "@/assets/icons/helheim.png";
+
 const realms = [
   { 
     name: "Niflheim", 
-    icon: "❄️", 
+    icon: niflheimIcon, 
     description: "The frozen realm of mist and ice, where frost giants dwell.", 
     image: niflheimImg 
   },
   { 
     name: "Muspelheim", 
-    icon: "🔥", 
+    icon: muspelheimIcon, 
     description: "The realm of fire and chaos, home to the fire giants.", 
     image: muspelheimImg 
   },
   { 
     name: "Asgard", 
-    icon: "⚡", 
+    icon: asgardIcon, 
     description: "The golden realm of the gods, where legends are born.", 
     image: asgardImg 
   },
   { 
     name: "Midgard", 
-    icon: "🌍", 
+    icon: midgardIcon, 
     description: "The realm of mortals, bound between heaven and hell.", 
     image: midgardImg 
   },
   { 
     name: "Vanaheim", 
-    icon: "🌿", 
+    icon: vanaheimIcon, 
     description: "The realm of fertility and peace, home to the Vanir gods.", 
     image: vanaheimImg 
   },
   { 
     name: "Alfheim", 
-    icon: "✨", 
+    icon: alfheimIcon, 
     description: "The radiant realm of light elves and eternal dawn.", 
     image: alfheimImg 
   },
   { 
     name: "Svartalfheim", 
-    icon: "🪨", 
+    icon: svartalfheimIcon, 
     description: "The shadowed realm of the dwarves, masters of forge and stone.", 
     image: svartalfheimImg 
   },
   { 
     name: "Jotunheim", 
-    icon: "🗻", 
+    icon: jotunheimIcon, 
     description: "The wild land of giants, untamed and perilous.", 
     image: jotunheimImg 
   },
   { 
     name: "Helheim", 
-    icon: "☠️", 
+    icon: helheimIcon, 
     description: "The cold underworld ruled by Hel, daughter of Loki.", 
     image: helheimImg 
   },
@@ -141,7 +152,11 @@ export const NineRealmsPreview = () => {
                       
                       {/* Realm Info */}
                       <div className="absolute bottom-0 inset-x-0 p-6">
-                        <div className="text-4xl mb-2">{realm.icon}</div>
+                        <img 
+                          src={realm.icon} 
+                          alt={`${realm.name} icon`}
+                          className="w-16 h-16 mb-3 object-contain drop-shadow-[0_0_8px_rgba(196,166,97,0.5)]"
+                        />
                         <h3 className="text-xl font-display font-bold text-primary mb-2">
                           {realm.name}
                         </h3>
