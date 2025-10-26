@@ -10,6 +10,9 @@ import Delimiter from "@editorjs/delimiter";
 import Warning from "@editorjs/warning";
 import Checklist from "@editorjs/checklist";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { MediaPicker } from "@/components/media/MediaPicker";
+import { ImageIcon } from "lucide-react";
 
 interface JournalEditorProps {
   initialData?: OutputData;
@@ -21,6 +24,7 @@ export const JournalEditor = ({ initialData, onChange, onReady }: JournalEditorP
   const editorRef = useRef<EditorJS | null>(null);
   const holderRef = useRef<HTMLDivElement>(null);
   const [isReady, setIsReady] = useState(false);
+  const [showMediaPicker, setShowMediaPicker] = useState(false);
 
   useEffect(() => {
     if (!holderRef.current) return;
@@ -112,18 +116,57 @@ export const JournalEditor = ({ initialData, onChange, onReady }: JournalEditorP
     };
   }, []);
 
+  const handleMediaSelect = async (url: string) => {
+    if (!editorRef.current || !isReady) return;
+    
+    try {
+      await editorRef.current.blocks.insert('image', {
+        file: {
+          url: url
+        },
+        caption: '',
+        withBorder: false,
+        stretched: false,
+        withBackground: false,
+      });
+      setShowMediaPicker(false);
+    } catch (error) {
+      console.error('Failed to insert image:', error);
+    }
+  };
+
   return (
-    <Card className="p-6">
-      <div 
-        ref={holderRef} 
-        id="editorjs"
-        className="prose prose-lg dark:prose-invert max-w-none min-h-[300px]"
+    <div className="space-y-4">
+      <div className="flex justify-end">
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => setShowMediaPicker(true)}
+          disabled={!isReady}
+        >
+          <ImageIcon className="w-4 h-4 mr-2" />
+          Choose from Media Library
+        </Button>
+      </div>
+
+      <Card className="p-6">
+        <div 
+          ref={holderRef} 
+          id="editorjs"
+          className="prose prose-lg dark:prose-invert max-w-none min-h-[300px]"
+        />
+        {!isReady && (
+          <div className="flex items-center justify-center h-[300px]">
+            <p className="text-muted-foreground">Loading editor...</p>
+          </div>
+        )}
+      </Card>
+
+      <MediaPicker
+        open={showMediaPicker}
+        onClose={() => setShowMediaPicker(false)}
+        onSelect={handleMediaSelect}
       />
-      {!isReady && (
-        <div className="flex items-center justify-center h-[300px]">
-          <p className="text-muted-foreground">Loading editor...</p>
-        </div>
-      )}
-    </Card>
+    </div>
   );
 };
