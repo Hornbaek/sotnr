@@ -1,19 +1,18 @@
 import { MediaLibraryManager } from "@/components/media/MediaLibraryManager";
-import { Card } from "@/components/ui/card";
 
-export default function MediaLibrary() {
+const MediaLibrary = () => {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold mb-2">Media Library</h1>
+    <div className="container mx-auto py-8 px-4">
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold mb-2">Media Library</h1>
         <p className="text-muted-foreground">
-          Manage all your uploaded images and media files
+          Manage images for your journal posts and website
         </p>
       </div>
 
-      <Card className="p-6">
-        <MediaLibraryManager />
-      </Card>
+      <MediaLibraryManager />
     </div>
   );
-}
+};
+
+export default MediaLibrary;

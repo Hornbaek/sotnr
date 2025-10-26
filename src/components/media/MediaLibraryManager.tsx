@@ -3,8 +3,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
-import { Upload, Trash2, Copy, Search } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
+import { Upload, Trash2, Copy, Search, Image as ImageIcon } from "lucide-react";
 import { uploadToSupabaseStorage, deleteFromStorage, getPublicUrl } from "@/lib/uploadToStorage";
 import {
   AlertDialog,
@@ -23,53 +23,31 @@ interface MediaItem {
   storage_path: string;
   file_size: number;
   mime_type: string;
-  width: number | null;
-  height: number | null;
   uploaded_at: string;
 }
 
-interface MediaLibraryManagerProps {
-  onSelect?: (url: string) => void;
-  selectable?: boolean;
-}
-
-export const MediaLibraryManager = ({ onSelect, selectable = false }: MediaLibraryManagerProps) => {
+export const MediaLibraryManager = () => {
   const [media, setMedia] = useState<MediaItem[]>([]);
-  const [filteredMedia, setFilteredMedia] = useState<MediaItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [uploading, setUploading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [deleteItem, setDeleteItem] = useState<MediaItem | null>(null);
-  const { toast } = useToast();
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     fetchMedia();
   }, []);
 
-  useEffect(() => {
-    if (searchQuery) {
-      setFilteredMedia(
-        media.filter((item) =>
-          item.filename.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-      );
-    } else {
-      setFilteredMedia(media);
-    }
-  }, [searchQuery, media]);
-
   const fetchMedia = async () => {
     try {
       const { data, error } = await supabase
-        .from("media_library")
-        .select("*")
-        .order("uploaded_at", { ascending: false });
+        .from('media_library')
+        .select('*')
+        .order('uploaded_at', { ascending: false });
 
       if (error) throw error;
       setMedia(data || []);
-      setFilteredMedia(data || []);
     } catch (error) {
-      console.error("Error fetching media:", error);
+      console.error('Error fetching media:', error);
       toast({
         title: "Error",
         description: "Failed to load media library",
@@ -85,32 +63,24 @@ export const MediaLibraryManager = ({ onSelect, selectable = false }: MediaLibra
     if (!files || files.length === 0) return;
 
     setUploading(true);
-    let successCount = 0;
-
-    for (const file of Array.from(files)) {
-      try {
+    try {
+      for (const file of Array.from(files)) {
         await uploadToSupabaseStorage(file);
-        successCount++;
-      } catch (error) {
-        console.error(`Failed to upload ${file.name}:`, error);
-        toast({
-          title: "Upload Failed",
-          description: `Failed to upload ${file.name}`,
-          variant: "destructive",
-        });
       }
-    }
-
-    if (successCount > 0) {
       toast({
         title: "Success",
-        description: `Uploaded ${successCount} file(s)`,
+        description: `Uploaded ${files.length} file(s)`,
       });
       await fetchMedia();
+    } catch (error: any) {
+      toast({
+        title: "Upload failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } finally {
+      setUploading(false);
     }
-
-    setUploading(false);
-    e.target.value = "";
   };
 
   const handleDelete = async () => {
@@ -120,14 +90,13 @@ export const MediaLibraryManager = ({ onSelect, selectable = false }: MediaLibra
       await deleteFromStorage(deleteItem.storage_path);
       toast({
         title: "Success",
-        description: "Image deleted successfully",
+        description: "Media deleted successfully",
       });
       await fetchMedia();
-    } catch (error) {
-      console.error("Delete error:", error);
+    } catch (error: any) {
       toast({
-        title: "Error",
-        description: "Failed to delete image",
+        title: "Delete failed",
+        description: error.message,
         variant: "destructive",
       });
     } finally {
@@ -135,26 +104,53 @@ export const MediaLibraryManager = ({ onSelect, selectable = false }: MediaLibra
     }
   };
 
-  const handleCopyUrl = (item: MediaItem) => {
-    const url = getPublicUrl(item.storage_path);
+  const copyToClipboard = (path: string) => {
+    const url = getPublicUrl(path);
     navigator.clipboard.writeText(url);
     toast({
-      title: "Success",
-      description: "URL copied to clipboard",
+      title: "Copied!",
+      description: "Image URL copied to clipboard",
     });
   };
 
-  const formatFileSize = (bytes: number): string => {
-    if (bytes < 1024) return bytes + " B";
-    if (bytes < 1048576) return (bytes / 1024).toFixed(1) + " KB";
-    return (bytes / 1048576).toFixed(1) + " MB";
+  const filteredMedia = media.filter(item =>
+    item.filename.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const formatFileSize = (bytes: number) => {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
   };
 
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <p className="text-muted-foreground">Loading media library...</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <div className="flex gap-4 items-center">
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+        <Button
+          onClick={() => document.getElementById('media-upload')?.click()}
+          disabled={uploading}
+        >
+          <Upload className="w-4 h-4 mr-2" />
+          {uploading ? 'Uploading...' : 'Upload Images'}
+        </Button>
+        <input
+          id="media-upload"
+          type="file"
+          accept="image/*"
+          multiple
+          className="hidden"
+          onChange={handleUpload}
+        />
+        <div className="relative flex-1 max-w-md">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input
             placeholder="Search images..."
             value={searchQuery}
@@ -162,45 +158,26 @@ export const MediaLibraryManager = ({ onSelect, selectable = false }: MediaLibra
             className="pl-10"
           />
         </div>
-        <label>
-          <Button disabled={uploading} className="cursor-pointer">
-            <Upload className="w-4 h-4 mr-2" />
-            {uploading ? "Uploading..." : "Upload Images"}
-          </Button>
-          <input
-            type="file"
-            multiple
-            accept="image/*"
-            onChange={handleUpload}
-            className="hidden"
-          />
-        </label>
       </div>
 
-      {loading ? (
-        <div className="text-center py-12 text-muted-foreground">Loading media library...</div>
-      ) : filteredMedia.length === 0 ? (
-        <div className="text-center py-12 text-muted-foreground">
-          {searchQuery ? "No images found matching your search" : "No images uploaded yet"}
-        </div>
+      {filteredMedia.length === 0 ? (
+        <Card className="p-12 text-center">
+          <ImageIcon className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
+          <p className="text-muted-foreground">
+            {searchQuery ? 'No images found' : 'No images uploaded yet'}
+          </p>
+        </Card>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {filteredMedia.map((item) => {
-            const url = getPublicUrl(item.storage_path);
+            const imageUrl = getPublicUrl(item.storage_path);
             return (
-              <Card
-                key={item.id}
-                className={`p-2 space-y-2 ${
-                  selectable ? "cursor-pointer hover:ring-2 hover:ring-primary" : ""
-                }`}
-                onClick={() => selectable && onSelect?.(url)}
-              >
-                <div className="aspect-square relative overflow-hidden rounded-md bg-muted">
+              <Card key={item.id} className="p-3 space-y-2">
+                <div className="aspect-square rounded overflow-hidden bg-muted">
                   <img
-                    src={url}
+                    src={imageUrl}
                     alt={item.filename}
                     className="w-full h-full object-cover"
-                    loading="lazy"
                   />
                 </div>
                 <div className="space-y-1">
@@ -209,31 +186,24 @@ export const MediaLibraryManager = ({ onSelect, selectable = false }: MediaLibra
                   </p>
                   <p className="text-xs text-muted-foreground">
                     {formatFileSize(item.file_size)}
-                    {item.width && item.height && ` • ${item.width}×${item.height}`}
                   </p>
-                  <div className="flex gap-1">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleCopyUrl(item);
-                      }}
-                      className="flex-1"
-                    >
-                      <Copy className="w-3 h-3" />
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setDeleteItem(item);
-                      }}
-                    >
-                      <Trash2 className="w-3 h-3 text-destructive" />
-                    </Button>
-                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => copyToClipboard(item.storage_path)}
+                    className="flex-1"
+                  >
+                    <Copy className="w-3 h-3" />
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    size="sm"
+                    onClick={() => setDeleteItem(item)}
+                  >
+                    <Trash2 className="w-3 h-3" />
+                  </Button>
                 </div>
               </Card>
             );
@@ -244,9 +214,9 @@ export const MediaLibraryManager = ({ onSelect, selectable = false }: MediaLibra
       <AlertDialog open={!!deleteItem} onOpenChange={() => setDeleteItem(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete Image</AlertDialogTitle>
+            <AlertDialogTitle>Delete Image?</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to delete "{deleteItem?.filename}"? This action cannot be undone.
+              This will permanently delete "{deleteItem?.filename}". This action cannot be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
