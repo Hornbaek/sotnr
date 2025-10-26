@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { JournalEditor } from "@/components/journal/JournalEditor";
+import { MediaPicker } from "@/components/media/MediaPicker";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,7 +11,7 @@ import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
 import { OutputData } from "@editorjs/editorjs";
 import { slugify } from "@/lib/slugify";
-import { ArrowLeft, Save, Eye } from "lucide-react";
+import { ArrowLeft, Save, Eye, Upload, ImageIcon } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -18,6 +19,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { JournalRenderer } from "@/components/journal/JournalRenderer";
+import { uploadToSupabaseStorage } from "@/lib/uploadToStorage";
 
 export default function JournalEditorPage() {
   const { id } = useParams();
@@ -30,6 +32,8 @@ export default function JournalEditorPage() {
   const [coverImage, setCoverImage] = useState("");
   const [content, setContent] = useState<OutputData>({ blocks: [] });
   const [showPreview, setShowPreview] = useState(false);
+  const [showMediaPicker, setShowMediaPicker] = useState(false);
+  const [uploadingCover, setUploadingCover] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
 
   useEffect(() => {
@@ -140,6 +144,28 @@ export default function JournalEditorPage() {
     }
   };
 
+  const handleCoverImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingCover(true);
+    try {
+      const url = await uploadToSupabaseStorage(file);
+      setCoverImage(url);
+      toast.success("Cover image uploaded!");
+    } catch (error: any) {
+      toast.error(error.message || "Upload failed");
+    } finally {
+      setUploadingCover(false);
+    }
+  };
+
+  const handleCoverImageSelect = (url: string) => {
+    setCoverImage(url);
+    setShowMediaPicker(false);
+    toast.success("Cover image selected!");
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
@@ -234,13 +260,49 @@ export default function JournalEditorPage() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="coverImage">Cover Image URL</Label>
-          <Input
-            id="coverImage"
-            value={coverImage}
-            onChange={(e) => setCoverImage(e.target.value)}
-            placeholder="https://example.com/image.jpg (optional)"
-          />
+          <Label htmlFor="coverImage">Cover Image</Label>
+          <div className="flex gap-2">
+            <Input
+              id="coverImage"
+              value={coverImage}
+              onChange={(e) => setCoverImage(e.target.value)}
+              placeholder="Image URL or use buttons below"
+              className="flex-1"
+            />
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => document.getElementById('cover-upload')?.click()}
+              disabled={uploadingCover}
+            >
+              <Upload className="w-4 h-4 mr-2" />
+              {uploadingCover ? 'Uploading...' : 'Upload'}
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setShowMediaPicker(true)}
+            >
+              <ImageIcon className="w-4 h-4 mr-2" />
+              Library
+            </Button>
+            <input
+              id="cover-upload"
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handleCoverImageUpload}
+            />
+          </div>
+          {coverImage && (
+            <div className="mt-2">
+              <img
+                src={coverImage}
+                alt="Cover preview"
+                className="w-full h-32 object-cover rounded-lg"
+              />
+            </div>
+          )}
         </div>
       </Card>
 
@@ -269,6 +331,12 @@ export default function JournalEditorPage() {
           </div>
         </DialogContent>
       </Dialog>
+
+      <MediaPicker
+        open={showMediaPicker}
+        onClose={() => setShowMediaPicker(false)}
+        onSelect={handleCoverImageSelect}
+      />
     </div>
   );
 }
