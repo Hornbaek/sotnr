@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify';
 import { RealmSpotlight } from "./blocks/RealmSpotlight";
 import { CharacterCard } from "./blocks/CharacterCard";
 import { RunicQuote } from "./blocks/RunicQuote";
@@ -44,7 +45,7 @@ export const JournalRenderer = ({ content }: JournalRendererProps) => {
 
           case 'paragraph':
             return (
-              <p key={index} className="text-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: block.data.text }} />
+              <p key={index} className="text-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block.data.text) }} />
             );
 
           case 'list':
@@ -52,7 +53,7 @@ export const JournalRenderer = ({ content }: JournalRendererProps) => {
             return (
               <ListTag key={index} className="text-foreground">
                 {block.data.items.map((item: string, i: number) => (
-                  <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
+                  <li key={i} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item) }} />
                 ))}
               </ListTag>
             );
@@ -60,7 +61,7 @@ export const JournalRenderer = ({ content }: JournalRendererProps) => {
           case 'quote':
             return (
               <blockquote key={index} className="border-l-4 border-primary pl-4 italic text-muted-foreground">
-                <p dangerouslySetInnerHTML={{ __html: block.data.text }} />
+                <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block.data.text) }} />
                 {block.data.caption && (
                   <cite className="block text-sm mt-2">— {block.data.caption}</cite>
                 )}

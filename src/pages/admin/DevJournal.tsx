@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 import { Plus, Edit, Trash2, Eye } from 'lucide-react';
 import { toast } from 'sonner';
+import { sanitizeError } from '@/lib/sanitizeError';
 
 interface JournalPost {
   id: string;
@@ -37,8 +38,9 @@ const DevJournal = () => {
 
       if (error) throw error;
       setPosts(data || []);
-    } catch (error) {
-      toast.error('Failed to load journal posts');
+    } catch (error: any) {
+      console.error('Error loading journal posts:', error);
+      toast.error(sanitizeError(error));
     } finally {
       setLoading(false);
     }
@@ -52,8 +54,9 @@ const DevJournal = () => {
       if (error) throw error;
       toast.success('Post deleted');
       setPosts(posts.filter(p => p.id !== deleteId));
-    } catch (error) {
-      toast.error('Failed to delete post');
+    } catch (error: any) {
+      console.error('Error deleting post:', error);
+      toast.error(sanitizeError(error));
     } finally {
       setDeleting(false);
       setDeleteId(null);

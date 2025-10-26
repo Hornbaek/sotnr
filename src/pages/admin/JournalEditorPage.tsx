@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
 import { OutputData } from "@editorjs/editorjs";
 import { slugify } from "@/lib/slugify";
+import { sanitizeError } from "@/lib/sanitizeError";
 import { ArrowLeft, Save, Eye, Upload, ImageIcon } from "lucide-react";
 import {
   Dialog,
@@ -138,7 +139,8 @@ export default function JournalEditorPage() {
       
       setLastSaved(new Date());
     } catch (error: any) {
-      toast.error(error.message || "Failed to save post");
+      console.error('Error saving post:', error);
+      toast.error(sanitizeError(error));
     } finally {
       setSaving(false);
     }
@@ -154,7 +156,8 @@ export default function JournalEditorPage() {
       setCoverImage(url);
       toast.success("Cover image uploaded!");
     } catch (error: any) {
-      toast.error(error.message || "Upload failed");
+      console.error('Error uploading cover image:', error);
+      toast.error(sanitizeError(error));
     } finally {
       setUploadingCover(false);
     }
