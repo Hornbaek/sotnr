@@ -47,6 +47,54 @@ export type Database = {
         }
         Relationships: []
       }
+      media_library: {
+        Row: {
+          alt_text: string | null
+          file_size: number
+          filename: string
+          height: number | null
+          id: string
+          mime_type: string
+          storage_path: string
+          tags: string[] | null
+          title: string | null
+          uploaded_at: string | null
+          uploaded_by: string | null
+          used_count: number | null
+          width: number | null
+        }
+        Insert: {
+          alt_text?: string | null
+          file_size: number
+          filename: string
+          height?: number | null
+          id?: string
+          mime_type: string
+          storage_path: string
+          tags?: string[] | null
+          title?: string | null
+          uploaded_at?: string | null
+          uploaded_by?: string | null
+          used_count?: number | null
+          width?: number | null
+        }
+        Update: {
+          alt_text?: string | null
+          file_size?: number
+          filename?: string
+          height?: number | null
+          id?: string
+          mime_type?: string
+          storage_path?: string
+          tags?: string[] | null
+          title?: string | null
+          uploaded_at?: string | null
+          uploaded_by?: string | null
+          used_count?: number | null
+          width?: number | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string

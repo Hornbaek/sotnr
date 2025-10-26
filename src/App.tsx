@@ -25,6 +25,7 @@ import JournalDetail from "./pages/JournalDetail";
 import Statistics from "./pages/admin/Statistics";
 import AdminWorkshop from "./pages/admin/AdminWorkshop";
 import AdminSettings from "./pages/admin/AdminSettings";
+import MediaLibrary from "./pages/admin/MediaLibrary";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -68,6 +69,7 @@ const App = () => (
             <Route path="dev-journal" element={<DevJournal />} />
             <Route path="dev-journal/new" element={<JournalEditorPage />} />
             <Route path="dev-journal/edit/:id" element={<JournalEditorPage />} />
+            <Route path="media-library" element={<MediaLibrary />} />
             <Route path="statistics" element={<Statistics />} />
             <Route path="workshop" element={<AdminWorkshop />} />
             <Route path="settings" element={<AdminSettings />} />

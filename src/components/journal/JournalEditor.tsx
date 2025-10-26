@@ -51,20 +51,25 @@ export const JournalEditor = ({ initialData, onChange, onReady }: JournalEditorP
           config: {
             uploader: {
               uploadByFile: async (file: File) => {
-                // Placeholder - will implement file upload later
-                return {
-                  success: 0,
-                  file: {
-                    url: URL.createObjectURL(file),
-                  },
-                };
+                try {
+                  const { uploadToSupabaseStorage } = await import('@/lib/uploadToStorage');
+                  const url = await uploadToSupabaseStorage(file);
+                  return {
+                    success: 1,
+                    file: { url },
+                  };
+                } catch (error) {
+                  console.error('Upload failed:', error);
+                  return {
+                    success: 0,
+                    file: { url: '' },
+                  };
+                }
               },
               uploadByUrl: async (url: string) => {
                 return {
                   success: 1,
-                  file: {
-                    url: url,
-                  },
+                  file: { url },
                 };
               },
             },
