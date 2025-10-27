@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Flame } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import heroImage from "@/assets/hero-norse.jpg";
+import logo from "@/assets/sotnr-logo.png";
 
 export const Hero = () => {
   const { scrollY } = useScroll();
@@ -29,14 +29,18 @@ export const Hero = () => {
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
-          {/* Flame Icon */}
+          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             className="inline-block"
           >
-            <Flame className="w-12 h-12 text-primary mx-auto" />
+            <img 
+              src={logo} 
+              alt="Nine Realms Logo" 
+              className="w-20 h-20 md:w-24 md:h-24 mx-auto object-contain drop-shadow-[0_0_20px_rgba(196,166,97,0.5)]" 
+            />
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl font-display font-bold text-foreground">

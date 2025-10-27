@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Flame } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
+import logo from "@/assets/sotnr-logo.png";
 
 const navLinks = [
   { path: "/", label: "Home" },
@@ -37,13 +38,17 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <motion.div
-              whileHover={{ scale: 1.05, filter: "brightness(1.3)" }}
+              whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
               transition={{ duration: 0.3 }}
               className="relative"
             >
-              <Flame className="w-7 h-7 text-primary drop-shadow-[0_0_8px_rgba(196,166,97,0.6)]" />
+              <img 
+                src={logo} 
+                alt="Nine Realms Logo" 
+                className="w-10 h-10 object-contain drop-shadow-[0_0_12px_rgba(196,166,97,0.4)]" 
+              />
             </motion.div>
             <span className="text-lg font-display font-bold text-foreground group-hover:text-primary transition-colors drop-shadow-lg">
               Nine Realms
