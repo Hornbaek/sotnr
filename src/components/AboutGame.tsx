@@ -67,8 +67,8 @@ export const AboutGame = () => {
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="text-center space-y-2"
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 border border-primary/20">
-                    <img src={feature.icon} alt={feature.title} className="w-8 h-8 object-contain" />
+                  <div className="inline-flex items-center justify-center">
+                    <img src={feature.icon} alt={feature.title} className="w-12 h-12 object-contain" />
                   </div>
                   <h3 className="text-xs font-semibold text-primary">{feature.title}</h3>
                   <p className="text-xs text-foreground/60">{feature.description}</p>
