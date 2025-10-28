@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Scroll } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { motion } from "framer-motion";
 import { z } from "zod";
+import runeIcon from "@/assets/icons/rune.png";
 
 // Input validation schema
 const waitlistSchema = z.object({
@@ -106,19 +106,13 @@ export const Newsletter = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center"
         >
-          {/* Icon */}
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/20 border-2 border-primary/40 mb-6 shadow-lg shadow-primary/20"
-          >
-            <Scroll className="w-10 h-10 text-primary" />
-          </motion.div>
-
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-primary">
-            Relic Vault
-          </h2>
+          {/* Title with Icon */}
+          <div className="inline-flex items-center gap-4 mb-4">
+            <img src={runeIcon} alt="Rune" className="w-10 h-10 object-contain" />
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
+              Relic Vault
+            </h2>
+          </div>
           
           <p className="text-lg text-foreground/80 mb-2 italic">
             Claim your place among the first to descend
