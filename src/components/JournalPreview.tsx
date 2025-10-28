@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { BookOpen, ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { format } from "date-fns";
+import journalIcon from "@/assets/icons/journal.png";
 
 export const JournalPreview = () => {
   const { data: posts, isLoading } = useQuery({
@@ -36,7 +37,7 @@ export const JournalPreview = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-3 mb-4">
-            <BookOpen className="w-8 h-8 text-primary" />
+            <img src={journalIcon} alt="Journal" className="w-10 h-10 object-contain" />
             <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
               From the Forge
             </h2>

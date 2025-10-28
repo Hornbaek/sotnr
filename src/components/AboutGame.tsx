@@ -1,20 +1,22 @@
 import { motion } from "framer-motion";
-import { Swords, Compass, Axe } from "lucide-react";
 import gameBoardImage from "@/assets/game-board.jpg";
+import combatIcon from "@/assets/icons/combat.png";
+import explorationIcon from "@/assets/icons/exploration.png";
+import heroesIcon from "@/assets/icons/heroes.png";
 
 const features = [
   {
-    icon: Swords,
+    icon: combatIcon,
     title: "Tactical Combat",
     description: "Strategic battles against mythic foes"
   },
   {
-    icon: Compass,
+    icon: explorationIcon,
     title: "Overworld Exploration",
     description: "Journey through the Nine Realms"
   },
   {
-    icon: Axe,
+    icon: heroesIcon,
     title: "Norse Heroes & Myths",
     description: "Command legendary warriors"
   }
@@ -66,7 +68,7 @@ export const AboutGame = () => {
                   className="text-center space-y-2"
                 >
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 border border-primary/20">
-                    <feature.icon className="w-6 h-6 text-primary" />
+                    <img src={feature.icon} alt={feature.title} className="w-8 h-8 object-contain" />
                   </div>
                   <h3 className="text-xs font-semibold text-primary">{feature.title}</h3>
                   <p className="text-xs text-foreground/60">{feature.description}</p>

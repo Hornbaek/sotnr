@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Hammer, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import realmsShowcase from "@/assets/realms-showcase.jpg";
+import forgeIcon from "@/assets/icons/forge-workshop.png";
 
 export const WorkshopPreview = () => {
   return (
@@ -19,7 +20,7 @@ export const WorkshopPreview = () => {
           className="text-center mb-12"
         >
           <div className="inline-flex items-center gap-3 mb-4">
-            <Hammer className="w-8 h-8 text-primary" />
+            <img src={forgeIcon} alt="Forge" className="w-10 h-10 object-contain" />
             <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
               The Carver's Forge
             </h2>
