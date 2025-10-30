@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { JournalEditor } from "@/components/journal/JournalEditor";
@@ -12,7 +12,8 @@ import { toast } from "sonner";
 import { OutputData } from "@editorjs/editorjs";
 import { slugify } from "@/lib/slugify";
 import { sanitizeError } from "@/lib/sanitizeError";
-import { ArrowLeft, Save, Eye, Upload, ImageIcon } from "lucide-react";
+import { ArrowLeft, Save, Eye, Upload, ImageIcon, FileText } from "lucide-react";
+import { markdownToEditorJS } from "@/lib/markdownToEditorJS";
 import {
   Dialog,
   DialogContent,
@@ -36,6 +37,7 @@ export default function JournalEditorPage() {
   const [showMediaPicker, setShowMediaPicker] = useState(false);
   const [uploadingCover, setUploadingCover] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
+  const markdownInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (id) {
@@ -169,6 +171,50 @@ export default function JournalEditorPage() {
     toast.success("Cover image selected!");
   };
 
+  const handleMarkdownImport = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Validate file type
+    if (!file.name.endsWith('.md') && !file.name.endsWith('.markdown')) {
+      toast.error('Please select a Markdown file (.md or .markdown)');
+      return;
+    }
+
+    // Validate file size (5MB limit)
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error('File size must be less than 5MB');
+      return;
+    }
+
+    try {
+      const text = await file.text();
+      
+      if (!text.trim()) {
+        toast.error('Markdown file is empty');
+        return;
+      }
+
+      const editorJSData = await markdownToEditorJS(text);
+      
+      if (!editorJSData.blocks || editorJSData.blocks.length === 0) {
+        toast.error('No content could be imported from the Markdown file');
+        return;
+      }
+
+      setContent(editorJSData);
+      toast.success(`Successfully imported ${editorJSData.blocks.length} block${editorJSData.blocks.length === 1 ? '' : 's'}`);
+    } catch (error) {
+      console.error('Failed to import Markdown:', error);
+      toast.error('Failed to import Markdown file. Please check the file format.');
+    }
+
+    // Reset file input
+    if (markdownInputRef.current) {
+      markdownInputRef.current.value = '';
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
@@ -201,6 +247,13 @@ export default function JournalEditorPage() {
           )}
           <Button
             variant="outline"
+            onClick={() => markdownInputRef.current?.click()}
+          >
+            <FileText className="w-4 h-4 mr-2" />
+            Import Markdown
+          </Button>
+          <Button
+            variant="outline"
             onClick={() => setShowPreview(true)}
             disabled={!content.blocks.length}
           >
@@ -222,6 +275,13 @@ export default function JournalEditorPage() {
             Publish
           </Button>
         </div>
+        <input
+          ref={markdownInputRef}
+          type="file"
+          accept=".md,.markdown"
+          className="hidden"
+          onChange={handleMarkdownImport}
+        />
       </div>
 
       <Card className="p-6 space-y-4">
