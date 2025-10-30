@@ -183,6 +183,30 @@ function convertImage(node: Image): EditorJSBlock {
 }
 
 /**
+ * Escape HTML to prevent XSS attacks
+ */
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+/**
+ * Validate URL to prevent javascript: and data: scheme attacks
+ */
+function isSafeUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url, typeof window !== 'undefined' ? window.location.href : 'http://localhost');
+    return ['http:', 'https:', 'mailto:'].includes(parsed.protocol);
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Extract plain text from a node
  */
 function extractText(node: any): string {
@@ -199,12 +223,13 @@ function extractText(node: any): string {
 
 /**
  * Extract formatted text with HTML tags for bold, italic, code, and links
+ * All content is properly escaped to prevent XSS attacks
  */
 function extractFormattedText(node: any): string {
   if (!node) return '';
   
   if (node.type === 'text') {
-    return (node as Text).value;
+    return escapeHtml((node as Text).value);
   }
   
   if (node.type === 'strong') {
@@ -218,12 +243,17 @@ function extractFormattedText(node: any): string {
   }
   
   if (node.type === 'inlineCode') {
-    return `<code>${(node as InlineCode).value}</code>`;
+    return `<code>${escapeHtml((node as InlineCode).value)}</code>`;
   }
   
   if (node.type === 'link') {
     const text = node.children.map((child: any) => extractFormattedText(child)).join('');
-    return `<a href="${(node as Link).url}">${text}</a>`;
+    const url = (node as Link).url;
+    // Only allow safe URL schemes, escape everything properly
+    if (!isSafeUrl(url)) {
+      return text; // Strip link if URL is unsafe
+    }
+    return `<a href="${escapeHtml(url)}">${text}</a>`;
   }
   
   if (node.children) {
