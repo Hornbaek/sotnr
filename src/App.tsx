@@ -9,6 +9,7 @@ import { AdminLayout } from "./components/admin/AdminLayout";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Game from "./pages/Game";
+import Rulebook from "./pages/Rulebook";
 import Lore from "./pages/Lore";
 import Workshop from "./pages/Workshop";
 import Campaign from "./pages/Campaign";
@@ -46,6 +47,7 @@ const App = () => (
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
             <Route path="/game" element={<Game />} />
+            <Route path="/rulebook" element={<Rulebook />} />
             <Route path="/lore" element={<Lore />} />
             <Route path="/workshop" element={<Workshop />} />
             <Route path="/campaign" element={<Campaign />} />

@@ -8,8 +8,9 @@ import logo from "@/assets/sotnr-logo.png";
 const navLinks = [
   { path: "/", label: "Home" },
   { path: "/game", label: "The Game" },
-  { path: "/lore", label: "Lore Codex" },
-  { path: "/journal", label: "Dev Journal" },
+  { path: "/rulebook", label: "Rulebook" },
+  { path: "/lore", label: "Lore" },
+  { path: "/journal", label: "Journal" },
 ];
 
 export const Navigation = () => {
