@@ -186,9 +186,9 @@ export const NineRealmsPreview = () => {
           transition={{ delay: 0.6 }}
           className="text-center"
         >
-          <Link to="/lore">
+          <Link to="/game">
             <Button size="lg" className="group">
-              Enter the Codex
+              The Game
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

@@ -51,7 +51,8 @@ export const Navigation = () => {
               />
             </motion.div>
             <span className="text-lg font-display font-bold text-foreground group-hover:text-primary transition-colors drop-shadow-lg">
-              Nine Realms
+              <span className="hidden md:inline">Shadows of the Nine Realms</span>
+              <span className="md:hidden">SOTNR</span>
             </span>
           </Link>
 
