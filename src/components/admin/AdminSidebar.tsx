@@ -8,7 +8,8 @@ import {
   Hammer, 
   Settings, 
   LogOut,
-  Image
+  Image,
+  BookText
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
@@ -31,6 +32,7 @@ const menuItems = [
   { title: 'Characters', url: '/admin/characters', icon: Swords },
   { title: 'Scenarios', url: '/admin/scenarios', icon: Scroll },
   { title: 'Dev Journal', url: '/admin/dev-journal', icon: BookOpen },
+  { title: 'Lore Codex', url: '/admin/lore', icon: BookText },
   { title: 'Media Library', url: '/admin/media-library', icon: Image },
   { title: 'Statistics', url: '/admin/statistics', icon: BarChart3 },
   { title: 'Workshop', url: '/admin/workshop', icon: Hammer },
