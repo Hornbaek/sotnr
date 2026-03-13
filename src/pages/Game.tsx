@@ -31,6 +31,8 @@ import svartalfheimImg from "@/assets/realms/svartalfheim.jpg";
 import jotunheimImg from "@/assets/realms/jotunheim.jpg";
 import helheimImg from "@/assets/realms/helheim.jpg";
 
+import CampaignSection from "@/components/game/CampaignSection";
+
 const heroClasses = [
   {
     name: "Einherjar",
