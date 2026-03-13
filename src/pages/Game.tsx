@@ -323,33 +323,8 @@ const Game = () => {
         </div>
       </section>
 
-      {/* Scenarios */}
-      <section id="scenarios" className="py-20 px-4 scroll-mt-20">
-        <div className="container mx-auto">
-          <motion.div {...fadeIn} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
-              The <span className="text-primary">Scenarios</span>
-            </h2>
-            <p className="text-muted-foreground">Six scenarios form a connected campaign across the Nine Realms</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {scenarios.map((scenario, i) => (
-              <motion.div key={scenario.name} {...fadeIn} transition={{ delay: i * 0.08, duration: 0.5 }}>
-                <Card className="bg-card/50 border-border hover:border-primary/30 transition-all h-full">
-                  <CardContent className="p-6 space-y-3">
-                    <h3 className="text-base font-bold text-primary">{scenario.name}</h3>
-                    <p className="text-xs italic text-foreground/60">"{scenario.quote}"</p>
-                    <div className="flex gap-4 text-xs text-muted-foreground">
-                      <span>📍 {scenario.location}</span>
-                      <span>⚔️ {scenario.enemies}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Grand Campaign */}
+      <CampaignSection />
 
       {/* Book-Box & Components */}
       <section id="book-box" className="py-20 px-4 bg-gradient-to-b from-background to-card/20 scroll-mt-20">
