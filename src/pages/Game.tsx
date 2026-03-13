@@ -29,6 +29,7 @@ const heroClasses = [
     quote: "Stand firm, shield-brothers! The Einherjar do not yield!",
     role: "Tank / Defender",
     icon: Shield,
+    image: einherjarImg,
     signature: "Shield Wall",
     description: "Fallen warriors chosen by Odin. Masters of defense and battlefield control."
   },
@@ -37,6 +38,7 @@ const heroClasses = [
     quote: "I choose the slain. I guide the worthy. I am the spear of judgment.",
     role: "Damage / Mobility",
     icon: Sword,
+    image: valkyrieImg,
     signature: "Wings of War",
     description: "Odin's choosers of the slain. Swift executioners who reap the unworthy."
   },
@@ -45,6 +47,7 @@ const heroClasses = [
     quote: "The threads of fate are mine to weave… and to sever.",
     role: "Support / Healer",
     icon: Heart,
+    image: seidrImg,
     signature: "Web of Fate",
     description: "Sorceresses who read the threads of fate and bend reality to their will."
   },
@@ -53,6 +56,7 @@ const heroClasses = [
     quote: "The wolf does not pity the lamb. I am the wolf.",
     role: "Risk / Reward",
     icon: Flame,
+    image: ulfhednarImg,
     signature: "Beast Within",
     description: "Wolf-pelt warriors who channel the beast's fury for devastating results."
   },
@@ -61,6 +65,7 @@ const heroClasses = [
     quote: "Listen, and I will sing of heroes yet to fall…",
     role: "Support / Inspire",
     icon: Music,
+    image: skaldImg,
     signature: "Saga of Heroes",
     description: "Poets who preserve the deeds of heroes and inspire allies to greater heights."
   },
@@ -69,6 +74,7 @@ const heroClasses = [
     quote: "I raise the curse-pole. Let doom find the unworthy.",
     role: "Debuffer / Curse",
     icon: Skull,
+    image: nidstangImg,
     signature: "Curse-Pole",
     description: "Dark practitioners who wield forbidden magic through the curse-pole."
   },
