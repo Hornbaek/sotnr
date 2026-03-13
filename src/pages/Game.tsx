@@ -12,7 +12,15 @@ import ulfhednarImg from "@/assets/heroes/ulfhednar.jpg";
 import skaldImg from "@/assets/heroes/skald.jpg";
 import nidstangImg from "@/assets/heroes/nidstang.jpg";
 
-// Import realm images & icons
+// Import monster images
+import draugrImg from "@/assets/monsters/draugr.jpg";
+import huldraImg from "@/assets/monsters/huldra.jpg";
+import nokkenImg from "@/assets/monsters/nokken.jpg";
+import trollImg from "@/assets/monsters/troll.jpg";
+import frostGiantImg from "@/assets/monsters/frost-giant.jpg";
+import dwarfWarriorImg from "@/assets/monsters/dwarf-warrior.jpg";
+import maraImg from "@/assets/monsters/mara.jpg";
+
 import niflheimImg from "@/assets/realms/niflheim.jpg";
 import muspelheimImg from "@/assets/realms/muspelheim.jpg";
 import asgardImg from "@/assets/realms/asgard.jpg";
