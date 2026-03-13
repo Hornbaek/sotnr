@@ -112,22 +112,75 @@
 ---
 
 ## Phase 5 — Campaign System
-*Goal: A campaign that feels like a living world without requiring a journal or heavy administration.*
+*Goal: A living world campaign structure that scales from a single realm to the full grand campaign across all Nine Realms, without requiring a journal or heavy administration.*
 
-### Design Constraints Established in Phase 1
-- Legacy Cards are the sole campaign state — no journal
-- Later spine slot always wins on contradictions
-- Legacy Cards can reference other spine slots by number for compounding effects (use sparingly, late-campaign only)
-- Each hero has individual Loot — maximum 10 tokens carried forward
-- Between-session flow: recover health, spend loot, level up, read Legacy Cards
+### Product Structure
+
+**The Core Box** contains the complete game system plus the **Midgard starter campaign** — a self-contained set of scenario sleeves, realm Legacy Cards, and a grand campaign map showing all 9 realms. The grand campaign map is included from the start as both a teaser and a functional reference for players tracking their journey.
+
+**Realm Campaign Packs** are self-contained expansions, one per realm. Each pack contains:
+- A set of Scenario Sleeves (number determined by the campaign designer, bounded by box capacity)
+- Realm Legacy Cards (earned only at special story moments — not one per scenario)
+- Any realm-specific rules or components
+- A defined linking structure: standalone, sequential, or conditional (designer's choice)
+
+**The Grand Campaign** is the full arc across all 9 realms. It is included in the core box. Additional grand campaigns (different stories across the same realms) may be developed as separate products later.
+
+### Two-Tier Legacy Card System
+
+Legacy Cards are split into two distinct tiers, each with dedicated physical slots in the book-box:
+
+**Realm Legacy Cards** (6 slots per realm campaign)
+- Earned within a single realm campaign at special story moments — not automatically after every scenario
+- Earned when: a specific Act 2 objective is achieved, a significant choice is made, or a named condition is met (defined per campaign pack)
+- Won/lost sides as before — 15-word constraint applies
+- Effects should be written broadly enough to remain relevant across scenarios in that realm
+- Physical home: the realm campaign pack's own Legacy sleeve, archived in the pack when the realm is complete
+
+**World Tree Legacy Cards** (6 slots in the book-box spine, permanent)
+- Earned only for the most significant cross-realm moments — completing a realm, making a grand campaign choice, or a named trigger defined by the campaign designer
+- Effects must be written broadly enough to apply across multiple realms — no realm-specific references
+- These 6 slots represent the permanent shape of the heroes' grand saga
+- Later slot always wins on contradictions, same as realm cards
+
+### Cross-Campaign Continuity
+
+When players complete a realm campaign and move to the next:
+- **Hero XP and level** carry forward — heroes grow across the full grand campaign
+- **Loot** carries forward — individual, capped at 10 tokens per hero
+- **World Tree Legacy Cards** carry forward — always in the spine
+- **Realm Legacy Cards** are archived in the completed realm pack — they do not carry forward, but the World Tree cards they triggered do
+- **Health** resets to maximum at campaign start
+
+### Grand Campaign Map
+
+The campaign map (included in the core box) shows all 9 realms connected by Yggdrasil's branches. It serves two functions:
+- **Navigation** — tracks which realms have been visited, won, or lost
+- **Linking** — campaign designers can print route connections on their pack's map overlay, showing which realms their campaign unlocks or requires
+
+Linking types a campaign designer can define:
+- **Standalone** — realm can be played at any point, no prerequisites
+- **Sequential** — realm unlocks only after a specific other realm is completed
+- **Conditional** — realm unlocks based on a specific World Tree Legacy Card outcome
+
+### Design Constraints Established
+- Legacy Cards are the sole campaign state — no journal at any level
+- Later spine slot always wins on contradictions (both tiers)
+- Realm Legacy Cards must be written broadly — no effects so specific they only apply to one scenario
+- World Tree Legacy Cards must be written broadly — no realm-specific references
+- Hero progression (XP, loot, level) carries forward across all realm campaigns
+- The box capacity defines the maximum number of scenario sleeves per realm campaign — exact count defined in Phase 7
 
 ### ⬜ Backlog
-- Define campaign branching map (which scenarios are linear, which are choice-dependent)
-- Define concrete mechanical effects for Allies and Enemies via Legacy Cards
-- Define Legacy bonus types (stat boost, narrative flag, new ability, or other)
-- Define Secrets system (what clues look like, how they unlock hidden content)
-- Define between-session flow step by step (recovery, levelling up, loot spending)
-- Confirm Legacy Card spine slot physical design (6 slots, won/lost face visible, slot numbers printed)
+- Define the grand campaign map design (realm positions, Yggdrasil branch connections, tracking mechanism)
+- Define exact trigger conditions for earning Realm Legacy Cards (what counts as "special enough")
+- Define exact trigger conditions for earning World Tree Legacy Cards
+- Define concrete mechanical effects for Allies and Enemies across realm campaigns
+- Define Secrets system (what clues look like, how they unlock hidden realms or scenarios)
+- Define between-session and between-realm flow step by step
+- Define how XP scaling works across a grand campaign — does Level 9 Saga Hero status carry into the next realm?
+- Design the Midgard starter campaign as the reference implementation for all campaign pack design
+- Confirm physical slot design for both Legacy Card tiers (see Phase 7)
 
 ---
 
@@ -152,15 +205,36 @@
 ## Phase 7 — Production & Presentation
 *Goal: Components are manufacturable, rules are clear to a first-time reader.*
 
+### Book-Box Physical Design — Concept
+
+> ⚠️ Physical design is still being decided. The following captures current thinking, not final decisions.
+
+The book-box uses a **three-panel unfold sequence:**
+
+- **Closed:** A4 format, spine up. Fully portable, fits in a bag.
+- **First unfold** (opens like a book): Left panel = hex grid battlefield + Scenario Sleeve slot. Right panel = player dashboards. Footprint: 2× A4.
+- **Second unfold** (a third panel folds out from the right panel, away from the battlefield): Contains Legacy Card slots (both tiers), grand campaign map, and between-session reference. Footprint: 3× A4.
+
+The second panel is only needed at setup and between sessions — it folds back during active play, keeping the battlefield clean.
+
+**Manufacturing flags for this design:**
+- Robust hinge required between panels 2 and 3
+- Legacy Card slots need a retention mechanism so cards don't slide out when the panel folds
+- The 3× A4 footprint must be validated against typical table sizes
+- Panel 3 thickness must account for 12 Legacy Card slots (6 Realm + 6 World Tree) without adding significant bulk to the closed box
+
 ### ⬜ Backlog
 - Finalise component list with manufacturing specs
+- Confirm three-panel unfold feasibility with manufacturing constraints
+- Define panel 3 layout (Realm Legacy Card slots, World Tree Legacy Card slots, campaign map area, between-session reference)
 - Character Board physical design (dial, slider, peg slots, Exhaustion threshold markers at slots 3 and 5)
 - Scenario Sleeve template design (front/back, seven zones, transition strips)
-- Legacy Card template design (spine slot numbers, won/lost sides)
+- Legacy Card template design — two versions: Realm Cards and World Tree Cards (visually distinct)
 - Rulebook final draft (all TODOs resolved)
 - Quick Reference card final version
 - Transition strip icon design (Norse-inspired symbols)
-- Box layout and spine slot design (6 Legacy Card slots, numbered)
+- Grand campaign map design (realm positions, Yggdrasil branch connections, tracking mechanism)
+- Realm Campaign Pack physical design (sleeve storage, realm Legacy Card sleeve, pack-specific components)
 
 ---
 
@@ -170,5 +244,7 @@
 - Should loot be split into gold (spendable currency) and items (physical equipment cards)? Current class action loot mechanic lacks narrative logic. (affects Phase 2, 4, 5)
 - Does failing a scenario always move the campaign forward, or are there dead-end outcomes? (affects Phase 4, 5)
 - Can Legacy Cards ever be removed or flipped mid-campaign, or are they permanent once placed? (affects Phase 1, 5)
-- Is there a maximum campaign length, or can players keep playing beyond 6 scenarios? (affects Phase 5)
-- What do hidden scenarios look like physically — separate Scenario Sleeves stored outside the box? (affects Phase 5, 7)
+- Does Saga Hero status (Level 9) carry forward into the next realm campaign, or do heroes reset to a defined level between realms? (affects Phase 5, 6)
+- What is the maximum number of scenario sleeves a realm campaign pack can contain, given the book-box capacity? (affects Phase 5, 7)
+- What do hidden scenarios look like physically — separate Scenario Sleeves stored in the realm pack? (affects Phase 5, 7)
+- Does the grand campaign map use a dry-erase surface for tracking, or physical tokens/stickers? (affects Phase 7)
