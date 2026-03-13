@@ -31,6 +31,8 @@ import svartalfheimImg from "@/assets/realms/svartalfheim.jpg";
 import jotunheimImg from "@/assets/realms/jotunheim.jpg";
 import helheimImg from "@/assets/realms/helheim.jpg";
 
+import CampaignSection from "@/components/game/CampaignSection";
+
 const heroClasses = [
   {
     name: "Einherjar",
@@ -98,14 +100,6 @@ const monsters = [
   { name: "Mara", quote: "She sits upon your chest while you sleep.", health: "TBD", move: "TBD", attack: "TBD", damage: "TBD", image: maraImg },
 ];
 
-const scenarios = [
-  { name: "The Hollow of the Huldra", quote: "They say she lures the lonely into the deep woods.", location: "Midgard", enemies: "Huldra" },
-  { name: "The Drowned Fiddler", quote: "Beautiful music from the lake tonight. Too beautiful.", location: "Midgard", enemies: "Nokken" },
-  { name: "Frostfall Pass", quote: "The jotnar do not raid for gold.", location: "Jotunheim Border", enemies: "Frost Giant, Trolls" },
-  { name: "The Nightmare Rider", quote: "You cannot move. You cannot scream.", location: "Unknown", enemies: "Mara" },
-  { name: "The Forge of Svartalfheim", quote: "The dwarves craft wonders… and horrors.", location: "Svartalfheim", enemies: "Dwarf Warriors" },
-  { name: "The World Tree's Shadow", quote: "Nidhogg gnaws at the roots. If he breaks through, all realms fall.", location: "Niflheim / Yggdrasil", enemies: "Nidhogg's minions" },
-];
 
 const realms = [
   { name: "Asgard", image: asgardImg, description: "Realm of the Aesir gods, shining citadels and divine power." },
@@ -174,7 +168,7 @@ const Game = () => {
               { label: "Heroes", id: "heroes" },
               { label: "Monsters", id: "monsters" },
               { label: "Realms", id: "realms" },
-              { label: "Scenarios", id: "scenarios" },
+              { label: "Campaign", id: "campaign" },
               { label: "Book-Box", id: "book-box" },
             ].map((item) => (
               <a
@@ -329,33 +323,8 @@ const Game = () => {
         </div>
       </section>
 
-      {/* Scenarios */}
-      <section id="scenarios" className="py-20 px-4 scroll-mt-20">
-        <div className="container mx-auto">
-          <motion.div {...fadeIn} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
-              The <span className="text-primary">Scenarios</span>
-            </h2>
-            <p className="text-muted-foreground">Six scenarios form a connected campaign across the Nine Realms</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {scenarios.map((scenario, i) => (
-              <motion.div key={scenario.name} {...fadeIn} transition={{ delay: i * 0.08, duration: 0.5 }}>
-                <Card className="bg-card/50 border-border hover:border-primary/30 transition-all h-full">
-                  <CardContent className="p-6 space-y-3">
-                    <h3 className="text-base font-bold text-primary">{scenario.name}</h3>
-                    <p className="text-xs italic text-foreground/60">"{scenario.quote}"</p>
-                    <div className="flex gap-4 text-xs text-muted-foreground">
-                      <span>📍 {scenario.location}</span>
-                      <span>⚔️ {scenario.enemies}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Grand Campaign */}
+      <CampaignSection />
 
       {/* Book-Box & Components */}
       <section id="book-box" className="py-20 px-4 bg-gradient-to-b from-background to-card/20 scroll-mt-20">
