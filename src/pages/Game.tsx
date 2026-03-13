@@ -100,14 +100,6 @@ const monsters = [
   { name: "Mara", quote: "She sits upon your chest while you sleep.", health: "TBD", move: "TBD", attack: "TBD", damage: "TBD", image: maraImg },
 ];
 
-const scenarios = [
-  { name: "The Hollow of the Huldra", quote: "They say she lures the lonely into the deep woods.", location: "Midgard", enemies: "Huldra" },
-  { name: "The Drowned Fiddler", quote: "Beautiful music from the lake tonight. Too beautiful.", location: "Midgard", enemies: "Nokken" },
-  { name: "Frostfall Pass", quote: "The jotnar do not raid for gold.", location: "Jotunheim Border", enemies: "Frost Giant, Trolls" },
-  { name: "The Nightmare Rider", quote: "You cannot move. You cannot scream.", location: "Unknown", enemies: "Mara" },
-  { name: "The Forge of Svartalfheim", quote: "The dwarves craft wonders… and horrors.", location: "Svartalfheim", enemies: "Dwarf Warriors" },
-  { name: "The World Tree's Shadow", quote: "Nidhogg gnaws at the roots. If he breaks through, all realms fall.", location: "Niflheim / Yggdrasil", enemies: "Nidhogg's minions" },
-];
 
 const realms = [
   { name: "Asgard", image: asgardImg, description: "Realm of the Aesir gods, shining citadels and divine power." },
