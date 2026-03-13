@@ -168,7 +168,7 @@ const Game = () => {
               { label: "Heroes", id: "heroes" },
               { label: "Monsters", id: "monsters" },
               { label: "Realms", id: "realms" },
-              { label: "Scenarios", id: "scenarios" },
+              { label: "Campaign", id: "campaign" },
               { label: "Book-Box", id: "book-box" },
             ].map((item) => (
               <a
