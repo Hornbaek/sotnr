@@ -4,6 +4,14 @@ import { Shield, Sword, Heart, Flame, Music, Skull, Users, Clock, Dices, BookOpe
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
+// Import hero images
+import einherjarImg from "@/assets/heroes/einherjar.jpg";
+import valkyrieImg from "@/assets/heroes/valkyrie.jpg";
+import seidrImg from "@/assets/heroes/seidr.jpg";
+import ulfhednarImg from "@/assets/heroes/ulfhednar.jpg";
+import skaldImg from "@/assets/heroes/skald.jpg";
+import nidstangImg from "@/assets/heroes/nidstang.jpg";
+
 // Import realm images & icons
 import niflheimImg from "@/assets/realms/niflheim.jpg";
 import muspelheimImg from "@/assets/realms/muspelheim.jpg";
@@ -21,6 +29,7 @@ const heroClasses = [
     quote: "Stand firm, shield-brothers! The Einherjar do not yield!",
     role: "Tank / Defender",
     icon: Shield,
+    image: einherjarImg,
     signature: "Shield Wall",
     description: "Fallen warriors chosen by Odin. Masters of defense and battlefield control."
   },
@@ -29,6 +38,7 @@ const heroClasses = [
     quote: "I choose the slain. I guide the worthy. I am the spear of judgment.",
     role: "Damage / Mobility",
     icon: Sword,
+    image: valkyrieImg,
     signature: "Wings of War",
     description: "Odin's choosers of the slain. Swift executioners who reap the unworthy."
   },
@@ -37,6 +47,7 @@ const heroClasses = [
     quote: "The threads of fate are mine to weave… and to sever.",
     role: "Support / Healer",
     icon: Heart,
+    image: seidrImg,
     signature: "Web of Fate",
     description: "Sorceresses who read the threads of fate and bend reality to their will."
   },
@@ -45,6 +56,7 @@ const heroClasses = [
     quote: "The wolf does not pity the lamb. I am the wolf.",
     role: "Risk / Reward",
     icon: Flame,
+    image: ulfhednarImg,
     signature: "Beast Within",
     description: "Wolf-pelt warriors who channel the beast's fury for devastating results."
   },
@@ -53,6 +65,7 @@ const heroClasses = [
     quote: "Listen, and I will sing of heroes yet to fall…",
     role: "Support / Inspire",
     icon: Music,
+    image: skaldImg,
     signature: "Saga of Heroes",
     description: "Poets who preserve the deeds of heroes and inspire allies to greater heights."
   },
@@ -61,6 +74,7 @@ const heroClasses = [
     quote: "I raise the curse-pole. Let doom find the unworthy.",
     role: "Debuffer / Curse",
     icon: Skull,
+    image: nidstangImg,
     signature: "Curse-Pole",
     description: "Dark practitioners who wield forbidden magic through the curse-pole."
   },
@@ -183,18 +197,17 @@ const Game = () => {
               const Icon = hero.icon;
               return (
                 <motion.div key={hero.name} {...fadeIn} transition={{ delay: i * 0.08, duration: 0.5 }}>
-                  <Card className="bg-card/60 border-border hover:border-primary/40 transition-all group h-full">
-                    <CardContent className="p-6 space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <Icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-bold text-primary">{hero.name}</h3>
-                          <span className="text-xs text-muted-foreground">{hero.role}</span>
-                        </div>
+                  <Card className="bg-card/60 border-border hover:border-primary/40 transition-all group h-full overflow-hidden">
+                    <div className="relative h-48 overflow-hidden">
+                      <img src={hero.image} alt={hero.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+                      <div className="absolute bottom-3 left-4 right-4">
+                        <h3 className="text-lg font-bold text-primary">{hero.name}</h3>
+                        <span className="text-xs text-foreground/70">{hero.role}</span>
                       </div>
-                      <p className="text-sm italic text-foreground/60">"{hero.quote}"</p>
+                    </div>
+                    <CardContent className="p-5 space-y-2">
+                      <p className="text-xs italic text-foreground/60">"{hero.quote}"</p>
                       <p className="text-sm text-foreground/80">{hero.description}</p>
                       <div className="text-xs text-primary/70 pt-1">
                         Signature: <span className="font-semibold">{hero.signature}</span>
