@@ -162,6 +162,34 @@ const Game = () => {
               <span className="flex items-center gap-2"><BookOpen className="w-4 h-4 text-primary" /> Ages 14+</span>
             </div>
           </motion.div>
+
+          {/* Section Navigation */}
+          <motion.nav
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="flex flex-wrap justify-center gap-2 mt-10"
+          >
+            {[
+              { label: "Heroes", id: "heroes" },
+              { label: "Monsters", id: "monsters" },
+              { label: "Realms", id: "realms" },
+              { label: "Scenarios", id: "scenarios" },
+              { label: "Book-Box", id: "book-box" },
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="px-4 py-2 rounded-full border border-primary/30 text-sm text-primary hover:bg-primary/10 hover:border-primary/60 transition-all"
+              >
+                {item.label}
+              </a>
+            ))}
+          </motion.nav>
         </div>
       </section>
 
@@ -192,7 +220,7 @@ const Game = () => {
       </section>
 
       {/* Heroes */}
-      <section className="py-20 px-4 bg-gradient-to-b from-background to-card/20">
+      <section id="heroes" className="py-20 px-4 bg-gradient-to-b from-background to-card/20 scroll-mt-20">
         <div className="container mx-auto">
           <motion.div {...fadeIn} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
@@ -230,7 +258,7 @@ const Game = () => {
       </section>
 
       {/* Monsters */}
-      <section className="py-20 px-4">
+      <section id="monsters" className="py-20 px-4 scroll-mt-20">
         <div className="container mx-auto">
           <motion.div {...fadeIn} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
@@ -276,7 +304,7 @@ const Game = () => {
       </section>
 
       {/* Nine Realms */}
-      <section className="py-20 px-4 bg-gradient-to-b from-background to-card/20">
+      <section id="realms" className="py-20 px-4 bg-gradient-to-b from-background to-card/20 scroll-mt-20">
         <div className="container mx-auto">
           <motion.div {...fadeIn} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
@@ -302,7 +330,7 @@ const Game = () => {
       </section>
 
       {/* Scenarios */}
-      <section className="py-20 px-4">
+      <section id="scenarios" className="py-20 px-4 scroll-mt-20">
         <div className="container mx-auto">
           <motion.div {...fadeIn} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
@@ -330,7 +358,7 @@ const Game = () => {
       </section>
 
       {/* Book-Box & Components */}
-      <section className="py-20 px-4 bg-gradient-to-b from-background to-card/20">
+      <section id="book-box" className="py-20 px-4 bg-gradient-to-b from-background to-card/20 scroll-mt-20">
         <div className="container mx-auto">
           <motion.div {...fadeIn} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
