@@ -258,7 +258,7 @@ const Game = () => {
       </section>
 
       {/* Monsters */}
-      <section className="py-20 px-4">
+      <section id="monsters" className="py-20 px-4 scroll-mt-20">
         <div className="container mx-auto">
           <motion.div {...fadeIn} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
