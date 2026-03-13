@@ -197,18 +197,17 @@ const Game = () => {
               const Icon = hero.icon;
               return (
                 <motion.div key={hero.name} {...fadeIn} transition={{ delay: i * 0.08, duration: 0.5 }}>
-                  <Card className="bg-card/60 border-border hover:border-primary/40 transition-all group h-full">
-                    <CardContent className="p-6 space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <Icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-bold text-primary">{hero.name}</h3>
-                          <span className="text-xs text-muted-foreground">{hero.role}</span>
-                        </div>
+                  <Card className="bg-card/60 border-border hover:border-primary/40 transition-all group h-full overflow-hidden">
+                    <div className="relative h-48 overflow-hidden">
+                      <img src={hero.image} alt={hero.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+                      <div className="absolute bottom-3 left-4 right-4">
+                        <h3 className="text-lg font-bold text-primary">{hero.name}</h3>
+                        <span className="text-xs text-foreground/70">{hero.role}</span>
                       </div>
-                      <p className="text-sm italic text-foreground/60">"{hero.quote}"</p>
+                    </div>
+                    <CardContent className="p-5 space-y-2">
+                      <p className="text-xs italic text-foreground/60">"{hero.quote}"</p>
                       <p className="text-sm text-foreground/80">{hero.description}</p>
                       <div className="text-xs text-primary/70 pt-1">
                         Signature: <span className="font-semibold">{hero.signature}</span>
