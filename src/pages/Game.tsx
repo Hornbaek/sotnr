@@ -241,9 +241,13 @@ const Game = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {monsters.map((monster, i) => (
               <motion.div key={monster.name} {...fadeIn} transition={{ delay: i * 0.06, duration: 0.5 }}>
-                <Card className="bg-card/50 border-border hover:border-destructive/30 transition-all h-full">
-                  <CardContent className="p-5 space-y-3">
-                    <h3 className="text-lg font-bold text-primary">{monster.name}</h3>
+                <Card className="bg-card/50 border-border hover:border-destructive/30 transition-all h-full overflow-hidden group">
+                  <div className="relative h-40 overflow-hidden">
+                    <img src={monster.image} alt={monster.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                    <h3 className="absolute bottom-3 left-4 text-lg font-bold text-primary">{monster.name}</h3>
+                  </div>
+                  <CardContent className="p-4 space-y-2">
                     <p className="text-xs italic text-foreground/60">"{monster.quote}"</p>
                     <div className="grid grid-cols-4 gap-2 text-center text-xs">
                       <div>
