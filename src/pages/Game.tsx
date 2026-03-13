@@ -12,7 +12,15 @@ import ulfhednarImg from "@/assets/heroes/ulfhednar.jpg";
 import skaldImg from "@/assets/heroes/skald.jpg";
 import nidstangImg from "@/assets/heroes/nidstang.jpg";
 
-// Import realm images & icons
+// Import monster images
+import draugrImg from "@/assets/monsters/draugr.jpg";
+import huldraImg from "@/assets/monsters/huldra.jpg";
+import nokkenImg from "@/assets/monsters/nokken.jpg";
+import trollImg from "@/assets/monsters/troll.jpg";
+import frostGiantImg from "@/assets/monsters/frost-giant.jpg";
+import dwarfWarriorImg from "@/assets/monsters/dwarf-warrior.jpg";
+import maraImg from "@/assets/monsters/mara.jpg";
+
 import niflheimImg from "@/assets/realms/niflheim.jpg";
 import muspelheimImg from "@/assets/realms/muspelheim.jpg";
 import asgardImg from "@/assets/realms/asgard.jpg";
@@ -81,13 +89,13 @@ const heroClasses = [
 ];
 
 const monsters = [
-  { name: "Draugr", quote: "The dead walk when dishonored.", health: 4, move: 3, attack: "+2", damage: 2 },
-  { name: "Huldra", quote: "Beautiful as spring, hollow as a rotting log.", health: 6, move: 4, attack: "+3", damage: 3 },
-  { name: "Nokken", quote: "He plays most beautifully when someone is about to drown.", health: 5, move: 3, attack: "+3", damage: 3 },
-  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they crush.", health: 8, move: 2, attack: "+3", damage: 4 },
-  { name: "Frost Giant", quote: "They raid to remind us we are small.", health: 15, move: 3, attack: "+4", damage: 5 },
-  { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, attack: "+3", damage: 3 },
-  { name: "Mara", quote: "She sits upon your chest while you sleep.", health: "TBD", move: "TBD", attack: "TBD", damage: "TBD" },
+  { name: "Draugr", quote: "The dead walk when dishonored.", health: 4, move: 3, attack: "+2", damage: 2, image: draugrImg },
+  { name: "Huldra", quote: "Beautiful as spring, hollow as a rotting log.", health: 6, move: 4, attack: "+3", damage: 3, image: huldraImg },
+  { name: "Nokken", quote: "He plays most beautifully when someone is about to drown.", health: 5, move: 3, attack: "+3", damage: 3, image: nokkenImg },
+  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they crush.", health: 8, move: 2, attack: "+3", damage: 4, image: trollImg },
+  { name: "Frost Giant", quote: "They raid to remind us we are small.", health: 15, move: 3, attack: "+4", damage: 5, image: frostGiantImg },
+  { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, attack: "+3", damage: 3, image: dwarfWarriorImg },
+  { name: "Mara", quote: "She sits upon your chest while you sleep.", health: "TBD", move: "TBD", attack: "TBD", damage: "TBD", image: maraImg },
 ];
 
 const scenarios = [
@@ -233,9 +241,13 @@ const Game = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {monsters.map((monster, i) => (
               <motion.div key={monster.name} {...fadeIn} transition={{ delay: i * 0.06, duration: 0.5 }}>
-                <Card className="bg-card/50 border-border hover:border-destructive/30 transition-all h-full">
-                  <CardContent className="p-5 space-y-3">
-                    <h3 className="text-lg font-bold text-primary">{monster.name}</h3>
+                <Card className="bg-card/50 border-border hover:border-destructive/30 transition-all h-full overflow-hidden group">
+                  <div className="relative h-40 overflow-hidden">
+                    <img src={monster.image} alt={monster.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                    <h3 className="absolute bottom-3 left-4 text-lg font-bold text-primary">{monster.name}</h3>
+                  </div>
+                  <CardContent className="p-4 space-y-2">
                     <p className="text-xs italic text-foreground/60">"{monster.quote}"</p>
                     <div className="grid grid-cols-4 gap-2 text-center text-xs">
                       <div>
