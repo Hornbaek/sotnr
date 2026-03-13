@@ -2,17 +2,6 @@
 
 Six unique classes offer diverse playstyles. Each class has a unique Dice Table, signature ability, and progression path from levels 1-9.
 
-> ⚠️ **Phase 2 work:** Role, Health, Speed, Signature abilities, and ability cards are all placeholder. Class content is developed in Phase 2. The Nidstang is prioritised first.
-
-## Phase 2 Design Constraints
-
-Every class must define:
-- **3-4 XP-marked actions** — thematic actions that reward playing the class as intended
-- **1-2 Loot-marked actions** — with logical narrative justification (not arbitrary)
-- **Initiative numbers** that account for their dual role as Rest Values — high initiative = powerful but poor rest card
-- **Signature ability** at base, Level 4 enhancement, and Level 8 mastery
-- **6 ability cards** total (4 starting + 2 unlockable at Levels 2 and 6)
-
 ---
 
 ## The Einherjar
@@ -21,12 +10,12 @@ Every class must define:
 
 The Einherjar are fallen warriors chosen by Odin to feast in Valhalla until Ragnarok. They are the shield wall that protects the realms, masters of defense and battlefield control.
 
-- **Role:** ⚠️ TODO — Tank / Defender
+- **Role:** ⚠️ TODO
 - **Health:** ⚠️ TODO
 - **Speed:** ⚠️ TODO
 
 ### Signature — Shield Wall
-> ⚠️ TODO: Define the Shield Wall signature ability text and mechanical effect.
+> ⚠️ **TODO:** Define the Shield Wall signature ability text.
 
 ### Dice Table
 
@@ -38,10 +27,6 @@ The Einherjar are fallen warriors chosen by Odin to feast in Valhalla until Ragn
 | 15-19 | Strong Hit — Full damage + push 1 hex OR gain 1 Fate |
 | 20 | Critical Hit — Double damage, push 2 hexes, gain 2 Fate |
 
-### Design Notes
-- Loot icon logic needs narrative rework — "earning loot by standing on a hex" lacks justification
-- XP icon placement should reward protective actions (adjacent ally avoids damage)
-
 ---
 
 ## The Valkyrie
@@ -50,12 +35,12 @@ The Einherjar are fallen warriors chosen by Odin to feast in Valhalla until Ragn
 
 Odin's choosers of the slain, Valkyries ride between battlefields on winged steeds. They are swift executioners who reap the unworthy and elevate the brave.
 
-- **Role:** ⚠️ TODO — Damage / Mobility
+- **Role:** ⚠️ TODO
 - **Health:** ⚠️ TODO
 - **Speed:** ⚠️ TODO
 
 ### Signature — Wings of War
-> ⚠️ TODO: Define Wings of War signature ability text and mechanical effect.
+> ⚠️ **TODO:** Define the Wings of War signature ability text.
 
 ### Dice Table
 
@@ -67,10 +52,6 @@ Odin's choosers of the slain, Valkyries ride between battlefields on winged stee
 | 15-19 | Strong Hit — Full damage + move 2 hexes OR teleport adjacent |
 | 20 | Critical Hit — Triple damage, move 3 hexes, attack again |
 
-### Design Notes
-- "Attack again" on Critical Hit needs careful balancing against 30-45 minute session budget
-- XP icon placement should reward repositioning after a kill
-
 ---
 
 ## The Seidr
@@ -79,12 +60,12 @@ Odin's choosers of the slain, Valkyries ride between battlefields on winged stee
 
 Practitioners of Seidr magic, these sorceresses read the threads of fate and bend reality to their will. They support allies with blessings and curse enemies with doom.
 
-- **Role:** ⚠️ TODO — Support / Healer
+- **Role:** ⚠️ TODO
 - **Health:** ⚠️ TODO
 - **Speed:** ⚠️ TODO
 
 ### Signature — Web of Fate
-> ⚠️ TODO: Define Web of Fate signature ability text and mechanical effect.
+> ⚠️ **TODO:** Define the Web of Fate signature ability text.
 
 ### Dice Table
 
@@ -96,24 +77,20 @@ Practitioners of Seidr magic, these sorceresses read the threads of fate and ben
 | 15-19 | Strong Hit — Full effect + grant ally +1 next roll |
 | 20 | Critical Hit — Double effect, all allies +1 next roll, gain 2 Fate |
 
-### Design Notes
-- Dual damage/heal on the same roll table is mechanically unusual — worth testing early in Phase 2
-- Must feel meaningfully different from the Skald's inspiration mechanic
-
 ---
 
 ## The Ulfhednar
 
 *"The wolf does not pity the lamb. I am the wolf."*
 
-Warriors who wear wolf pelts and channel the beast's fury. The Ulfhednar uses tactical risk management — choose when to embrace the beast's power for devastating results.
+Warriors who wear wolf pelts and channel the beast's fury. The Ulfhednar uses tactical risk management — you choose when to embrace the beast's power for devastating results.
 
-- **Role:** ⚠️ TODO — Risk/Reward Damage
+- **Role:** ⚠️ TODO
 - **Health:** ⚠️ TODO
 - **Speed:** ⚠️ TODO
 
 ### Signature — Beast Within
-> ⚠️ TODO: Define Beast Within signature ability text and mechanical effect. Must include a genuine risk component — not just a damage bonus.
+> ⚠️ **TODO:** Define the Beast Within signature ability text.
 
 ### Dice Table
 
@@ -125,9 +102,6 @@ Warriors who wear wolf pelts and channel the beast's fury. The Ulfhednar uses ta
 | 15-19 | Strong Hit — Full damage +2, gain 1 Fate |
 | 20 | Critical Hit — Double damage +2, gain 2 Fate, heal 2 |
 
-### Design Notes
-- Beast Within risk mechanic is undefined — this is the core of the class identity and must be designed before anything else in Phase 2
-
 ---
 
 ## The Skald
@@ -136,12 +110,12 @@ Warriors who wear wolf pelts and channel the beast's fury. The Ulfhednar uses ta
 
 Poets and historians who preserve the deeds of heroes through song. Skalds inspire their allies to greater heights and demoralize enemies with cutting verses.
 
-- **Role:** ⚠️ TODO — Support / Inspire
+- **Role:** ⚠️ TODO
 - **Health:** ⚠️ TODO
 - **Speed:** ⚠️ TODO
 
 ### Signature — Saga of Heroes
-> ⚠️ TODO: Define Saga of Heroes signature ability text and mechanical effect.
+> ⚠️ **TODO:** Define the Saga of Heroes signature ability text.
 
 ### Dice Table
 
@@ -153,9 +127,6 @@ Poets and historians who preserve the deeds of heroes through song. Skalds inspi
 | 15-19 | Strong Hit — Full damage, inspire all allies within 2 hexes |
 | 20 | Critical Hit — Double damage, all allies heal 1 and gain +1 next roll |
 
-### Design Notes
-- Must feel meaningfully different from the Seidr's support role — inspiration vs healing is the starting distinction but needs more mechanical separation
-
 ---
 
 ## The Nidstang
@@ -164,12 +135,12 @@ Poets and historians who preserve the deeds of heroes through song. Skalds inspi
 
 Masters of the Nidstang — the curse-pole — these dark practitioners wield forbidden magic. They excel at debuffs, damage over time, and manipulating enemy positioning.
 
-- **Role:** ⚠️ TODO — Debuffer / Curse
+- **Role:** ⚠️ TODO
 - **Health:** ⚠️ TODO
 - **Speed:** ⚠️ TODO
 
 ### Signature — Curse-Pole
-> ⚠️ TODO: Define Curse-Pole signature ability text and mechanical effect.
+> ⚠️ **TODO:** Define the Curse-Pole signature ability text.
 
 ### Dice Table
 
@@ -180,8 +151,3 @@ Masters of the Nidstang — the curse-pole — these dark practitioners wield fo
 | 7-14 | Standard Hit — Full damage, apply curse effect |
 | 15-19 | Strong Hit — Full damage, curse spreads to adjacent enemy |
 | 20 | Critical Hit — Double damage, all enemies within 2 hexes cursed, gain 2 Fate |
-
-### Design Notes
-- **Prioritised for Phase 2** — strongest thematic identity in the game
-- XP icon placement should reward curse-trigger kills (enemy dies while cursed)
-- Curse token is currently undefined as a component — needs a physical representation

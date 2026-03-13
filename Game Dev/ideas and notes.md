@@ -1,0 +1,1 @@
+- I think loot should be gold or items. I'm not sure what should decide when to loot an item. Maybe it could 

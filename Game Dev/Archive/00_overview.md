@@ -8,24 +8,23 @@ Shadows of the Nine Realms is a cooperative tactical adventure board game for 1-
 
 ## Design Pillars
 
-- **Fail-forward:** Even low rolls accomplish something. No action — and no session — should feel like a dead end. This principle applies at every level: individual dice rolls, scenario outcomes, and campaign losses.
+- **Fail-forward:** Even low rolls accomplish something. No action should feel like a dead end.
 - **Authentic Norse Folklore:** Creatures and lore drawn from actual Scandinavian mythology, not generic fantasy.
-- **Portability and Fast Setup:** Book-box design, under 5 minutes to set up, 30-45 minute sessions.
+- **Portability and Fast Setup:** Book-box design, under 5 minutes to set up.
 - **Cooperative, not competitive:** Players work together against the game.
 
 ## Key Features
 
-- **D20 Dice Combat:** Streamlined dice system where each Character Board's Dice Table determines every outcome. Roll once (or twice for Advantage/Disadvantage) — no modifier stacking.
-- **Fail Forward Mechanics:** Every roll moves the story forward. Even campaign losses reward the party and advance the narrative.
-- **3-Act Session Structure:** Every session has a built-in dramatic shape — Approach, Escalation, Resolution — keeping sessions within the 30-45 minute target naturally.
-- **1-9 Level Progression:** RPG-style progression across a campaign. Reach Level 9 to become a Saga Hero and fight for your allies rather than your own glory.
-- **Portable Book-Box Design:** Compact A4-sized box that opens like a book. Everything has its place.
-- **Authentic Norse Folklore:** Huldra, Nokken, Draugr, and more — each with authentic abilities and folklore-rooted behaviours.
+- **D20 Dice Combat:** Streamlined dice system where each Character Board's Dice Table determines every outcome.
+- **Fail Forward Mechanics:** Every roll moves the story forward.
+- **1-9 Level Progression:** Traditional RPG-style progression with nine levels of growth.
+- **Portable Book-Box Design:** Compact A4-sized box that opens like a book.
+- **Authentic Norse Folklore:** Huldra, Nokken, Draugr, and more — each with authentic abilities and behaviors.
 
 ## Player Info
 
 - **Players:** 1-4
-- **Duration:** 30-45 minutes per session
+- **Duration:** 45-90 minutes
 - **Age:** 14+
 
 ---

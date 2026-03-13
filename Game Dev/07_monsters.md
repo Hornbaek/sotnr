@@ -1,6 +1,8 @@
 # Shadows of the Nine Realms — Monster Compendium
 
-All monsters draw from authentic Norse folklore. Each entry includes stats, AI behavior, and lore.
+All monsters draw from authentic Norse folklore. Each entry includes stats, AI keywords, special ability, and lore.
+
+> ⚠️ **Phase 3 work:** Keywords and special abilities are assigned in Phase 3. Current entries show stats only.
 
 ---
 
@@ -14,8 +16,9 @@ Draugr are undead Vikings who rise from their graves to torment the living. Unli
 |---|---|---|---|
 | 4 | 3 | +2 (D20) | 2 |
 
-- **Preferred Target:** ⚠️ TODO
-- **Special Ability:** ⚠️ TODO
+- **Primary Keyword:** ⚠️ TODO
+- **Secondary Keyword:** ⚠️ TODO (optional)
+- **Special Ability:** ⚠️ TODO — consider grave-guard mechanic (bonus defence near objective hexes)
 
 ---
 
@@ -29,8 +32,9 @@ The Huldra is a forest spirit who appears as a beautiful woman from the front bu
 |---|---|---|---|
 | 6 | 4 | +3 (D20) | 3 |
 
-- **Preferred Target:** ⚠️ TODO
-- **Special Ability:** ⚠️ TODO
+- **Primary Keyword:** ⚠️ TODO — consider ISOLATIONIST (she targets those separated from the group)
+- **Secondary Keyword:** ⚠️ TODO (optional)
+- **Special Ability:** ⚠️ TODO — consider luring mechanic (forced movement toward her position)
 
 ---
 
@@ -44,8 +48,9 @@ The Nokken is a male water spirit who plays enchanted music on his fiddle. He lu
 |---|---|---|---|
 | 5 | 3 | +3 (D20) | 3 |
 
-- **Preferred Target:** ⚠️ TODO
-- **Special Ability:** ⚠️ TODO
+- **Primary Keyword:** ⚠️ TODO — consider CLOSEST with enchantment modifier
+- **Secondary Keyword:** ⚠️ TODO (optional)
+- **Special Ability:** ⚠️ TODO — Enchanting Song: define mechanic for compelling heroes toward water hexes
 
 ---
 
@@ -59,8 +64,9 @@ Trolls are large, slow creatures of enormous strength. They dwell in mountains a
 |---|---|---|---|
 | 8 | 2 | +3 (D20) | 4 |
 
-- **Preferred Target:** ⚠️ TODO
-- **Special Ability:** Sunlight Weakness — ⚠️ TODO (define mechanic for sunlight/day-night if applicable)
+- **Primary Keyword:** ⚠️ TODO — consider WEAKEST (brute hunting injured prey)
+- **Secondary Keyword:** ⚠️ TODO (optional)
+- **Special Ability:** ⚠️ TODO — Sunlight Weakness: define mechanic if scenario uses day/night. Consider Shield token on hide (reduce incoming damage by 1 unless attacked from range).
 
 ---
 
@@ -74,8 +80,9 @@ Frost Giants dwell in Jotunheim, the realm of giants. They are ancient enemies o
 |---|---|---|---|
 | 15 | 3 | +4 (D20) | 5 |
 
-- **Preferred Target:** ⚠️ TODO
-- **Special Ability:** Freezing Touch — ⚠️ TODO (define freeze/immobilize mechanic)
+- **Primary Keyword:** ⚠️ TODO — consider ELITE (targets the most powerful hero)
+- **Secondary Keyword:** ⚠️ TODO (optional)
+- **Special Ability:** ⚠️ TODO — Freezing Touch: define Immobilize application on hit, or Strained condition from cold
 
 ---
 
@@ -89,15 +96,33 @@ Dwarves are master craftsmen who dwell in Svartalfheim, crafting weapons and art
 |---|---|---|---|
 | 5 | 3 | +3 (D20) | 3 |
 
-- **Preferred Target:** ⚠️ TODO
-- **Special Ability:** ⚠️ TODO
+- **Primary Keyword:** ⚠️ TODO — consider PACK HUNTER (dwarves fight in coordinated formations)
+- **Secondary Keyword:** ⚠️ TODO (optional)
+- **Special Ability:** ⚠️ TODO — consider Forge-Hardened (Shield 1 while adjacent to another Dwarf Warrior)
 
 ---
 
-## Notes
+## Mara — The Nightmare Rider
 
-> ⚠️ **TODO:** Assign preferred target keywords (from `06_monster_ai.md`) to each monster.
+*"She sits upon your chest while you sleep. You cannot move. You cannot scream."*
 
-> ⚠️ **TODO:** Define special abilities for each monster that reflect their folklore origins.
+The Mara is a spirit who torments sleepers, causing sleep paralysis and draining their life force. She strikes at night, leaving victims exhausted and terrified.
 
-> ⚠️ **TODO:** Consider whether the Mara (featured in Scenario 4) needs a full compendium entry.
+| Health | Move | Attack | Damage |
+|---|---|---|---|
+| ⚠️ TODO | ⚠️ TODO | ⚠️ TODO | ⚠️ TODO |
+
+- **Primary Keyword:** ⚠️ TODO — consider EXHAUSTION FOCUS (targets those already weakened)
+- **Secondary Keyword:** ⚠️ TODO (optional)
+- **Special Ability:** ⚠️ TODO — Nightmare Drain: consider applying Exhaustion on hit rather than damage
+
+> **Note:** The Mara is featured in Scenario 4. Stats and abilities are fully defined in Phase 3.
+
+---
+
+## Phase 3 Design Notes
+
+- All keywords should be reviewed against the **Universal Fallback** (defaults to CLOSEST) — ensure fallback doesn't trivialise any monster's identity
+- Special abilities must be folklore-rooted, not generic fantasy
+- The Frost Giant is significantly more powerful than other monsters — confirm it only appears as a boss-tier encounter
+- Consider whether the Nokken's Enchanting Song interacts with the Exhaustion system (forced movement causing Straining) for narrative coherence
