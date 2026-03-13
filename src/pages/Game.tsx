@@ -4,6 +4,14 @@ import { Shield, Sword, Heart, Flame, Music, Skull, Users, Clock, Dices, BookOpe
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
+// Import hero images
+import einherjarImg from "@/assets/heroes/einherjar.jpg";
+import valkyrieImg from "@/assets/heroes/valkyrie.jpg";
+import seidrImg from "@/assets/heroes/seidr.jpg";
+import ulfhednarImg from "@/assets/heroes/ulfhednar.jpg";
+import skaldImg from "@/assets/heroes/skald.jpg";
+import nidstangImg from "@/assets/heroes/nidstang.jpg";
+
 // Import realm images & icons
 import niflheimImg from "@/assets/realms/niflheim.jpg";
 import muspelheimImg from "@/assets/realms/muspelheim.jpg";
