@@ -1,27 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Clock, Swords, Scroll } from "lucide-react";
+import { Users, Clock, Dices, BookOpen } from "lucide-react";
 
 export const Features = () => {
   const features = [
     {
       icon: Users,
-      title: "2-4 Players",
-      description: "Perfect for intimate gaming sessions with friends and family"
+      title: "1-4 Players",
+      description: "Cooperative adventures — work together against the game, not each other"
     },
     {
       icon: Clock,
-      title: "45-90 Minutes",
-      description: "Epic adventures that fit into your gaming night"
+      title: "30-45 Minutes",
+      description: "Fast sessions with a built-in 3-Act dramatic structure"
     },
     {
-      icon: Swords,
-      title: "Strategic Depth",
-      description: "Multiple paths to victory through combat, diplomacy, or cunning"
+      icon: Dices,
+      title: "Fail-Forward D20",
+      description: "Every roll accomplishes something — no dead ends, no wasted turns"
     },
     {
-      icon: Scroll,
-      title: "Rich Lore",
-      description: "Authentic Norse mythology woven into every card and quest"
+      icon: BookOpen,
+      title: "Portable Book-Box",
+      description: "A4-sized book-box design — opens like a tome, sets up in under 5 minutes"
     }
   ];
 
@@ -30,10 +30,10 @@ export const Features = () => {
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Game <span className="text-primary">Features</span>
+            Design <span className="text-primary">Pillars</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Designed for both casual players and strategy enthusiasts
+            Built for authentic Norse mythology, cooperative strategy, and fast play
           </p>
         </div>
 

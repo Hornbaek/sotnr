@@ -68,13 +68,15 @@ export const Hero = () => {
             >
               Join the Waitlist
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-lg px-8 py-6 border-2 border-border hover:bg-muted transition-all"
-            >
-              Explore the Realms
-            </Button>
+            <a href="/game">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg px-8 py-6 border-2 border-border hover:bg-muted transition-all"
+              >
+                Explore the Realms
+              </Button>
+            </a>
           </motion.div>
 
           {/* Subtle Runes */}

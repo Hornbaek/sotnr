@@ -7,25 +7,24 @@ import heroesIcon from "@/assets/icons/heroes.png";
 const features = [
   {
     icon: combatIcon,
-    title: "Tactical Combat",
-    description: "Strategic battles against mythic foes"
+    title: "D20 Tactical Combat",
+    description: "Fail-forward dice system — every roll moves the story"
   },
   {
     icon: explorationIcon,
-    title: "Overworld Exploration",
-    description: "Journey through the Nine Realms"
+    title: "Nine Realms Campaign",
+    description: "6 scenarios across a connected campaign"
   },
   {
     icon: heroesIcon,
-    title: "Norse Heroes & Myths",
-    description: "Command legendary warriors"
+    title: "6 Norse Heroes",
+    description: "Unique classes from Einherjar to Nidstang"
   }
 ];
 
 export const AboutGame = () => {
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-background via-background/95 to-background relative overflow-hidden">
-      {/* Decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,166,97,0.03),transparent_50%)]" />
       
       <div className="container mx-auto relative z-10">
@@ -36,7 +35,6 @@ export const AboutGame = () => {
           transition={{ duration: 0.6 }}
           className="grid md:grid-cols-2 gap-12 items-center"
         >
-          {/* Left: Text */}
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
               The Descent Begins
@@ -44,11 +42,11 @@ export const AboutGame = () => {
             
             <div className="space-y-4 text-foreground/90 leading-relaxed">
               <p>
-                <span className="text-primary font-semibold">Shadows of the Nine Realms</span> is a cooperative Norse mythology board game where strategy, fate, and glory intertwine. Players navigate between the Overworld and treacherous Dungeon phases, making critical decisions that shape their saga.
+                <span className="text-primary font-semibold">Shadows of the Nine Realms</span> is a cooperative tactical adventure board game for 1-4 players set in authentic Nordic mythology. Every session follows a dramatic 3-Act structure — Approach, Escalation, Resolution — keeping play within 30-45 minutes.
               </p>
               
               <p>
-                Command legendary heroes, forge alliances with gods, and face mythic beasts in tactical combat. Each choice echoes through the realms as you uncover ancient secrets and challenge the threads of destiny itself.
+                Command legendary heroes, roll the D20 with a fail-forward system where every outcome matters, and face mythic beasts driven by intelligent AI behaviour. Your choices ripple through a campaign as Legacy Cards shape the story across sessions.
               </p>
               
               <p className="text-sm italic text-foreground/70">
@@ -56,7 +54,6 @@ export const AboutGame = () => {
               </p>
             </div>
 
-            {/* Feature Icons */}
             <div className="grid grid-cols-3 gap-4 pt-6">
               {features.map((feature, index) => (
                 <motion.div
@@ -77,7 +74,6 @@ export const AboutGame = () => {
             </div>
           </div>
 
-          {/* Right: Image */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -94,7 +90,6 @@ export const AboutGame = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
             
-            {/* Decorative runes */}
             <motion.div
               className="absolute -top-4 -right-4 text-6xl text-primary/20 font-rune"
               animate={{ rotate: [0, 5, 0] }}

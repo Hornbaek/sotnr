@@ -46,7 +46,7 @@ const Lore = () => {
     <div className="container mx-auto px-4 py-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-display text-primary mb-4">Lore Codex</h1>
+          <h1 className="text-4xl font-display text-primary mb-4">Lore</h1>
           <p className="text-muted-foreground text-lg">
             Explore the Norse mythology that shapes the Nine Realms
           </p>
