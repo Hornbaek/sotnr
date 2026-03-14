@@ -34,33 +34,54 @@
 ## Phase 2 — Character Classes
 *Goal: Six mechanically distinct classes that feel different to play, not just different on paper.*
 
-> ⚠️ All class content is currently placeholder. Role, Health, Speed, Signature abilities, and ability cards are undefined for all classes.
+### Design Constraints Established
 
-### Design Constraints Established in Phase 1
-- Each class needs **3-4 XP-marked actions** defined (thematic card XP)
-- Each class needs **1-2 Loot-marked actions** defined (class action loot — needs logical narrative wrapper, consider gold/item split)
-- Initiative numbers carry double meaning — also used as rest value in Resting rules. High initiative = poor rest card. Design accordingly.
-- The 5th ability card can be unlocked early via Loot (6 Loot) before Level 2 XP — class design must account for early access
-- Dice threshold improves at Level 5 (Strong Hit band widens to 14-19) and Level 9 (13-19) — must be reflected on Character Board
+**Card Pool System:**
+- Each class has its own defined **pool size** (total unlockable cards) and **hand size** (cards brought per Act)
+- Pool grows at Level 2 (+1 card) and Level 6 (+1 card) — no other source adds ability cards
+- Variety across the grand campaign comes from **item equipment**, not card unlocks
+- Hand size may vary by player count — defined per class
+- Card selection happens at each Act transition where hand reset is not suppressed
+- Cards not selected do not exist mechanically during that Act
+
+**Card Design:**
+- Each class needs **3-4 XP-marked actions** — thematic actions rewarding class identity
+- Each class needs **1-2 Loot-marked actions** — with clear narrative logic per class
+- Initiative numbers carry double meaning — also used as Rest Value. High initiative = powerful but poor rest card. Design accordingly.
+- Pool size and hand size must create genuine sacrifice decisions every Act
+
+**Item System (resolved):**
+- Items do **not** directly modify ability cards — they modify the hero's behaviour independently
+- Items have 3 slots: Weapon, Armour, Relic
+- Loot Tokens = universal currency. Items = what you buy with them.
+- Class action Loot icon narrative logic is now resolved — fear, reputation, and class-specific tradeable value
+
+**Progression:**
+- Dice threshold improves at Level 5 (Strong Hit: 14-19) and Level 9 (13-19)
+- Must be reflected on Character Board physical design
+
+### ✅ Complete
+- **Nidstang** — full class design complete. Role: Debuff/Control/Damage-over-Time. Health: 8. Speed: 4. Curse Token system defined. Nídstǫng Pole Signature (base, Level 4, Level 8). 4 starting cards + 2 unlockable cards designed. Pool: 6 cards. Hand size: class-defined pending balance pass.
+
+### 🔄 In Progress
+- Card pool size and hand size defined per class (Nidstang anchor defined, others pending)
 
 ### ⬜ Backlog
-- Define Role, Health, and Speed for all 6 classes
-- Define Signature ability for each class (text + mechanical effect)
-- Design 4 starting ability cards per class (Top + Bottom actions, initiative value, XP icons, Loot icons)
-- Design 2 unlockable ability cards per class (unlocked at Level 2 and Level 6)
-- Define Level 4 Signature enhancement for each class
-- Define Level 8 Signature mastery for each class
-- Balance pass — compare class power curves against each other
-- Class identity review — ensure mechanical differentiation is meaningful at the table
-- Revisit class action Loot mechanic — current version lacks narrative logic. Consider gold/item split.
+- Define Role, Health, Speed, pool size, and hand size for remaining 5 classes
+- Define Signature ability for each remaining class (base, Level 4 enhancement, Level 8 mastery)
+- Design starting card pool for each remaining class (Top + Bottom actions, initiative value, XP icons, Loot icons)
+- Design 2 unlockable cards for each remaining class (Level 2 and Level 6)
+- Balance pass — compare class power curves, pool sizes, and hand sizes against each other
+- Class identity review — ensure no two classes feel similar at the table
+- Validate Loot icon narrative logic per class
 
 ### Class-Specific Notes
-- **Nidstang** — strongest thematic identity, prioritise first. Curse-pole mechanic has high potential. XP icon on curse-trigger-kill actions.
-- **Einherjar** — shield/tank role. Shield Wall signature needs concrete mechanical definition.
-- **Valkyrie** — mobility-focused. "Attack again" on crit needs careful balancing against session time budget.
-- **Seidr** — support/heal role. Dual damage/heal on same roll table is unusual, worth testing early.
-- **Ulfhednar** — risk/reward mechanic implied by Beast Within. Needs a clear risk mechanic, not just a damage bonus.
-- **Skald** — inspiration mechanic must feel meaningfully different from Seidr's support role.
+- **Nidstang** ✅ — complete. Reference implementation for all other class designs.
+- **Einherjar** — shield/tank. Shield Wall signature needs concrete mechanical definition. Consider small pool/large hand (the Einherjar commits to a plan and executes it).
+- **Valkyrie** — mobility/damage. "Attack again" on crit needs careful balancing. Consider large pool/small hand (always adapting, always moving).
+- **Seidr** — support/heal. Must feel distinct from Nidstang's outward corruption — Seiðr weaves fate *for* allies. Consider lore: the Völva archetype suggests fate manipulation, not just healing.
+- **Ulfhednar** — risk/reward. Beast Within needs a genuine risk mechanic. Consider a berserk state that players can enter and struggle to exit — powerful but uncontrolled.
+- **Skald** — inspiration. Must feel distinct from Seidr's support. Inspiration = empowering others through song, not healing them. Consider an audience/performance mechanic tied to positioning.
 
 ---
 

@@ -32,7 +32,7 @@ Target → Move → Attack → Special Ability
 
 ## Advantage & Disadvantage
 
-Roll the D20 **twice** (or roll once, then again).
+Roll the D20 **twice.**
 - **Advantage:** Keep the higher result
 - **Disadvantage:** Keep the lower result
 - **Both at once:** Cancel out — roll once normally
@@ -50,6 +50,17 @@ Roll the D20 **twice** (or roll once, then again).
 | 1 | Move +1 hex | As part of any movement |
 
 **Maximum: 3 Fate Tokens per hero**
+
+---
+
+## Card Selection
+
+At each Act transition where the hand reset is **not suppressed**, players select which cards from their full pool to bring into the upcoming Act.
+
+- Read the transition strip and upcoming Act zone on the Scenario Sleeve first
+- Hand size varies by class — see Character Board
+- Cards not selected do not exist mechanically during that Act
+- **Suppressed transition:** No reset, no re-selection — carry forward what remains in hand
 
 ---
 
@@ -85,7 +96,8 @@ Returns at next Act transition with 3 Exhaustion Tokens.
 
 ## Act Transition (unless suppressed by Sleeve)
 - Remove Exhaustion Tokens (see above)
-- Return all played cards to hand (no cost, no shuffle)
+- Return all played cards to hand
+- **Re-select hand** from full card pool
 
 ---
 
@@ -101,6 +113,20 @@ Returns at next Act transition with 3 Exhaustion Tokens.
 
 ---
 
+## Equipment Slots
+
+Each hero has 3 equipment slots on their Character Board:
+
+| Slot | Type | Effect Style |
+|---|---|---|
+| Weapon | Attack modifier | Changes how hits behave |
+| Armour | Defence modifier | Reduces damage or gains resources |
+| Relic | Passive special | Unique persistent effects |
+
+One item per slot. Swap between scenarios only.
+
+---
+
 ## Monster AI — Threat Chain
 
 When heroes are tied on any keyword metric, resolve in this order:
@@ -112,7 +138,7 @@ When heroes are tied on any keyword metric, resolve in this order:
 
 **Universal Fallback:** If no valid target for keyword → default to CLOSEST.
 
-**Committed Movement:** Monster identifies target before moving. Does not switch targets mid-activation even if it ends in range of another hero.
+**Committed Movement:** Monster identifies target before moving. Does not switch mid-activation.
 
 ---
 
@@ -145,21 +171,35 @@ When heroes are tied on any keyword metric, resolve in this order:
 
 ---
 
-## Loot Shop
+## Loot Shop — Consumables
 
 | Item | Cost | Effect |
 |---|---|---|
 | Healing Draught | 2 | Restore 3 Health (once, any session) |
-| Weapon Upgrade | 4 | +1 damage permanently |
-| Runic Charm | 5 | Start next scenario with 2 Fate Tokens |
-| New Ability | 6 | Gain 5th ability card early |
-| Blessing of the Gods | 8 | Strained threshold moves to 4 tokens permanently |
+| Mead of Courage | 3 | Gain 2 Fate Tokens immediately |
+| Rune Salve | 3 | Remove all Exhaustion Tokens (once, any session) |
+
+## Loot Shop — Equipment
+
+| Item | Slot | Cost | Effect |
+|---|---|---|---|
+| Runed Blade | Weapon | 4 | Hit an enemy → deal 1 damage to adjacent enemy |
+| Spear of Precision | Weapon | 6 | Glancing Blows deal 2 damage instead of 1 |
+| Venom Edge | Weapon | 5 | Enemies you hit gain Wound |
+| Iron Shield | Armour | 3 | Gain Shield 1 at start of each Act |
+| Wolf Pelt | Armour | 4 | Suffer Exhaustion from monster → gain 1 Fate Token |
+| Rune-Stitched Cloak | Armour | 5 | Reduce all incoming damage by 1 (min 1) |
+| Blessing of the Gods | Relic | 6 | Strained threshold moves to 4 tokens permanently |
+| Rune-Carved Pendant | Relic | 5 | Cursed/Wounded enemy defeated → gain 1 Fate Token |
+| Cloak of Shadows | Relic | 6 | Start each Act with Invisible for 1 round |
+| Draupnir Echo | Relic | 7 | Gain 1 Loot Token at end of each scenario |
 
 ---
 
 ## Legacy Card Rules
 
-- Read left to right across spine slots at session start
+- Read left to right — Realm Cards first, then World Tree Cards
 - Later slot **wins** on any contradiction
-- Each card effect: one conditional sentence, 15 words or fewer
-- Only read cards relevant to this scenario — skip the rest
+- World Tree Cards override Realm Cards on direct conflicts
+- Each effect: one conditional sentence, 15 words or fewer
+- Skip cards irrelevant to this scenario
