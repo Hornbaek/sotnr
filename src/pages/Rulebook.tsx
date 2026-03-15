@@ -496,17 +496,45 @@ const Rulebook = () => {
                 />
               </SectionCard>
 
-              <SectionCard title="Loot Shop">
+              <SectionCard title="Equipment Slots">
                 <TableBlock
-                  headers={["Item", "Cost", "Effect"]}
+                  headers={["Slot", "Type"]}
                   rows={[
-                    ["Healing Draught", "2", "Restore 3 HP"],
-                    ["Weapon Upgrade", "4", "+1 damage (permanent)"],
-                    ["Runic Charm", "5", "Start with 2 Fate Tokens"],
-                    ["New Ability", "6", "Gain 5th card early"],
-                    ["Blessing", "8", "Strained at 4 tokens"],
+                    ["Weapon", "Affects attacks"],
+                    ["Armour", "Affects defence"],
+                    ["Relic", "Affects abilities/passives"],
                   ]}
                 />
+                <p className="text-xs text-muted-foreground mt-2">One item per slot. Swap between scenarios only.</p>
+              </SectionCard>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <SectionCard title="Consumables">
+                  <TableBlock
+                    headers={["Item", "Cost", "Effect"]}
+                    rows={[
+                      ["Healing Draught", "2", "Restore 3 HP"],
+                      ["Mead of Courage", "3", "Gain 2 Fate Tokens"],
+                      ["Rune Salve", "3", "Remove all Exhaustion"],
+                    ]}
+                  />
+                </SectionCard>
+
+                <SectionCard title="Card Selection">
+                  <div className="space-y-2 text-sm text-foreground/80">
+                    <p>Each Act, select your <span className="font-bold">hand</span> from your card pool.</p>
+                    <p>Play 2 cards per round: 1 TOP + 1 BOTTOM.</p>
+                    <p><span className="font-bold text-primary">Burnout:</span> Both deck & discard empty → Basic Action, then full reset.</p>
+                  </div>
+                </SectionCard>
+              </div>
+
+              <SectionCard title="Legacy Cards">
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p><span className="font-bold text-primary">Victory:</span> Flip to boon side — permanent benefit for future scenarios.</p>
+                  <p><span className="font-bold text-primary">Defeat:</span> Flip to scar side — permanent penalty carried forward.</p>
+                  <p>Stored in spine slots of the Book-Box. Active cards affect all future sessions.</p>
+                </div>
               </SectionCard>
             </TabsContent>
           </Tabs>

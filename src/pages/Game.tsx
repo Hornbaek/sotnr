@@ -242,10 +242,28 @@ const Game = () => {
                         <span className="text-xs text-foreground/70">{hero.role}</span>
                       </div>
                     </div>
-                    <CardContent className="p-5 space-y-2">
+                    <CardContent className="p-5 space-y-3">
                       <p className="text-xs italic text-foreground/60">"{hero.quote}"</p>
                       <p className="text-sm text-foreground/80">{hero.description}</p>
-                      <div className="text-xs text-primary/70 pt-1">
+                      <div className="grid grid-cols-4 gap-2 text-center text-xs pt-1">
+                        <div>
+                          <div className="text-muted-foreground">HP</div>
+                          <div className="font-bold text-foreground">{hero.health}</div>
+                        </div>
+                        <div>
+                          <div className="text-muted-foreground">Speed</div>
+                          <div className="font-bold text-foreground">{hero.speed}</div>
+                        </div>
+                        <div>
+                          <div className="text-muted-foreground">Pool</div>
+                          <div className="font-bold text-foreground">{hero.poolSize}</div>
+                        </div>
+                        <div>
+                          <div className="text-muted-foreground">Hand</div>
+                          <div className="font-bold text-foreground">{hero.handSize}</div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-primary/70">
                         Signature: <span className="font-semibold">{hero.signature}</span>
                       </div>
                     </CardContent>
