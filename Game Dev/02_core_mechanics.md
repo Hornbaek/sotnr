@@ -42,6 +42,37 @@ Each hero has unique ability cards. Each card has:
 - **XP ICON (optional):** Earning XP when this action is performed in a thematically appropriate way
 - **LOOT ICON (optional):** Earning Loot when this action is performed
 
+### The TOP + BOTTOM Rule
+
+Each round you play exactly **two cards:**
+- **Card A** — played for its **TOP** action
+- **Card B** — played for its **BOTTOM** action
+
+You cannot play two TOPs or two BOTTOMs in the same round. The pairing of cards is the core decision — which TOP action do I want, and which card am I willing to sacrifice its TOP to get the BOTTOM I need?
+
+**Exceptions:**
+- **Special cards** printed with a [SPECIAL] tag may override this rule as described on the card
+- **Certain items** may allow double-TOP or double-BOTTOM plays as their equipment effect
+
+With 6 cards in hand and the pairing requirement, each round offers a meaningful combination of choices — ensuring no two rounds feel identical even with the same hand.
+
+### Card Pool & Hand Size
+
+Each class has a defined **card pool** (total cards available) and **hand size** (cards selected per Act). Both vary by class — see `04_classes.md`.
+
+**Pool growth across levels:**
+
+| Level | Cards Unlocked |
+|---|---|
+| 1 | Starting pool (class-defined) |
+| 2 | +2 |
+| 4 | +2 |
+| 6 | +2 |
+| 8 | +2 |
+| 9 | No new cards — Saga Hero |
+
+Maximum pool at Level 9 varies by class: 10 cards (small pool) to 16 cards (large pool).
+
 ### Deck Cycle Rules
 
 After playing cards on your turn, refill your hand at turn end:

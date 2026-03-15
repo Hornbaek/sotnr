@@ -53,13 +53,18 @@ Each class has 3-4 XP-marked actions defined in Phase 2. See `04_classes.md`.
 
 Each class has a defined maximum card pool. Cards are unlocked at **Level 2** and **Level 6** through the progression track. No other source adds ability cards — variety between sessions comes from item equipment, not card unlocks.
 
-| Level | Cards Unlocked | Pool Size |
+| Level | Cards Unlocked | Notes |
 |---|---|---|
-| 1 | Starting cards (varies by class) | Class-defined |
-| 2 | +1 unlock | +1 |
-| 6 | +1 unlock | +1 (maximum) |
+| 1 | Starting pool (class-defined: 6 or 8) | Varies by class |
+| 2 | +2 | First unlock |
+| 4 | +2 | Second unlock |
+| 6 | +2 | Third unlock |
+| 8 | +2 | Fourth unlock |
+| 9 | No new cards | Saga Hero |
 
-Pool size and hand size (cards selected per Act) vary by class — see `04_classes.md`. Classes are designed so that even at maximum pool, hand selection requires genuine sacrifice each Act.
+Maximum pool at Level 9: **10 cards** (small pool classes: Ulfhednar) to **16 cards** (large pool classes: all others). Hand size varies by class — from 4 to 6 cards selected per Act. See `04_classes.md` for per-class values.
+
+Classes are designed so that even at maximum pool, hand selection requires genuine sacrifice each Act. The TOP+BOTTOM pairing rule means a hand of 6 cards offers up to 30 distinct pairing combinations per round.
 
 ---
 

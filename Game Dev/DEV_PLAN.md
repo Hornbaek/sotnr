@@ -61,10 +61,13 @@
 - Must be reflected on Character Board physical design
 
 ### ✅ Complete
-- **Nidstang** — full class design complete. Role: Debuff/Control/Damage-over-Time. Health: 8. Speed: 4. Curse Token system defined. Nídstǫng Pole Signature (base, Level 4, Level 8). 4 starting cards + 2 unlockable cards designed. Pool: 6 cards. Hand size: class-defined pending balance pass.
+- **Nidstang** — full class design complete. Role: Debuff/Control/DoT. Health: 8. Speed: 4. Pool: 8 starting → 16. Hand: 5. Curse Token system, Nídstǫng Pole Signature (base/L4/L8), 8 starting cards designed.
+- **Einherjar** — full class design complete. Role: Tank/Defender. Health: 14. Speed: 3. Pool: 8 starting → 16. Hand: 6. Hold Ground system, Skjaldborg Signature (base/L4/L8), 8 starting cards designed.
+- **TOP + BOTTOM rule** — clarified and documented. Each round: one card played TOP, one card played BOTTOM. Cannot play two TOPs or two BOTTOMs. Exceptions via Special cards or items only.
+- **Card pool framework** — class-dependent pool sizes and hand sizes established. Pool grows +2 at levels 2/4/6/8. Max pool: 10 (Ulfhednar) to 16 (all others).
 
 ### 🔄 In Progress
-- Card pool size and hand size defined per class (Nidstang anchor defined, others pending)
+- Valkyrie class design (next)
 
 ### ⬜ Backlog
 - Define Role, Health, Speed, pool size, and hand size for remaining 5 classes
