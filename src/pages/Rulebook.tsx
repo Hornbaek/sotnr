@@ -272,14 +272,14 @@ const Rulebook = () => {
                 <TableBlock
                   headers={["Level", "XP Needed", "Rewards"]}
                   rows={[
-                    ["1", "0", "Starting board, 4 ability cards"],
-                    ["2", "25", "Unlock 5th ability card"],
+                    ["1", "0", "Starting board, starting card pool (6 or 8), 3 equipment slots"],
+                    ["2", "25", "+2 ability cards (pool grows)"],
                     ["3", "55", "+2 Health"],
-                    ["4", "90", "Signature ability enhanced"],
+                    ["4", "90", "Signature ability enhanced, +2 ability cards"],
                     ["5", "120", "Dice threshold improvement (Strong Hit: 14-19)"],
-                    ["6", "150", "Unlock 6th ability card"],
+                    ["6", "150", "+2 ability cards (pool grows)"],
                     ["7", "180", "+2 Health"],
-                    ["8", "210", "Signature ability mastery"],
+                    ["8", "210", "Signature ability mastery, +2 ability cards"],
                     ["9", "240", "Saga Hero — Strong Hit: 13-19"],
                   ]}
                 />
