@@ -93,7 +93,19 @@ const Rulebook = () => {
                 <div className="space-y-2 text-sm text-foreground/80">
                   <p>Each card has a <span className="text-primary font-semibold">Top Action</span> (attack/aggressive) and <span className="text-primary font-semibold">Bottom Action</span> (movement/defense/utility).</p>
                   <p>The <span className="text-primary font-semibold">Initiative Number</span> determines turn order and also serves as the Rest Value.</p>
+                  <p>Some actions are marked with an <span className="text-primary font-semibold">XP Icon</span> — triggering these earns XP tokens (~8-12 per session). Others have a <span className="text-primary font-semibold">Loot Icon</span> — earning Loot Tokens when performed.</p>
                 </div>
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">The TOP + BOTTOM Rule</h4>
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>Each round you play exactly <span className="font-bold">two cards</span>: one for its TOP action and one for its BOTTOM action. You cannot play two TOPs or two BOTTOMs.</p>
+                  <p>The pairing is the core decision — which TOP do you want, and which card's TOP are you willing to sacrifice for its BOTTOM?</p>
+                </div>
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">Card Pool & Hand Size</h4>
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>Each class has a defined <span className="font-bold">card pool</span> (total cards available) and <span className="font-bold">hand size</span> (cards selected per Act). Both vary by class.</p>
+                  <p>Pool grows +2 cards at levels 2, 4, 6, and 8. Maximum pool ranges from 10 (Ulfhednar) to 16 (all others).</p>
+                </div>
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">Deck Cycle</h4>
                 <TableBlock
                   headers={["Situation", "Result"]}
                   rows={[
@@ -102,6 +114,10 @@ const Rulebook = () => {
                     ["Both empty", "Burnout — Basic Action only, full reset at turn end"],
                   ]}
                 />
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">Burnout</h4>
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>When both deck and discard are empty: perform one <span className="font-bold">Basic Action</span> — move up to your Speed OR deal 1 damage to an adjacent enemy. At turn end, ALL played cards return to hand — full reset, no Exhaustion cost.</p>
+                </div>
               </SectionCard>
 
               <SectionCard title="Setup (Under 5 Minutes)">
