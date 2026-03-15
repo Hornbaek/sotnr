@@ -61,30 +61,29 @@
 - Must be reflected on Character Board physical design
 
 ### ✅ Complete
-- **Nidstang** — full class design complete. Role: Debuff/Control/DoT. Health: 8. Speed: 4. Pool: 8 starting → 16. Hand: 5. Curse Token system, Nídstǫng Pole Signature (base/L4/L8), 8 starting cards designed.
-- **Einherjar** — full class design complete. Role: Tank/Defender. Health: 14. Speed: 3. Pool: 8 starting → 16. Hand: 6. Hold Ground system, Skjaldborg Signature (base/L4/L8), 8 starting cards designed.
-- **TOP + BOTTOM rule** — clarified and documented. Each round: one card played TOP, one card played BOTTOM. Cannot play two TOPs or two BOTTOMs. Exceptions via Special cards or items only.
-- **Card pool framework** — class-dependent pool sizes and hand sizes established. Pool grows +2 at levels 2/4/6/8. Max pool: 10 (Ulfhednar) to 16 (all others).
+- **Nidstang** — full class design. Role: Debuff/Control/DoT. Health: 8. Speed: 4. Pool: 8→16. Hand: 5. Curse Token system, Nídstǫng Pole Signature (base/L4/L8), 8 starting cards.
+- **Einherjar** — full class design. Role: Tank/Defender. Health: 14. Speed: 3. Pool: 8→16. Hand: 6. Hold Ground system, Skjaldborg Signature (base/L4/L8), 8 starting cards.
+- **Valkyrie** — full class design. Role: Damage/Mobility. Health: 10. Speed: 5. Pool: 8→16. Hand: 4. Verdict system, Wings of War Signature (base/L4/L8), 8 starting cards.
+- **TOP + BOTTOM rule** — each round: one card played TOP, one card played BOTTOM. Exceptions via Special card or item only.
+- **Card pool framework** — class-dependent. Grows +2 at levels 2/4/6/8. Max pool: 10 (Ulfhednar) to 16 (all others).
 
 ### 🔄 In Progress
-- Valkyrie class design (next)
+- Seiðr class design (next)
 
 ### ⬜ Backlog
-- Define Role, Health, Speed, pool size, and hand size for remaining 5 classes
-- Define Signature ability for each remaining class (base, Level 4 enhancement, Level 8 mastery)
-- Design starting card pool for each remaining class (Top + Bottom actions, initiative value, XP icons, Loot icons)
-- Design 2 unlockable cards for each remaining class (Level 2 and Level 6)
-- Balance pass — compare class power curves, pool sizes, and hand sizes against each other
+- Design Seiðr, Ulfhednar, Skald (full class designs)
+- Balance pass — compare all six class power curves, pool sizes, and hand sizes
 - Class identity review — ensure no two classes feel similar at the table
 - Validate Loot icon narrative logic per class
+- Design unlockable cards (+2 per unlock per class, levels 2/4/6/8)
 
 ### Class-Specific Notes
-- **Nidstang** ✅ — complete. Reference implementation for all other class designs.
-- **Einherjar** — shield/tank. Shield Wall signature needs concrete mechanical definition. Consider small pool/large hand (the Einherjar commits to a plan and executes it).
-- **Valkyrie** — mobility/damage. "Attack again" on crit needs careful balancing. Consider large pool/small hand (always adapting, always moving).
-- **Seidr** — support/heal. Must feel distinct from Nidstang's outward corruption — Seiðr weaves fate *for* allies. Consider lore: the Völva archetype suggests fate manipulation, not just healing.
-- **Ulfhednar** — risk/reward. Beast Within needs a genuine risk mechanic. Consider a berserk state that players can enter and struggle to exit — powerful but uncontrolled.
-- **Skald** — inspiration. Must feel distinct from Seidr's support. Inspiration = empowering others through song, not healing them. Consider an audience/performance mechanic tied to positioning.
+- **Nidstang** ✅ — complete.
+- **Einherjar** ✅ — complete.
+- **Valkyrie** ✅ — complete.
+- **Seiðr** — must feel distinct from Nidstang. Weaves fate *for* allies. Völva archetype: foreknowledge and reroll mechanics over raw healing.
+- **Ulfhednar** — berserk state voluntarily entered, difficult to exit. In beast state: massive damage, but monsters prefer to target Ulfhednar.
+- **Skald** — performance/positioning mechanic. Must be within range for song to be heard. XP for inspiring ally who achieves Strong/Critical Hit.
 
 ---
 

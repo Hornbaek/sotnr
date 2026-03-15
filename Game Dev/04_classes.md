@@ -243,23 +243,113 @@ The 2-hex cursed zone follows the Nidstang everywhere. Pole never falls when the
 
 ---
 
-## ⬜ The Valkyrie
+## ✅ The Valkyrie
 
 *"I choose the slain. I guide the worthy. I am the spear of judgment."*
 
+Odin's choosers of the slain — they ride between battlefields on winged steeds, deciding who is worthy, striking without warning, and vanishing before the dust settles. They serve both Odin and Freyja, who each claim half the battle-dead.
+
 - **Role:** Damage / Mobility
-- **Health:** ⚠️ TODO — expected medium
-- **Speed:** ⚠️ TODO — expected high
+- **Health:** 10 *(medium — avoids hits through positioning, not absorption)*
+- **Speed:** 5 *(highest base speed — movement is fundamental)*
 - **Pool Size:** 8 starting → 16 at Level 9
-- **Hand Size:** 4 from pool *(large pool, small hand — always adapting)*
+- **Hand Size:** 4 from pool *(largest pool, smallest hand — highest selection pressure of any class)*
+
+### The Verdict System
+
+The Valkyrie designates enemies as chosen for death, and killing them powers her across the battlefield.
+
+**Designating a Verdict:** At the start of her turn, the Valkyrie may place a **Verdict token** (white disc) on one Monster Card. Only one enemy can be Verdicted at a time — designating a new one removes the old.
+
+- The Valkyrie rolls with **Advantage** on all attacks against the Verdicted enemy
+- If the Verdicted enemy is killed by **anyone**, she earns 1 **Verdict Token**
+- Maximum **3 Verdict Tokens** held at any time
+
+**Spending Verdict Tokens:**
+
+| Cost | Effect | Timing |
+|---|---|---|
+| 1 | Teleport to any hex within 4 hexes (ignoring terrain) | After any kill |
+| 1 | Make one bonus attack against an adjacent enemy | After killing the Verdicted enemy |
+| 2 | Give 1 Fate Token to each ally within 3 hexes | Any time on your turn |
+| 3 | Any hero takes a bonus turn immediately | Any time on your turn |
 
 ### Signature — Wings of War
-> ⚠️ TODO: Consider teleport after kill — defeat an enemy, immediately reposition anywhere within X hexes.
+
+**Base (Levels 1-3):** Once per turn, after killing an enemy, immediately move up to 4 hexes — no action cost, cannot be interrupted. If she began her turn more than 2 hexes from the killed enemy, also gain 1 Fate Token.
+
+**Level 4 Enhancement — Ride of the Slain:**
+Post-kill movement increases to 6 hexes. The Valkyrie may pass through occupied hexes during this movement.
+
+**Level 8 Mastery — The Final Judgment:**
+Once per scenario, after killing any enemy, immediately Verdict a second enemy and attack them as a free action — the killing blow cascades. No action cost, no movement cost.
+
+### Dice Table
+
+| Roll | Effect |
+|---|---|
+| 1-3 | **Glancing Blow** — Deal 1 damage. If target is Verdicted, also gain 1 Verdict Token |
+| 4-6 | **Weak Hit** — Half damage, no bonus |
+| 7-14 | **Standard Hit** — Full damage. If Verdicted, place yourself adjacent to target |
+| 15-19 | **Strong Hit** — Full damage + gain 1 Verdict Token OR 1 Fate Token |
+| 20 | **Critical Strike** — Double damage, gain 1 Verdict Token AND 1 Fate Token |
+
+Even a Glancing Blow against a Verdicted enemy earns a Verdict Token — the judgment is passed, the kill just needs to land.
+
+### Starting Cards (8)
+
+**Card 1 — Spear of Judgment** *(Initiative 2)*
+- **TOP:** Attack one enemy within 3 hexes. If Verdicted, this attack ignores Shield tokens ⭐ *XP icon*
+- **BOTTOM:** Designate any enemy within 4 hexes as Verdicted
+
+**Card 2 — Ride Between Worlds** *(Initiative 4)*
+- **TOP:** Move up to 5 hexes, then attack one adjacent enemy. This movement does not trigger monster attacks of opportunity ⭐ *XP icon*
+- **BOTTOM:** Teleport to any hex within 3 hexes. Gain 1 Verdict Token if you land adjacent to the Verdicted enemy
+
+**Card 3 — The Choosing** *(Initiative 3)*
+- **TOP:** All enemies adjacent to you must move 1 hex away — the Valkyrie's presence is overwhelming ⭐ *XP icon*
+- **BOTTOM:** Designate a Verdicted enemy as **Condemned** — next attack against them by anyone deals +3 damage, then Condemned is removed
+
+**Card 4 — Winged Strike** *(Initiative 6)*
+- **TOP:** Attack one enemy. If you moved at least 3 hexes this turn before attacking, deal +2 damage (momentum strike) 💰 *Loot icon*
+- **BOTTOM:** Move up to 3 hexes. If you pass within 1 hex of the Verdicted enemy, deal 1 damage to them automatically
+
+**Card 5 — Valkyrjur's Call** *(Initiative 1)*
+- **TOP:** Any ally within 3 hexes may immediately make one attack as a free action ⭐ *XP icon*
+- **BOTTOM:** Gain 2 Verdict Tokens immediately
+
+*Lowest initiative in the class — acts first if chosen as initiative card. The TOP bonus ally attack effectively gives the team an extra action at round start.*
+
+**Card 6 — Swift Execution** *(Initiative 7)*
+- **TOP:** Attack one enemy. If this kills them, immediately make one bonus attack against any enemy within 2 hexes (one attack roll only — cannot chain) 💰 *Loot icon*
+- **BOTTOM:** Move up to 4 hexes. Each enemy within 1 hex of your path suffers 1 damage
+
+**Card 7 — Battlefield Vision** *(Initiative 5)*
+- **TOP:** Peek at the Scenario Sleeve's next unrevealed Act zone — read it silently, replace exactly as found, then share one thing you observed with the party ⭐ *XP icon*
+- **BOTTOM:** Remove the current Verdict — gain 1 Verdict Token and 1 Fate Token (changing judgment mid-battle is costly but rewarded)
+
+*The TOP is the class's unique non-combat action — the Valkyrie as seer of battle outcomes. A genuine information advantage.*
+
+**Card 8 — Into Valhalla** *(Initiative 9)*
+- **TOP:** Attack the Verdicted enemy. If this kills them, each ally within 3 hexes immediately removes 2 Exhaustion Tokens ⭐ *XP icon*
+- **BOTTOM:** Move up to 6 hexes. You may end this movement in a hex occupied by a monster — the monster is pushed 1 hex away
+
+*Highest initiative — powerful Rest card (removes 9 Exhaustion). The BOTTOM is the most aggressive repositioning tool in the class.*
+
+### Unlockable Cards (+2 per unlock, levels 2/4/6/8)
+
+> ⚠️ 8 additional cards to be designed in full. Include:
+> - Cards interacting with multiple Verdicts simultaneously
+> - Cards rewarding allies for killing the Verdicted enemy
+> - A high-risk card that Verdicts all enemies for one round
+> - Cards combining movement and Verdict designation in new ways
 
 ### Design Notes
-- "Attack again" on Critical Hit needs careful balancing vs session time
-- XP icon should reward repositioning after a kill
-- Small hand from large pool = high selection pressure every Act
+- **Verdict token** (white disc, 1 per Valkyrie) + **Verdict Tokens** (up to 3, different colour) stored in Character Sleeve
+- **"Battlefield Vision" TOP** — sleeve replaced exactly as found. Information advantage is real and intentional.
+- **"Swift Execution" cascade attack** does NOT trigger Wings of War's post-kill teleport — prevents infinite chaining at Level 4+
+- **"Valkyrjur's Call"** — bonus ally attack at player count 1 is very powerful. Monitor in Phase 6.
+- **Speed 5** — Scenario Sleeve designers should account for this when placing objectives and spawn hexes
 
 ---
 
