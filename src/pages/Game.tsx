@@ -40,8 +40,9 @@ const heroClasses = [
     role: "Tank / Defender",
     icon: Shield,
     image: einherjarImg,
-    signature: "Shield Wall",
-    description: "Fallen warriors chosen by Odin. Masters of defense and battlefield control."
+    signature: "Skjaldborg (Shield Wall)",
+    description: "Fallen warriors chosen by Odin. Masters of defense and battlefield control.",
+    health: 14, speed: 3, poolSize: 8, handSize: 6,
   },
   {
     name: "Valkyrie",
@@ -50,43 +51,48 @@ const heroClasses = [
     icon: Sword,
     image: valkyrieImg,
     signature: "Wings of War",
-    description: "Odin's choosers of the slain. Swift executioners who reap the unworthy."
+    description: "Odin's choosers of the slain. Swift executioners who reap the unworthy.",
+    health: "TBD", speed: "TBD", poolSize: 8, handSize: 4,
   },
   {
-    name: "Seidr",
+    name: "Seiðr",
     quote: "The threads of fate are mine to weave… and to sever.",
-    role: "Support / Healer",
+    role: "Support / Fate Manipulation",
     icon: Heart,
     image: seidrImg,
     signature: "Web of Fate",
-    description: "Sorceresses who read the threads of fate and bend reality to their will."
+    description: "Völva seers who read the threads of fate and bend reality to their will.",
+    health: "TBD", speed: "TBD", poolSize: 8, handSize: 5,
   },
   {
     name: "Ulfhednar",
     quote: "The wolf does not pity the lamb. I am the wolf.",
-    role: "Risk / Reward",
+    role: "Risk / Reward Damage",
     icon: Flame,
     image: ulfhednarImg,
     signature: "Beast Within",
-    description: "Wolf-pelt warriors who channel the beast's fury for devastating results."
+    description: "Wolf-pelt warriors who channel the beast's fury for devastating results.",
+    health: "TBD", speed: "TBD", poolSize: 6, handSize: 6,
   },
   {
     name: "Skald",
     quote: "Listen, and I will sing of heroes yet to fall…",
-    role: "Support / Inspire",
+    role: "Inspire / Support",
     icon: Music,
     image: skaldImg,
     signature: "Saga of Heroes",
-    description: "Poets who preserve the deeds of heroes and inspire allies to greater heights."
+    description: "Poets who preserve the deeds of heroes and inspire allies to greater heights.",
+    health: "TBD", speed: "TBD", poolSize: 8, handSize: 4,
   },
   {
     name: "Nidstang",
     quote: "I raise the curse-pole. Let doom find the unworthy.",
-    role: "Debuffer / Curse",
+    role: "Debuff / Control / Damage-over-Time",
     icon: Skull,
     image: nidstangImg,
-    signature: "Curse-Pole",
-    description: "Dark practitioners who wield forbidden magic through the curse-pole."
+    signature: "The Nídstǫng Pole",
+    description: "Dark practitioners who wield forbidden magic through the curse-pole.",
+    health: 8, speed: 4, poolSize: 8, handSize: 5,
   },
 ];
 
@@ -236,10 +242,28 @@ const Game = () => {
                         <span className="text-xs text-foreground/70">{hero.role}</span>
                       </div>
                     </div>
-                    <CardContent className="p-5 space-y-2">
+                    <CardContent className="p-5 space-y-3">
                       <p className="text-xs italic text-foreground/60">"{hero.quote}"</p>
                       <p className="text-sm text-foreground/80">{hero.description}</p>
-                      <div className="text-xs text-primary/70 pt-1">
+                      <div className="grid grid-cols-4 gap-2 text-center text-xs pt-1">
+                        <div>
+                          <div className="text-muted-foreground">HP</div>
+                          <div className="font-bold text-foreground">{hero.health}</div>
+                        </div>
+                        <div>
+                          <div className="text-muted-foreground">Speed</div>
+                          <div className="font-bold text-foreground">{hero.speed}</div>
+                        </div>
+                        <div>
+                          <div className="text-muted-foreground">Pool</div>
+                          <div className="font-bold text-foreground">{hero.poolSize}</div>
+                        </div>
+                        <div>
+                          <div className="text-muted-foreground">Hand</div>
+                          <div className="font-bold text-foreground">{hero.handSize}</div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-primary/70">
                         Signature: <span className="font-semibold">{hero.signature}</span>
                       </div>
                     </CardContent>

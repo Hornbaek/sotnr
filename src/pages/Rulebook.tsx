@@ -93,7 +93,19 @@ const Rulebook = () => {
                 <div className="space-y-2 text-sm text-foreground/80">
                   <p>Each card has a <span className="text-primary font-semibold">Top Action</span> (attack/aggressive) and <span className="text-primary font-semibold">Bottom Action</span> (movement/defense/utility).</p>
                   <p>The <span className="text-primary font-semibold">Initiative Number</span> determines turn order and also serves as the Rest Value.</p>
+                  <p>Some actions are marked with an <span className="text-primary font-semibold">XP Icon</span> — triggering these earns XP tokens (~8-12 per session). Others have a <span className="text-primary font-semibold">Loot Icon</span> — earning Loot Tokens when performed.</p>
                 </div>
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">The TOP + BOTTOM Rule</h4>
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>Each round you play exactly <span className="font-bold">two cards</span>: one for its TOP action and one for its BOTTOM action. You cannot play two TOPs or two BOTTOMs.</p>
+                  <p>The pairing is the core decision — which TOP do you want, and which card's TOP are you willing to sacrifice for its BOTTOM?</p>
+                </div>
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">Card Pool & Hand Size</h4>
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>Each class has a defined <span className="font-bold">card pool</span> (total cards available) and <span className="font-bold">hand size</span> (cards selected per Act). Both vary by class.</p>
+                  <p>Pool grows +2 cards at levels 2, 4, 6, and 8. Maximum pool ranges from 10 (Ulfhednar) to 16 (all others).</p>
+                </div>
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">Deck Cycle</h4>
                 <TableBlock
                   headers={["Situation", "Result"]}
                   rows={[
@@ -102,6 +114,10 @@ const Rulebook = () => {
                     ["Both empty", "Burnout — Basic Action only, full reset at turn end"],
                   ]}
                 />
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">Burnout</h4>
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>When both deck and discard are empty: perform one <span className="font-bold">Basic Action</span> — move up to your Speed OR deal 1 damage to an adjacent enemy. At turn end, ALL played cards return to hand — full reset, no Exhaustion cost.</p>
+                </div>
               </SectionCard>
 
               <SectionCard title="Setup (Under 5 Minutes)">
@@ -256,14 +272,14 @@ const Rulebook = () => {
                 <TableBlock
                   headers={["Level", "XP Needed", "Rewards"]}
                   rows={[
-                    ["1", "0", "Starting board, 4 ability cards"],
-                    ["2", "25", "Unlock 5th ability card"],
+                    ["1", "0", "Starting board, starting card pool (6 or 8), 3 equipment slots"],
+                    ["2", "25", "+2 ability cards (pool grows)"],
                     ["3", "55", "+2 Health"],
-                    ["4", "90", "Signature ability enhanced"],
+                    ["4", "90", "Signature ability enhanced, +2 ability cards"],
                     ["5", "120", "Dice threshold improvement (Strong Hit: 14-19)"],
-                    ["6", "150", "Unlock 6th ability card"],
+                    ["6", "150", "+2 ability cards (pool grows)"],
                     ["7", "180", "+2 Health"],
-                    ["8", "210", "Signature ability mastery"],
+                    ["8", "210", "Signature ability mastery, +2 ability cards"],
                     ["9", "240", "Saga Hero — Strong Hit: 13-19"],
                   ]}
                 />
@@ -282,15 +298,60 @@ const Rulebook = () => {
                 />
               </SectionCard>
 
-              <SectionCard title="Loot Shop">
+              <SectionCard title="Equipment Slots">
+                <p className="text-sm text-foreground/80 mb-4">Every hero has <span className="font-bold text-primary">3 equipment slots</span> on their Character Board from Level 1. One item per slot. Swapping happens between scenarios only.</p>
+                <TableBlock
+                  headers={["Slot", "Type", "Examples"]}
+                  rows={[
+                    ["Weapon", "Affects attack behaviour", "Runed Blade, Spear of Precision, Venom Edge"],
+                    ["Armour", "Affects defence and resilience", "Iron Shield, Wolf Pelt, Rune-Stitched Cloak"],
+                    ["Relic", "Affects special abilities and passives", "Blessing of the Gods, Rune-Carved Pendant, Cloak of Shadows"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Loot Shop — Consumables">
+                <p className="text-sm text-foreground/80 mb-3">Single-use items purchased with Loot Tokens between scenarios. Maximum 10 Loot Tokens held at any time.</p>
                 <TableBlock
                   headers={["Item", "Cost", "Effect"]}
                   rows={[
-                    ["Healing Draught", "2", "Restore 3 Health (once, any session)"],
-                    ["Weapon Upgrade", "4", "+1 damage permanently"],
-                    ["Runic Charm", "5", "Start next scenario with 2 Fate Tokens"],
-                    ["New Ability", "6", "Gain 5th ability card early"],
-                    ["Blessing of the Gods", "8", "Strained threshold moves to 4 tokens permanently"],
+                    ["Healing Draught", "2 Loot", "Restore 3 Health (use once, any session)"],
+                    ["Mead of Courage", "3 Loot", "Gain 2 Fate Tokens immediately"],
+                    ["Rune Salve", "3 Loot", "Remove all Exhaustion Tokens (use once, any session)"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Loot Shop — Weapons">
+                <TableBlock
+                  headers={["Item", "Cost", "Effect"]}
+                  rows={[
+                    ["Runed Blade", "4 Loot", "On hit, deal 1 damage to an adjacent enemy"],
+                    ["Spear of Precision", "6 Loot", "Glancing Blows (1-3) deal 2 damage instead of 1"],
+                    ["Venom Edge", "5 Loot", "Enemies you hit gain the Wound condition"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Loot Shop — Armour">
+                <TableBlock
+                  headers={["Item", "Cost", "Effect"]}
+                  rows={[
+                    ["Iron Shield", "3 Loot", "Gain Shield 1 at the start of each Act"],
+                    ["Wolf Pelt", "4 Loot", "Gain 1 Fate Token when you suffer Exhaustion from a monster attack"],
+                    ["Rune-Stitched Cloak", "5 Loot", "Reduce all incoming damage by 1 (minimum 1)"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Loot Shop — Relics">
+                <TableBlock
+                  headers={["Item", "Cost", "Effect"]}
+                  rows={[
+                    ["Blessing of the Gods", "6 Loot", "Strained threshold permanently moves to 4 tokens"],
+                    ["Rune-Carved Pendant", "5 Loot", "Gain 1 Fate Token when a cursed/Wounded enemy is defeated"],
+                    ["Cloak of Shadows", "6 Loot", "Start each Act with Invisible for 1 round"],
+                    ["Draupnir Echo", "7 Loot", "Gain 1 Loot Token at the end of each scenario automatically"],
                   ]}
                 />
               </SectionCard>
@@ -435,17 +496,45 @@ const Rulebook = () => {
                 />
               </SectionCard>
 
-              <SectionCard title="Loot Shop">
+              <SectionCard title="Equipment Slots">
                 <TableBlock
-                  headers={["Item", "Cost", "Effect"]}
+                  headers={["Slot", "Type"]}
                   rows={[
-                    ["Healing Draught", "2", "Restore 3 HP"],
-                    ["Weapon Upgrade", "4", "+1 damage (permanent)"],
-                    ["Runic Charm", "5", "Start with 2 Fate Tokens"],
-                    ["New Ability", "6", "Gain 5th card early"],
-                    ["Blessing", "8", "Strained at 4 tokens"],
+                    ["Weapon", "Affects attacks"],
+                    ["Armour", "Affects defence"],
+                    ["Relic", "Affects abilities/passives"],
                   ]}
                 />
+                <p className="text-xs text-muted-foreground mt-2">One item per slot. Swap between scenarios only.</p>
+              </SectionCard>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <SectionCard title="Consumables">
+                  <TableBlock
+                    headers={["Item", "Cost", "Effect"]}
+                    rows={[
+                      ["Healing Draught", "2", "Restore 3 HP"],
+                      ["Mead of Courage", "3", "Gain 2 Fate Tokens"],
+                      ["Rune Salve", "3", "Remove all Exhaustion"],
+                    ]}
+                  />
+                </SectionCard>
+
+                <SectionCard title="Card Selection">
+                  <div className="space-y-2 text-sm text-foreground/80">
+                    <p>Each Act, select your <span className="font-bold">hand</span> from your card pool.</p>
+                    <p>Play 2 cards per round: 1 TOP + 1 BOTTOM.</p>
+                    <p><span className="font-bold text-primary">Burnout:</span> Both deck & discard empty → Basic Action, then full reset.</p>
+                  </div>
+                </SectionCard>
+              </div>
+
+              <SectionCard title="Legacy Cards">
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p><span className="font-bold text-primary">Victory:</span> Flip to boon side — permanent benefit for future scenarios.</p>
+                  <p><span className="font-bold text-primary">Defeat:</span> Flip to scar side — permanent penalty carried forward.</p>
+                  <p>Stored in spine slots of the Book-Box. Active cards affect all future sessions.</p>
+                </div>
               </SectionCard>
             </TabsContent>
           </Tabs>
