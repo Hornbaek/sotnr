@@ -298,15 +298,60 @@ const Rulebook = () => {
                 />
               </SectionCard>
 
-              <SectionCard title="Loot Shop">
+              <SectionCard title="Equipment Slots">
+                <p className="text-sm text-foreground/80 mb-4">Every hero has <span className="font-bold text-primary">3 equipment slots</span> on their Character Board from Level 1. One item per slot. Swapping happens between scenarios only.</p>
+                <TableBlock
+                  headers={["Slot", "Type", "Examples"]}
+                  rows={[
+                    ["Weapon", "Affects attack behaviour", "Runed Blade, Spear of Precision, Venom Edge"],
+                    ["Armour", "Affects defence and resilience", "Iron Shield, Wolf Pelt, Rune-Stitched Cloak"],
+                    ["Relic", "Affects special abilities and passives", "Blessing of the Gods, Rune-Carved Pendant, Cloak of Shadows"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Loot Shop — Consumables">
+                <p className="text-sm text-foreground/80 mb-3">Single-use items purchased with Loot Tokens between scenarios. Maximum 10 Loot Tokens held at any time.</p>
                 <TableBlock
                   headers={["Item", "Cost", "Effect"]}
                   rows={[
-                    ["Healing Draught", "2", "Restore 3 Health (once, any session)"],
-                    ["Weapon Upgrade", "4", "+1 damage permanently"],
-                    ["Runic Charm", "5", "Start next scenario with 2 Fate Tokens"],
-                    ["New Ability", "6", "Gain 5th ability card early"],
-                    ["Blessing of the Gods", "8", "Strained threshold moves to 4 tokens permanently"],
+                    ["Healing Draught", "2 Loot", "Restore 3 Health (use once, any session)"],
+                    ["Mead of Courage", "3 Loot", "Gain 2 Fate Tokens immediately"],
+                    ["Rune Salve", "3 Loot", "Remove all Exhaustion Tokens (use once, any session)"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Loot Shop — Weapons">
+                <TableBlock
+                  headers={["Item", "Cost", "Effect"]}
+                  rows={[
+                    ["Runed Blade", "4 Loot", "On hit, deal 1 damage to an adjacent enemy"],
+                    ["Spear of Precision", "6 Loot", "Glancing Blows (1-3) deal 2 damage instead of 1"],
+                    ["Venom Edge", "5 Loot", "Enemies you hit gain the Wound condition"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Loot Shop — Armour">
+                <TableBlock
+                  headers={["Item", "Cost", "Effect"]}
+                  rows={[
+                    ["Iron Shield", "3 Loot", "Gain Shield 1 at the start of each Act"],
+                    ["Wolf Pelt", "4 Loot", "Gain 1 Fate Token when you suffer Exhaustion from a monster attack"],
+                    ["Rune-Stitched Cloak", "5 Loot", "Reduce all incoming damage by 1 (minimum 1)"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Loot Shop — Relics">
+                <TableBlock
+                  headers={["Item", "Cost", "Effect"]}
+                  rows={[
+                    ["Blessing of the Gods", "6 Loot", "Strained threshold permanently moves to 4 tokens"],
+                    ["Rune-Carved Pendant", "5 Loot", "Gain 1 Fate Token when a cursed/Wounded enemy is defeated"],
+                    ["Cloak of Shadows", "6 Loot", "Start each Act with Invisible for 1 round"],
+                    ["Draupnir Echo", "7 Loot", "Gain 1 Loot Token at the end of each scenario automatically"],
                   ]}
                 />
               </SectionCard>
