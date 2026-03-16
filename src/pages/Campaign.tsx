@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, MapPin, Trophy, Scroll, Shield, Swords, ArrowRight } from "lucide-react";
+import CampaignTracker from "@/components/game/CampaignTracker";
 
 import grandCampaignMapImg from "@/assets/campaign/grand-campaign-map.jpg";
 import midgardCampaignImg from "@/assets/campaign/midgard-campaign.jpg";
