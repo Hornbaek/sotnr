@@ -203,16 +203,23 @@ Linking types a campaign designer can define:
 - Hero progression (XP, loot, level) carries forward across all realm campaigns
 - The box capacity defines the maximum number of scenario sleeves per realm campaign — exact count defined in Phase 7
 
-### ⬜ Backlog
-- Define the grand campaign map design (realm positions, Yggdrasil branch connections, tracking mechanism)
-- Define exact trigger conditions for earning Realm Legacy Cards (what counts as "special enough")
-- Define exact trigger conditions for earning World Tree Legacy Cards
-- Define concrete mechanical effects for Allies and Enemies across realm campaigns
-- Define Secrets system (what clues look like, how they unlock hidden realms or scenarios)
-- Define between-session and between-realm flow step by step
-- Define how XP scaling works across a grand campaign — does Level 9 Saga Hero status carry into the next realm?
-- Design the Midgard starter campaign as the reference implementation for all campaign pack design
-- Confirm physical slot design for both Legacy Card tiers (see Phase 7)
+### ✅ Complete
+- **Mastery Pool system** — heroes have two pools: Mastery Pool (permanent, never resets across realms) and Active Pool (current realm, determined by level). Card unlocks grow the Mastery Pool permanently. Level resets to 3 between realms but Mastery Pool is unchanged.
+- **Level reset** — heroes reset to Level 3 between realm campaigns. Re-select Active Pool from full Mastery Pool at Level 3.
+- **Saga Hero carry-forward resolved** — Level resets to 3. Mastery Pool preserved. Full Mastery Pool (all cards) reached around Realm 3-4.
+- **Secrets system** — cut. Conditional linking already handles hidden content elegantly. No separate system needed.
+- **Grand campaign map** — defined. Third panel of book-box unfold, dry-erase compatible, tracks realm visits and outcomes. Realm Campaign Packs include map overlay inserts for linking.
+- **Between-session flow** — fully documented (9 steps)
+- **Between-realm flow** — fully documented (8 steps)
+- **Legacy Card trigger guidelines** — defined. Earned at special moments (significant choice, dramatic objective, notable outcome). 3-5 Realm Legacy Cards per campaign. One World Tree Legacy Card per completed realm.
+- **Campaign design guidelines** — defined as reference for all future realm campaign designers
+- **Midgard starter campaign** — complete as Phase 4 reference implementation
+
+### ⬜ Open Items
+- Small-pool class (Ulfhednar) cross-realm bonus after Mastery Pool completion — explore in Phase 2 revision
+- Physical slot design for both Legacy Card tiers — see Phase 7
+- Grand campaign map physical layout and dry-erase mechanism — see Phase 7
+- Realm Campaign Pack map overlay insert design — see Phase 7
 
 ---
 
@@ -277,7 +284,6 @@ The second panel is only needed at setup and between sessions — it folds back 
 - Should loot be split into gold (spendable currency) and items (physical equipment cards)? Current class action loot mechanic lacks narrative logic. (affects Phase 2, 4, 5)
 - Does failing a scenario always move the campaign forward, or are there dead-end outcomes? (affects Phase 4, 5)
 - Can Legacy Cards ever be removed or flipped mid-campaign, or are they permanent once placed? (affects Phase 1, 5)
-- Does Saga Hero status (Level 9) carry forward into the next realm campaign, or do heroes reset to a defined level between realms? (affects Phase 5, 6)
 - What is the maximum number of scenario sleeves a realm campaign pack can contain, given the book-box capacity? (affects Phase 5, 7)
-- What do hidden scenarios look like physically — separate Scenario Sleeves stored in the realm pack? (affects Phase 5, 7)
-- Does the grand campaign map use a dry-erase surface for tracking, or physical tokens/stickers? (affects Phase 7)
+- Small-pool class (Ulfhednar) cross-realm bonus after Mastery Pool completion — what form should this take? (affects Phase 2)
+- Grand campaign map: dry-erase surface or physical tokens/stickers for tracking? (affects Phase 7)
