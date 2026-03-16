@@ -52,7 +52,7 @@ const heroClasses = [
     image: valkyrieImg,
     signature: "Wings of War",
     description: "Odin's choosers of the slain. Swift executioners who reap the unworthy.",
-    health: "TBD", speed: "TBD", poolSize: 8, handSize: 4,
+    health: 10, speed: 5, poolSize: 8, handSize: 4,
   },
   {
     name: "Seiðr",
@@ -60,9 +60,9 @@ const heroClasses = [
     role: "Support / Fate Manipulation",
     icon: Heart,
     image: seidrImg,
-    signature: "Web of Fate",
+    signature: "Völva's Trance",
     description: "Völva seers who read the threads of fate and bend reality to their will.",
-    health: "TBD", speed: "TBD", poolSize: 8, handSize: 5,
+    health: 8, speed: 3, poolSize: 8, handSize: 5,
   },
   {
     name: "Ulfhednar",
@@ -72,7 +72,7 @@ const heroClasses = [
     image: ulfhednarImg,
     signature: "Beast Within",
     description: "Wolf-pelt warriors who channel the beast's fury for devastating results.",
-    health: "TBD", speed: "TBD", poolSize: 6, handSize: 6,
+    health: 12, speed: "4/6", poolSize: 6, handSize: 6,
   },
   {
     name: "Skald",
