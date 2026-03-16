@@ -93,23 +93,25 @@
 *Goal: Every monster feels distinct, behaviourally and thematically, using the AI keyword system.*
 
 ### ✅ Complete
-- **Monster Card format** — double-sided card (front: stats/keywords/special ability/lore line; back: Dice Result Table)
-- **Monster tier system** — Standard (HP 4-8), Elite (HP 8-15), Boss (HP 20-40)
-- **Full keyword list** — 10 Primary keywords (including new SONG FOCUS and THREAD SEEKER), 2 Secondary keywords
-- **Special Ability trigger types** — ON HIT, ON ACTIVATION, ON DAMAGE, PASSIVE, THRESHOLD
-- **Boss rules** — Threshold mechanic, Enraged state, Cannot Be Defeated before threshold
-- **Boss Escape mechanic** — bosses escape at threshold HP, can recur across campaign
-- **Full 45-monster compendium** — 5 monsters per realm across 9 realms, all with stats/keywords/special abilities
-- **9 realm bosses** — all realms now have dedicated bosses (Frost Giant, Fáfnir, Fire Giant, Níðhöggr, Garmr, Dökkálfr the Unbound, Jörð's Wrath, Loki's Shade + Midgard has no boss by design)
-- **Master Vault** — physical storage concept established (separate from book-box, stores inactive campaigns)
+- **Monster Card format** — double-sided card. Front: Health, Move, Primary/Secondary keywords, any permanent Passives, lore line. Back: integrated Dice Table (max 10 rows) with damage and all special effects built into roll results.
+- **Dice Table design rules** — Miss (1-5) always clean. Effects scale upward. 1-4 distinct effects per monster woven into the table at specific rolls or ranges. Permanent passives noted on front of card.
+- **Monster tier system** — Standard (HP 4-8), Elite (HP 8-15), Boss (HP 20-40) with stat ranges defined
+- **Full keyword list** — 10 Primary keywords (including SONG FOCUS and THREAD SEEKER for Skald/Seiðr synergy), 2 Secondary keywords
+- **Boss rules** — Threshold mechanic (50% and 25% HP), Enraged state, Cannot Be Defeated before threshold. Boss cards carry zero threshold text — all threshold behaviour defined on Scenario Sleeve only.
+- **Boss Escape mechanic** — bosses escape at threshold HP, can recur across multiple campaign scenarios
+- **Full 48-monster compendium** — 5 monsters per realm (Midgard/Jotunheim/Svartalfheim/Muspelheim/Niflheim/Helheim), 6 per realm (Alfheim/Vanaheim/Asgard including bosses)
+- **9 realm bosses** — Frost Giant (Jotunheim), Fáfnir (Svartalfheim), Fire Giant (Muspelheim), Níðhöggr (Niflheim), Garmr (Helheim), Dökkálfr the Unbound (Alfheim), Jörð's Wrath (Vanaheim), Loki's Shade (Asgard). Midgard has no dedicated boss by design.
+- **Master Vault** — physical storage concept established (separate from book-box, stores all inactive campaigns, characters, and monster sets)
 
-### ⬜ Open Items
-- All stat values are first iteration estimates — validated in Phase 6
-- Fáfnir's dual Special Abilities need playtesting confirmation
-- Soul Husk respawn mechanic needs Scenario Sleeve Cleansed hex setup rule
-- Glamour Hound ally token placement needs setup ruling
-- Wisp Swarm split activation timing needs ruling (recommended: split tokens activate next round)
-- Loki's Shade Trickster Form complexity — monitor in Phase 6
+### ⬜ Open Items (validated in Phase 6)
+- All stat values are first iteration estimates
+- Soul Husk respawn requires Scenario Sleeve to define Cleansed hex locations
+- Glamour Hound and Dökkálfr the Unbound alias token placement needs setup ruling in scenario design guidelines
+- Wisp Swarm split timing: split tokens activate the following round (not the round they split)
+- Loki's Shade Trickster Form — monitor for feel and speed in Phase 6
+- Hrimfaxi's Shadow damage boost when target has no Fate Tokens — monitor balance in Phase 6
+- Níðhöggr's "Cannot Be Defeated" passive needs clear physical indicator on card (suggested: red border)
+- Garmr's threshold stat boosts need tracking mechanism (suggested: small tokens on card)
 - Midgard has no boss by design — campaign designers may import from adjacent realms or use recurring bosses
 
 ---

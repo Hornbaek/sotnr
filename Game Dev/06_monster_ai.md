@@ -81,14 +81,15 @@ Bosses ignore difficult terrain entirely and may move through hero hexes freely.
 
 ## The Monster AI Sequence
 
-Every monster follows this exact sequence each activation. Six steps, always in this order:
+Every monster follows this exact sequence each activation. Five steps, always in this order:
 
 1. **Identify Primary keyword target** — apply keyword, identify valid targets
 2. **Apply Secondary keyword if tied** — narrow to one target
 3. **Apply Threat Chain if still tied** — resolve to exactly one target
 4. **Move toward target** — shortest path, full Speed, committed
-5. **Attack if in range** — roll D20, consult back-of-card table
-6. **Apply Special Ability** — as printed on Monster Card
+5. **Attack if in range** — roll D20, consult back-of-card Dice Table. Damage and all special effects are in the table. Apply whatever the roll result specifies.
+
+> **Note:** Special abilities are not listed separately on the card — they are built into the Dice Table on the back. Each roll result may include zero, one, or multiple effects alongside damage. Some monsters also have permanent **Passive** abilities noted on the front of the card.
 
 ---
 
@@ -169,37 +170,40 @@ After moving, if in attack range of target:
 
 1. Roll D20
 2. Consult monster's back-of-card Dice Table
-3. Apply damage and effects
-4. Apply Special Ability if triggered
+3. Apply the full result — damage and all listed effects simultaneously
 
 If **not** in range after moving: no attack this activation. Monster waits, committed to position.
 
+> Effects in the Dice Table are always applied together. If a roll says "Wound + Immobilize + push 2 hexes", all three happen at once. There is no order dependency within a single result.
+
 ---
 
-## Special Ability Design Rules
+## Dice Table Design Rules
 
-Every monster has exactly **one Special Ability**. It must:
-- Be expressible in two lines or fewer on the card
-- Reflect the creature's folklore identity — not generic fantasy
-- Create a different tactical problem than any other monster in the same realm
-- Be fail-forward compatible — triggering the special moves the game forward
+Each monster's Dice Table is its complete combat identity — damage and all special effects live here together. Design principles:
 
-### Special Ability Trigger Types
+- **Miss (1-5)** is always a clean miss. No effect, no partial trigger.
+- **Effects scale upward** — lower rolls deal damage with no effect or minor effects; higher rolls combine damage with increasingly powerful effects.
+- **Specific roll numbers** can trigger unique effects (e.g. exactly 16 triggers a special ability).
+- **Roll ranges** can share an effect (e.g. 13-15 all trigger Wound).
+- **Maximum 10 rows** per table — if you need more granularity, combine adjacent rolls.
+- **1-4 distinct special effects** per monster woven into the table. Simpler monsters have 1-2 effects; complex monsters have 3-4 appearing at different roll thresholds.
+- Every effect must reflect the creature's folklore identity — not generic fantasy.
+- Every effect must be fail-forward compatible — the game always moves forward.
 
-| Trigger | Meaning |
-|---|---|
-| **ON HIT** | Activates when monster's attack succeeds |
-| **ON ACTIVATION** | Activates at start of monster's turn |
-| **ON DAMAGE** | Activates when monster takes damage |
-| **PASSIVE** | Always active, no trigger needed |
-| **THRESHOLD** | Activates when monster drops below X health |
+### Permanent Passives
+Some monsters have abilities that are always active regardless of the dice roll. These are noted on the **front of the card** above the lore line. They must be expressible in two lines or fewer.
+
+Common passive types: immunity to a condition, permanent stat modification, setup placement rule, on-defeat behaviour.
 
 ---
 
 ## Boss-Specific Rules
 
 ### Boss Threshold Triggers
-At 50% and 25% Health, check the Scenario Sleeve. The Monster Card says *"At threshold: see Scenario Sleeve."* This keeps cards reusable across multiple scenarios while the Sleeve defines each encounter's specific response.
+At 50% and 25% Health, check the Scenario Sleeve. Boss Monster Cards carry **no threshold text** — all threshold behaviour is defined entirely on the Scenario Sleeve. This keeps Monster Cards fully reusable across multiple scenarios and campaign appearances.
+
+The Scenario Sleeve defines the specific response for this encounter. Common responses:
 
 **Common threshold responses (defined on Scenario Sleeve):**
 - *Remove boss from map — read Escalation text* (escape)

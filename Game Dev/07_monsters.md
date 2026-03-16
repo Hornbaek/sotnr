@@ -1,24 +1,35 @@
 # Shadows of the Nine Realms — Monster Compendium
 
-45 monsters across 9 realms. Each realm has 4-5 monsters covering Standard, Elite, and Boss tiers. Monsters marked **(L)** are lore-authentic, **(LI)** are lore-inspired/regional variants, **(I)** are invented but cosmologically plausible.
+48 monsters across 9 realms (5 per realm for Midgard/Jotunheim/Svartalfheim/Muspelheim/Niflheim/Helheim, 6 per realm for Alfheim/Vanaheim/Asgard which include dedicated bosses). Every monster has a unique dice table on the back of its card with effects integrated into the roll results, scaling from minor to devastating.
 
-> ⚠️ **Phase 3 work:** Stats, keywords, and special abilities are first iteration estimates. All values validated in Phase 6 playtesting.
+> ⚠️ **Phase 3 note:** All stat values are first iteration estimates. Validated in Phase 6 playtesting.
+
+**Monster types:** **(L)** = lore-authentic, **(LI)** = lore-inspired/regional variant, **(I)** = invented but cosmologically plausible
 
 ---
 
-## Realm Assignment Overview
+## Monster Card Format
 
-| Realm | Monsters | Boss |
-|---|---|---|
-| Midgard | Draugr, Huldra, Troll, Mara, Myling | — |
-| Jotunheim | Jotun Hound, Stone Thrall, Ice Wight, Rimthurs, Frost Giant | Frost Giant |
-| Svartalfheim | Dwarf Warrior, Svartálfar, Forge Wraith, Cave Crawler, Fáfnir | Fáfnir |
-| Muspelheim | Cinder Wraith, Ash Walker, Surtr's Hound, Ember Drake, Fire Giant | Fire Giant |
-| Niflheim | Frost Shade, Corpse Worm, Hrimfaxi's Shadow, Mist Stalker, Níðhöggr | Níðhöggr |
-| Helheim | Hel-Walker, Náströnd Shade, Soul Husk, Drowned Dead, Garmr | Garmr |
-| Alfheim | Fossegrim, Glamour Hound, Wisp Swarm, Nokken, Corrupted Light Elf, Dökkálfr the Unbound | Dökkálfr the Unbound |
-| Vanaheim | Bog Hag, Storm Elk, Harvest Wraith, Rå, Wild Boar Spirit, Jörð's Wrath | Jörð's Wrath |
-| Asgard | Bifröst Stalker, Odin's Exile, Raven Construct, Fallen Einherjar, Valkyrie Shade, Loki's Shade | Loki's Shade |
+### Front Side
+- Name, Tier (Standard/Elite/Boss), Realm
+- Health, Move
+- Primary Keyword
+- Secondary Keyword (if any)
+- Any permanent Passive abilities
+- Lore line (single evocative sentence)
+
+### Back Side — Dice Table
+Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through the table.
+
+---
+
+## Stat Ranges by Tier
+
+| Tier | Health | Move | Mid-Table Damage | Max Damage |
+|---|---|---|---|---|
+| Standard | 4-8 | 2-4 | 2-3 | 4-5 |
+| Elite | 8-15 | 3-5 | 3-4 | 6-7 |
+| Boss | 20-40 | 3-6 | 5-6 | 8-10 |
 
 ---
 
@@ -27,78 +38,101 @@
 
 ---
 
-## Draugr — The Restless Dead (L)
+## Draugr — The Restless Dead *(L — Standard)*
 
 *"The dead walk when dishonoured. The Draugr remembers life… and hates the living for it."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 6 | 3 | +2 | 2 | Standard |
+**Health:** 6 | **Move:** 3
+**Primary:** ISOLATIONIST | **Secondary:** WEAKEST
 
-- **Primary:** ISOLATIONIST *(seeks those separated from the group)*
-- **Secondary:** WEAKEST
-
-**Special — Grave Guard (PASSIVE):** While within 2 hexes of an objective hex, gain Shield 1 permanently. The Draugr fights hardest over what it hoards.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14 | 2 | Push target 1 hex |
+| 15-16 | 2 | Push 1 hex + Wound |
+| 17-18 | 3 | Push 1 hex + Wound |
+| 19 | 3 | Push 2 hexes + Wound + target −1 attack until end of round |
+| 20 | 4 | Push 2 hexes + Wound + target −1 attack + Draugr gains Shield 1 |
 
 ---
 
-## Huldra — The Forest Spirit (L)
+## Huldra — The Forest Spirit *(L — Standard)*
 
 *"Beautiful as spring, hollow as a rotting log. Do not follow her into the woods."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 7 | 4 | +3 | 3 | Standard |
+**Health:** 7 | **Move:** 4
+**Primary:** ISOLATIONIST | **Secondary:** WEAKEST
 
-- **Primary:** ISOLATIONIST *(lures the lonely)*
-- **Secondary:** WEAKEST
-
-**Special — Lure (ON ACTIVATION):** The hero furthest from their nearest ally must move 1 hex toward the Huldra.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-12 | 2 | — |
+| 13-15 | 2 | Target must move 1 hex toward Huldra at start of their next turn |
+| 16 | 3 | Target must move 1 hex toward Huldra next turn + Muddle |
+| 17-18 | 3 | Target must move 1 hex toward Huldra + Muddle + Wound |
+| 19 | 3 | Target must move 2 hexes toward Huldra + Wound |
+| 20 | 4 | All heroes within 2 hexes must move 1 hex toward Huldra + Wound on primary target |
 
 ---
 
-## Troll — The Mountain Dweller (L)
+## Troll — The Mountain Dweller *(L — Elite)*
 
 *"Trolls turn to stone in sunlight. Until then, they are strong enough to crush a horse."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 10 | 2 | +3 | 4 | Elite |
+**Health:** 10 | **Move:** 2
+**Primary:** WEAKEST | **Secondary:** CLOSEST
 
-- **Primary:** WEAKEST
-- **Secondary:** CLOSEST
-
-**Special — Stone Hide (PASSIVE):** Reduce all incoming damage by 1 (minimum 1). Negated if attacked by a hero with Higher Ground advantage.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-12 | 3 | — |
+| 13-15 | 3 | Immobilize until start of target's next turn |
+| 16 | 4 | Immobilize + push 2 hexes |
+| 17-18 | 4 | Immobilize + Wound |
+| 19 | 5 | Immobilize + Stun |
+| 20 | 6 | Immobilize + Stun + all adjacent heroes take 2 damage |
 
 ---
 
-## Mara — The Nightmare Rider (LI)
+## Mara — The Nightmare Rider *(LI — Standard)*
 
 *"She sits upon your chest while you sleep. You cannot move. You cannot scream."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 8 | 3 | +3 | 2 | Standard |
+**Health:** 8 | **Move:** 3
+**Primary:** EXHAUSTION FOCUS | **Secondary:** CLOSEST
 
-- **Primary:** EXHAUSTION FOCUS
-- **Secondary:** CLOSEST
-
-**Special — Nightmare Drain (ON HIT):** Instead of dealing damage, apply 2 Exhaustion Tokens to the target. The Mara feeds on fatigue, not flesh.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | — | 1 Exhaustion Token |
+| 10-13 | — | 2 Exhaustion Tokens |
+| 14-16 | 1 | 2 Exhaustion Tokens + Immobilize |
+| 17 | 1 | 3 Exhaustion Tokens + Immobilize |
+| 18-19 | 2 | 3 Exhaustion Tokens + Immobilize + target cannot use Fate Tokens until next turn |
+| 20 | 3 | 4 Exhaustion Tokens + Immobilize + target cannot use Fate Tokens until next turn |
 
 ---
 
-## Myling — The Unbaptised Ghost (LI)
+## Myling — The Unbaptised Ghost *(LI — Standard)*
 
 *"It screams your name from the darkness. Each step it takes onto your back is heavier than the last."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 5 | 4 | +2 | 1 | Standard |
+**Health:** 5 | **Move:** 4
+**Primary:** CLOSEST | **Secondary:** EXHAUSTION FOCUS
 
-- **Primary:** CLOSEST
-- **Secondary:** EXHAUSTION FOCUS
-
-**Special — Latch (ON HIT):** Place a Myling token on the target's Character Board. At the start of that hero's turn, they gain 1 Exhaustion Token. The token is removed when the Myling is defeated or the hero spends a Bottom Action to shake it off.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 1 | Place Latch token on target (target gains 1 Exhaustion at turn start until Myling is defeated or token removed by Bottom Action) |
+| 14-16 | 2 | Latch token + Wound |
+| 17 | 2 | Latch token + Wound + target Speed −1 |
+| 18-19 | 2 | Latch token + Wound + target Speed −1 + 1 Exhaustion immediately |
+| 20 | 3 | Latch token + Wound + target Speed −1 + 2 Exhaustion immediately |
 
 ---
 
@@ -107,80 +141,102 @@
 
 ---
 
-## Jotun Hound — Wolf of the Giants (I)
+## Jotun Hound — Wolf of the Giants *(I — Standard)*
 
 *"Massive as a horse, patient as winter. It has been tracking you since you entered the mountains."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 5 | 4 | +2 | 2 | Standard |
+**Health:** 5 | **Move:** 4
+**Primary:** PACK HUNTER | **Secondary:** WEAKEST
 
-- **Primary:** PACK HUNTER
-- **Secondary:** WEAKEST
-
-**Special — Pack Surge (ON ACTIVATION):** If 2+ Jotun Hounds are within 2 hexes of the same hero, each deals +1 damage this round.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-16 | 2 | Push 1 hex |
+| 17 | 3 | Push 1 hex + Wound |
+| 18 | 3 | Push 2 hexes + Wound |
+| 19 | 3 | Push 2 hexes + Wound + each Jotun Hound within 3 hexes moves 1 hex toward target |
+| 20 | 4 | Push 2 hexes + Wound + all Jotun Hounds within 3 hexes attack target for 1 damage |
 
 ---
 
-## Stone Thrall — Enslaved Giant-Kin (I)
+## Stone Thrall — Enslaved Giant-Kin *(I — Standard)*
 
 *"It does not fight for glory. It fights because it has no choice."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 6 | 2 | +2 | 3 | Standard |
+**Health:** 6 | **Move:** 2
+**Primary:** BLOCKER | **Secondary:** CLOSEST
 
-- **Primary:** BLOCKER *(targets hero with most adjacent allies)*
-- **Secondary:** CLOSEST
-
-**Special — Living Shield (PASSIVE):** Any monster within 2 hexes of the Stone Thrall reduces incoming damage by 1. The Thrall absorbs punishment meant for its masters.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-15 | 3 | Nearest monster within 2 hexes gains Shield 1 |
+| 16-17 | 3 | All monsters within 2 hexes gain Shield 1 |
+| 18-19 | 3 | Immobilize + all monsters within 2 hexes gain Shield 1 |
+| 20 | 4 | Immobilize + all monsters within 3 hexes gain Shield 1 |
 
 ---
 
-## Ice Wight — Frozen Battle-Spirit (I)
+## Ice Wight — Frozen Battle-Spirit *(I — Standard)*
 
 *"It died in the cold. Now it brings the cold to everything it touches."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 6 | 3 | +2 | 2 | Standard |
+**Health:** 6 | **Move:** 3
+**Primary:** CLOSEST | **Secondary:** EXHAUSTION FOCUS
 
-- **Primary:** CLOSEST
-- **Secondary:** EXHAUSTION FOCUS
-
-**Special — Icy Wake (ON ACTIVATION):** The hex the Ice Wight occupies becomes difficult terrain until end of round.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-12 | 2 | — |
+| 13-15 | 2 | Target's hex becomes difficult terrain until end of round |
+| 16-17 | 2 | Target's hex difficult terrain + Wound |
+| 18 | 3 | Immobilize + 2 adjacent hexes become difficult terrain |
+| 19 | 3 | Immobilize + all adjacent hexes become difficult terrain |
+| 20 | 4 | Immobilize + Wound + all adjacent hexes become difficult terrain |
 
 ---
 
-## Rimthurs — Lesser Frost Giant (I)
+## Rimthurs — Lesser Frost Giant *(I — Elite)*
 
 *"Smaller than their kin but faster — and far more eager to prove themselves."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 10 | 4 | +3 | 3 | Elite |
+**Health:** 10 | **Move:** 4
+**Primary:** WEAKEST | **Secondary:** ISOLATIONIST
 
-- **Primary:** WEAKEST
-- **Secondary:** ISOLATIONIST
-
-**Special — Frost Grip (ON HIT):** Target gains Immobilize until start of their next turn. The Rimthurs holds them in place for the killing blow.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-12 | 3 | — |
+| 13-15 | 3 | Immobilize until start of target's next turn |
+| 16 | 4 | Immobilize + 1 Exhaustion Token |
+| 17-18 | 4 | Immobilize + Wound |
+| 19 | 5 | Immobilize + Wound + push 2 hexes |
+| 20 | 6 | Immobilize + Wound + push 2 hexes + 2 Exhaustion Tokens |
 
 ---
 
-## Frost Giant — The Ice Tyrant (L) ★ BOSS
+## Frost Giant — The Ice Tyrant *(L — BOSS)*
 
 *"The jotnar do not raid for gold. They raid to remind us we are small."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 28 | 3 | +5 | 5 | Boss |
+**Health:** 28 | **Move:** 3
+**Primary:** ELITE | **Secondary:** WEAKEST
 
-- **Primary:** ELITE *(targets the most powerful hero)*
-- **Secondary:** WEAKEST
-
-**Special — Freezing Touch (ON HIT):** Target suffers Immobilize AND 1 Exhaustion Token.
-
-**Boss Threshold:** At 50% and 25% HP — see Scenario Sleeve.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 2 | — |
+| 9-11 | 4 | — |
+| 12-14 | 5 | Immobilize |
+| 15-16 | 5 | Immobilize + 1 Exhaustion Token |
+| 17-18 | 6 | Immobilize + Wound + push 1 hex |
+| 19 | 7 | Immobilize + Wound + push 2 hexes |
+| 20 | 8 | Immobilize + Wound + push 2 hexes + all adjacent heroes take 3 damage |
 
 ---
 
@@ -189,84 +245,106 @@
 
 ---
 
-## Dwarf Warrior — The Deep Guard (L)
+## Dwarf Warrior — The Deep Guard *(L — Standard)*
 
 *"Dwarves craft wonders… and guard them with their lives."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 5 | 3 | +3 | 3 | Standard |
+**Health:** 5 | **Move:** 3
+**Primary:** PACK HUNTER | **Secondary:** CLOSEST
 
-- **Primary:** PACK HUNTER
-- **Secondary:** CLOSEST
-
-**Special — Forge-Hardened (PASSIVE):** Gain Shield 1 while adjacent to another Dwarf Warrior.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-12 | 2 | — |
+| 13-15 | 2 | Shield 1 if adjacent to another Dwarf Warrior |
+| 16-17 | 3 | Disarm until start of target's next turn |
+| 18-19 | 3 | Disarm + Wound |
+| 20 | 4 | Disarm + Wound + push 1 hex |
 
 ---
 
-## Svartálfar — The Runic Trapper (L)
+## Svartálfar — The Runic Trapper *(L — Elite)*
 
 *"You did not see the rune. You never see the rune."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 9 | 3 | +3 | 3 | Elite |
+**Health:** 9 | **Move:** 3
+**Primary:** ISOLATIONIST | **Secondary:** CLOSEST
 
-- **Primary:** ISOLATIONIST
-- **Secondary:** CLOSEST
-
-**Special — Runic Trap (ON ACTIVATION):** Place a trap token on any empty hex within 3 hexes. The first hero to enter that hex suffers 3 damage and Immobilize.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-11 | 2 | — |
+| 12-14 | 2 | Place trap token on target's hex (first hero to remain there next round takes 3 damage + Immobilize) |
+| 15-16 | 3 | Place 2 trap tokens on adjacent hexes |
+| 17-18 | 3 | Wound + place trap token on target's hex |
+| 19 | 4 | Wound + place trap tokens on all adjacent empty hexes |
+| 20 | 5 | Wound + Immobilize + place trap tokens on all adjacent empty hexes |
 
 ---
 
-## Forge Wraith — Spirit of the Dead Smith (I)
+## Forge Wraith — Spirit of the Dead Smith *(I — Standard)*
 
 *"He died at the anvil. He never stopped working."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 5 | 3 | +2 | 2 | Standard |
+**Health:** 5 | **Move:** 3
+**Primary:** RANGED PRIORITY | **Secondary:** CLOSEST
 
-- **Primary:** RANGED PRIORITY
-- **Secondary:** CLOSEST
-
-**Special — Disarming Strike (ON HIT):** Target gains Disarm until start of their next turn. The Wraith hammers weapons from hands.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-16 | 2 | Disarm until start of target's next turn |
+| 17 | 2 | Disarm + Wound |
+| 18-19 | 3 | Disarm + Wound + target cannot use Bottom Actions next turn |
+| 20 | 4 | Disarm + all adjacent heroes gain Disarm until their next turn |
 
 ---
 
-## Cave Crawler — Blind Deep Predator (I)
+## Cave Crawler — Blind Deep Predator *(I — Standard)*
 
 *"It has never seen light. It does not need to."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 6 | 4 | +2 | 2 | Standard |
+**Health:** 6 | **Move:** 4
+**Primary:** EXHAUSTION FOCUS | **Secondary:** CLOSEST
 
-- **Primary:** EXHAUSTION FOCUS
-- **Secondary:** CLOSEST
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-15 | 2 | Wound |
+| 16-17 | 3 | Wound + Immobilize |
+| 18-19 | 3 | Wound + Immobilize + 1 Exhaustion Token |
+| 20 | 4 | Wound + Immobilize + 2 Exhaustion Tokens |
 
-**Special — Blind Hunter (PASSIVE):** Immune to the Invisible condition. Cannot be misled by darkness or concealment.
+*Passive: Immune to Invisible condition.*
 
 ---
 
-## Fáfnir — The Cursed Dragon (L) ★ BOSS
+## Fáfnir — The Cursed Dragon *(L — BOSS)*
 
 *"He was a dwarf once. Then greed became his skin, his scales, his fire."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 30 | 3 | +5 | 6 | Boss |
+**Health:** 30 | **Move:** 3
+**Primary:** ELITE | **Secondary:** CLOSEST
 
-- **Primary:** ELITE *(guards the most powerful)*
-- **Secondary:** CLOSEST
+*Passive: Dragon Hide — all incoming damage reduced by 2. Negated if attacked by a hero who moved adjacent from behind this turn.*
 
-**Special — Dragon Hide (PASSIVE):** Reduce all incoming damage by 2. Negated by attacks from heroes who first moved adjacent to Fáfnir from behind (flanking negates the hide).
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 2 | — |
+| 9-11 | 4 | — |
+| 12-14 | 5 | Poison |
+| 15-16 | 5 | Poison + Immobilize |
+| 17 | 6 | Poison + Wound |
+| 18-19 | 7 | Poison + Wound + push 2 hexes |
+| 20 | 8 | Poison + Wound + all heroes within 2 hexes take 3 damage (breath) |
 
-**Special — Poison Breath (ON ACTIVATION):** All heroes within 2 hexes gain the Poison condition.
-
-> *Note: Fáfnir has two special abilities — he is the most mechanically complex standard boss in the game. Both must be tracked.*
-
-**Boss Threshold:** At 50% and 25% HP — see Scenario Sleeve.
+*Note: Dragon Hide is a permanent passive too important to omit — listed above the table.*
 
 ---
 
@@ -275,80 +353,104 @@
 
 ---
 
-## Cinder Wraith — Spirit of the Consumed (I)
+## Cinder Wraith — Spirit of the Consumed *(I — Standard)*
 
 *"It was something once. Now it is only heat and hunger."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 4 | 3 | +2 | 2 | Standard |
+**Health:** 4 | **Move:** 3
+**Primary:** CLOSEST | **Secondary:** EXHAUSTION FOCUS
 
-- **Primary:** CLOSEST
-- **Secondary:** EXHAUSTION FOCUS
+*Passive: Immune to fire terrain damage.*
 
-**Special — Fire Immunity (PASSIVE):** Immune to all fire terrain damage. Cinder Wraiths thrive in the burning hexes other monsters avoid.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-15 | 2 | Push target into adjacent fire terrain (if any) |
+| 16-17 | 2 | Wound |
+| 18-19 | 3 | Wound + Poison (burning) |
+| 20 | 4 | Wound + Poison + push into fire terrain |
 
 ---
 
-## Ash Walker — Living Cooling Lava (I)
+## Ash Walker — Living Cooling Lava *(I — Standard)*
 
 *"Where it walks, the ground remembers."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 6 | 2 | +2 | 3 | Standard |
+**Health:** 6 | **Move:** 2
+**Primary:** CLOSEST | **Secondary:** WEAKEST
 
-- **Primary:** CLOSEST
-- **Secondary:** WEAKEST
-
-**Special — Scorched Wake (ON ACTIVATION):** The hex the Ash Walker occupied last round becomes difficult terrain (cooled lava). Persists until end of Act.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-12 | 2 | Previously occupied hex becomes difficult terrain until end of Act |
+| 13-15 | 3 | Previously occupied hex difficult terrain + push 1 hex |
+| 16-17 | 3 | Immobilize + previously occupied hex difficult terrain |
+| 18-19 | 4 | Immobilize + Wound + previous hex difficult terrain |
+| 20 | 5 | Immobilize + Wound + all hexes in path this turn become difficult terrain |
 
 ---
 
-## Surtr's Hound — Fire Wolf (I)
+## Surtr's Hound — Fire Wolf *(I — Standard)*
 
 *"Born of flame, fed on screaming. It has never been cold."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 5 | 5 | +2 | 2 | Standard |
+**Health:** 5 | **Move:** 5
+**Primary:** CLOSEST | **Secondary:** PACK HUNTER
 
-- **Primary:** CLOSEST
-- **Secondary:** PACK HUNTER
-
-**Special — Burning Trail (ON ACTIVATION):** Leave a fire terrain token on the hex just vacated. Heroes entering fire terrain take 1 damage.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-15 | 2 | Wound |
+| 16 | 3 | Wound + target's hex becomes fire terrain |
+| 17-18 | 3 | Wound + push into adjacent fire terrain (or create fire terrain if none) |
+| 19 | 3 | Wound + push 2 hexes + fire terrain on vacated hex |
+| 20 | 4 | Wound + push 2 hexes + fire terrain on both vacated hexes |
 
 ---
 
-## Ember Drake — Lesser Fire Dragon (I)
+## Ember Drake — Lesser Fire Dragon *(I — Elite)*
 
 *"Surtr's dragons are ancient. These are their children — smaller, faster, just as hungry."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 12 | 4 | +4 | 4 | Elite |
+**Health:** 12 | **Move:** 4
+**Primary:** RANGED PRIORITY | **Secondary:** WEAKEST
 
-- **Primary:** RANGED PRIORITY
-- **Secondary:** WEAKEST
+*Passive: Can attack up to 3 hexes away.*
 
-**Special — Fire Breath (ON HIT):** Attack hits target AND all heroes adjacent to target for half damage. Ranged — can attack up to 3 hexes away.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-12 | 3 | — |
+| 13-15 | 3 | Poison (burning) |
+| 16-17 | 4 | Poison + all heroes adjacent to target take 2 damage |
+| 18-19 | 5 | Wound + Poison + all heroes adjacent to target take 2 damage |
+| 20 | 6 | Wound + Poison + all heroes within 3 hexes take 3 damage |
 
 ---
 
-## Fire Giant — Surtr's Kin (LI) ★ BOSS
+## Fire Giant — Surtr's Kin *(LI — BOSS)*
 
 *"Surtr will end all worlds with fire. His kin practice on the living."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 32 | 4 | +5 | 6 | Boss |
+**Health:** 32 | **Move:** 4
+**Primary:** ELITE | **Secondary:** WEAKEST
 
-- **Primary:** ELITE
-- **Secondary:** WEAKEST
-
-**Special — Inferno Step (ON ACTIVATION):** Place fire terrain tokens on all hexes the Fire Giant moved through this activation. Fire terrain deals 1 damage to heroes who enter it.
-
-**Boss Threshold:** At 50% and 25% HP — see Scenario Sleeve.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 2 | — |
+| 9-11 | 4 | — |
+| 12-14 | 5 | Wound |
+| 15-16 | 6 | Wound + target's hex becomes fire terrain |
+| 17-18 | 6 | Wound + push 2 hexes + target hex fire terrain |
+| 19 | 7 | Wound + push 2 hexes + all hexes in movement path fire terrain |
+| 20 | 8 | Wound + Stun + all hexes adjacent to Fire Giant become fire terrain |
 
 ---
 
@@ -357,82 +459,111 @@
 
 ---
 
-## Frost Shade — Ghost of the Frozen (I)
+## Frost Shade — Ghost of the Frozen *(I — Standard)*
 
 *"It died in the cold. It is still cold."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 5 | 3 | +2 | 2 | Standard |
+**Health:** 5 | **Move:** 3
+**Primary:** WEAKEST | **Secondary:** CLOSEST
 
-- **Primary:** WEAKEST
-- **Secondary:** CLOSEST
+*Passive: Cannot be pushed or repositioned by any hero ability.*
 
-**Special — Immovable (PASSIVE):** Cannot be pushed or repositioned by any hero ability. The Frost Shade is anchored to the cold.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-15 | 2 | Wound |
+| 16-17 | 2 | Wound + target's hex becomes difficult terrain |
+| 18-19 | 3 | Wound + Immobilize |
+| 20 | 4 | Wound + Immobilize + 1 Exhaustion Token |
 
 ---
 
-## Corpse Worm — Níðhöggr's Spawn (I)
+## Corpse Worm — Níðhöggr's Spawn *(I — Standard)*
 
 *"Níðhöggr's children are everywhere the roots reach. You just cannot see them yet."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 4 | 4 | +2 | 2 | Standard |
+**Health:** 4 | **Move:** 4
+**Primary:** EXHAUSTION FOCUS | **Secondary:** CLOSEST
 
-- **Primary:** EXHAUSTION FOCUS
-- **Secondary:** CLOSEST
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-15 | 2 | Poison |
+| 16-17 | 2 | Poison + Wound |
+| 18-19 | 3 | Poison + Wound + 1 Exhaustion Token |
+| 20 | 4 | Poison + Wound + 2 Exhaustion Tokens |
 
-**Special — Burrow (ON ACTIVATION):** Remove Corpse Worm from map. At start of next Monster Phase, place it adjacent to its current target (ignoring all terrain and distance).
+*On Activation: Remove from map. At start of next Monster Phase, place adjacent to current target.*
 
 ---
 
-## Hrimfaxi's Shadow — Night-Horse Wraith (I)
+## Hrimfaxi's Shadow — Night-Horse Wraith *(I — Standard)*
 
 *"Named for the horse that pulls night across the sky. Its shadow steals what you have left."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 6 | 4 | +3 | 0 | Standard |
+**Health:** 6 | **Move:** 4
+**Primary:** ELITE | **Secondary:** EXHAUSTION FOCUS
 
-- **Primary:** ELITE *(drains those with most resources)*
-- **Secondary:** EXHAUSTION FOCUS
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | — | Target loses 1 Fate Token |
+| 10-12 | 1 | Target loses 1 Fate Token |
+| 13-15 | 2 | Target loses 1 Fate Token |
+| 16-17 | 2 | Target loses 2 Fate Tokens |
+| 18 | 3 | Target loses 2 Fate Tokens + Muddle |
+| 19 | 3 | Target loses 2 Fate Tokens + Muddle + Wound |
+| 20 | 4 | Target loses all Fate Tokens + Muddle + Wound |
 
-**Special — Fate Drain (ON HIT):** Instead of damage, target loses 1 Fate Token (if held). If the target holds no Fate Tokens, deal 2 damage instead.
+*If target holds no Fate Tokens, all damage values increase by 2.*
 
 ---
 
-## Mist Stalker — The Unseen Hunter (I)
+## Mist Stalker — The Unseen Hunter *(I — Elite)*
 
 *"The mist is Niflheim's gift to those who hunt. Some of them never left."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 11 | 4 | +4 | 4 | Elite |
+**Health:** 11 | **Move:** 4
+**Primary:** ISOLATIONIST | **Secondary:** WEAKEST
 
-- **Primary:** ISOLATIONIST
-- **Secondary:** WEAKEST
+*Passive: Invisible at start of each round. Becomes visible when it attacks. Returns to Invisible at next Monster Phase start.*
 
-**Special — Mist Form (PASSIVE):** The Mist Stalker is Invisible at the start of each round. Becomes visible when it attacks. Returns to Invisible at the start of the next Monster Phase.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-11 | 3 | — |
+| 12-14 | 4 | Wound |
+| 15-16 | 4 | Wound + target cannot gain Advantage until next turn |
+| 17-18 | 5 | Wound + Immobilize |
+| 19 | 5 | Wound + Immobilize + Mist Stalker re-enters Invisible immediately |
+| 20 | 6 | Wound + Immobilize + Mist Stalker re-enters Invisible + 1 Exhaustion Token |
 
 ---
 
-## Níðhöggr — The Ever-Gnawing Dragon (L) ★ BOSS
+## Níðhöggr — The Ever-Gnawing Dragon *(L — BOSS)*
 
 *"He gnaws at the roots of everything. He has always been gnawing. He will still be gnawing when the world ends."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 35 | 4 | +6 | 6 | Boss |
+**Health:** 35 | **Move:** 4
+**Primary:** CLOSEST | **Secondary:** EXHAUSTION FOCUS
 
-- **Primary:** CLOSEST *(indiscriminate, ancient hunger)*
-- **Secondary:** EXHAUSTION FOCUS
+*Passive: Cannot be reduced below 1 HP by hero attacks alone. Only Scenario Sleeve threshold events remove him from play.*
 
-**Special — Root Corruption (ON ACTIVATION):** One objective hex within 4 hexes becomes Corrupted — heroes cannot complete objectives on Corrupted hexes until they spend a Bottom Action to cleanse it.
-
-**Special — Cannot Be Destroyed (PASSIVE):** Níðhöggr cannot be reduced below 1 HP by hero attacks alone. Only threshold events (Scenario Sleeve) remove him from play. He is not killed — he is driven back.
-
-**Boss Threshold:** At 50% and 25% HP — see Scenario Sleeve.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-7 | 2 | — |
+| 8-10 | 5 | — |
+| 11-13 | 5 | Poison |
+| 14-15 | 6 | Poison + Corrupt 1 objective hex within 3 hexes (heroes cannot complete objectives there until cleansed) |
+| 16-17 | 6 | Poison + Wound |
+| 18-19 | 7 | Poison + Wound + push 2 hexes |
+| 20 | 8 | Poison + Wound + Corrupt all objective hexes within 4 hexes |
 
 ---
 
@@ -441,80 +572,107 @@
 
 ---
 
-## Hel-Walker — The Half-Dead (I)
+## Hel-Walker — The Half-Dead *(I — Standard)*
 
 *"Half alive, half rot. It remembers being a person."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 6 | 3 | +2 | 2 | Standard |
+**Health:** 6 | **Move:** 3
+**Primary:** WEAKEST | **Secondary:** CLOSEST
 
-- **Primary:** WEAKEST
-- **Secondary:** CLOSEST
+*Passive: Immune to Wound and Poison conditions.*
 
-**Special — Undying (PASSIVE):** Immune to Wound and Poison conditions. The Hel-Walker is already dying — it cannot be made worse.
-
----
-
-## Náströnd Shade — The Punished Dead (I)
-
-*"Oath-breakers and murderers serve eternity here. They remember what they did. They want company."*
-
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 5 | 3 | +2 | 1 | Standard |
-
-- **Primary:** HEALER HATE
-- **Secondary:** CLOSEST
-
-**Special — Nihilistic Curse (ON HIT):** Target gains 1 Curse Token (as per Nidstang system). If the target is not in a party with a Nidstang, treat as: -1 to all attack rolls until end of round.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-15 | 2 | Muddle |
+| 16-17 | 2 | Muddle + Immobilize |
+| 18-19 | 3 | Stun |
+| 20 | 4 | Stun + all heroes within 1 hex gain Muddle |
 
 ---
 
-## Soul Husk — The Spent Dead (I)
+## Náströnd Shade — The Punished Dead *(I — Standard)*
+
+*"Oath-breakers and murderers serve eternity on the Corpse Shore. They remember what they did. They want company."*
+
+**Health:** 5 | **Move:** 3
+**Primary:** HEALER HATE | **Secondary:** CLOSEST
+
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 1 | Target −1 to all attack rolls until end of round |
+| 14-16 | 1 | Target −1 attack + Muddle |
+| 17-18 | 2 | Target −1 attack + Muddle + Wound |
+| 19 | 2 | Target rolls at Disadvantage until next turn + Wound |
+| 20 | 3 | Target rolls at Disadvantage + Wound + 1 Exhaustion Token |
+
+---
+
+## Soul Husk — The Spent Dead *(I — Standard)*
 
 *"Nothing remains. Not memory, not malice. Just the motion of the once-living."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 4 | 3 | +1 | 1 | Standard |
+**Health:** 4 | **Move:** 3
+**Primary:** CLOSEST | **Secondary:** —
 
-- **Primary:** CLOSEST
-- **Secondary:** —
+*On Defeat: If not on a Cleansed hex (defined by Scenario Sleeve), respawn at 2 HP on nearest non-objective hex. Can only be truly destroyed on Cleansed hexes.*
 
-**Special — Persistence (THRESHOLD):** When reduced to 0 HP, if not on a designated Cleansed hex, respawn at 2 HP on the nearest non-objective hex. Can only truly be destroyed on Cleansed hexes (defined by Scenario Sleeve).
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-14 | 1 | — |
+| 15-17 | 1 | Muddle |
+| 18-19 | 2 | Muddle + Wound |
+| 20 | 2 | Muddle + Wound + 1 Exhaustion Token |
 
 ---
 
-## Drowned Dead — Rán's Sailors (LI)
+## Drowned Dead — Rán's Sailors *(LI — Elite)*
 
 *"Rán's net catches all who drown. Her collection grows every storm."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 10 | 3 | +3 | 3 | Elite |
+**Health:** 10 | **Move:** 3
+**Primary:** HEALER HATE | **Secondary:** ISOLATIONIST
 
-- **Primary:** HEALER HATE
-- **Secondary:** ISOLATIONIST
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-12 | 3 | — |
+| 13-15 | 3 | Pull target 1 hex toward nearest water hex |
+| 16 | 4 | Pull 2 hexes toward water + Wound |
+| 17-18 | 4 | Pull 2 hexes toward water + Immobilize |
+| 19 | 5 | Pull 2 hexes toward water + Immobilize + 1 Exhaustion Token |
+| 20 | 6 | Pull 2 hexes toward water + Immobilize + Wound + 1 Exhaustion Token |
 
-**Special — Drag Under (ON HIT):** Pull target 2 hexes toward the nearest water hex. If no water hex exists on this scenario, apply Immobilize instead.
+*If no water hex exists on this scenario, pull becomes Immobilize.*
 
 ---
 
-## Garmr — Hound of Hel (L) ★ BOSS
+## Garmr — Hound of Hel *(L — BOSS)*
 
 *"Chained at Gnipahellir since the world's beginning. The chain grows thin."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 30 | 4 | +5 | 5 | Boss |
+**Health:** 30 | **Move:** 4
+**Primary:** WEAKEST | **Secondary:** CLOSEST
 
-- **Primary:** WEAKEST
-- **Secondary:** CLOSEST
+*Threshold passive: Each time Garmr reaches a threshold, his Move increases by 1 and his base damage increases by 1 permanently for this scenario.*
 
-**Special — Broken Chain (THRESHOLD):** Each time Garmr hits a threshold, his Move increases by 1 and his Damage increases by 1. He gets faster and more dangerous as he is wounded — the chain breaks further with each blow.
-
-**Boss Threshold:** At 50% and 25% HP — see Scenario Sleeve.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 2 | — |
+| 9-11 | 4 | — |
+| 12-14 | 5 | Wound |
+| 15-16 | 5 | Wound + Immobilize |
+| 17-18 | 6 | Wound + push 2 hexes |
+| 19 | 7 | Wound + Immobilize + push 2 hexes |
+| 20 | 8 | Wound + Immobilize + push 2 hexes + 2 Exhaustion Tokens |
 
 ---
 
@@ -523,97 +681,128 @@
 
 ---
 
-## Fossegrim — The Waterfall Fiddler (LI)
+## Fossegrim — The Waterfall Fiddler *(LI — Standard)*
 
 *"His music is more beautiful than anything human hands could make. That is the problem."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 6 | 3 | +3 | 3 | Standard |
+**Health:** 6 | **Move:** 3
+**Primary:** CLOSEST | **Secondary:** EXHAUSTION FOCUS
 
-- **Primary:** CLOSEST
-- **Secondary:** EXHAUSTION FOCUS
-
-**Special — Enchanted Melody (ON ACTIVATION):** One hero within 4 hexes must move 1 hex toward the Fossegrim or roll at Disadvantage on all actions this round.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-12 | 2 | — |
+| 13-15 | 2 | Target must move 1 hex toward Fossegrim at start of their next turn |
+| 16 | 3 | Target must move 1 hex toward Fossegrim + Muddle |
+| 17-18 | 3 | Muddle + Wound |
+| 19 | 3 | Target must move 2 hexes toward Fossegrim + Wound |
+| 20 | 4 | All heroes within 4 hexes must move 1 hex toward Fossegrim + Wound on primary target |
 
 ---
 
-## Glamour Hound — The False Friend (I)
+## Glamour Hound — The False Friend *(I — Standard)*
 
 *"It looks like a hunting dog. It looks like something that might help you."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 5 | 4 | +3 | 3 | Standard |
+**Health:** 5 | **Move:** 4
+**Primary:** ISOLATIONIST | **Secondary:** CLOSEST
 
-- **Primary:** ISOLATIONIST
-- **Secondary:** CLOSEST
+*Setup: Placed on map as an ally token. Revealed when a hero moves adjacent or at Act 2 start.*
 
-**Special — Deceptive Form (PASSIVE):** Placed on the map as an ally token. Revealed as a monster when it activates for the first time or when a hero moves adjacent to it.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-15 | 2 | Wound |
+| 16-17 | 3 | Wound + push 1 hex |
+| 18-19 | 3 | Wound + Muddle |
+| 20 | 4 | Wound + Muddle + re-disguise as ally token until next activation |
 
 ---
 
-## Wisp Swarm — Fragments of Broken Light (I)
+## Wisp Swarm — Fragments of Broken Light *(I — Standard)*
 
 *"Alone they are harmless. Together they are a storm."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 8 | 3 | +2 | 1 | Standard |
+**Health:** 8 | **Move:** 3
+**Primary:** CLOSEST | **Secondary:** PACK HUNTER
 
-- **Primary:** CLOSEST
-- **Secondary:** PACK HUNTER
+*On taking 3+ damage in one hit: Split into two Wisp Swarm tokens at 4 HP each. Each activates independently next round. Combined HP cannot exceed original.*
 
-**Special — Split (ON DAMAGE):** The first time the Wisp Swarm takes 3+ damage in one hit, split into two Wisp Swarm tokens at 4 HP each. Each activates independently. Combined HP cannot exceed original.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 1 | — |
+| 14-16 | 1 | Muddle |
+| 17-18 | 2 | Muddle + Wound |
+| 19 | 2 | Full damage to all heroes within 1 hex |
+| 20 | 3 | Full damage to all heroes within 1 hex + Muddle |
 
 ---
 
-## Nokken — The Water Fiddler (L)
+## Nokken — The Water Fiddler *(L — Elite)*
 
 *"He plays most beautifully when someone is about to drown."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 11 | 3 | +4 | 3 | Elite |
+**Health:** 11 | **Move:** 3
+**Primary:** HEALER HATE | **Secondary:** CLOSEST
 
-- **Primary:** HEALER HATE
-- **Secondary:** CLOSEST
-
-**Special — Drowning Song (ON ACTIVATION):** All heroes within 3 hexes of a water hex must succeed on a D20 roll (8+) or move 1 hex toward the nearest water hex. Heroes already adjacent to water take 1 damage.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-12 | 3 | — |
+| 13-14 | 3 | Muddle |
+| 15-16 | 3 | Muddle + target moves 1 hex toward water |
+| 17-18 | 4 | Wound + Immobilize |
+| 19 | 5 | Wound + Immobilize + target moves 2 hexes toward water |
+| 20 | 6 | Wound + Immobilize + all heroes within 3 hexes of water take 1 damage |
 
 ---
 
-## Corrupted Light Elf — The Fallen Radiant (I)
+## Corrupted Light Elf — The Fallen Radiant *(I — Elite)*
 
 *"Once it shone brighter than the sun. Now it is darkness wearing light's clothes."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 12 | 4 | +4 | 4 | Elite |
+**Health:** 12 | **Move:** 4
+**Primary:** ELITE | **Secondary:** THREAD SEEKER
 
-- **Primary:** ELITE
-- **Secondary:** THREAD SEEKER
-
-**Special — Light Inversion (ON HIT):** Target loses Advantage on their next roll (if they had it) and instead rolls at Disadvantage.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-11 | 3 | — |
+| 12-14 | 3 | Remove Advantage from target's next roll |
+| 15-16 | 4 | Remove Advantage + apply Disadvantage on target's next roll |
+| 17-18 | 4 | Wound + Disadvantage on all target's rolls until next turn |
+| 19 | 5 | Wound + Disadvantage + 1 Exhaustion Token |
+| 20 | 6 | Wound + Disadvantage + 1 Exhaustion Token + remove 1 active Fate Thread |
 
 ---
 
-## Dökkálfr the Unbound — The Great Deceiver (I) ★ BOSS
+## Dökkálfr the Unbound — The Great Deceiver *(I — BOSS)*
 
 *"It wore the face of an ally for three scenarios. You never suspected."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 25 | 4 | +5 | 4 | Boss |
+**Health:** 25 | **Move:** 4
+**Primary:** ELITE | **Secondary:** THREAD SEEKER
 
-- **Primary:** ELITE
-- **Secondary:** THREAD SEEKER
+*Setup: Placed on map as an ally token. Revealed when a hero moves adjacent or at Act 2 start automatically.*
+*Passive: Cannot be targeted by direct attacks unless a hero first spends 1 Fate Token to see through its deceptions.*
 
-**Special — Perfect Disguise (PASSIVE):** Placed on map as an ally token at scenario start. Revealed when any hero moves adjacent, or at Act 2 start automatically.
-
-**Special — Mirror Strike (ON HIT):** Target cannot use Fate Tokens until start of their next turn.
-
-**Boss Threshold:** At 50% and 25% HP — see Scenario Sleeve.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 2 | — |
+| 9-11 | 3 | Target loses 1 Fate Token |
+| 12-14 | 4 | Target cannot use Fate Tokens this round |
+| 15-16 | 5 | Wound + target cannot use Fate Tokens this round |
+| 17-18 | 5 | Wound + remove 1 active Fate Thread from any target |
+| 19 | 6 | Wound + target cannot use Fate Tokens + remove all Fate Threads within 3 hexes |
+| 20 | 7 | Wound + all heroes within 2 hexes cannot use Fate Tokens this round |
 
 ---
 
@@ -622,97 +811,127 @@
 
 ---
 
-## Bog Hag — The Marsh Puller (I)
+## Bog Hag — The Marsh Puller *(I — Standard)*
 
 *"The bog takes everything eventually. She just speeds up the process."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 6 | 3 | +2 | 2 | Standard |
+**Health:** 6 | **Move:** 3
+**Primary:** EXHAUSTION FOCUS | **Secondary:** CLOSEST
 
-- **Primary:** EXHAUSTION FOCUS
-- **Secondary:** CLOSEST
-
-**Special — Mire Pull (ON HIT):** Pull target into an adjacent difficult terrain hex (if one exists). Target gains 1 Exhaustion Token.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-15 | 2 | Pull into adjacent difficult terrain (if any) + 1 Exhaustion Token |
+| 16-17 | 2 | Pull into difficult terrain + 1 Exhaustion Token + Wound |
+| 18-19 | 3 | Immobilize + 1 Exhaustion Token + Wound |
+| 20 | 4 | Immobilize + 2 Exhaustion Tokens + Wound |
 
 ---
 
-## Storm Elk — Sacred Animal Gone Violent (I)
+## Storm Elk — Sacred Animal Gone Violent *(I — Standard)*
 
 *"The gods blessed these creatures once. Whatever broke that blessing left something dangerous."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 7 | 5 | +3 | 3 | Standard |
+**Health:** 7 | **Move:** 5
+**Primary:** CLOSEST | **Secondary:** BLOCKER
 
-- **Primary:** CLOSEST
-- **Secondary:** BLOCKER
+*On Activation: Moves in a straight line — cannot change direction mid-charge. Deals 1 damage to every hero in its path.*
 
-**Special — Charge (ON ACTIVATION):** Moves in a straight line through all hexes between start and target, dealing 1 damage to every hero in its path. Cannot change direction mid-charge.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-12 | 2 | — |
+| 13-15 | 3 | Push target 1 hex in charge direction |
+| 16-17 | 3 | Push 2 hexes + Wound |
+| 18-19 | 4 | Stun + push 1 hex |
+| 20 | 5 | Stun + push 2 hexes + all heroes in charge path take 2 damage |
 
 ---
 
-## Harvest Wraith — Spirit of Famine (I)
+## Harvest Wraith — Spirit of Famine *(I — Standard)*
 
 *"When the harvest fails, something is left behind. It remembers the hunger."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 5 | 3 | +2 | 2 | Standard |
+**Health:** 5 | **Move:** 3
+**Primary:** HEALER HATE | **Secondary:** EXHAUSTION FOCUS
 
-- **Primary:** HEALER HATE
-- **Secondary:** EXHAUSTION FOCUS
-
-**Special — Wither (ON HIT):** Target's healing is reduced by 2 until end of round. Any Health restoration is halved.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-16 | 2 | Wither — target's healing halved until end of round |
+| 17-18 | 2 | Wither + Poison |
+| 19 | 3 | Wither + Poison + Wound |
+| 20 | 3 | Wither + Poison + Wound + 1 Exhaustion Token |
 
 ---
 
-## Rå — The Territory Guardian (LI)
+## Rå — The Territory Guardian *(LI — Elite)*
 
 *"Do not enter her forest. Do not harm her creatures. You already did both."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 12 | 4 | +4 | 4 | Elite |
+**Health:** 12 | **Move:** 4
+**Primary:** CLOSEST | **Secondary:** RANGED PRIORITY
 
-- **Primary:** CLOSEST
-- **Secondary:** RANGED PRIORITY
+*Passive: While any hero is on a Territory hex (defined by Scenario Sleeve), all Rå stats double. Returns to normal when all heroes leave the Territory.*
 
-**Special — Territorial Wrath (THRESHOLD):** While any hero is on a designated Territory hex (defined by Scenario Sleeve), the Rå's stats double. When all heroes leave the Territory, stats return to normal.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-12 | 3 | — |
+| 13-14 | 4 | Wound |
+| 15-16 | 4 | Wound + push toward Territory hex |
+| 17-18 | 5 | Wound + Immobilize |
+| 19 | 5 | Wound + Immobilize + push toward Territory hex |
+| 20 | 6 | Wound + Immobilize + push toward Territory hex + 1 Exhaustion Token |
 
 ---
 
-## Wild Boar Spirit — Gullinbursti's Echo (I)
+## Wild Boar Spirit — Gullinbursti's Echo *(I — Elite)*
 
 *"Freyr's golden boar was a wonder of the forge. This is what remains when the gold is gone."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 13 | 5 | +4 | 5 | Elite |
+**Health:** 13 | **Move:** 5
+**Primary:** CLOSEST | **Secondary:** BLOCKER
 
-- **Primary:** CLOSEST
-- **Secondary:** BLOCKER
+*Passive: Cannot be pushed, pulled, or repositioned by any hero ability. Immune to Immobilize.*
 
-**Special — Unstoppable (PASSIVE):** Cannot be pushed, pulled, or repositioned by any hero ability. Immune to Immobilize.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 2 | — |
+| 9-12 | 4 | — |
+| 13-15 | 4 | Wound |
+| 16-17 | 5 | Wound + push 2 hexes |
+| 18-19 | 6 | Stun |
+| 20 | 7 | Stun + all adjacent heroes take 3 damage |
 
 ---
 
-## Jörð's Wrath — The Living Earth (I) ★ BOSS
+## Jörð's Wrath — The Living Earth *(I — BOSS)*
 
 *"Jörð is Thor's mother. The earth herself. She is patient. She is not patient anymore."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 30 | 3 | +5 | 5 | Boss |
+**Health:** 30 | **Move:** 3
+**Primary:** CLOSEST | **Secondary:** BLOCKER
 
-- **Primary:** CLOSEST
-- **Secondary:** BLOCKER
+*Passive: Cannot be pushed or repositioned. All incoming damage capped at 3 per hit (absorbs the blow).*
 
-**Special — Terrain Shift (ON ACTIVATION):** Flip one terrain token within 4 hexes — normal becomes difficult, difficult becomes obstacle. The battlefield itself fights back.
-
-**Special — Rooted (PASSIVE):** Cannot be pushed or repositioned. When it takes 5+ damage in one hit, it instead takes only 3 (damage cap per hit).
-
-**Boss Threshold:** At 50% and 25% HP — see Scenario Sleeve.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 2 | — |
+| 9-11 | 4 | — |
+| 12-13 | 5 | Flip nearest terrain token (normal↔difficult) |
+| 14-15 | 5 | Wound + flip nearest terrain token |
+| 16-17 | 6 | Wound + Immobilize + flip 2 terrain tokens |
+| 18-19 | 7 | Wound + Immobilize + flip all terrain tokens within 3 hexes |
+| 20 | 8 | Stun + flip all terrain tokens within 3 hexes |
 
 ---
 
@@ -721,106 +940,139 @@
 
 ---
 
-## Bifröst Stalker — Bridge-Thing (I)
+## Bifröst Stalker — Bridge-Thing *(I — Standard)*
 
 *"Something slipped through the rainbow bridge. Heimdall did not notice. That is the most frightening part."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 5 | 4 | +2 | 2 | Standard |
+**Health:** 5 | **Move:** 4
+**Primary:** RANGED PRIORITY | **Secondary:** CLOSEST
 
-- **Primary:** RANGED PRIORITY
-- **Secondary:** CLOSEST
+*On Activation: May teleport to any unoccupied hex within 4 hexes instead of moving normally.*
 
-**Special — Dimensional Step (ON ACTIVATION):** May teleport to any unoccupied hex within 4 hexes instead of moving normally.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 2 | — |
+| 14-15 | 2 | Wound |
+| 16-17 | 2 | Wound + teleport target 2 hexes in any direction |
+| 18-19 | 3 | Wound + teleport target to any non-adjacent hex within 4 hexes |
+| 20 | 4 | Wound + teleport target + Immobilize at new location |
 
 ---
 
-## Odin's Exile — The Unworthy (I)
+## Odin's Exile — The Unworthy *(I — Standard)*
 
 *"Odin cast him out for reasons he has forgotten. The madness filled the space where the reasons were."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 6 | 3 | +3 | 3 | Standard |
+**Health:** 6 | **Move:** 3
+**Primary:** CLOSEST | **Secondary:** —
 
-- **Primary:** CLOSEST
-- **Secondary:** —
+*On Activation: Roll D6. On 1-3, attack closest hero. On 4-6, attack a random hero instead.*
 
-**Special — Erratic (ON ACTIVATION):** Roll D6. On 1-3, target the closest hero as normal. On 4-6, target a random hero (re-roll if same as current). The Exile's madness makes it unpredictable.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-12 | 2 | — |
+| 13-15 | 3 | Muddle |
+| 16-17 | 3 | Muddle + Wound |
+| 18 | 4 | Stun + Muddle |
+| 19 | 4 | Stun + Muddle + Wound |
+| 20 | 5 | Stun + all heroes within 1 hex take 2 damage |
 
 ---
 
-## Raven Construct — Huginn or Muninn's Echo (I)
+## Raven Construct — Huginn or Muninn's Echo *(I — Standard)*
 
 *"Odin's ravens remember everything. This one remembers things it should not."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 4 | 5 | +2 | 1 | Standard |
+**Health:** 4 | **Move:** 5
+**Primary:** ELITE | **Secondary:** CLOSEST
 
-- **Primary:** ELITE
-- **Secondary:** CLOSEST
-
-**Special — All-Seeing (ON ACTIVATION):** All other monsters this round ignore Invisible — the Raven Construct shares what it sees with the entire battlefield.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-9 | 1 | — |
+| 10-13 | 1 | All monsters this round ignore Invisible condition |
+| 14-15 | 1 | All monsters ignore Invisible + gain +1 to next attack roll |
+| 16-17 | 2 | All monsters ignore Invisible + gain +1 attack roll + Wound |
+| 18-19 | 2 | All monsters gain +2 to attack rolls this round + Wound |
+| 20 | 3 | All monsters gain +2 attack + ignore Invisible + Wound |
 
 ---
 
-## Fallen Einherjar — The Corrupted Chosen (I)
+## Fallen Einherjar — The Corrupted Chosen *(I — Elite)*
 
 *"Odin chose him. Something unchoose him. He is still fighting — just for the wrong side."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 13 | 3 | +4 | 4 | Elite |
+**Health:** 13 | **Move:** 3
+**Primary:** BLOCKER | **Secondary:** WEAKEST
 
-- **Primary:** BLOCKER
-- **Secondary:** WEAKEST
+*Passive: Reduce incoming damage by 1. If the Fallen Einherjar has not moved this round, reduce by 2 instead.*
 
-**Special — Shield Wall Echo (PASSIVE):** Reduce incoming damage by 1. If the Fallen Einherjar has not moved this round, reduce by 2 instead (mirroring the Einherjar class Hold Ground mechanic as a threat).
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-12 | 3 | — |
+| 13-14 | 4 | Fallen Einherjar gains Shield 1 |
+| 15-16 | 4 | Immobilize + Shield 1 |
+| 17-18 | 5 | Immobilize + Shield 2 + push 1 hex |
+| 19 | 6 | Immobilize + Shield 2 + push 2 hexes |
+| 20 | 7 | Immobilize + Shield 2 + push 2 hexes + Wound |
 
 ---
 
-## Valkyrie Shade — The Refuser (I)
+## Valkyrie Shade — The Refuser *(I — Elite)*
 
 *"She was a Valkyrie who refused her orders. She still chooses the slain. Her choices are her own now."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 12 | 5 | +4 | 4 | Elite |
+**Health:** 12 | **Move:** 5
+**Primary:** ELITE | **Secondary:** WEAKEST
 
-- **Primary:** ELITE
-- **Secondary:** WEAKEST
-
-**Special — Drag to Hel (ON HIT):** If target is already at half Health or below, they are Immobilized and cannot be targeted by ally healing abilities until start of their next turn. The Shade has marked them for death.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 1 | — |
+| 9-12 | 3 | — |
+| 13-15 | 4 | Wound |
+| 16-17 | 4 | Wound + target cannot be healed until start of their next turn |
+| 18-19 | 5 | Immobilize + target cannot be healed until their next turn |
+| 20 | 6 | Immobilize + Wound + target cannot be healed this Act (Marked for Death) |
 
 ---
 
-## Loki's Shade — The Escaped Fragment (I) ★ BOSS
+## Loki's Shade — The Escaped Fragment *(I — BOSS)*
 
 *"Loki is bound beneath the mountains. Most of him. This piece slipped free when the chains weakened."*
 
-| Health | Move | Attack | Damage | Tier |
-|---|---|---|---|---|
-| 28 | 4 | +5 | 4 | Boss |
+**Health:** 28 | **Move:** 4
+**Primary:** ELITE | **Secondary:** THREAD SEEKER
 
-- **Primary:** ELITE
-- **Secondary:** THREAD SEEKER
+*Passive (Trickster Form): Cannot be targeted by direct attacks unless a hero first spends 1 Fate Token to see through the Shade's deceptions. Otherwise all attacks miss automatically.*
 
-**Special — Trickster Form (PASSIVE):** Cannot be targeted by direct attacks unless a hero first spends 1 Fate Token to "see through" the Shade's deceptions. Otherwise all attacks against it miss automatically.
-
-**Special — Redirect (ON DAMAGE):** When Loki's Shade takes damage, roll D6. On 4-6, redirect half that damage to a random adjacent hero.
-
-**Boss Threshold:** At 50% and 25% HP — see Scenario Sleeve.
+| Roll | Damage | Effect |
+|---|---|---|
+| 1-5 | — | Miss |
+| 6-8 | 2 | — |
+| 9-11 | 3 | — |
+| 12-14 | 4 | Redirect 1 damage to random adjacent hero |
+| 15-16 | 5 | Wound + redirect 2 damage to random adjacent hero |
+| 17-18 | 5 | Wound + Muddle + redirect half total damage to adjacent hero |
+| 19 | 6 | Wound + Muddle + redirect all damage to adjacent hero (Loki takes none) |
+| 20 | 7 | Wound + Stun + half damage redirected to ALL heroes within 2 hexes |
 
 ---
 
 ## Compendium Notes
 
-> ⚠️ **Phase 3 open items:**
-> - All stat values are first iteration estimates — validated in Phase 6
-> - Fáfnir has two Special Abilities (the only non-boss monster with two) — confirm this is justified in playtesting
-> - Soul Husk's respawn mechanic needs Scenario Sleeve to define Cleansed hex locations
-> - Glamour Hound's ally token placement needs a setup rule (who places it, when)
-> - Wisp Swarm split mechanic needs a ruling on whether split tokens each get a full activation this round or wait until next round (recommended: wait until next round)
-> - Loki's Shade's "Trickster Form" is the most complex passive in the compendium — monitor for feel in Phase 6
+> ⚠️ **Open items for Phase 6 playtesting:**
+> - Fáfnir and Fallen Einherjar have permanent passives on the card — confirm card space is sufficient in Phase 7
+> - Soul Husk respawn requires Cleansed hex definition on Scenario Sleeve
+> - Glamour Hound and Dökkálfr the Unbound alias token placement needs setup rule in scenario design guidelines
+> - Wisp Swarm split timing: split tokens activate the following round (not the round they split)
+> - Loki's Shade Trickster Form is the most mechanically complex passive — monitor for feel and speed in Phase 6
+> - Hrimfaxi's Shadow damage boost when target has no Fate Tokens needs careful monitoring — could trivialise low-Fate heroes
+> - Níðhöggr's "Cannot Be Defeated" passive needs clear physical indicator on the card (suggested: red border or stamp)
+> - Garmr's threshold stat boost needs tracking — suggest using small tokens on card to mark active boosts
