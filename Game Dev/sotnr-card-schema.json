@@ -1,0 +1,1136 @@
+{
+  "_schema": "sotnr-card-generator-v1",
+  "_note": "Each top-level key maps to a card type or game entity. Card generator templates select a type and render the fields within it. All id fields are kebab-case strings used for cross-referencing.",
+
+  "classes": [
+    {
+      "id": "einherjar",
+      "name": "Einherjar",
+      "loreQuote": "Stand firm, shield-brothers! The Einherjar do not yield!",
+      "role": "Tank/Defender",
+      "health": 14,
+      "speed": 3,
+      "poolSize": { "start": 8, "max": 16 },
+      "handSize": 6,
+      "classMechanic": {
+        "name": "Hold Ground",
+        "description": "Gain Hold Ground tokens by staying in place. Lose all tokens on voluntary movement. More tokens = more power. Token states: 0 = Unrooted, 1 = Planted, 2 = Rooted, 3 = Immovable.",
+        "tokenName": "Hold Ground tokens",
+        "maxTokens": 3,
+        "states": [
+          { "count": 0, "label": "Unrooted" },
+          { "count": 1, "label": "Planted" },
+          { "count": 2, "label": "Rooted" },
+          { "count": 3, "label": "Immovable" }
+        ]
+      },
+      "signature": {
+        "name": "Skjaldborg",
+        "flavour": "Shield Wall",
+        "base": "Once per turn, extend shield to one adjacent ally. That ally gains Shield 1 until start of Einherjar's next turn. Requires Planted (1+ tokens).",
+        "level4": "Shield extension now covers all adjacent allies simultaneously.",
+        "level8": "While Immovable (3 tokens), adjacent allies cannot be forcibly moved by any monster ability."
+      },
+      "diceTable": [
+        { "roll": "1-3",   "name": "Glancing Blow", "effect": "Deal 1 damage AND gain 1 Hold Ground token." },
+        { "roll": "4-6",   "name": "Weak Hit",       "effect": "Half damage, no bonus." },
+        { "roll": "7-14",  "name": "Standard Hit",   "effect": "Full damage + Shield 1 until start of next turn." },
+        { "roll": "15-19", "name": "Strong Hit",     "effect": "Full damage + push target 1 hex away + Shield 1." },
+        { "roll": "20",    "name": "Critical Blow",  "effect": "Double damage, push 2 hexes, Shield 2 until next turn, gain 1 Fate Token." }
+      ]
+    },
+    {
+      "id": "valkyrie",
+      "name": "Valkyrie",
+      "loreQuote": "I choose the slain. I guide the worthy. I am the spear of judgment.",
+      "role": "Damage/Mobility",
+      "health": 10,
+      "speed": 5,
+      "poolSize": { "start": 8, "max": 16 },
+      "handSize": 4,
+      "classMechanic": {
+        "name": "Verdict",
+        "description": "One enemy at a time is Verdicted. Verdict Tokens track battle momentum. Verdicted enemies are prime targets for bonus damage and special effects.",
+        "tokenName": "Verdict tokens",
+        "maxTokens": null,
+        "states": null
+      },
+      "signature": {
+        "name": "Wings of War",
+        "flavour": "Wings of War",
+        "base": "Once per Act (not per turn), teleport to any hex within 4 hexes. If you land adjacent to the Verdicted enemy, deal 2 damage immediately. No attack roll.",
+        "level4": "Wings of War range increases to 6 hexes. Landing adjacent to any Verdicted or Condemned enemy triggers the damage.",
+        "level8": "Wings of War can now be used twice per Act. Second use deals 3 damage instead of 2 on landing."
+      },
+      "diceTable": [
+        { "roll": "1-3",   "name": "Glancing Blow", "effect": "Deal 1 damage AND move 1 hex in any direction." },
+        { "roll": "4-6",   "name": "Weak Hit",       "effect": "Half damage, no bonus." },
+        { "roll": "7-14",  "name": "Standard Hit",   "effect": "Full damage, normal effects." },
+        { "roll": "15-19", "name": "Strong Hit",     "effect": "Full damage + move 2 hexes OR teleport adjacent to any ally. Gain 1 Fate Token." },
+        { "roll": "20",    "name": "Critical Blow",  "effect": "Triple damage, move 3 hexes, immediately attack again (new roll). Gain 2 Fate Tokens." }
+      ]
+    },
+    {
+      "id": "nidstang",
+      "name": "Nidstang",
+      "loreQuote": "Your name is cursed. Your deeds are ash. The Níðstǫng stands, and you are nothing.",
+      "role": "Debuff/Control/DoT",
+      "health": 8,
+      "speed": 4,
+      "poolSize": { "start": 8, "max": 16 },
+      "handSize": 5,
+      "classMechanic": {
+        "name": "Curse Tokens",
+        "description": "Place Curse Tokens on Monster Cards (max 3 per enemy). Each token degrades the monster's dice table results. Remove on monster defeat.",
+        "tokenName": "Curse tokens",
+        "maxTokens": 3,
+        "states": [
+          { "count": 1, "label": "Nídingr — Shamed" },
+          { "count": 2, "label": "Útlagi — Outlaw" },
+          { "count": 3, "label": "Níðingr Full — Accursed" }
+        ]
+      },
+      "signature": {
+        "name": "Nídstǫng Pole",
+        "flavour": "Curse Pole",
+        "base": "Once per Act: erect a Curse Pole on any hex within 3 hexes. While the Pole stands, all enemies within 2 hexes of it start each Monster Phase with 1 Curse Token already applied. The Pole lasts until the Nidstang moves more than 5 hexes from it or the Act ends.",
+        "level4": "The Pole's aura extends to 3 hexes. Enemies entering the aura mid-round gain 1 Curse Token immediately.",
+        "level8": "The Pole now persists across Act transitions (until destroyed). Enemies ending their activation within the aura cannot spend or remove Curse Tokens."
+      },
+      "diceTable": [
+        { "roll": "1-3",   "name": "Cursed Whisper", "effect": "Deal 1 damage. Place 1 Curse Token on target regardless of hit strength." },
+        { "roll": "4-6",   "name": "Weak Hit",        "effect": "Half damage. Target receives Wound condition." },
+        { "roll": "7-14",  "name": "Standard Hit",    "effect": "Full damage. Place 1 Curse Token on target." },
+        { "roll": "15-19", "name": "Strong Hit",      "effect": "Full damage + place 2 Curse Tokens on target + Poison condition." },
+        { "roll": "20",    "name": "Critical Blow",   "effect": "Double damage. Place 3 Curse Tokens on target. Target is Stunned until their next activation. Gain 1 Fate Token." }
+      ]
+    },
+    {
+      "id": "seidr",
+      "name": "Seiðr",
+      "loreQuote": "The threads of fate are mine to weave… and to sever.",
+      "role": "Support/Fate Manipulation",
+      "health": 8,
+      "speed": 3,
+      "poolSize": { "start": 8, "max": 16 },
+      "handSize": 5,
+      "classMechanic": {
+        "name": "Fate Threads",
+        "description": "Weave Fate Threads onto allies (Protection) or enemies (Doom) or the board state (Reversal). Each thread type triggers different effects when activated.",
+        "tokenName": "Fate Thread tokens",
+        "maxTokens": null,
+        "states": [
+          { "count": null, "label": "Protection — ally gains benefit" },
+          { "count": null, "label": "Doom — enemy suffers penalty" },
+          { "count": null, "label": "Reversal — flip a dice result" }
+        ]
+      },
+      "signature": {
+        "name": "Völva's Trance",
+        "flavour": "Seer's Vision",
+        "base": "Once per scenario: the Seiðr enters a trance until end of their next turn. During the trance, peek at the top 3 cards of the Saga Event deck and reorder them however you choose. Gain 2 Fate Tokens on return.",
+        "level4": "Trance now lets you peek at the full Saga Event deck. You may remove one card from the deck entirely this scenario (set aside face-down).",
+        "level8": "Trance can now be used twice per scenario. The second use also lets any one ally immediately remove all Exhaustion Tokens."
+      },
+      "diceTable": [
+        { "roll": "1-3",   "name": "Glancing Touch", "effect": "Deal 1 damage OR heal 1 Health on one ally within 2 hexes." },
+        { "roll": "4-6",   "name": "Weak Hit",        "effect": "Half damage or half heal (round down), no bonus." },
+        { "roll": "7-14",  "name": "Standard Hit",    "effect": "Full damage or full heal. Place 1 Protection or Doom thread (your choice)." },
+        { "roll": "15-19", "name": "Strong Hit",      "effect": "Full effect + grant one ally Advantage on their next roll. Gain 1 Fate Token." },
+        { "roll": "20",    "name": "Critical Blow",   "effect": "Double effect, all allies within 3 hexes gain +1 on their next roll. Gain 2 Fate Tokens." }
+      ]
+    },
+    {
+      "id": "ulfhednar",
+      "name": "Ulfhednar",
+      "loreQuote": "The wolf does not pity the lamb. I am the wolf.",
+      "role": "Risk/Reward Damage",
+      "health": 12,
+      "speed_human": 4,
+      "speed_wolf": 6,
+      "poolSize": { "start": 6, "max": 10 },
+      "handSize": 6,
+      "classMechanic": {
+        "name": "Two-State System",
+        "description": "Human state: measured, tactical. Wolf state: powerful but restricted — cannot use Bottom actions, no card selection at Act transitions. Switch with Rage Tokens. Wolf state forces specific AI-like behaviour.",
+        "tokenName": "Rage tokens",
+        "maxTokens": null,
+        "states": [
+          { "count": null, "label": "Human — full card access, Speed 4" },
+          { "count": null, "label": "Wolf — Top actions only, Speed 6, bonus damage" }
+        ]
+      },
+      "signature": {
+        "name": "Odin's Wolf",
+        "flavour": "Beast Unleashed",
+        "base": "Shift into Wolf state as a free action at the start of your turn (no card play needed). While in Wolf state, all TOP actions deal +2 damage. Cannot voluntarily return to Human state until Act transition.",
+        "level4": "Wolf state now grants immunity to Stun and Immobilize. Gain 1 Rage Token each time you deal damage while in Wolf state.",
+        "level8": "While in Wolf state with 3+ Rage Tokens, your attacks ignore Shield tokens and Armour effects. Rage Tokens carry across Act transitions (do not reset)."
+      },
+      "diceTable": [
+        { "roll": "1-3",   "name": "Glancing Fang",  "effect": "Deal 1 damage. If in Wolf state, gain 1 Rage Token." },
+        { "roll": "4-6",   "name": "Weak Bite",       "effect": "Half damage. If in Wolf state, push target 1 hex." },
+        { "roll": "7-14",  "name": "Standard Hit",    "effect": "Full damage. If in Wolf state, deal +1 bonus damage." },
+        { "roll": "15-19", "name": "Strong Hit",      "effect": "Full damage + Wound condition. If in Wolf state, deal +2 bonus damage + 1 Rage Token." },
+        { "roll": "20",    "name": "Savage Rend",     "effect": "Double damage, Wound + Poison. If in Wolf state, triple damage instead. Gain 2 Fate Tokens." }
+      ]
+    },
+    {
+      "id": "skald",
+      "name": "Skald",
+      "loreQuote": "I sing of victory before it happens. My words make it true.",
+      "role": "Inspire/Amplify",
+      "health": 9,
+      "speed": 4,
+      "poolSize": { "start": 8, "max": 16 },
+      "handSize": 4,
+      "classMechanic": {
+        "name": "Song Track",
+        "description": "A slider (1-5) on the Character Board. Advances when allies succeed. Powers Skald abilities — higher track = more powerful effects. Decays if the Skald fails to perform.",
+        "tokenName": null,
+        "maxTokens": null,
+        "states": [
+          { "count": 1, "label": "Murmur — baseline" },
+          { "count": 2, "label": "Verse — mild bonus" },
+          { "count": 3, "label": "Chorus — notable bonus" },
+          { "count": 4, "label": "Saga — strong bonus" },
+          { "count": 5, "label": "Legend — maximum power" }
+        ]
+      },
+      "signature": {
+        "name": "Saga of Heroes",
+        "flavour": "The Living Song",
+        "base": "Once per Act: declare a Saga Moment. Choose one ally within Song Range (4 hexes). Until the end of the Act, that ally's Strong Hits (15-19) trigger the Song Track to advance by 1 as a bonus. The Skald does not need to be in range when this triggers.",
+        "level4": "Saga Moment can now be declared on two allies simultaneously. Both allies benefit. Song Track advances for either qualifying.",
+        "level8": "When the Song Track reaches 5 during a Saga Moment, all allies within Song Range immediately gain 2 Fate Tokens and remove 2 Exhaustion Tokens. Song Track resets to 3."
+      },
+      "diceTable": [
+        { "roll": "1-3",   "name": "Off-Key",        "effect": "Deal 1 damage. Song Track -1 (minimum 1)." },
+        { "roll": "4-6",   "name": "Weak Verse",     "effect": "Half damage. No Song Track change." },
+        { "roll": "7-14",  "name": "Standard Hit",   "effect": "Full damage. If Song Track is 3+, one ally within Song Range removes 1 Exhaustion Token." },
+        { "roll": "15-19", "name": "Inspiring Blow", "effect": "Full damage + Song Track +1 + one ally within Song Range gains Advantage on next attack." },
+        { "roll": "20",    "name": "Legendary Blow", "effect": "Double damage. Song Track advances to maximum (5). All allies in Song Range gain 1 Fate Token." }
+      ]
+    }
+  ],
+
+  "abilityCards": [
+    {
+      "id": "einherjar_card_01",
+      "classId": "einherjar",
+      "name": "Plant Your Feet",
+      "initiative": 1,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Gain 2 Hold Ground tokens immediately.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Move up to 2 hexes.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": "Lowest initiative — the Einherjar always goes last, and is always exactly where they need to be."
+    },
+    {
+      "id": "einherjar_card_02",
+      "classId": "einherjar",
+      "name": "Shield Slam",
+      "initiative": 4,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Attack one adjacent enemy. On any hit, enemy is Stunned until their next activation.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Move up to 2 hexes and position between an ally and nearest enemy (lose all Hold Ground tokens).",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "einherjar_card_03",
+      "classId": "einherjar",
+      "name": "Hold the Line",
+      "initiative": 3,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Until start of next turn, the first attack against any adjacent ally is redirected to the Einherjar instead.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Remove 2 Exhaustion Tokens from any adjacent ally.",
+        "xpIcon": false,
+        "lootIcon": true,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "einherjar_card_04",
+      "classId": "einherjar",
+      "name": "Valhalla Calls",
+      "initiative": 6,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Attack one enemy within 2 hexes. If Rooted or Immovable (2-3 tokens), deal +3 additional damage.",
+        "xpIcon": false,
+        "lootIcon": true,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Gain Immovable status until end of turn — cannot be forcibly moved by any monster ability this round.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "einherjar_card_05",
+      "classId": "einherjar",
+      "name": "Brace",
+      "initiative": 2,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Gain 3 Hold Ground tokens AND Shield 3 this round — pure defensive commitment.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Grant Shield 1 to all adjacent allies until start of your next turn.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "einherjar_card_06",
+      "classId": "einherjar",
+      "name": "Shield Bash",
+      "initiative": 5,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Attack one adjacent enemy — push them 2 hexes away.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Move up to 3 hexes without losing Hold Ground tokens this turn.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": "Shield Bash BOTTOM is the exception — the only card that allows movement without penalty."
+    },
+    {
+      "id": "einherjar_card_07",
+      "classId": "einherjar",
+      "name": "Óðinn's Chosen",
+      "initiative": 3,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Reactive — when an ally would be Incapacitated this round, immediately move to their hex and take the triggering hit instead.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Gain 1 Hold Ground token AND remove 1 Exhaustion Token from yourself.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "einherjar_card_08",
+      "classId": "einherjar",
+      "name": "Defy the Giant",
+      "initiative": 7,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Deal damage equal to 2× the number of Hold Ground tokens currently held (minimum 2). No attack roll needed.",
+        "xpIcon": false,
+        "lootIcon": true,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "All enemies adjacent to you must make a move action away from you — they cannot attack this Monster Phase activation.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": "High initiative — powerful Rest card (removes 7 Exhaustion)."
+    },
+
+    {
+      "id": "valkyrie_card_01",
+      "classId": "valkyrie",
+      "name": "Spear of Judgment",
+      "initiative": 2,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Attack one enemy within 3 hexes. If Verdicted, this attack ignores Shield tokens.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Designate any enemy within 4 hexes as Verdicted.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "valkyrie_card_02",
+      "classId": "valkyrie",
+      "name": "Ride Between Worlds",
+      "initiative": 4,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Move up to 5 hexes, then attack one adjacent enemy. This movement does not trigger monster attacks of opportunity.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Teleport to any hex within 3 hexes. Gain 1 Verdict Token if you land adjacent to the Verdicted enemy.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "valkyrie_card_03",
+      "classId": "valkyrie",
+      "name": "The Choosing",
+      "initiative": 3,
+      "unlockLevel": 1,
+      "top": {
+        "action": "All enemies adjacent to you must move 1 hex away — the Valkyrie's presence is overwhelming.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Designate a Verdicted enemy as Condemned — next attack against them by anyone deals +3 damage, then Condemned is removed.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "valkyrie_card_04",
+      "classId": "valkyrie",
+      "name": "Winged Strike",
+      "initiative": 6,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Attack one enemy. If you moved at least 3 hexes this turn before attacking, deal +2 damage.",
+        "xpIcon": false,
+        "lootIcon": true,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Move up to 3 hexes. If you pass within 1 hex of the Verdicted enemy, deal 1 damage to them automatically.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "valkyrie_card_05",
+      "classId": "valkyrie",
+      "name": "Valkyrjur's Call",
+      "initiative": 1,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Any ally within 3 hexes may immediately make one attack as a free action.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Gain 2 Verdict Tokens immediately.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": "Lowest initiative in the class. The TOP bonus ally attack gives the team an extra action at round start."
+    },
+    {
+      "id": "valkyrie_card_06",
+      "classId": "valkyrie",
+      "name": "Swift Execution",
+      "initiative": 7,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Attack one enemy. If this kills them, immediately make one bonus attack against any enemy within 2 hexes (one attack roll only — cannot chain).",
+        "xpIcon": false,
+        "lootIcon": true,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Move up to 4 hexes. Each enemy within 1 hex of your path suffers 1 damage.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "valkyrie_card_07",
+      "classId": "valkyrie",
+      "name": "Battlefield Vision",
+      "initiative": 5,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Peek at the Scenario Sleeve's next unrevealed Act zone — read it silently, replace exactly as found, then share one thing you observed with the party.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Remove the current Verdict — gain 1 Verdict Token and 1 Fate Token.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": "TOP is the class's unique non-combat action. Genuine information advantage."
+    },
+    {
+      "id": "valkyrie_card_08",
+      "classId": "valkyrie",
+      "name": "Into Valhalla",
+      "initiative": 9,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Attack the Verdicted enemy. If this kills them, each ally within 3 hexes immediately removes 2 Exhaustion Tokens.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Move up to 6 hexes. You may end this movement in a hex occupied by a monster — the monster is pushed 1 hex away.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": "Highest initiative — powerful Rest card (removes 9 Exhaustion)."
+    },
+
+    {
+      "id": "skald_card_01",
+      "classId": "skald",
+      "name": "Open the Saga",
+      "initiative": 2,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Choose one ally within Song Range (4 hexes). Until their next turn, their Strong Hits (15-19) deal +2 bonus damage. Song Track +1 if any ally uses this bonus.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Move up to 3 hexes.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "skald_card_02",
+      "classId": "skald",
+      "name": "Verse of Valor",
+      "initiative": 4,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Choose one ally within Song Range. When that ally makes a Strong Hit (15-19) this round, they also gain 1 Fate Token.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Attack one adjacent enemy. On hit, the next ally to attack this monster gains Advantage.",
+        "xpIcon": false,
+        "lootIcon": true,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "skald_card_03",
+      "classId": "skald",
+      "name": "Skaldic Taunt",
+      "initiative": 5,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Taunt one enemy within 4 hexes — that enemy uses CLOSEST targeting with the Skald as target this round (overriding normal AI).",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Move up to 2 hexes. All allies within Song Range remove 1 Exhaustion Token.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": "Taunt draws fire onto the Skald — protecting allies by making herself the target."
+    },
+    {
+      "id": "skald_card_04",
+      "classId": "skald",
+      "name": "War Cry",
+      "initiative": 1,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Reactive — when any ally within Song Range achieves a Critical Hit (20) this round, immediately declare War Cry: all other allies within Song Range gain Advantage on their next attack. Song Track +1.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": true
+      },
+      "bottom": {
+        "action": "Attack one enemy. If Song Track is 3+, deal bonus damage equal to Song Track value.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": "[SPECIAL] TOP can trigger mid-round separate from normal turn structure."
+    },
+    {
+      "id": "skald_card_05",
+      "classId": "skald",
+      "name": "Immortalise the Deed",
+      "initiative": 7,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Choose one ally who achieved a Strong or Critical Hit this round — that ally gains 2 XP immediately. Song Track +2.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Skald and one adjacent ally swap positions. Neither loses tokens or conditions.",
+        "xpIcon": false,
+        "lootIcon": true,
+        "isSpecial": false
+      },
+      "designNote": "The XP grant is the most thematically authentic card in the game."
+    },
+    {
+      "id": "skald_card_06",
+      "classId": "skald",
+      "name": "Mead of Poetry",
+      "initiative": 3,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Choose one ally within Song Range. That ally may swap one currently selected card for any from their pool.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Remove all Exhaustion from one ally within Song Range. Song Track -1.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "skald_card_07",
+      "classId": "skald",
+      "name": "Dirge",
+      "initiative": 6,
+      "unlockLevel": 1,
+      "top": {
+        "action": "Choose one enemy. Until end of Act, that enemy rolls at Disadvantage when targeting any ally.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Gain 1 Fate Token for each ally within Song Range who made a Strong or Critical Hit this round.",
+        "xpIcon": false,
+        "lootIcon": true,
+        "isSpecial": false
+      },
+      "designNote": null
+    },
+    {
+      "id": "skald_card_08",
+      "classId": "skald",
+      "name": "The Last Verse",
+      "initiative": 9,
+      "unlockLevel": 1,
+      "top": {
+        "action": "If any hero became Incapacitated this round, they immediately return to play with 2 Health and 1 Fate Token. Cannot be used if Act transition hand reset was suppressed.",
+        "xpIcon": true,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "bottom": {
+        "action": "Move up to 4 hexes. Song Track advances to 3 regardless of current value.",
+        "xpIcon": false,
+        "lootIcon": false,
+        "isSpecial": false
+      },
+      "designNote": "Highest initiative — powerful Rest card (removes 9 Exhaustion)."
+    }
+  ],
+
+  "monsters": [
+    {
+      "id": "draugr",
+      "name": "Draugr",
+      "lore": "The dead walk when dishonored. The Draugr remembers life… and hates the living for it.",
+      "realm": "midgard",
+      "tier": "standard",
+      "health": 6,
+      "move": 3,
+      "attackModifier": 2,
+      "damage": 2,
+      "primaryKeyword": "CLOSEST",
+      "secondaryKeyword": "EXHAUSTION_FOCUS",
+      "passives": [
+        {
+          "name": "Undying Grudge",
+          "effect": "When a Draugr is defeated, place 1 Exhaustion Token on the hero who dealt the killing blow."
+        }
+      ],
+      "specialAbility": {
+        "name": "Grave Chill",
+        "effect": "On a Strong Hit or Critical, the target hero loses 1 Fate Token (discarded to the pool). If the hero has no Fate Tokens, they gain 1 Exhaustion Token instead."
+      },
+      "diceTable": [
+        { "roll": "1-5",   "name": "Miss",          "effect": "The Draugr's blow goes wide. No effect." },
+        { "roll": "6-10",  "name": "Weak Hit",       "effect": "1 damage." },
+        { "roll": "11-16", "name": "Standard Hit",   "effect": "2 damage. Target gains 1 Exhaustion Token." },
+        { "roll": "17-19", "name": "Strong Hit",     "effect": "3 damage. Grave Chill triggers — target loses 1 Fate Token." },
+        { "roll": "20",    "name": "Critical",       "effect": "4 damage. Grave Chill triggers. Target is also Wounded." }
+      ]
+    },
+    {
+      "id": "huldra",
+      "name": "Huldra",
+      "lore": "Beautiful as spring, hollow as a rotting log. Do not follow her into the woods.",
+      "realm": "midgard",
+      "tier": "standard",
+      "health": 7,
+      "move": 4,
+      "attackModifier": 3,
+      "damage": 2,
+      "primaryKeyword": "ISOLATIONIST",
+      "secondaryKeyword": "WEAKEST",
+      "passives": [
+        {
+          "name": "Hollow Form",
+          "effect": "The Huldra cannot be targeted by abilities that require line-of-sight from behind (the hollow back cannot be exploited — she always faces you)."
+        }
+      ],
+      "specialAbility": {
+        "name": "Lure",
+        "effect": "On a Standard Hit or better, the target hero must spend 1 Fate Token or move 1 hex toward the Huldra at the end of their next turn (compelled movement, ignores own movement rules)."
+      },
+      "diceTable": [
+        { "roll": "1-5",   "name": "Miss",          "effect": "No effect." },
+        { "roll": "6-10",  "name": "Weak Hit",       "effect": "2 damage." },
+        { "roll": "11-16", "name": "Standard Hit",   "effect": "2 damage. Lure triggers." },
+        { "roll": "17-19", "name": "Strong Hit",     "effect": "3 damage. Lure triggers. Target also gains Muddle condition." },
+        { "roll": "20",    "name": "Critical",       "effect": "4 damage. Lure triggers. Target is Muddled and Immobilized until their next turn." }
+      ]
+    },
+    {
+      "id": "nokken",
+      "name": "Nøkken",
+      "lore": "He plays most beautifully when someone is about to drown.",
+      "realm": "midgard",
+      "tier": "elite",
+      "health": 12,
+      "move": 3,
+      "attackModifier": 3,
+      "damage": 3,
+      "primaryKeyword": "SONG_FOCUS",
+      "secondaryKeyword": "WEAKEST",
+      "passives": [
+        {
+          "name": "Enchanted Melody",
+          "effect": "At the start of each Monster Phase, all heroes within 3 hexes of the Nøkken must spend 1 Fate Token or suffer Muddle until their next activation."
+        }
+      ],
+      "specialAbility": {
+        "name": "Drowning Song",
+        "effect": "On a Critical Hit, the target hero is Immobilized and gains 2 Exhaustion Tokens as the song's pull overwhelms them."
+      },
+      "diceTable": [
+        { "roll": "1-5",   "name": "Miss",          "effect": "The music falters. No effect." },
+        { "roll": "6-10",  "name": "Weak Hit",       "effect": "2 damage. Target gains Muddle." },
+        { "roll": "11-16", "name": "Standard Hit",   "effect": "3 damage. Target gains Muddle." },
+        { "roll": "17-19", "name": "Strong Hit",     "effect": "4 damage. Target gains Muddle + 1 Exhaustion Token." },
+        { "roll": "20",    "name": "Critical",       "effect": "5 damage. Drowning Song triggers — Immobilized + 2 Exhaustion Tokens." }
+      ]
+    },
+    {
+      "id": "troll",
+      "name": "Troll",
+      "lore": "Trolls turn to stone in sunlight. Until then, they are strong enough to crush a horse.",
+      "realm": "midgard",
+      "tier": "elite",
+      "health": 14,
+      "move": 2,
+      "attackModifier": 3,
+      "damage": 5,
+      "primaryKeyword": "CLOSEST",
+      "secondaryKeyword": "EXHAUSTION_FOCUS",
+      "passives": [
+        {
+          "name": "Stone Hide",
+          "effect": "The Troll has permanent Shield 1 against all ranged attacks."
+        },
+        {
+          "name": "Sunlight Weakness",
+          "effect": "If the active Scenario Sleeve has a Daylight icon in Zone 6, the Troll rolls at Disadvantage on all attacks."
+        }
+      ],
+      "specialAbility": {
+        "name": "Boulder Hurl",
+        "effect": "On a Strong Hit, the Troll hurls a boulder instead of striking — targets a hero up to 4 hexes away. That hero is pushed 2 hexes and adjacent heroes to the landing point take 1 damage each."
+      },
+      "diceTable": [
+        { "roll": "1-5",   "name": "Miss",           "effect": "No effect." },
+        { "roll": "6-10",  "name": "Weak Hit",        "effect": "3 damage." },
+        { "roll": "11-16", "name": "Standard Hit",    "effect": "5 damage. Target is pushed 1 hex." },
+        { "roll": "17-19", "name": "Strong Hit",      "effect": "Boulder Hurl — target up to 4 hexes, pushed 2 hexes, adjacent heroes take 1 damage." },
+        { "roll": "20",    "name": "Critical",        "effect": "6 damage + push 2 hexes. All heroes adjacent to target take 2 damage (ground shockwave)." }
+      ]
+    },
+    {
+      "id": "frost-giant",
+      "name": "Frost Giant",
+      "lore": "The jotnar do not raid for gold. They raid to remind us we are small.",
+      "realm": "jotunheim",
+      "tier": "boss",
+      "health": 30,
+      "move": 4,
+      "attackModifier": 5,
+      "damage": 6,
+      "primaryKeyword": "ELITE",
+      "secondaryKeyword": "WEAKEST",
+      "passives": [
+        {
+          "name": "Towering Presence",
+          "effect": "Heroes adjacent to the Frost Giant at the start of their turn must spend 1 Fate Token or suffer 1 Exhaustion Token (the sheer scale is overwhelming)."
+        }
+      ],
+      "specialAbility": {
+        "name": "Freezing Grasp",
+        "effect": "On a Critical Hit, the target hero is Immobilized (cannot move) until another hero uses a full action to break them free. The Frozen hero can still attack, but only targets within 1 hex."
+      },
+      "bossThreshold": {
+        "note": "Boss threshold behaviour is defined entirely on the Scenario Sleeve. This card carries no threshold text. See scenario.bossThresholds."
+      },
+      "diceTable": [
+        { "roll": "1-5",   "name": "Miss",           "effect": "No effect. The giant's blow misses by a margin that would decapitate a smaller target." },
+        { "roll": "6-10",  "name": "Weak Hit",        "effect": "4 damage." },
+        { "roll": "11-16", "name": "Standard Hit",    "effect": "6 damage. Target gains 2 Exhaustion Tokens." },
+        { "roll": "17-19", "name": "Strong Hit",      "effect": "8 damage. Target is pushed 3 hexes. Heroes in the path take 2 damage each." },
+        { "roll": "20",    "name": "Critical",        "effect": "10 damage. Freezing Grasp triggers — Immobilized until freed." }
+      ]
+    }
+  ],
+
+  "equipment": [
+    {
+      "id": "runed-blade",
+      "name": "Runed Blade",
+      "slot": "weapon",
+      "cost": 5,
+      "type": "permanent",
+      "effect": "Once per round, after rolling your attack, you may spend 1 Fate Token to reroll one die before consulting the Dice Table.",
+      "realm": null,
+      "flavour": "Inscribed with the names of enemies yet to fall."
+    },
+    {
+      "id": "spear-of-precision",
+      "name": "Spear of Precision",
+      "slot": "weapon",
+      "cost": 6,
+      "type": "permanent",
+      "effect": "Attacks with this weapon can target enemies up to 3 hexes away (ranged melee). Close-range attacks (adjacent) deal +1 damage.",
+      "realm": null,
+      "flavour": "Balanced for both the battlefield and the hunt."
+    },
+    {
+      "id": "iron-shield",
+      "name": "Iron Shield",
+      "slot": "armour",
+      "cost": 4,
+      "type": "permanent",
+      "effect": "Gain Shield 1 at the start of each Act. This shield stacks with ability-granted shields.",
+      "realm": null,
+      "flavour": "Heavy. Reassuring. Still warm from the forge."
+    },
+    {
+      "id": "wolf-pelt",
+      "name": "Wolf Pelt",
+      "slot": "armour",
+      "cost": 5,
+      "type": "permanent",
+      "effect": "You are immune to the Muddle condition. When you remove 2 or more Exhaustion Tokens in a single action, gain 1 Fate Token.",
+      "realm": null,
+      "flavour": "The wolf ran with the pack. You do not."
+    },
+    {
+      "id": "rune-carved-pendant",
+      "name": "Rune-Carved Pendant",
+      "slot": "relic",
+      "cost": 6,
+      "type": "permanent",
+      "effect": "Once per scenario, when you would be Incapacitated, instead remain at 1 Health. The pendant shatters — this equipment is then discarded.",
+      "realm": null,
+      "flavour": "It saved its last bearer too. Someone carved that name on the back."
+    },
+    {
+      "id": "healing-draught",
+      "name": "Healing Draught",
+      "slot": null,
+      "cost": 2,
+      "type": "consumable",
+      "effect": "Restore 3 Health. Use once during any session. Discard after use.",
+      "realm": null,
+      "flavour": "Bitter. Effective."
+    },
+    {
+      "id": "mead-of-courage",
+      "name": "Mead of Courage",
+      "slot": null,
+      "cost": 3,
+      "type": "consumable",
+      "effect": "Gain 2 Fate Tokens immediately. Use once during any session. Discard after use.",
+      "realm": null,
+      "flavour": "The gods drink this before Ragnarök. So can you."
+    },
+    {
+      "id": "rune-salve",
+      "name": "Rune Salve",
+      "slot": null,
+      "cost": 3,
+      "type": "consumable",
+      "effect": "Remove all Exhaustion Tokens from yourself. Use once during any session. Discard after use.",
+      "realm": null,
+      "flavour": "Smells of pine resin and something older."
+    }
+  ],
+
+  "sagaEvents": [
+    {
+      "id": "aesir-01",
+      "deck": "aesir_hand",
+      "deckLabel": "Aesir's Hand",
+      "sagaLine": "Odin watches from the high seat. His ravens have already reported your deeds.",
+      "immediateEffect": "The hero with the most Fate Tokens gains 2 additional Fate Tokens. If tied, all tied heroes gain 1.",
+      "echo": "For the remainder of this scenario, Strong Hits (15-19) by any hero generate an additional Fate Token."
+    },
+    {
+      "id": "aesir-02",
+      "deck": "aesir_hand",
+      "deckLabel": "Aesir's Hand",
+      "sagaLine": "Thor's hammer echoes in the distance. Something draws his attention here.",
+      "immediateEffect": "One enemy of your choice is immediately Stunned until end of their next activation.",
+      "echo": "Once per round for the rest of this Act, any hero who rolls a 20 may immediately remove 2 Exhaustion Tokens."
+    },
+    {
+      "id": "jotun-01",
+      "deck": "jotuns_shadow",
+      "deckLabel": "Jotun's Shadow",
+      "sagaLine": "The mountains tremble. The giants have noticed you.",
+      "immediateEffect": "Each hero gains 2 Exhaustion Tokens. The monster with the lowest current Health is removed and replaced with a new instance of the same monster at full Health.",
+      "echo": "For the remainder of this Act, all Standard Hits (7-14) by monsters deal +1 bonus damage."
+    },
+    {
+      "id": "jotun-02",
+      "deck": "jotuns_shadow",
+      "deckLabel": "Jotun's Shadow",
+      "sagaLine": "A shadow falls across the battlefield that has no source.",
+      "immediateEffect": "All heroes must discard 1 Fate Token (discarded to the pool). Heroes with no Fate Tokens gain 1 Exhaustion Token instead.",
+      "echo": "Enemies gain +1 to their attack roll for the remainder of this round only."
+    },
+    {
+      "id": "world-tree-01",
+      "deck": "world_trees_whisper",
+      "deckLabel": "World Tree's Whisper",
+      "sagaLine": "The World Tree shifts. A branch breaks. Somewhere, something changes.",
+      "immediateEffect": "Reveal the next unrevealed Act zone on the Scenario Sleeve early. The party may adjust card selections immediately if a hand reset is currently available.",
+      "echo": "The party may look at one Legacy Card spine slot that has not yet been earned — the won side only. Replace it exactly as found."
+    },
+    {
+      "id": "world-tree-02",
+      "deck": "world_trees_whisper",
+      "deckLabel": "World Tree's Whisper",
+      "sagaLine": "A thread of fate runs between two of your number. When one acts, the other feels it.",
+      "immediateEffect": "Choose two heroes. Until end of Act: when either gains a Fate Token, the other gains 1 as well.",
+      "echo": "The linked pair may, once this Act, swap positions as a free action (no card play needed). Both heroes must agree."
+    }
+  ],
+
+  "legacyCards": [
+    {
+      "id": "legacy-midgard-01",
+      "tier": "realm",
+      "realm": "midgard",
+      "spineSlot": null,
+      "won": "The dead are at rest. Heroes begin each session with 1 bonus Fate Token.",
+      "lost": "The Draugr's curse lingers. All heroes start Act 1 with 1 Exhaustion Token.",
+      "constraintNote": "15-word maximum per side. Both sides above comply."
+    },
+    {
+      "id": "legacy-world-tree-01",
+      "tier": "world_tree",
+      "realm": null,
+      "spineSlot": 1,
+      "won": "The Nine Realms remember your name. Strong Hits grant 1 bonus Fate Token this campaign.",
+      "lost": "The darkness grows. Monsters gain +1 damage on Strong Hits for this campaign.",
+      "constraintNote": "15-word maximum per side. Both sides above comply."
+    }
+  ],
+
+  "scenarios": [
+    {
+      "id": "scenario-midgard-01",
+      "name": "The Barrow Fields",
+      "realm": "midgard",
+      "difficulty": 1,
+      "playerCount": { "min": 1, "max": 4 },
+      "sagaEventDeck": "aesir_hand",
+      "enemies": [
+        { "monsterId": "draugr", "count": 3, "tier": "standard", "spawnOrder": 1 },
+        { "monsterId": "huldra", "count": 1, "tier": "standard", "spawnOrder": 2 }
+      ],
+      "zones": {
+        "zone1": {
+          "location": "Midgard — The Barrow Fields",
+          "difficulty": "1",
+          "playerCount": "1-4",
+          "flavourText": "The burial mounds stretch to the horizon. Something stirs beneath the frost."
+        },
+        "zone2": {
+          "mapLayout": "TODO — hex layout, starting positions, spawn hexes, objective markers",
+          "startingHexes": ["TODO"],
+          "spawnHexes": {
+            "draugr": ["TODO"],
+            "huldra": ["TODO"]
+          },
+          "objectiveHexes": ["TODO"],
+          "terrain": ["TODO"]
+        },
+        "zone3": {
+          "actName": "The Approach",
+          "triggerType": "round_limit",
+          "roundCount": 3,
+          "victorious": "The barrow entrance is clear. The dead have retreated — for now.",
+          "besieged": "The dead rise faster than expected. You push forward but pay a cost."
+        },
+        "zone4": {
+          "actName": "The Escalation",
+          "triggerType": "objective",
+          "roundCount": 5,
+          "victorious": "The barrow lord's seal is broken. The Draugr fall still.",
+          "besieged": "The seal resists you. The Draugr multiply.",
+          "newSpawns": [
+            { "monsterId": "draugr", "count": 2, "spawnOrder": 3, "condition": "besieged_only" }
+          ]
+        },
+        "zone5": {
+          "actName": "The Resolution",
+          "winText": "The barrow is sealed. The dead rest. A Legacy Card is earned.",
+          "lossText": "The barrow holds. You retreat into the night, cursed and exhausted.",
+          "consolationReward": "Each hero gains 1 Loot Token. The active Realm Legacy Card is placed on its lost side."
+        },
+        "zone6": {
+          "specialRules": "TODO — define any scenario-specific rules (e.g. daylight tracker, environmental effects)"
+        }
+      },
+      "act1to2Transition": {
+        "suppressHandReset": false,
+        "suppressExhaustionRecovery": false,
+        "transitionText": "The barrow gate opens. The air changes."
+      },
+      "act2to3Transition": {
+        "suppressHandReset": false,
+        "suppressExhaustionRecovery": false,
+        "transitionText": "One final push. The dawn approaches."
+      },
+      "objectives": [
+        {
+          "type": "eliminate",
+          "description": "Defeat all enemies on the map before round limit expires.",
+          "mechanicalFlow": "Count enemies remaining. Trigger Act transition when 0 enemies remain."
+        },
+        {
+          "type": "objective_reach",
+          "description": "One hero must reach the barrow entrance hex and spend a full action to seal it.",
+          "mechanicalFlow": "Hero must end movement on objective hex and play any card for its TOP action (representing the sealing ritual). Cannot attack same turn."
+        }
+      ],
+      "bossThresholds": [],
+      "legacyCardId": "legacy-midgard-01",
+      "xpRewards": {
+        "win": 20,
+        "loss": 10
+      },
+      "lootRewards": {
+        "scenarioCompletion_win": 3,
+        "scenarioCompletion_loss": 1,
+        "objectiveLoot": [
+          { "objectiveType": "objective_reach", "amount": 1 }
+        ]
+      }
+    }
+  ],
+
+  "campaigns": [
+    {
+      "id": "midgard-starter",
+      "name": "Shadows Over Midgard",
+      "realm": "midgard",
+      "linkType": "standalone",
+      "prerequisite": null,
+      "scenarioIds": [
+        "scenario-midgard-01"
+      ],
+      "realmLegacyCardIds": [
+        "legacy-midgard-01"
+      ],
+      "realmLootItems": [
+        "runed-blade",
+        "iron-shield",
+        "healing-draught"
+      ],
+      "grandCampaignMap": {
+        "realmPosition": "centre",
+        "connectedRealms": ["jotunheim", "alfheim"],
+        "unlocks": []
+      }
+    }
+  ]
+}
