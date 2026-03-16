@@ -121,17 +121,23 @@ const realms = [
 
 const components = [
   { name: "Book-Box", qty: "1", desc: "Magnetic closure, A4 size, opens like a book" },
-  { name: "Player Dashboards", qty: "4", desc: "Dry-erase compatible with health/exhaustion tracking" },
-  { name: "Character Boards", qty: "6", desc: "Sliding XP track, token-peg ability slots, health dial" },
-  { name: "Ability Cards", qty: "24", desc: "4 unique starting cards per class" },
-  { name: "Monster Cards", qty: "12", desc: "6 types with stats and AI behaviour" },
+  { name: "Hex Grid Map", qty: "1", desc: "Modular battlefield — Scenario Sleeve overlays change the terrain" },
+  { name: "Character Sleeves", qty: "6", desc: "Slide over Character Board, one per hero class" },
+  { name: "Character Boards", qty: "6", desc: "Sliding XP track, token-peg ability slots, health dial, 3 equipment slots" },
+  { name: "Ability Cards", qty: "36+", desc: "Starting pool + unlockable cards per class" },
+  { name: "Equipment Cards", qty: "30+", desc: "Weapons, Armour, and Relics — one per slot" },
+  { name: "Monster Cards", qty: "12", desc: "7 types with stats, dice tables, and AI behaviour" },
   { name: "Scenario Sleeves", qty: "6", desc: "Front/back design, slides over the map" },
-  { name: "Legacy Cards", qty: "6", desc: "Double-sided (won/lost), stored in spine slots" },
-  { name: "D20 Die", qty: "1", desc: "Norse runic design" },
+  { name: "Realm Legacy Cards", qty: "6", desc: "Double-sided (Boon/Scar) — one per realm scenario" },
+  { name: "World Tree Legacy Cards", qty: "6", desc: "Double-sided — earned at grand campaign milestones" },
+  { name: "D20 Die", qty: "1", desc: "Norse runic design — rolled twice for Advantage/Disadvantage" },
   { name: "Hero Miniatures", qty: "4", desc: "Wooden block-style figurines" },
   { name: "Monster Tokens", qty: "24", desc: "Wooden discs for each monster type" },
   { name: "Fate Tokens", qty: "40", desc: "Wooden tokens for dice manipulation" },
   { name: "Exhaustion Tokens", qty: "20", desc: "Track hero fatigue" },
+  { name: "Loot Tokens", qty: "40", desc: "Currency for equipment and consumables" },
+  { name: "XP Tokens", qty: "30", desc: "Earned from XP-marked card actions" },
+  { name: "Curse Tokens", qty: "20", desc: "Used by the Nidstang class and certain monsters" },
 ];
 
 const fadeIn = {
