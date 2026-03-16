@@ -68,10 +68,12 @@
 - **Card pool framework** — class-dependent. Grows +2 at levels 2/4/6/8. Max pool: 10 (Ulfhednar) to 16 (all others).
 
 ### 🔄 In Progress
-- Seiðr class design (next)
+- All six classes complete as first iterations
 
 ### ⬜ Backlog
-- Design Seiðr, Ulfhednar, Skald (full class designs)
+- **Skald** — full class design. Role: Inspire/Amplify. Health: 9. Speed: 4. Pool: 8→16. Hand: 4. Song Track system (1-5), Saga of Heroes Signature (base/L4/L8), 8 starting cards.
+- **Seiðr** — full class design. Role: Support/Fate Manipulation. Health: 8. Speed: 3. Pool: 8→16. Hand: 5. Fate Thread system (Protection/Doom/Reversal), Völva's Trance Signature (base/L4/L8), 8 starting cards.
+- **Ulfhednar** — full class design. Role: Risk/Reward Damage. Health: 12. Speed: 4/6. Pool: 6→10. Hand: 6. Two-state system (Human/Wolf), Rage Tokens, Odin's Wolf Signature (base/L4/L8), 6 starting cards.
 - Balance pass — compare all six class power curves, pool sizes, and hand sizes
 - Class identity review — ensure no two classes feel similar at the table
 - Validate Loot icon narrative logic per class
@@ -81,27 +83,34 @@
 - **Nidstang** ✅ — complete.
 - **Einherjar** ✅ — complete.
 - **Valkyrie** ✅ — complete.
-- **Seiðr** — must feel distinct from Nidstang. Weaves fate *for* allies. Völva archetype: foreknowledge and reroll mechanics over raw healing.
-- **Ulfhednar** — berserk state voluntarily entered, difficult to exit. In beast state: massive damage, but monsters prefer to target Ulfhednar.
-- **Skald** — performance/positioning mechanic. Must be within range for song to be heard. XP for inspiring ally who achieves Strong/Critical Hit.
+- **Seiðr** ✅ — complete.
+- **Ulfhednar** ✅ — complete.
+- **Skald** ✅ — complete.
 
 ---
 
 ## Phase 3 — Monster System
 *Goal: Every monster feels distinct, behaviourally and thematically, using the AI keyword system.*
 
-### Design Constraints Established in Phase 1
-- Every Monster Card needs a **Primary keyword** and optionally a **Secondary keyword**
-- No monster should have more than two keywords
-- Keyword design should consider the Universal Fallback (defaults to CLOSEST)
+### ✅ Complete
+- **Monster Card format** — double-sided card (front: stats/keywords/special ability/lore line; back: Dice Result Table)
+- **Monster tier system** — Standard (HP 4-8), Elite (HP 8-15), Boss (HP 20-40)
+- **Full keyword list** — 10 Primary keywords (including new SONG FOCUS and THREAD SEEKER), 2 Secondary keywords
+- **Special Ability trigger types** — ON HIT, ON ACTIVATION, ON DAMAGE, PASSIVE, THRESHOLD
+- **Boss rules** — Threshold mechanic, Enraged state, Cannot Be Defeated before threshold
+- **Boss Escape mechanic** — bosses escape at threshold HP, can recur across campaign
+- **Full 45-monster compendium** — 5 monsters per realm across 9 realms, all with stats/keywords/special abilities
+- **9 realm bosses** — all realms now have dedicated bosses (Frost Giant, Fáfnir, Fire Giant, Níðhöggr, Garmr, Dökkálfr the Unbound, Jörð's Wrath, Loki's Shade + Midgard has no boss by design)
+- **Master Vault** — physical storage concept established (separate from book-box, stores inactive campaigns)
 
-### ⬜ Backlog
-- Assign Primary and Secondary keywords to all monsters in the compendium
-- Define special abilities for each monster (folklore-rooted)
-- Write full AI card for each monster (target → move → attack → special)
-- Add Mara to the compendium (referenced in Scenario 4, currently missing)
-- Define Nidhogg's minions (referenced in Scenario 6, unnamed)
-- Balance pass — compare monster threat levels against class health pools
+### ⬜ Open Items
+- All stat values are first iteration estimates — validated in Phase 6
+- Fáfnir's dual Special Abilities need playtesting confirmation
+- Soul Husk respawn mechanic needs Scenario Sleeve Cleansed hex setup rule
+- Glamour Hound ally token placement needs setup ruling
+- Wisp Swarm split activation timing needs ruling (recommended: split tokens activate next round)
+- Loki's Shade Trickster Form complexity — monitor in Phase 6
+- Midgard has no boss by design — campaign designers may import from adjacent realms or use recurring bosses
 
 ---
 
@@ -258,6 +267,7 @@ The second panel is only needed at setup and between sessions — it folds back 
 - Transition strip icon design (Norse-inspired symbols)
 - Grand campaign map design (realm positions, Yggdrasil branch connections, tracking mechanism)
 - Realm Campaign Pack physical design (sleeve storage, realm Legacy Card sleeve, pack-specific components)
+- **Master Vault** physical design — stores all inactive campaigns, characters, monsters, and components not currently loaded in the book-box. Should accommodate all 9 realm packs, all 6 character sleeves, and all 45 monster sets
 
 ---
 
