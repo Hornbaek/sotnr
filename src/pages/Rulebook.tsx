@@ -359,18 +359,29 @@ const Rulebook = () => {
 
             {/* MONSTER AI */}
             <TabsContent value="monster-ai" className="space-y-6">
+              <SectionCard title="Monster Tiers">
+                <p className="text-sm text-foreground/80 mb-3">Every monster belongs to a tier that determines its complexity and threat level.</p>
+                <TableBlock
+                  headers={["Tier", "HP Range", "Behaviour"]}
+                  rows={[
+                    ["Standard", "5-8", "Simple AI, 1 keyword, straightforward dice table"],
+                    ["Elite", "8-14", "More complex AI, may have secondary keyword, stronger dice table"],
+                    ["Boss", "20-30+", "Multi-phase, unique mechanics, highest threat"],
+                  ]}
+                />
+              </SectionCard>
+
               <SectionCard title="The Monster AI Sequence">
                 <ol className="list-decimal list-inside space-y-2 text-sm text-foreground/80">
                   <li>Identify Primary keyword target</li>
                   <li>Apply Secondary keyword if tied</li>
                   <li>Apply Threat Chain if still tied</li>
                   <li>Move toward target (shortest path, full Speed, committed)</li>
-                  <li>Attack if in range</li>
-                  <li>Apply special ability</li>
+                  <li>Attack if in range — consult monster's dice table</li>
                 </ol>
               </SectionCard>
 
-              <SectionCard title="Preferred Target Keywords">
+              <SectionCard title="Primary Target Keywords">
                 <TableBlock
                   headers={["Keyword", "Behaviour"]}
                   rows={[
@@ -382,6 +393,19 @@ const Rulebook = () => {
                     ["RANGED PRIORITY", "Target hero who made a ranged attack this round"],
                     ["HEALER HATE", "Target hero who healed another this round"],
                     ["ELITE", "Target hero with the most Fate Tokens"],
+                    ["SONG FOCUS", "Target hero who moved most hexes this round"],
+                    ["THREAD SEEKER", "Target hero with most active conditions"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Secondary Keywords (Tie-Breakers)">
+                <p className="text-sm text-foreground/80 mb-3">Some monsters have a secondary keyword used only when the primary results in a tie before the Threat Chain.</p>
+                <TableBlock
+                  headers={["Keyword", "Behaviour"]}
+                  rows={[
+                    ["BLOCKER", "Prefer heroes adjacent to allies (body-blocking)"],
+                    ["EXPOSED", "Prefer heroes not adjacent to any ally"],
                   ]}
                 />
               </SectionCard>
