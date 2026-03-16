@@ -28,8 +28,10 @@ const campaignRealms = [
     pack: "Core Box",
     scenarios: [
       { name: "The Hollow of the Huldra", quote: "They say she lures the lonely into the deep woods." },
-      { name: "The Drowned Fiddler", quote: "Beautiful music from the lake tonight. Too beautiful." },
-      { name: "The Shadow Over Birka", quote: "The dead do not rest easy in Birka. Not anymore." },
+      { name: "The Waking Mound", quote: "Something stirs beneath the barrow. It remembers its name." },
+      { name: "What Rides the Night", quote: "She sits upon your chest while you sleep. When you wake, you are less." },
+      { name: "The Mountain Road", quote: "The path narrows. The stones watch. The trolls are patient." },
+      { name: "The Rot Beneath", quote: "The roots of Järnvik are poisoned. Something feeds on the town's fear." },
     ],
   },
   {
