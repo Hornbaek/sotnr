@@ -433,7 +433,7 @@ const Rulebook = () => {
               <SectionCard title="Turn Order">
                 <div className="space-y-2 text-sm text-foreground/80">
                   <p><span className="font-bold text-primary">1. Hero Phase:</span> Play 2 cards — Top + Bottom action, any order.</p>
-                  <p><span className="font-bold text-primary">2. Monster Phase:</span> Target → Move → Attack → Special Ability</p>
+                  <p><span className="font-bold text-primary">2. Monster Phase:</span> Target → Move → Attack (dice table)</p>
                 </div>
               </SectionCard>
 
