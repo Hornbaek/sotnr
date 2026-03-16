@@ -242,42 +242,8 @@ const Campaign = () => {
         </div>
       </section>
 
-      {/* Campaign Progression */}
-      <section className="py-16 px-4 bg-gradient-to-b from-background to-card/20">
-        <div className="container mx-auto max-w-4xl">
-          <motion.h2 {...fadeIn} className="text-3xl md:text-4xl font-display font-bold text-center mb-4">
-            Campaign <span className="text-primary">Progression</span>
-          </motion.h2>
-          <motion.p {...fadeIn} className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Track your journey through the Nine Realms. Each realm completed brings you closer to the final confrontation — and every Legacy Card shapes your fate.
-          </motion.p>
-
-          <motion.div {...fadeIn} className="space-y-3">
-            {campaignRealms.map((realm, i) => (
-              <div key={realm.name} className="flex items-center gap-4 p-3 rounded-lg bg-card/30 border border-border/50">
-                <img src={realm.image} alt={realm.name} className="w-12 h-12 rounded-lg object-cover hidden sm:block" />
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="font-display font-bold text-sm text-foreground">{realm.name}</span>
-                    <Badge variant={realm.pack === "Core Box" ? "default" : "secondary"} className="text-[10px] px-1.5 py-0">
-                      {realm.pack}
-                    </Badge>
-                    <span className={`text-[10px] font-semibold ${difficultyColor[realm.difficulty]}`}>
-                      {realm.difficulty}
-                    </span>
-                  </div>
-                  <Progress value={0} className="h-1.5" />
-                </div>
-                <span className="text-xs text-muted-foreground whitespace-nowrap">{realm.scenarios.length} scenarios</span>
-              </div>
-            ))}
-          </motion.div>
-
-          <motion.p {...fadeIn} className="text-center text-xs text-muted-foreground mt-4 italic">
-            Progress tracking shown above is illustrative. In the physical game, Legacy Cards in the Book-Box spine track your advancement.
-          </motion.p>
-        </div>
-      </section>
+      {/* Interactive Campaign Progress Tracker */}
+      <CampaignTracker />
 
       {/* Legacy Card System */}
       <section className="py-16 px-4">
