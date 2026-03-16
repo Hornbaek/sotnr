@@ -355,6 +355,27 @@ const Rulebook = () => {
                   ]}
                 />
               </SectionCard>
+
+              <SectionCard title="Mastery Pool (Grand Campaign)">
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>In the grand campaign (all 9 realms), your <span className="font-bold text-primary">card pool never resets</span> — all unlocked ability cards carry forward across realms.</p>
+                  <p>However, your <span className="font-bold text-primary">level resets to 3</span> when entering a new realm. You keep equipment and Legacy Cards, but must re-earn XP for levels 4-9.</p>
+                  <p>This creates a growing tactical toolkit while keeping each realm's challenge fresh.</p>
+                </div>
+              </SectionCard>
+
+              <SectionCard title="Campaign Math">
+                <p className="text-sm text-foreground/80 mb-3">Expected XP earnings per campaign type:</p>
+                <TableBlock
+                  headers={["Campaign", "Scenarios", "Expected XP", "Target Level"]}
+                  rows={[
+                    ["Single Realm (Midgard)", "5", "~140-180", "Level 5-6"],
+                    ["Two-Realm Arc", "8-10", "~250-320", "Level 7-8"],
+                    ["Grand Campaign (all 9)", "27+", "Level 9 per realm*", "Saga Hero"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">*Grand campaign resets level to 3 per realm — reaching Level 9 in any realm unlocks Saga Hero for that realm's finale.</p>
+              </SectionCard>
             </TabsContent>
 
             {/* MONSTER AI */}
