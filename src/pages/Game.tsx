@@ -311,12 +311,12 @@ const Game = () => {
                         <div className="font-bold text-foreground">{monster.move}</div>
                       </div>
                       <div>
-                        <div className="text-muted-foreground">Atk</div>
-                        <div className="font-bold text-foreground">{monster.attack}</div>
+                        <div className="text-muted-foreground">Tier</div>
+                        <div className={`font-bold ${monster.tier === "Boss" ? "text-destructive" : monster.tier === "Elite" ? "text-primary" : "text-foreground"}`}>{monster.tier}</div>
                       </div>
                       <div>
-                        <div className="text-muted-foreground">Dmg</div>
-                        <div className="font-bold text-foreground">{monster.damage}</div>
+                        <div className="text-muted-foreground">AI</div>
+                        <div className="font-bold text-foreground text-[10px]">{monster.keyword}</div>
                       </div>
                     </div>
                   </CardContent>
