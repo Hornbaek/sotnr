@@ -117,31 +117,29 @@
 ---
 
 ## Phase 4 — Scenarios
-*Goal: 6 complete, playtestable scenarios with branching objectives that feel mechanically different from each other.*
+*Goal: Complete, playtestable scenarios with branching objectives that feel mechanically different from each other.*
 
-> ⚠️ All scenario content is currently placeholder.
+### ✅ Complete — Midgard Starter Campaign: *Shadows Over Järnvik*
+- **Campaign structure** — 5 scenarios, linear with one branch at S1 (Huldra won/lost)
+- **Scenario 1 — The Hollow of the Huldra** — Introductory. Eliminate vs Negotiate branching. Introduces Trust token mechanic and Forest Lure environmental rule.
+- **Scenario 2 — The Waking Mound** — Standard. Dual-condition Act 2 objective (seal hexes + weaken jarl). Introduces named monster variants and Darkness rule.
+- **Scenario 3 — What Rides the Night** — Challenging. Survival/defense with hidden Mara. Suppressed Act 1→2 Exhaustion recovery. Introduces Sleeper hex protection mechanic.
+- **Scenario 4 — The Mountain Road** — Challenging. Three-approach Act 1 (Fight/Sneak/Bargain). Introduces Rune Knowledge carry-forward token.
+- **Scenario 5 — The Night of All Shadows** — Campaign finale. Legacy-state-dependent monster roster. Huldra as ally if S1 won. Rune Knowledge token from S4 applies. First World Tree Legacy Card earned.
+- **All 5 Legacy Cards designed** — 4 Realm Cards + 1 World Tree Card (Järnvik endures/falls)
+- **Scenario design checklist** defined — reference for all future realm campaign designers
 
-### Design Constraints Established in Phase 1
-- Every scenario must use the **Scenario Sleeve spec** (front/back, seven zones, transition strips)
-- Every Act must have exactly **one primary trigger** and **one fallback trigger** (Type A/B/C)
-- Every Act transition must resolve into exactly **two named outcomes** (Victorious / Besieged)
-- Every scenario must define a **consolation reward** for a lost Act 3
-- Every scenario must define a **Legacy Card** (won side + lost side, 15 words or fewer per effect)
-- Branching objectives must play differently at the table, not just resolve differently
+### ⬜ Open Items
+- Zone 2 hex maps need physical layout diagrams (Phase 7)
+- Trust token proxy (Fate Tokens) — confirm no resource conflict in play
+- Rune Knowledge token — new component, 1 per Midgard campaign pack
+- Scenario 5 worst-case monster count (8 activations) needs balance testing
+- Three-approach Scenario 4 needs playtesting at all player counts
 
-### ⬜ Backlog
-- Restructure `08_scenarios.md` entries to match the seven-zone Sleeve format
-- Define all missing fields for each scenario (location, difficulty, player count, enemy lists)
-- Design Act 1, 2, and 3 triggers for each scenario (type + fallback)
-- Write Victorious and Besieged outcome text for each Act transition
-- Design Eliminate and Negotiate mechanical flows for Scenarios 1 and 3
-- Design Ambush mechanical flow for Scenario 3
-- Define special rules for each scenario (Nokken enchantment, Mara night mechanic, Forge timer, etc.)
-- Write consolation reward for each scenario's lost outcome
-- Design Legacy Card (won + lost sides, 15-word constraint) for all 6 scenarios
-- Define campaign branching — which scenarios unlock from which choices
-- Define any hidden scenarios and what Secrets unlock them
-- Balance pass — difficulty curve across Scenarios 1-6
+### ⬜ Future Campaign Backlog
+- Design remaining 8 realm campaigns (Jotunheim, Svartalfheim, Muspelheim, Niflheim, Helheim, Alfheim, Vanaheim, Asgard) — after playtesting validates the Midgard reference implementation
+- Each realm campaign: 4-6 scenarios, dedicated boss, realm-specific Legacy Cards
+- Define hidden scenarios and Secrets system across grand campaign
 
 ---
 
