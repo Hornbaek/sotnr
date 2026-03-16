@@ -97,13 +97,13 @@ const heroClasses = [
 ];
 
 const monsters = [
-  { name: "Draugr", quote: "The dead walk when dishonored.", health: 4, move: 3, attack: "+2", damage: 2, image: draugrImg },
-  { name: "Huldra", quote: "Beautiful as spring, hollow as a rotting log.", health: 6, move: 4, attack: "+3", damage: 3, image: huldraImg },
-  { name: "Nokken", quote: "He plays most beautifully when someone is about to drown.", health: 5, move: 3, attack: "+3", damage: 3, image: nokkenImg },
-  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they crush.", health: 8, move: 2, attack: "+3", damage: 4, image: trollImg },
-  { name: "Frost Giant", quote: "They raid to remind us we are small.", health: 15, move: 3, attack: "+4", damage: 5, image: frostGiantImg },
-  { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, attack: "+3", damage: 3, image: dwarfWarriorImg },
-  { name: "Mara", quote: "She sits upon your chest while you sleep.", health: "TBD", move: "TBD", attack: "TBD", damage: "TBD", image: maraImg },
+  { name: "Draugr", quote: "The dead walk when dishonored.", health: 6, move: 3, tier: "Standard", keyword: "CLOSEST", image: draugrImg },
+  { name: "Huldra", quote: "Beautiful as spring, hollow as a rotting log.", health: 7, move: 4, tier: "Standard", keyword: "ISOLATIONIST", image: huldraImg },
+  { name: "Nokken", quote: "He plays most beautifully when someone is about to drown.", health: 11, move: 3, tier: "Elite", keyword: "SONG FOCUS", image: nokkenImg },
+  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they crush.", health: 10, move: 2, tier: "Elite", keyword: "CLOSEST", image: trollImg },
+  { name: "Frost Giant", quote: "They raid to remind us we are small.", health: 28, move: 3, tier: "Boss", keyword: "ELITE", image: frostGiantImg },
+  { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, tier: "Standard", keyword: "CLOSEST", image: dwarfWarriorImg },
+  { name: "Mara", quote: "She sits upon your chest while you sleep.", health: 8, move: 3, tier: "Elite", keyword: "THREAD SEEKER", image: maraImg },
 ];
 
 
