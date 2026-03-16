@@ -365,7 +365,7 @@ const Game = () => {
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               A compact A4-sized box that opens like a tome. The left half holds the battlefield and storage, 
-              the right half contains four player dashboards, and the spine stores Legacy Cards across your campaign.
+              the right half contains Character Sleeves and boards, and the spine stores Legacy Cards across your campaign.
             </p>
           </motion.div>
 

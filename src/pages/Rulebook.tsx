@@ -555,10 +555,28 @@ const Rulebook = () => {
 
               <SectionCard title="Legacy Cards">
                 <div className="space-y-2 text-sm text-foreground/80">
-                  <p><span className="font-bold text-primary">Victory:</span> Flip to boon side — permanent benefit for future scenarios.</p>
-                  <p><span className="font-bold text-primary">Defeat:</span> Flip to scar side — permanent penalty carried forward.</p>
+                  <p><span className="font-bold text-primary">Realm Legacy:</span> One per realm scenario — Victory Boon or Defeat Scar.</p>
+                  <p><span className="font-bold text-primary">World Tree Legacy:</span> Earned at grand campaign milestones — higher impact.</p>
                   <p>Stored in spine slots of the Book-Box. Active cards affect all future sessions.</p>
                 </div>
+              </SectionCard>
+
+              <SectionCard title="Monster AI Keywords">
+                <TableBlock
+                  headers={["Keyword", "Target"]}
+                  rows={[
+                    ["CLOSEST", "Nearest hero"],
+                    ["WEAKEST", "Lowest HP"],
+                    ["EXHAUSTION FOCUS", "Most Exhaustion"],
+                    ["PACK HUNTER", "Adjacent to 2+ same type"],
+                    ["ISOLATIONIST", "No adjacent allies"],
+                    ["RANGED PRIORITY", "Used ranged attack"],
+                    ["HEALER HATE", "Healed this round"],
+                    ["ELITE", "Most Fate Tokens"],
+                    ["SONG FOCUS", "Most movement"],
+                    ["THREAD SEEKER", "Most conditions"],
+                  ]}
+                />
               </SectionCard>
             </TabsContent>
           </Tabs>
