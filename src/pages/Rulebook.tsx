@@ -355,22 +355,54 @@ const Rulebook = () => {
                   ]}
                 />
               </SectionCard>
+
+              <SectionCard title="Mastery Pool (Grand Campaign)">
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>In the grand campaign (all 9 realms), your <span className="font-bold text-primary">card pool never resets</span> — all unlocked ability cards carry forward across realms.</p>
+                  <p>However, your <span className="font-bold text-primary">level resets to 3</span> when entering a new realm. You keep equipment and Legacy Cards, but must re-earn XP for levels 4-9.</p>
+                  <p>This creates a growing tactical toolkit while keeping each realm's challenge fresh.</p>
+                </div>
+              </SectionCard>
+
+              <SectionCard title="Campaign Math">
+                <p className="text-sm text-foreground/80 mb-3">Expected XP earnings per campaign type:</p>
+                <TableBlock
+                  headers={["Campaign", "Scenarios", "Expected XP", "Target Level"]}
+                  rows={[
+                    ["Single Realm (Midgard)", "5", "~140-180", "Level 5-6"],
+                    ["Two-Realm Arc", "8-10", "~250-320", "Level 7-8"],
+                    ["Grand Campaign (all 9)", "27+", "Level 9 per realm*", "Saga Hero"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">*Grand campaign resets level to 3 per realm — reaching Level 9 in any realm unlocks Saga Hero for that realm's finale.</p>
+              </SectionCard>
             </TabsContent>
 
             {/* MONSTER AI */}
             <TabsContent value="monster-ai" className="space-y-6">
+              <SectionCard title="Monster Tiers">
+                <p className="text-sm text-foreground/80 mb-3">Every monster belongs to a tier that determines its complexity and threat level.</p>
+                <TableBlock
+                  headers={["Tier", "HP Range", "Behaviour"]}
+                  rows={[
+                    ["Standard", "5-8", "Simple AI, 1 keyword, straightforward dice table"],
+                    ["Elite", "8-14", "More complex AI, may have secondary keyword, stronger dice table"],
+                    ["Boss", "20-30+", "Multi-phase, unique mechanics, highest threat"],
+                  ]}
+                />
+              </SectionCard>
+
               <SectionCard title="The Monster AI Sequence">
                 <ol className="list-decimal list-inside space-y-2 text-sm text-foreground/80">
                   <li>Identify Primary keyword target</li>
                   <li>Apply Secondary keyword if tied</li>
                   <li>Apply Threat Chain if still tied</li>
                   <li>Move toward target (shortest path, full Speed, committed)</li>
-                  <li>Attack if in range</li>
-                  <li>Apply special ability</li>
+                  <li>Attack if in range — consult monster's dice table</li>
                 </ol>
               </SectionCard>
 
-              <SectionCard title="Preferred Target Keywords">
+              <SectionCard title="Primary Target Keywords">
                 <TableBlock
                   headers={["Keyword", "Behaviour"]}
                   rows={[
@@ -382,6 +414,19 @@ const Rulebook = () => {
                     ["RANGED PRIORITY", "Target hero who made a ranged attack this round"],
                     ["HEALER HATE", "Target hero who healed another this round"],
                     ["ELITE", "Target hero with the most Fate Tokens"],
+                    ["SONG FOCUS", "Target hero who moved most hexes this round"],
+                    ["THREAD SEEKER", "Target hero with most active conditions"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Secondary Keywords (Tie-Breakers)">
+                <p className="text-sm text-foreground/80 mb-3">Some monsters have a secondary keyword used only when the primary results in a tie before the Threat Chain.</p>
+                <TableBlock
+                  headers={["Keyword", "Behaviour"]}
+                  rows={[
+                    ["BLOCKER", "Prefer heroes adjacent to allies (body-blocking)"],
+                    ["EXPOSED", "Prefer heroes not adjacent to any ally"],
                   ]}
                 />
               </SectionCard>
@@ -409,7 +454,7 @@ const Rulebook = () => {
               <SectionCard title="Turn Order">
                 <div className="space-y-2 text-sm text-foreground/80">
                   <p><span className="font-bold text-primary">1. Hero Phase:</span> Play 2 cards — Top + Bottom action, any order.</p>
-                  <p><span className="font-bold text-primary">2. Monster Phase:</span> Target → Move → Attack → Special Ability</p>
+                  <p><span className="font-bold text-primary">2. Monster Phase:</span> Target → Move → Attack (dice table)</p>
                 </div>
               </SectionCard>
 
@@ -531,10 +576,28 @@ const Rulebook = () => {
 
               <SectionCard title="Legacy Cards">
                 <div className="space-y-2 text-sm text-foreground/80">
-                  <p><span className="font-bold text-primary">Victory:</span> Flip to boon side — permanent benefit for future scenarios.</p>
-                  <p><span className="font-bold text-primary">Defeat:</span> Flip to scar side — permanent penalty carried forward.</p>
+                  <p><span className="font-bold text-primary">Realm Legacy:</span> One per realm scenario — Victory Boon or Defeat Scar.</p>
+                  <p><span className="font-bold text-primary">World Tree Legacy:</span> Earned at grand campaign milestones — higher impact.</p>
                   <p>Stored in spine slots of the Book-Box. Active cards affect all future sessions.</p>
                 </div>
+              </SectionCard>
+
+              <SectionCard title="Monster AI Keywords">
+                <TableBlock
+                  headers={["Keyword", "Target"]}
+                  rows={[
+                    ["CLOSEST", "Nearest hero"],
+                    ["WEAKEST", "Lowest HP"],
+                    ["EXHAUSTION FOCUS", "Most Exhaustion"],
+                    ["PACK HUNTER", "Adjacent to 2+ same type"],
+                    ["ISOLATIONIST", "No adjacent allies"],
+                    ["RANGED PRIORITY", "Used ranged attack"],
+                    ["HEALER HATE", "Healed this round"],
+                    ["ELITE", "Most Fate Tokens"],
+                    ["SONG FOCUS", "Most movement"],
+                    ["THREAD SEEKER", "Most conditions"],
+                  ]}
+                />
               </SectionCard>
             </TabsContent>
           </Tabs>

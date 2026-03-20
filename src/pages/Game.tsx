@@ -52,7 +52,7 @@ const heroClasses = [
     image: valkyrieImg,
     signature: "Wings of War",
     description: "Odin's choosers of the slain. Swift executioners who reap the unworthy.",
-    health: "TBD", speed: "TBD", poolSize: 8, handSize: 4,
+    health: 10, speed: 5, poolSize: 8, handSize: 4,
   },
   {
     name: "Seiðr",
@@ -60,9 +60,9 @@ const heroClasses = [
     role: "Support / Fate Manipulation",
     icon: Heart,
     image: seidrImg,
-    signature: "Web of Fate",
+    signature: "Völva's Trance",
     description: "Völva seers who read the threads of fate and bend reality to their will.",
-    health: "TBD", speed: "TBD", poolSize: 8, handSize: 5,
+    health: 8, speed: 3, poolSize: 8, handSize: 5,
   },
   {
     name: "Ulfhednar",
@@ -72,7 +72,7 @@ const heroClasses = [
     image: ulfhednarImg,
     signature: "Beast Within",
     description: "Wolf-pelt warriors who channel the beast's fury for devastating results.",
-    health: "TBD", speed: "TBD", poolSize: 6, handSize: 6,
+    health: 12, speed: "4/6", poolSize: 6, handSize: 6,
   },
   {
     name: "Skald",
@@ -97,13 +97,13 @@ const heroClasses = [
 ];
 
 const monsters = [
-  { name: "Draugr", quote: "The dead walk when dishonored.", health: 4, move: 3, attack: "+2", damage: 2, image: draugrImg },
-  { name: "Huldra", quote: "Beautiful as spring, hollow as a rotting log.", health: 6, move: 4, attack: "+3", damage: 3, image: huldraImg },
-  { name: "Nokken", quote: "He plays most beautifully when someone is about to drown.", health: 5, move: 3, attack: "+3", damage: 3, image: nokkenImg },
-  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they crush.", health: 8, move: 2, attack: "+3", damage: 4, image: trollImg },
-  { name: "Frost Giant", quote: "They raid to remind us we are small.", health: 15, move: 3, attack: "+4", damage: 5, image: frostGiantImg },
-  { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, attack: "+3", damage: 3, image: dwarfWarriorImg },
-  { name: "Mara", quote: "She sits upon your chest while you sleep.", health: "TBD", move: "TBD", attack: "TBD", damage: "TBD", image: maraImg },
+  { name: "Draugr", quote: "The dead walk when dishonored.", health: 6, move: 3, tier: "Standard", keyword: "CLOSEST", image: draugrImg },
+  { name: "Huldra", quote: "Beautiful as spring, hollow as a rotting log.", health: 7, move: 4, tier: "Standard", keyword: "ISOLATIONIST", image: huldraImg },
+  { name: "Nokken", quote: "He plays most beautifully when someone is about to drown.", health: 11, move: 3, tier: "Elite", keyword: "SONG FOCUS", image: nokkenImg },
+  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they crush.", health: 10, move: 2, tier: "Elite", keyword: "CLOSEST", image: trollImg },
+  { name: "Frost Giant", quote: "They raid to remind us we are small.", health: 28, move: 3, tier: "Boss", keyword: "ELITE", image: frostGiantImg },
+  { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, tier: "Standard", keyword: "CLOSEST", image: dwarfWarriorImg },
+  { name: "Mara", quote: "She sits upon your chest while you sleep.", health: 8, move: 3, tier: "Elite", keyword: "THREAD SEEKER", image: maraImg },
 ];
 
 
@@ -121,17 +121,23 @@ const realms = [
 
 const components = [
   { name: "Book-Box", qty: "1", desc: "Magnetic closure, A4 size, opens like a book" },
-  { name: "Player Dashboards", qty: "4", desc: "Dry-erase compatible with health/exhaustion tracking" },
-  { name: "Character Boards", qty: "6", desc: "Sliding XP track, token-peg ability slots, health dial" },
-  { name: "Ability Cards", qty: "24", desc: "4 unique starting cards per class" },
-  { name: "Monster Cards", qty: "12", desc: "6 types with stats and AI behaviour" },
+  { name: "Hex Grid Map", qty: "1", desc: "Modular battlefield — Scenario Sleeve overlays change the terrain" },
+  { name: "Character Sleeves", qty: "6", desc: "Slide over Character Board, one per hero class" },
+  { name: "Character Boards", qty: "6", desc: "Sliding XP track, token-peg ability slots, health dial, 3 equipment slots" },
+  { name: "Ability Cards", qty: "36+", desc: "Starting pool + unlockable cards per class" },
+  { name: "Equipment Cards", qty: "30+", desc: "Weapons, Armour, and Relics — one per slot" },
+  { name: "Monster Cards", qty: "12", desc: "7 types with stats, dice tables, and AI behaviour" },
   { name: "Scenario Sleeves", qty: "6", desc: "Front/back design, slides over the map" },
-  { name: "Legacy Cards", qty: "6", desc: "Double-sided (won/lost), stored in spine slots" },
-  { name: "D20 Die", qty: "1", desc: "Norse runic design" },
+  { name: "Realm Legacy Cards", qty: "6", desc: "Double-sided (Boon/Scar) — one per realm scenario" },
+  { name: "World Tree Legacy Cards", qty: "6", desc: "Double-sided — earned at grand campaign milestones" },
+  { name: "D20 Die", qty: "1", desc: "Norse runic design — rolled twice for Advantage/Disadvantage" },
   { name: "Hero Miniatures", qty: "4", desc: "Wooden block-style figurines" },
   { name: "Monster Tokens", qty: "24", desc: "Wooden discs for each monster type" },
   { name: "Fate Tokens", qty: "40", desc: "Wooden tokens for dice manipulation" },
   { name: "Exhaustion Tokens", qty: "20", desc: "Track hero fatigue" },
+  { name: "Loot Tokens", qty: "40", desc: "Currency for equipment and consumables" },
+  { name: "XP Tokens", qty: "30", desc: "Earned from XP-marked card actions" },
+  { name: "Curse Tokens", qty: "20", desc: "Used by the Nidstang class and certain monsters" },
 ];
 
 const fadeIn = {
@@ -305,12 +311,12 @@ const Game = () => {
                         <div className="font-bold text-foreground">{monster.move}</div>
                       </div>
                       <div>
-                        <div className="text-muted-foreground">Atk</div>
-                        <div className="font-bold text-foreground">{monster.attack}</div>
+                        <div className="text-muted-foreground">Tier</div>
+                        <div className={`font-bold ${monster.tier === "Boss" ? "text-destructive" : monster.tier === "Elite" ? "text-primary" : "text-foreground"}`}>{monster.tier}</div>
                       </div>
                       <div>
-                        <div className="text-muted-foreground">Dmg</div>
-                        <div className="font-bold text-foreground">{monster.damage}</div>
+                        <div className="text-muted-foreground">AI</div>
+                        <div className="font-bold text-foreground text-[10px]">{monster.keyword}</div>
                       </div>
                     </div>
                   </CardContent>
@@ -359,7 +365,7 @@ const Game = () => {
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               A compact A4-sized box that opens like a tome. The left half holds the battlefield and storage, 
-              the right half contains four player dashboards, and the spine stores Legacy Cards across your campaign.
+              the right half contains Character Sleeves and boards, and the spine stores Legacy Cards across your campaign.
             </p>
           </motion.div>
 
