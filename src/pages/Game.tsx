@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Sword, Heart, Flame, Music, Skull, Users, Clock, Dices, BookOpen } from "lucide-react";
+import { Shield, Sword, Heart, Flame, Music, Skull, Users, Clock, Dices, BookOpen, ArrowUpRight, Layers, TrendingUp, Briefcase, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -38,6 +38,7 @@ const heroClasses = [
     name: "Einherjar",
     quote: "Stand firm, shield-brothers! The Einherjar do not yield!",
     role: "Tank / Defender",
+    mechanic: "Hold Ground",
     icon: Shield,
     image: einherjarImg,
     signature: "Skjaldborg (Shield Wall)",
@@ -48,6 +49,7 @@ const heroClasses = [
     name: "Valkyrie",
     quote: "I choose the slain. I guide the worthy. I am the spear of judgment.",
     role: "Damage / Mobility",
+    mechanic: "Verdict",
     icon: Sword,
     image: valkyrieImg,
     signature: "Wings of War",
@@ -58,6 +60,7 @@ const heroClasses = [
     name: "Seiðr",
     quote: "The threads of fate are mine to weave… and to sever.",
     role: "Support / Fate Manipulation",
+    mechanic: "Fate Threads",
     icon: Heart,
     image: seidrImg,
     signature: "Völva's Trance",
@@ -68,6 +71,7 @@ const heroClasses = [
     name: "Ulfhednar",
     quote: "The wolf does not pity the lamb. I am the wolf.",
     role: "Risk / Reward Damage",
+    mechanic: "Two-State",
     icon: Flame,
     image: ulfhednarImg,
     signature: "Beast Within",
@@ -76,18 +80,20 @@ const heroClasses = [
   },
   {
     name: "Skald",
-    quote: "Listen, and I will sing of heroes yet to fall…",
-    role: "Inspire / Support",
+    quote: "Listen. I will sing of what you are about to do.",
+    role: "Inspire / Amplify",
+    mechanic: "Song Track",
     icon: Music,
     image: skaldImg,
     signature: "Saga of Heroes",
-    description: "Poets who preserve the deeds of heroes and inspire allies to greater heights.",
-    health: "TBD", speed: "TBD", poolSize: 8, handSize: 4,
+    description: "Poets dedicated to Bragi who immortalise heroic deeds through verse. The Skald's song has real power — it makes allies transcend their limits.",
+    health: 9, speed: 4, poolSize: 8, handSize: 4,
   },
   {
     name: "Nidstang",
     quote: "I raise the curse-pole. Let doom find the unworthy.",
     role: "Debuff / Control / Damage-over-Time",
+    mechanic: "Curse Tokens",
     icon: Skull,
     image: nidstangImg,
     signature: "The Nídstǫng Pole",
@@ -97,36 +103,36 @@ const heroClasses = [
 ];
 
 const monsters = [
-  { name: "Draugr", quote: "The dead walk when dishonored.", health: 6, move: 3, tier: "Standard", keyword: "CLOSEST", image: draugrImg },
-  { name: "Huldra", quote: "Beautiful as spring, hollow as a rotting log.", health: 7, move: 4, tier: "Standard", keyword: "ISOLATIONIST", image: huldraImg },
-  { name: "Nokken", quote: "He plays most beautifully when someone is about to drown.", health: 11, move: 3, tier: "Elite", keyword: "SONG FOCUS", image: nokkenImg },
-  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they crush.", health: 10, move: 2, tier: "Elite", keyword: "CLOSEST", image: trollImg },
-  { name: "Frost Giant", quote: "They raid to remind us we are small.", health: 28, move: 3, tier: "Boss", keyword: "ELITE", image: frostGiantImg },
-  { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, tier: "Standard", keyword: "CLOSEST", image: dwarfWarriorImg },
-  { name: "Mara", quote: "She sits upon your chest while you sleep.", health: 8, move: 3, tier: "Elite", keyword: "THREAD SEEKER", image: maraImg },
+  { name: "Draugr", quote: "The dead walk when dishonoured. The Draugr remembers life… and hates the living for it.", health: 6, move: 3, tier: "Standard", primary: "ISOLATIONIST", secondary: "WEAKEST", image: draugrImg },
+  { name: "Huldra", quote: "Beautiful as spring, hollow as a rotting log. Do not follow her into the woods.", health: 7, move: 4, tier: "Standard", primary: "ISOLATIONIST", secondary: "WEAKEST", image: huldraImg },
+  { name: "Nokken", quote: "He plays most beautifully when someone is about to drown.", health: 11, move: 3, tier: "Elite", primary: "HEALER HATE", secondary: "CLOSEST", image: nokkenImg },
+  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they are strong enough to crush a horse.", health: 10, move: 2, tier: "Elite", primary: "WEAKEST", secondary: "CLOSEST", image: trollImg },
+  { name: "Frost Giant", quote: "The jotnar do not raid for gold. They raid to remind us we are small.", health: 28, move: 3, tier: "Boss", primary: "ELITE", secondary: "WEAKEST", image: frostGiantImg },
+  { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, tier: "Standard", primary: "PACK HUNTER", secondary: "CLOSEST", image: dwarfWarriorImg },
+  { name: "Mara", quote: "She sits upon your chest while you sleep. You cannot move. You cannot scream.", health: 8, move: 3, tier: "Standard", primary: "EXHAUSTION FOCUS", secondary: "CLOSEST", image: maraImg },
 ];
 
 
 const realms = [
-  { name: "Asgard", image: asgardImg, description: "Realm of the Aesir gods, shining citadels and divine power." },
-  { name: "Midgard", image: midgardImg, description: "The mortal realm, where humanity struggles against monsters and the whims of gods." },
-  { name: "Jotunheim", image: jotunheimImg, description: "Land of frost and fire giants, treacherous and wild." },
-  { name: "Niflheim", image: niflheimImg, description: "Realm of ice, mist, and primordial cold." },
-  { name: "Muspelheim", image: muspelheimImg, description: "Fire realm of the fire giants, burning and eternal." },
-  { name: "Alfheim", image: alfheimImg, description: "Home of the light elves, beautiful and deceiving." },
-  { name: "Svartalfheim", image: svartalfheimImg, description: "Underground realm of dwarves and dark elves." },
-  { name: "Vanaheim", image: vanaheimImg, description: "Realm of the Vanir gods, nature and ancient magic." },
-  { name: "Helheim", image: helheimImg, description: "Realm of the dead, ruled by the goddess Hel." },
+  { name: "Asgard", image: asgardImg, description: "Realm of the Aesir gods, shining citadels and divine power. Home to Odin, Thor, and the halls of Valhalla." },
+  { name: "Midgard", image: midgardImg, description: "The mortal realm, where humanity struggles to survive against monsters, harsh winters, and the whims of gods." },
+  { name: "Jotunheim", image: jotunheimImg, description: "Land of frost and fire giants, treacherous and wild. Ancient enemies of both gods and mortals." },
+  { name: "Niflheim", image: niflheimImg, description: "Realm of ice, mist, and primordial cold. Where the river Hvergelmir flows and the dragon Nidhogg gnaws at Yggdrasil's roots." },
+  { name: "Muspelheim", image: muspelheimImg, description: "Fire realm of the fire giants, burning and eternal. Home to Surtr, who will bring flame at Ragnarok." },
+  { name: "Alfheim", image: alfheimImg, description: "Home of the light elves, beautiful and deceiving. A realm of magic and wonder." },
+  { name: "Svartalfheim", image: svartalfheimImg, description: "Underground realm of dwarves and dark elves. Master craftsmen who forge legendary artifacts." },
+  { name: "Vanaheim", image: vanaheimImg, description: "Realm of the Vanir gods, nature and magic. Older than the Aesir, with their own ancient wisdom." },
+  { name: "Helheim", image: helheimImg, description: "Realm of the dead, ruled by the goddess Hel. Where those who die dishonourably find their rest." },
 ];
 
 const components = [
   { name: "Book-Box", qty: "1", desc: "Magnetic closure, A4 size, opens like a book" },
-  { name: "Hex Grid Map", qty: "1", desc: "Modular battlefield — Scenario Sleeve overlays change the terrain" },
-  { name: "Character Sleeves", qty: "6", desc: "Slide over Character Board, one per hero class" },
+  { name: "Hex Grid Map", qty: "1", desc: "Double-sided, dry-erase compatible" },
+  { name: "Character Sleeves", qty: "6", desc: "One per class — slim pocket holding board, cards, tokens, and equipment" },
   { name: "Character Boards", qty: "6", desc: "Sliding XP track, token-peg ability slots, health dial, 3 equipment slots" },
   { name: "Ability Cards", qty: "36+", desc: "Starting pool + unlockable cards per class" },
   { name: "Equipment Cards", qty: "30+", desc: "Weapons, Armour, and Relics — one per slot" },
-  { name: "Monster Cards", qty: "12", desc: "7 types with stats, dice tables, and AI behaviour" },
+  { name: "Monster Cards", qty: "12", desc: "6 types with stats and AI behaviour" },
   { name: "Scenario Sleeves", qty: "6", desc: "Front/back design, slides over the map" },
   { name: "Realm Legacy Cards", qty: "6", desc: "Double-sided (Boon/Scar) — one per realm scenario" },
   { name: "World Tree Legacy Cards", qty: "6", desc: "Double-sided — earned at grand campaign milestones" },
@@ -225,6 +231,45 @@ const Game = () => {
         </div>
       </section>
 
+      {/* Key Features */}
+      <section className="py-20 px-4 bg-gradient-to-b from-background to-card/20">
+        <div className="container mx-auto">
+          <motion.h2 {...fadeIn} className="text-3xl md:text-4xl font-display font-bold text-center mb-4">
+            How It <span className="text-primary">Plays</span>
+          </motion.h2>
+          <motion.p {...fadeIn} className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+            Every design choice serves one goal — fast, dramatic sessions with meaningful decisions
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: Dices, title: "D20 Dice Combat", desc: "Each Character Board's Dice Table determines every outcome. Roll once — no modifier stacking." },
+              { icon: ArrowUpRight, title: "Fail Forward", desc: "Every roll moves the story forward. Even campaign losses reward the party and advance the narrative." },
+              { icon: Layers, title: "3-Act Sessions", desc: "Approach, Escalation, Resolution — every session has a built-in dramatic shape keeping play within 30-45 minutes." },
+              { icon: TrendingUp, title: "1-9 Progression", desc: "RPG-style progression across a campaign. Reach Level 9 to become a Saga Hero and fight for your allies." },
+              { icon: Briefcase, title: "Portable Book-Box", desc: "Compact A4-sized box that opens like a book. Setup takes under 5 minutes. Everything has its place." },
+              { icon: Sparkles, title: "Authentic Folklore", desc: "Huldra, Nokken, Draugr, and more — each with authentic abilities and folklore-rooted behaviours." },
+            ].map((feature, i) => {
+              const FeatureIcon = feature.icon;
+              return (
+                <motion.div key={feature.title} {...fadeIn} transition={{ delay: i * 0.08, duration: 0.5 }}>
+                  <Card className="bg-card/50 border-border hover:border-primary/30 transition-all h-full">
+                    <CardContent className="p-6 flex gap-4">
+                      <div className="shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <FeatureIcon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-bold text-foreground mb-1">{feature.title}</h3>
+                        <p className="text-xs text-muted-foreground">{feature.desc}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Heroes */}
       <section id="heroes" className="py-20 px-4 bg-gradient-to-b from-background to-card/20 scroll-mt-20">
         <div className="container mx-auto">
@@ -243,9 +288,14 @@ const Game = () => {
                     <div className="relative h-48 overflow-hidden">
                       <img src={hero.image} alt={hero.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-                      <div className="absolute bottom-3 left-4 right-4">
-                        <h3 className="text-lg font-bold text-primary">{hero.name}</h3>
-                        <span className="text-xs text-foreground/70">{hero.role}</span>
+                      <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between">
+                        <div>
+                          <h3 className="text-lg font-bold text-primary">{hero.name}</h3>
+                          <span className="text-xs text-foreground/70">{hero.role}</span>
+                        </div>
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary border border-primary/30 font-semibold whitespace-nowrap">
+                          {hero.mechanic}
+                        </span>
                       </div>
                     </div>
                     <CardContent className="p-5 space-y-3">
@@ -314,9 +364,10 @@ const Game = () => {
                         <div className="text-muted-foreground">Tier</div>
                         <div className={`font-bold ${monster.tier === "Boss" ? "text-destructive" : monster.tier === "Elite" ? "text-primary" : "text-foreground"}`}>{monster.tier}</div>
                       </div>
-                      <div>
+                      <div className="col-span-1">
                         <div className="text-muted-foreground">AI</div>
-                        <div className="font-bold text-foreground text-[10px]">{monster.keyword}</div>
+                        <div className="font-bold text-foreground text-[10px]">{monster.primary}</div>
+                        {monster.secondary && <div className="text-[9px] text-foreground/50">{monster.secondary}</div>}
                       </div>
                     </div>
                   </CardContent>
