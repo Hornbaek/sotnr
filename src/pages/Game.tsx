@@ -111,6 +111,7 @@ const monsters = [
   { name: "Frost Giant", quote: "The jotnar do not raid for gold. They raid to remind us we are small.", health: 28, move: 3, tier: "Boss", primary: "ELITE", secondary: "WEAKEST", image: frostGiantImg },
   { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, tier: "Standard", primary: "PACK HUNTER", secondary: "CLOSEST", image: dwarfWarriorImg },
   { name: "Mara", quote: "She sits upon your chest while you sleep. You cannot move. You cannot scream.", health: 8, move: 3, tier: "Standard", primary: "EXHAUSTION FOCUS", secondary: "CLOSEST", image: maraImg },
+  { name: "Myling", quote: "It cries from the burial ground. If you carry it, it grows heavier with every step.", health: 5, move: 4, tier: "Standard", primary: "CLOSEST", secondary: "EXHAUSTION FOCUS", image: mylingImg },
 ];
 
 
