@@ -457,13 +457,34 @@ const Rulebook = () => {
               <SectionCard title="Monster Tiers">
                 <p className="text-sm text-foreground/80 mb-3">Every monster belongs to a tier that determines its complexity and threat level.</p>
                 <TableBlock
-                  headers={["Tier", "HP Range", "Behaviour"]}
+                  headers={["Tier", "HP Range", "Appears As", "Boss Threshold"]}
                   rows={[
-                    ["Standard", "5-8", "Simple AI, 1 keyword, straightforward dice table"],
-                    ["Elite", "8-14", "More complex AI, may have secondary keyword, stronger dice table"],
-                    ["Boss", "20-30+", "Multi-phase, unique mechanics, highest threat"],
+                    ["Standard", "4-8", "Multiple tokens per scenario", "No"],
+                    ["Elite", "8-15", "1-2 per scenario", "No"],
+                    ["Boss", "20-40", "1 per scenario", "Yes — at 50% and 25% HP"],
                   ]}
                 />
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">Stat Ranges by Tier</h4>
+                <TableBlock
+                  headers={["Tier", "Health", "Move", "Attack Mod", "Damage"]}
+                  rows={[
+                    ["Standard", "4-8", "2-4", "+1 to +3", "1-3"],
+                    ["Elite", "8-15", "3-5", "+3 to +5", "3-5"],
+                    ["Boss", "20-40", "3-6", "+4 to +6", "4-7"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Monster Initiative — Swift & Steady">
+                <p className="text-sm text-foreground/80 mb-3">Every Monster Card has an Initiative value (1-10) that determines when it activates:</p>
+                <TableBlock
+                  headers={["Initiative", "Phase", "Activates"]}
+                  rows={[
+                    ["1-5", "Swift", "Before all heroes (Phase 1)"],
+                    ["6-10", "Steady", "After all heroes (Phase 3)"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">Within each phase, monsters activate in Initiative order (lowest first). Ties broken by spawn order.</p>
               </SectionCard>
 
               <SectionCard title="The Monster AI Sequence">
@@ -472,8 +493,9 @@ const Rulebook = () => {
                   <li>Apply Secondary keyword if tied</li>
                   <li>Apply Threat Chain if still tied</li>
                   <li>Move toward target (shortest path, full Speed, committed)</li>
-                  <li>Attack if in range — consult monster's dice table</li>
+                  <li>Attack if in range — roll D20, consult monster's back-of-card Dice Table</li>
                 </ol>
+                <p className="text-xs text-muted-foreground mt-2">Special abilities are built into the Dice Table — each roll result may include effects alongside damage. Some monsters also have permanent Passive abilities on the front of the card.</p>
               </SectionCard>
 
               <SectionCard title="Primary Target Keywords">
@@ -488,19 +510,19 @@ const Rulebook = () => {
                     ["RANGED PRIORITY", "Target hero who made a ranged attack this round"],
                     ["HEALER HATE", "Target hero who healed another this round"],
                     ["ELITE", "Target hero with the most Fate Tokens"],
-                    ["SONG FOCUS", "Target hero who moved most hexes this round"],
-                    ["THREAD SEEKER", "Target hero with most active conditions"],
+                    ["SONG FOCUS", "Target active Skald (or hero with highest Song Track value)"],
+                    ["THREAD SEEKER", "Target hero with most active Fate Threads"],
                   ]}
                 />
               </SectionCard>
 
               <SectionCard title="Secondary Keywords (Tie-Breakers)">
-                <p className="text-sm text-foreground/80 mb-3">Some monsters have a secondary keyword used only when the primary results in a tie before the Threat Chain.</p>
+                <p className="text-sm text-foreground/80 mb-3">All primary keywords can serve as secondary. Additionally:</p>
                 <TableBlock
                   headers={["Keyword", "Behaviour"]}
                   rows={[
-                    ["BLOCKER", "Prefer heroes adjacent to allies (body-blocking)"],
-                    ["EXPOSED", "Prefer heroes not adjacent to any ally"],
+                    ["BLOCKER", "If tied, target the hero with the most adjacent allies"],
+                    ["EXPOSED", "If tied, target the hero with fewest active equipment items"],
                   ]}
                 />
               </SectionCard>
@@ -516,10 +538,48 @@ const Rulebook = () => {
                 </ol>
               </SectionCard>
 
-              <SectionCard title="Committed Movement">
-                <p className="text-sm text-foreground/80">
-                  A monster identifies its target before moving and commits for the entire activation. If it ends movement in range of a different hero, it does not switch targets. This makes monster behaviour fully predictable — leading monsters away from vulnerable allies is a valid tactic.
-                </p>
+              <SectionCard title="Monster Movement & Exceptions">
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>Monsters identify their target before moving and <span className="font-bold">commit</span> for the entire activation — no switching targets mid-move.</p>
+                  <h4 className="text-sm font-bold text-primary mt-3 mb-1">Elite Movement Exception</h4>
+                  <p>Elite monsters may move through <span className="font-bold">one hero's hex</span> per activation — forcing that hero 1 hex in a direction of the monster's choice. No damage, but displacement.</p>
+                  <h4 className="text-sm font-bold text-primary mt-3 mb-1">Boss Movement Exception</h4>
+                  <p>Bosses <span className="font-bold">ignore difficult terrain</span> entirely and may move through hero hexes freely.</p>
+                </div>
+              </SectionCard>
+
+              <SectionCard title="Monster Attack Resolution">
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>After moving, if in attack range of target:</p>
+                  <ol className="list-decimal list-inside space-y-1">
+                    <li>Roll D20</li>
+                    <li>Consult monster's back-of-card Dice Table</li>
+                    <li>Apply the full result — damage and all listed effects simultaneously</li>
+                  </ol>
+                  <p className="mt-2">If <span className="font-bold">not</span> in range after moving: no attack this activation. Monster waits, committed to position.</p>
+                  <p className="text-xs text-muted-foreground italic mt-2">Effects in the Dice Table are always applied together. No order dependency within a single result.</p>
+                </div>
+              </SectionCard>
+
+              <SectionCard title="Boss-Specific Rules">
+                <div className="space-y-3 text-sm text-foreground/80">
+                  <div>
+                    <h4 className="font-bold text-primary mb-1">Threshold Triggers</h4>
+                    <p>At 50% and 25% Health, check the Scenario Sleeve. Boss Monster Cards carry no threshold text — all behaviour is defined on the Sleeve for reusability.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-1">Enraged State</h4>
+                    <p>If the Sleeve specifies Enraged, flip the Monster Card. The back shows a simplified Enraged Dice Table — higher damage, simpler effects.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-1">Boss Escape</h4>
+                    <p>When a boss escapes, remove its token. It does not return in Act 3. The Legacy Card reflects whether it was driven to threshold.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-1">Cannot Be Defeated Before Threshold</h4>
+                    <p>If reduced to 0 HP before reaching threshold: the boss escapes at 1 HP. A creature of this power cannot be destroyed in a single encounter.</p>
+                  </div>
+                </div>
               </SectionCard>
             </TabsContent>
 
