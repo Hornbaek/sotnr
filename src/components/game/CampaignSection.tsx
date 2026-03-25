@@ -31,7 +31,7 @@ const campaignRealms = [
       { name: "The Waking Mound", quote: "Something stirs beneath the barrow. It remembers its name." },
       { name: "What Rides the Night", quote: "She sits upon your chest while you sleep. When you wake, you are less." },
       { name: "The Mountain Road", quote: "The path narrows. The stones watch. The trolls are patient." },
-      { name: "The Rot Beneath", quote: "The roots of Järnvik are poisoned. Something feeds on the town's fear." },
+      { name: "The Night of All Shadows", quote: "They all came at once. As if something called them." },
     ],
   },
   {

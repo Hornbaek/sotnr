@@ -20,6 +20,7 @@ import trollImg from "@/assets/monsters/troll.jpg";
 import frostGiantImg from "@/assets/monsters/frost-giant.jpg";
 import dwarfWarriorImg from "@/assets/monsters/dwarf-warrior.jpg";
 import maraImg from "@/assets/monsters/mara.jpg";
+import mylingImg from "@/assets/monsters/myling.jpg";
 
 import niflheimImg from "@/assets/realms/niflheim.jpg";
 import muspelheimImg from "@/assets/realms/muspelheim.jpg";
@@ -74,7 +75,7 @@ const heroClasses = [
     mechanic: "Two-State",
     icon: Flame,
     image: ulfhednarImg,
-    signature: "Beast Within",
+    signature: "Odin's Wolf",
     description: "Wolf-pelt warriors who channel the beast's fury for devastating results.",
     health: 12, speed: "4/6", poolSize: 6, handSize: 6,
   },
@@ -106,10 +107,11 @@ const monsters = [
   { name: "Draugr", quote: "The dead walk when dishonoured. The Draugr remembers life… and hates the living for it.", health: 6, move: 3, tier: "Standard", primary: "ISOLATIONIST", secondary: "WEAKEST", image: draugrImg },
   { name: "Huldra", quote: "Beautiful as spring, hollow as a rotting log. Do not follow her into the woods.", health: 7, move: 4, tier: "Standard", primary: "ISOLATIONIST", secondary: "WEAKEST", image: huldraImg },
   { name: "Nokken", quote: "He plays most beautifully when someone is about to drown.", health: 11, move: 3, tier: "Elite", primary: "HEALER HATE", secondary: "CLOSEST", image: nokkenImg },
-  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they are strong enough to crush a horse.", health: 10, move: 2, tier: "Elite", primary: "WEAKEST", secondary: "CLOSEST", image: trollImg },
+  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they are strong enough to crush a horse.", health: 12, move: 2, tier: "Elite", primary: "WEAKEST", secondary: "CLOSEST", image: trollImg },
   { name: "Frost Giant", quote: "The jotnar do not raid for gold. They raid to remind us we are small.", health: 28, move: 3, tier: "Boss", primary: "ELITE", secondary: "WEAKEST", image: frostGiantImg },
   { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, tier: "Standard", primary: "PACK HUNTER", secondary: "CLOSEST", image: dwarfWarriorImg },
   { name: "Mara", quote: "She sits upon your chest while you sleep. You cannot move. You cannot scream.", health: 8, move: 3, tier: "Standard", primary: "EXHAUSTION FOCUS", secondary: "CLOSEST", image: maraImg },
+  { name: "Myling", quote: "It cries from the burial ground. If you carry it, it grows heavier with every step.", health: 5, move: 4, tier: "Standard", primary: "CLOSEST", secondary: "EXHAUSTION FOCUS", image: mylingImg },
 ];
 
 
@@ -129,19 +131,19 @@ const components = [
   { name: "Book-Box", qty: "1", desc: "Magnetic closure, A4 size, opens like a book" },
   { name: "Hex Grid Map", qty: "1", desc: "Double-sided, dry-erase compatible" },
   { name: "Character Sleeves", qty: "6", desc: "One per class — slim pocket holding board, cards, tokens, and equipment" },
-  { name: "Character Boards", qty: "6", desc: "Sliding XP track, token-peg ability slots, health dial, 3 equipment slots" },
+  { name: "Character Boards", qty: "6", desc: "Sliding XP track, token-peg ability slots, health/exhaustion dial, 3 equipment slots" },
   { name: "Ability Cards", qty: "36+", desc: "Starting pool + unlockable cards per class" },
   { name: "Equipment Cards", qty: "30+", desc: "Weapons, Armour, and Relics — one per slot" },
   { name: "Monster Cards", qty: "12", desc: "6 types with stats and AI behaviour" },
-  { name: "Scenario Sleeves", qty: "6", desc: "Front/back design, slides over the map" },
+  { name: "Scenario Sleeves", qty: "6", desc: "Front/back design, slides over the map — adds terrain and rules to map during play" },
   { name: "Realm Legacy Cards", qty: "6", desc: "Double-sided (Boon/Scar) — one per realm scenario" },
   { name: "World Tree Legacy Cards", qty: "6", desc: "Double-sided — earned at grand campaign milestones" },
   { name: "D20 Die", qty: "1", desc: "Norse runic design — rolled twice for Advantage/Disadvantage" },
   { name: "Hero Miniatures", qty: "4", desc: "Wooden block-style figurines" },
   { name: "Monster Tokens", qty: "24", desc: "Wooden discs for each monster type" },
-  { name: "Fate Tokens", qty: "40", desc: "Wooden tokens for dice manipulation" },
-  { name: "Exhaustion Tokens", qty: "20", desc: "Track hero fatigue" },
-  { name: "Loot Tokens", qty: "40", desc: "Currency for equipment and consumables" },
+  { name: "Fate Tokens", qty: "40", desc: "Wooden tokens for dice manipulation (max 3 per hero)" },
+  { name: "Exhaustion Tokens", qty: "20", desc: "Track hero fatigue (max 6 per hero)" },
+  { name: "Loot Tokens", qty: "40", desc: "Currency for equipment and consumables (max 10 per hero)" },
   { name: "XP Tokens", qty: "30", desc: "Earned from XP-marked card actions" },
   { name: "Curse Tokens", qty: "20", desc: "Used by the Nidstang class and certain monsters" },
 ];

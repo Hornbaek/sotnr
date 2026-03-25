@@ -69,10 +69,13 @@ const Rulebook = () => {
 
             {/* HOW TO PLAY */}
             <TabsContent value="how-to-play" className="space-y-6">
-              <SectionCard title="The Round Structure">
+              <SectionCard title="The Round Structure — Swift & Steady Initiative">
                 <div className="space-y-3 text-sm text-foreground/80">
-                  <p><span className="font-bold text-primary">1. Hero Phase</span> — Players take turns in any order (lowest initiative first). Play two ability cards — one for its Top action, one for its Bottom action.</p>
-                  <p><span className="font-bold text-primary">2. Monster Phase</span> — Each monster activates in spawn order and follows the full Monster AI sequence.</p>
+                  <p>Each round has <span className="font-bold text-primary">three phases</span>, determined by monster Initiative values printed on their cards:</p>
+                  <p><span className="font-bold text-primary">Phase 1 — Swift Monsters</span> (Initiative 1-5): These monsters activate <span className="font-bold">before</span> all heroes. Lowest Initiative first.</p>
+                  <p><span className="font-bold text-primary">Phase 2 — Hero Phase</span>: Players take turns in any order. Play two ability cards — one for its Top action, one for its Bottom action.</p>
+                  <p><span className="font-bold text-primary">Phase 3 — Steady Monsters</span> (Initiative 6-10): These monsters activate <span className="font-bold">after</span> all heroes. Lowest Initiative first.</p>
+                  <p className="text-xs text-muted-foreground italic">Swift monsters must be anticipated. Steady monsters give heroes first-move advantage. This creates meaningful tactical decisions each round.</p>
                 </div>
               </SectionCard>
 
@@ -123,12 +126,48 @@ const Rulebook = () => {
               <SectionCard title="Setup (Under 5 Minutes)">
                 <ol className="list-decimal list-inside space-y-2 text-sm text-foreground/80">
                   <li>Open the book-box. Slide the Scenario Sleeve over the left half.</li>
-                  <li>Read the Scenario Sleeve — front (Acts, rules) and back (transitions).</li>
+                  <li>Read the Scenario Sleeve — <span className="font-bold">front</span> (Acts, rules) <span className="font-bold">and back</span> (transitions, special rules).</li>
                   <li>Check active Legacy Cards in the spine slots.</li>
                   <li>Each player chooses a hero, sets XP slider, places miniature on starting hex.</li>
+                  <li><span className="font-bold text-primary">Select Opening Hand</span> — each player selects cards from their pool up to their hand size.</li>
                   <li>Place monster tokens on indicated hexes.</li>
                   <li>Distribute tokens — Fate, Exhaustion, Loot, XP.</li>
                 </ol>
+                <p className="text-xs text-muted-foreground mt-3 italic">First game recommendation: Start with Einherjar, Valkyrie, and Seiðr for a balanced party.</p>
+              </SectionCard>
+
+              <SectionCard title="Card Selection">
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>At the <span className="font-bold text-primary">start of each Act</span>, select your hand from your card pool (up to your class hand size). This is your toolkit for the Act.</p>
+                  <p>Played cards go to your discard pile. When your deck is empty, shuffle your discard back in (gaining 1 Exhaustion).</p>
+                  <p>At each Act transition, <span className="font-bold">all played cards return to hand</span> — a full reset.</p>
+                  <p className="text-xs text-muted-foreground italic">Note: The Scenario Sleeve's transition strip can suppress recovery with suppression icons — always narratively motivated.</p>
+                </div>
+              </SectionCard>
+
+              <SectionCard title="Terrain">
+                <TableBlock
+                  headers={["Terrain", "Movement Cost", "Combat Effect"]}
+                  rows={[
+                    ["Open", "1 move point per hex", "Standard"],
+                    ["Difficult", "2 move points per hex", "No combat effect"],
+                    ["Elevated", "1 move point per hex", "Advantage attacking lower ground; Disadvantage attacking upward"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">A hex can be both Elevated and Difficult (e.g. a rocky slope) — apply both effects.</p>
+              </SectionCard>
+
+              <SectionCard title="Line of Sight">
+                <TableBlock
+                  headers={["Situation", "Result"]}
+                  rows={[
+                    ["Line passes through obstacle hex", "Blocked — no LoS"],
+                    ["Line passes along shared edge of two hexes", "Obscured — LoS exists but attack at Disadvantage"],
+                    ["Attacker Elevated, line passes over one ground-level obstacle", "Clear — elevated position sees over it"],
+                    ["Adjacent hexes", "Always clear — regardless of other terrain"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">LoS is checked at the moment of the action. Movement during a turn does not retroactively affect LoS.</p>
               </SectionCard>
             </TabsContent>
 
@@ -270,19 +309,35 @@ const Rulebook = () => {
 
               <SectionCard title="XP Thresholds & Rewards">
                 <TableBlock
-                  headers={["Level", "XP Needed", "Rewards"]}
+                  headers={["Level", "XP Needed", "XP Gap", "Rewards"]}
                   rows={[
-                    ["1", "0", "Starting board, starting card pool (6 or 8), 3 equipment slots"],
-                    ["2", "25", "+2 ability cards (pool grows)"],
-                    ["3", "55", "+2 Health"],
-                    ["4", "90", "Signature ability enhanced, +2 ability cards"],
-                    ["5", "120", "Dice threshold improvement (Strong Hit: 14-19)"],
-                    ["6", "150", "+2 ability cards (pool grows)"],
-                    ["7", "180", "+2 Health"],
-                    ["8", "210", "Signature ability mastery, +2 ability cards"],
-                    ["9", "240", "Saga Hero — Strong Hit: 13-19"],
+                    ["1", "0", "—", "Starting board, starting card pool (6 or 8), 3 equipment slots"],
+                    ["2", "25", "25", "Unlock ability card (pool grows)"],
+                    ["3", "55", "30", "+2 Health"],
+                    ["4", "90", "35", "Signature ability enhanced"],
+                    ["5", "120", "30", "Dice threshold improvement (Strong Hit: 14-19)"],
+                    ["6", "150", "30", "Unlock ability card (pool grows)"],
+                    ["7", "180", "30", "+2 Health"],
+                    ["8", "210", "30", "Signature ability mastery"],
+                    ["9", "240", "30", "Saga Hero — Strong Hit: 13-19"],
                   ]}
                 />
+              </SectionCard>
+
+              <SectionCard title="Card Pool Growth">
+                <p className="text-sm text-foreground/80 mb-3">Cards are unlocked at specific levels. No other source adds ability cards.</p>
+                <TableBlock
+                  headers={["Level", "Cards Unlocked", "Notes"]}
+                  rows={[
+                    ["1", "Starting pool (class-defined: 6 or 8)", "Varies by class"],
+                    ["2", "+2", "First unlock"],
+                    ["4", "+2", "Second unlock"],
+                    ["6", "+2", "Third unlock"],
+                    ["8", "+2", "Fourth unlock"],
+                    ["9", "No new cards", "Saga Hero"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">Maximum pool at Level 9: 10 cards (Ulfhednar) to 16 cards (all others). Hand size varies by class (4-6 cards per Act).</p>
               </SectionCard>
 
               <SectionCard title="Level 9 — Saga Hero">
@@ -357,11 +412,30 @@ const Rulebook = () => {
               </SectionCard>
 
               <SectionCard title="Mastery Pool (Grand Campaign)">
-                <div className="space-y-2 text-sm text-foreground/80">
-                  <p>In the grand campaign (all 9 realms), your <span className="font-bold text-primary">card pool never resets</span> — all unlocked ability cards carry forward across realms.</p>
-                  <p>However, your <span className="font-bold text-primary">level resets to 3</span> when entering a new realm. You keep equipment and Legacy Cards, but must re-earn XP for levels 4-9.</p>
-                  <p>This creates a growing tactical toolkit while keeping each realm's challenge fresh.</p>
+                <div className="space-y-3 text-sm text-foreground/80">
+                  <p>In the grand campaign (all 9 realms), your <span className="font-bold text-primary">Mastery Pool</span> — all unlocked ability cards — carries forward across realms. This is separate from your <span className="font-bold text-primary">Active Pool</span> (cards available for the current realm based on level).</p>
+                  <p>Your <span className="font-bold text-primary">level resets to 3</span> when entering a new realm. You keep equipment and Legacy Cards, but must re-earn XP for levels 4-9.</p>
                 </div>
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">What Carries Forward Between Realms</h4>
+                <TableBlock
+                  headers={["Carries Forward", "Resets"]}
+                  rows={[
+                    ["All unlocked ability cards (Mastery Pool)", "Level → 3"],
+                    ["Equipment (all 3 slots)", "XP → 55 (Level 3 threshold)"],
+                    ["Legacy Cards (Realm + World Tree)", "Exhaustion Tokens"],
+                    ["Loot Tokens (current balance)", "Fate Tokens → starting value"],
+                  ]}
+                />
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">Mastery Pool Growth Arc</h4>
+                <TableBlock
+                  headers={["After Realm", "Mastery Pool Size", "Active Pool (at L3)"]}
+                  rows={[
+                    ["Midgard (Realm 1)", "~14 cards", "Starting pool + 4"],
+                    ["Realm 2", "~18 cards", "Starting pool + 4"],
+                    ["Realm 3+", "Growing", "Select from ever-larger Mastery Pool"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">This creates a growing tactical toolkit while keeping each realm's challenge fresh.</p>
               </SectionCard>
 
               <SectionCard title="Campaign Math">
@@ -383,13 +457,34 @@ const Rulebook = () => {
               <SectionCard title="Monster Tiers">
                 <p className="text-sm text-foreground/80 mb-3">Every monster belongs to a tier that determines its complexity and threat level.</p>
                 <TableBlock
-                  headers={["Tier", "HP Range", "Behaviour"]}
+                  headers={["Tier", "HP Range", "Appears As", "Boss Threshold"]}
                   rows={[
-                    ["Standard", "5-8", "Simple AI, 1 keyword, straightforward dice table"],
-                    ["Elite", "8-14", "More complex AI, may have secondary keyword, stronger dice table"],
-                    ["Boss", "20-30+", "Multi-phase, unique mechanics, highest threat"],
+                    ["Standard", "4-8", "Multiple tokens per scenario", "No"],
+                    ["Elite", "8-15", "1-2 per scenario", "No"],
+                    ["Boss", "20-40", "1 per scenario", "Yes — at 50% and 25% HP"],
                   ]}
                 />
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">Stat Ranges by Tier</h4>
+                <TableBlock
+                  headers={["Tier", "Health", "Move", "Attack Mod", "Damage"]}
+                  rows={[
+                    ["Standard", "4-8", "2-4", "+1 to +3", "1-3"],
+                    ["Elite", "8-15", "3-5", "+3 to +5", "3-5"],
+                    ["Boss", "20-40", "3-6", "+4 to +6", "4-7"],
+                  ]}
+                />
+              </SectionCard>
+
+              <SectionCard title="Monster Initiative — Swift & Steady">
+                <p className="text-sm text-foreground/80 mb-3">Every Monster Card has an Initiative value (1-10) that determines when it activates:</p>
+                <TableBlock
+                  headers={["Initiative", "Phase", "Activates"]}
+                  rows={[
+                    ["1-5", "Swift", "Before all heroes (Phase 1)"],
+                    ["6-10", "Steady", "After all heroes (Phase 3)"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">Within each phase, monsters activate in Initiative order (lowest first). Ties broken by spawn order.</p>
               </SectionCard>
 
               <SectionCard title="The Monster AI Sequence">
@@ -398,8 +493,9 @@ const Rulebook = () => {
                   <li>Apply Secondary keyword if tied</li>
                   <li>Apply Threat Chain if still tied</li>
                   <li>Move toward target (shortest path, full Speed, committed)</li>
-                  <li>Attack if in range — consult monster's dice table</li>
+                  <li>Attack if in range — roll D20, consult monster's back-of-card Dice Table</li>
                 </ol>
+                <p className="text-xs text-muted-foreground mt-2">Special abilities are built into the Dice Table — each roll result may include effects alongside damage. Some monsters also have permanent Passive abilities on the front of the card.</p>
               </SectionCard>
 
               <SectionCard title="Primary Target Keywords">
@@ -414,19 +510,19 @@ const Rulebook = () => {
                     ["RANGED PRIORITY", "Target hero who made a ranged attack this round"],
                     ["HEALER HATE", "Target hero who healed another this round"],
                     ["ELITE", "Target hero with the most Fate Tokens"],
-                    ["SONG FOCUS", "Target hero who moved most hexes this round"],
-                    ["THREAD SEEKER", "Target hero with most active conditions"],
+                    ["SONG FOCUS", "Target active Skald (or hero with highest Song Track value)"],
+                    ["THREAD SEEKER", "Target hero with most active Fate Threads"],
                   ]}
                 />
               </SectionCard>
 
               <SectionCard title="Secondary Keywords (Tie-Breakers)">
-                <p className="text-sm text-foreground/80 mb-3">Some monsters have a secondary keyword used only when the primary results in a tie before the Threat Chain.</p>
+                <p className="text-sm text-foreground/80 mb-3">All primary keywords can serve as secondary. Additionally:</p>
                 <TableBlock
                   headers={["Keyword", "Behaviour"]}
                   rows={[
-                    ["BLOCKER", "Prefer heroes adjacent to allies (body-blocking)"],
-                    ["EXPOSED", "Prefer heroes not adjacent to any ally"],
+                    ["BLOCKER", "If tied, target the hero with the most adjacent allies"],
+                    ["EXPOSED", "If tied, target the hero with fewest active equipment items"],
                   ]}
                 />
               </SectionCard>
@@ -442,19 +538,58 @@ const Rulebook = () => {
                 </ol>
               </SectionCard>
 
-              <SectionCard title="Committed Movement">
-                <p className="text-sm text-foreground/80">
-                  A monster identifies its target before moving and commits for the entire activation. If it ends movement in range of a different hero, it does not switch targets. This makes monster behaviour fully predictable — leading monsters away from vulnerable allies is a valid tactic.
-                </p>
+              <SectionCard title="Monster Movement & Exceptions">
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>Monsters identify their target before moving and <span className="font-bold">commit</span> for the entire activation — no switching targets mid-move.</p>
+                  <h4 className="text-sm font-bold text-primary mt-3 mb-1">Elite Movement Exception</h4>
+                  <p>Elite monsters may move through <span className="font-bold">one hero's hex</span> per activation — forcing that hero 1 hex in a direction of the monster's choice. No damage, but displacement.</p>
+                  <h4 className="text-sm font-bold text-primary mt-3 mb-1">Boss Movement Exception</h4>
+                  <p>Bosses <span className="font-bold">ignore difficult terrain</span> entirely and may move through hero hexes freely.</p>
+                </div>
+              </SectionCard>
+
+              <SectionCard title="Monster Attack Resolution">
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>After moving, if in attack range of target:</p>
+                  <ol className="list-decimal list-inside space-y-1">
+                    <li>Roll D20</li>
+                    <li>Consult monster's back-of-card Dice Table</li>
+                    <li>Apply the full result — damage and all listed effects simultaneously</li>
+                  </ol>
+                  <p className="mt-2">If <span className="font-bold">not</span> in range after moving: no attack this activation. Monster waits, committed to position.</p>
+                  <p className="text-xs text-muted-foreground italic mt-2">Effects in the Dice Table are always applied together. No order dependency within a single result.</p>
+                </div>
+              </SectionCard>
+
+              <SectionCard title="Boss-Specific Rules">
+                <div className="space-y-3 text-sm text-foreground/80">
+                  <div>
+                    <h4 className="font-bold text-primary mb-1">Threshold Triggers</h4>
+                    <p>At 50% and 25% Health, check the Scenario Sleeve. Boss Monster Cards carry no threshold text — all behaviour is defined on the Sleeve for reusability.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-1">Enraged State</h4>
+                    <p>If the Sleeve specifies Enraged, flip the Monster Card. The back shows a simplified Enraged Dice Table — higher damage, simpler effects.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-1">Boss Escape</h4>
+                    <p>When a boss escapes, remove its token. It does not return in Act 3. The Legacy Card reflects whether it was driven to threshold.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-1">Cannot Be Defeated Before Threshold</h4>
+                    <p>If reduced to 0 HP before reaching threshold: the boss escapes at 1 HP. A creature of this power cannot be destroyed in a single encounter.</p>
+                  </div>
+                </div>
               </SectionCard>
             </TabsContent>
 
             {/* QUICK REFERENCE */}
             <TabsContent value="reference" className="space-y-6">
-              <SectionCard title="Turn Order">
+              <SectionCard title="Round Structure">
                 <div className="space-y-2 text-sm text-foreground/80">
-                  <p><span className="font-bold text-primary">1. Hero Phase:</span> Play 2 cards — Top + Bottom action, any order.</p>
-                  <p><span className="font-bold text-primary">2. Monster Phase:</span> Target → Move → Attack (dice table)</p>
+                  <p><span className="font-bold text-primary">Phase 1 — Swift Monsters:</span> Initiative 1-5 activate before heroes.</p>
+                  <p><span className="font-bold text-primary">Phase 2 — Hero Phase:</span> Play 2 cards — Top + Bottom action, any order.</p>
+                  <p><span className="font-bold text-primary">Phase 3 — Steady Monsters:</span> Initiative 6-10 activate after heroes.</p>
                 </div>
               </SectionCard>
 
@@ -594,8 +729,10 @@ const Rulebook = () => {
                     ["RANGED PRIORITY", "Used ranged attack"],
                     ["HEALER HATE", "Healed this round"],
                     ["ELITE", "Most Fate Tokens"],
-                    ["SONG FOCUS", "Most movement"],
-                    ["THREAD SEEKER", "Most conditions"],
+                    ["SONG FOCUS", "Active Skald / highest Song Track"],
+                    ["THREAD SEEKER", "Most active Fate Threads"],
+                    ["BLOCKER", "(Secondary) Most adjacent allies"],
+                    ["EXPOSED", "(Secondary) Fewest equipment items"],
                   ]}
                 />
               </SectionCard>
