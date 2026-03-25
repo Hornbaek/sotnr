@@ -141,9 +141,9 @@ const components = [
   { name: "D20 Die", qty: "1", desc: "Norse runic design — rolled twice for Advantage/Disadvantage" },
   { name: "Hero Miniatures", qty: "4", desc: "Wooden block-style figurines" },
   { name: "Monster Tokens", qty: "24", desc: "Wooden discs for each monster type" },
-  { name: "Fate Tokens", qty: "40", desc: "Wooden tokens for dice manipulation" },
-  { name: "Exhaustion Tokens", qty: "20", desc: "Track hero fatigue" },
-  { name: "Loot Tokens", qty: "40", desc: "Currency for equipment and consumables" },
+  { name: "Fate Tokens", qty: "40", desc: "Wooden tokens for dice manipulation (max 3 per hero)" },
+  { name: "Exhaustion Tokens", qty: "20", desc: "Track hero fatigue (max 6 per hero)" },
+  { name: "Loot Tokens", qty: "40", desc: "Currency for equipment and consumables (max 10 per hero)" },
   { name: "XP Tokens", qty: "30", desc: "Earned from XP-marked card actions" },
   { name: "Curse Tokens", qty: "20", desc: "Used by the Nidstang class and certain monsters" },
 ];
