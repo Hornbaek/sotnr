@@ -131,7 +131,7 @@ const components = [
   { name: "Book-Box", qty: "1", desc: "Magnetic closure, A4 size, opens like a book" },
   { name: "Hex Grid Map", qty: "1", desc: "Double-sided, dry-erase compatible" },
   { name: "Character Sleeves", qty: "6", desc: "One per class — slim pocket holding board, cards, tokens, and equipment" },
-  { name: "Character Boards", qty: "6", desc: "Sliding XP track, token-peg ability slots, health dial, 3 equipment slots" },
+  { name: "Character Boards", qty: "6", desc: "Sliding XP track, token-peg ability slots, health/exhaustion dial, 3 equipment slots" },
   { name: "Ability Cards", qty: "36+", desc: "Starting pool + unlockable cards per class" },
   { name: "Equipment Cards", qty: "30+", desc: "Weapons, Armour, and Relics — one per slot" },
   { name: "Monster Cards", qty: "12", desc: "6 types with stats and AI behaviour" },
