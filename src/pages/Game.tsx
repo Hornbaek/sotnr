@@ -20,6 +20,7 @@ import trollImg from "@/assets/monsters/troll.jpg";
 import frostGiantImg from "@/assets/monsters/frost-giant.jpg";
 import dwarfWarriorImg from "@/assets/monsters/dwarf-warrior.jpg";
 import maraImg from "@/assets/monsters/mara.jpg";
+import mylingImg from "@/assets/monsters/myling.jpg";
 
 import niflheimImg from "@/assets/realms/niflheim.jpg";
 import muspelheimImg from "@/assets/realms/muspelheim.jpg";
