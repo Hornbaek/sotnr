@@ -107,7 +107,7 @@ const monsters = [
   { name: "Draugr", quote: "The dead walk when dishonoured. The Draugr remembers life… and hates the living for it.", health: 6, move: 3, tier: "Standard", primary: "ISOLATIONIST", secondary: "WEAKEST", image: draugrImg },
   { name: "Huldra", quote: "Beautiful as spring, hollow as a rotting log. Do not follow her into the woods.", health: 7, move: 4, tier: "Standard", primary: "ISOLATIONIST", secondary: "WEAKEST", image: huldraImg },
   { name: "Nokken", quote: "He plays most beautifully when someone is about to drown.", health: 11, move: 3, tier: "Elite", primary: "HEALER HATE", secondary: "CLOSEST", image: nokkenImg },
-  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they are strong enough to crush a horse.", health: 10, move: 2, tier: "Elite", primary: "WEAKEST", secondary: "CLOSEST", image: trollImg },
+  { name: "Troll", quote: "Trolls turn to stone in sunlight. Until then, they are strong enough to crush a horse.", health: 12, move: 2, tier: "Elite", primary: "WEAKEST", secondary: "CLOSEST", image: trollImg },
   { name: "Frost Giant", quote: "The jotnar do not raid for gold. They raid to remind us we are small.", health: 28, move: 3, tier: "Boss", primary: "ELITE", secondary: "WEAKEST", image: frostGiantImg },
   { name: "Dwarf Warrior", quote: "Dwarves craft wonders… and guard them with their lives.", health: 5, move: 3, tier: "Standard", primary: "PACK HUNTER", secondary: "CLOSEST", image: dwarfWarriorImg },
   { name: "Mara", quote: "She sits upon your chest while you sleep. You cannot move. You cannot scream.", health: 8, move: 3, tier: "Standard", primary: "EXHAUSTION FOCUS", secondary: "CLOSEST", image: maraImg },
