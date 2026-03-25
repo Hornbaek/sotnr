@@ -135,7 +135,7 @@ const components = [
   { name: "Ability Cards", qty: "36+", desc: "Starting pool + unlockable cards per class" },
   { name: "Equipment Cards", qty: "30+", desc: "Weapons, Armour, and Relics — one per slot" },
   { name: "Monster Cards", qty: "12", desc: "6 types with stats and AI behaviour" },
-  { name: "Scenario Sleeves", qty: "6", desc: "Front/back design, slides over the map" },
+  { name: "Scenario Sleeves", qty: "6", desc: "Front/back design, slides over the map — adds terrain and rules to map during play" },
   { name: "Realm Legacy Cards", qty: "6", desc: "Double-sided (Boon/Scar) — one per realm scenario" },
   { name: "World Tree Legacy Cards", qty: "6", desc: "Double-sided — earned at grand campaign milestones" },
   { name: "D20 Die", qty: "1", desc: "Norse runic design — rolled twice for Advantage/Disadvantage" },
