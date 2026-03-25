@@ -412,11 +412,30 @@ const Rulebook = () => {
               </SectionCard>
 
               <SectionCard title="Mastery Pool (Grand Campaign)">
-                <div className="space-y-2 text-sm text-foreground/80">
-                  <p>In the grand campaign (all 9 realms), your <span className="font-bold text-primary">card pool never resets</span> — all unlocked ability cards carry forward across realms.</p>
-                  <p>However, your <span className="font-bold text-primary">level resets to 3</span> when entering a new realm. You keep equipment and Legacy Cards, but must re-earn XP for levels 4-9.</p>
-                  <p>This creates a growing tactical toolkit while keeping each realm's challenge fresh.</p>
+                <div className="space-y-3 text-sm text-foreground/80">
+                  <p>In the grand campaign (all 9 realms), your <span className="font-bold text-primary">Mastery Pool</span> — all unlocked ability cards — carries forward across realms. This is separate from your <span className="font-bold text-primary">Active Pool</span> (cards available for the current realm based on level).</p>
+                  <p>Your <span className="font-bold text-primary">level resets to 3</span> when entering a new realm. You keep equipment and Legacy Cards, but must re-earn XP for levels 4-9.</p>
                 </div>
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">What Carries Forward Between Realms</h4>
+                <TableBlock
+                  headers={["Carries Forward", "Resets"]}
+                  rows={[
+                    ["All unlocked ability cards (Mastery Pool)", "Level → 3"],
+                    ["Equipment (all 3 slots)", "XP → 55 (Level 3 threshold)"],
+                    ["Legacy Cards (Realm + World Tree)", "Exhaustion Tokens"],
+                    ["Loot Tokens (current balance)", "Fate Tokens → starting value"],
+                  ]}
+                />
+                <h4 className="text-sm font-bold text-primary mt-4 mb-2">Mastery Pool Growth Arc</h4>
+                <TableBlock
+                  headers={["After Realm", "Mastery Pool Size", "Active Pool (at L3)"]}
+                  rows={[
+                    ["Midgard (Realm 1)", "~14 cards", "Starting pool + 4"],
+                    ["Realm 2", "~18 cards", "Starting pool + 4"],
+                    ["Realm 3+", "Growing", "Select from ever-larger Mastery Pool"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">This creates a growing tactical toolkit while keeping each realm's challenge fresh.</p>
               </SectionCard>
 
               <SectionCard title="Campaign Math">
