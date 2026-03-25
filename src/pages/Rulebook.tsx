@@ -309,19 +309,35 @@ const Rulebook = () => {
 
               <SectionCard title="XP Thresholds & Rewards">
                 <TableBlock
-                  headers={["Level", "XP Needed", "Rewards"]}
+                  headers={["Level", "XP Needed", "XP Gap", "Rewards"]}
                   rows={[
-                    ["1", "0", "Starting board, starting card pool (6 or 8), 3 equipment slots"],
-                    ["2", "25", "+2 ability cards (pool grows)"],
-                    ["3", "55", "+2 Health"],
-                    ["4", "90", "Signature ability enhanced, +2 ability cards"],
-                    ["5", "120", "Dice threshold improvement (Strong Hit: 14-19)"],
-                    ["6", "150", "+2 ability cards (pool grows)"],
-                    ["7", "180", "+2 Health"],
-                    ["8", "210", "Signature ability mastery, +2 ability cards"],
-                    ["9", "240", "Saga Hero — Strong Hit: 13-19"],
+                    ["1", "0", "—", "Starting board, starting card pool (6 or 8), 3 equipment slots"],
+                    ["2", "25", "25", "Unlock ability card (pool grows)"],
+                    ["3", "55", "30", "+2 Health"],
+                    ["4", "90", "35", "Signature ability enhanced"],
+                    ["5", "120", "30", "Dice threshold improvement (Strong Hit: 14-19)"],
+                    ["6", "150", "30", "Unlock ability card (pool grows)"],
+                    ["7", "180", "30", "+2 Health"],
+                    ["8", "210", "30", "Signature ability mastery"],
+                    ["9", "240", "30", "Saga Hero — Strong Hit: 13-19"],
                   ]}
                 />
+              </SectionCard>
+
+              <SectionCard title="Card Pool Growth">
+                <p className="text-sm text-foreground/80 mb-3">Cards are unlocked at specific levels. No other source adds ability cards.</p>
+                <TableBlock
+                  headers={["Level", "Cards Unlocked", "Notes"]}
+                  rows={[
+                    ["1", "Starting pool (class-defined: 6 or 8)", "Varies by class"],
+                    ["2", "+2", "First unlock"],
+                    ["4", "+2", "Second unlock"],
+                    ["6", "+2", "Third unlock"],
+                    ["8", "+2", "Fourth unlock"],
+                    ["9", "No new cards", "Saga Hero"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">Maximum pool at Level 9: 10 cards (Ulfhednar) to 16 cards (all others). Hand size varies by class (4-6 cards per Act).</p>
               </SectionCard>
 
               <SectionCard title="Level 9 — Saga Hero">
