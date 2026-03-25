@@ -86,11 +86,11 @@ const realmCampaigns: RealmCampaign[] = [
         branchNote: "Choose: Fight, Sneak, or Bargain with the Troll",
       },
       {
-        id: "m5", name: "The Rot Beneath",
-        quote: "The roots of Järnvik are poisoned.",
-        difficulty: "⭐⭐⭐⭐ Hard", monsters: "TBD",
+        id: "m5", name: "The Night of All Shadows",
+        quote: "They all came at once. As if something called them.",
+        difficulty: "⭐⭐⭐⭐ Campaign Finale", monsters: "Draugr ×2, Myling ×3 (staggered), Mara ×1, Huldra ×1 (conditional)",
         legacy: { won: "Järnvik endures — each hero gains 3 Loot entering next realm.", lost: "Järnvik falls — each hero begins next realm with 1 Exhaustion Token." },
-        branchNote: "S1 outcome determines: Huldra appears as ally (won) or enemy (lost)",
+        branchNote: "S1 outcome determines: Huldra appears as ally (won) or enemy (lost). Rune Knowledge token from S4 grants opening Advantage.",
       },
     ],
     branches: [

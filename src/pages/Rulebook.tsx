@@ -729,8 +729,10 @@ const Rulebook = () => {
                     ["RANGED PRIORITY", "Used ranged attack"],
                     ["HEALER HATE", "Healed this round"],
                     ["ELITE", "Most Fate Tokens"],
-                    ["SONG FOCUS", "Most movement"],
-                    ["THREAD SEEKER", "Most conditions"],
+                    ["SONG FOCUS", "Active Skald / highest Song Track"],
+                    ["THREAD SEEKER", "Most active Fate Threads"],
+                    ["BLOCKER", "(Secondary) Most adjacent allies"],
+                    ["EXPOSED", "(Secondary) Fewest equipment items"],
                   ]}
                 />
               </SectionCard>
