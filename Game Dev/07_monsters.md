@@ -42,7 +42,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"The dead walk when dishonoured. The Draugr remembers life… and hates the living for it."*
 
-**Health:** 6 | **Move:** 3
+**Health:** 6 | **Move:** 3 | **Initiative:** 7 *(Steady)*
 **Primary:** ISOLATIONIST | **Secondary:** WEAKEST
 
 | Roll | Damage | Effect |
@@ -62,7 +62,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Beautiful as spring, hollow as a rotting log. Do not follow her into the woods."*
 
-**Health:** 7 | **Move:** 4
+**Health:** 7 | **Move:** 4 | **Initiative:** 4 *(Swift)*
 **Primary:** ISOLATIONIST | **Secondary:** WEAKEST
 
 | Roll | Damage | Effect |
@@ -82,7 +82,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Trolls turn to stone in sunlight. Until then, they are strong enough to crush a horse."*
 
-**Health:** 10 | **Move:** 2
+**Health:** 12 | **Move:** 2 | **Initiative:** 9 *(Steady)*
 **Primary:** WEAKEST | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -102,7 +102,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"She sits upon your chest while you sleep. You cannot move. You cannot scream."*
 
-**Health:** 8 | **Move:** 3
+**Health:** 8 | **Move:** 3 | **Initiative:** 5 *(Swift)*
 **Primary:** EXHAUSTION FOCUS | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -121,7 +121,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"It screams your name from the darkness. Each step it takes onto your back is heavier than the last."*
 
-**Health:** 5 | **Move:** 4
+**Health:** 5 | **Move:** 4 | **Initiative:** 3 *(Swift)*
 **Primary:** CLOSEST | **Secondary:** EXHAUSTION FOCUS
 
 | Roll | Damage | Effect |
@@ -145,7 +145,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Massive as a horse, patient as winter. It has been tracking you since you entered the mountains."*
 
-**Health:** 5 | **Move:** 4
+**Health:** 5 | **Move:** 4 | **Initiative:** 4 *(Swift)*
 **Primary:** PACK HUNTER | **Secondary:** WEAKEST
 
 | Roll | Damage | Effect |
@@ -165,7 +165,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"It does not fight for glory. It fights because it has no choice."*
 
-**Health:** 6 | **Move:** 2
+**Health:** 6 | **Move:** 2 | **Initiative:** 9 *(Steady)*
 **Primary:** BLOCKER | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -184,7 +184,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"It died in the cold. Now it brings the cold to everything it touches."*
 
-**Health:** 6 | **Move:** 3
+**Health:** 6 | **Move:** 3 | **Initiative:** 6 *(Steady)*
 **Primary:** CLOSEST | **Secondary:** EXHAUSTION FOCUS
 
 | Roll | Damage | Effect |
@@ -204,7 +204,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Smaller than their kin but faster — and far more eager to prove themselves."*
 
-**Health:** 10 | **Move:** 4
+**Health:** 10 | **Move:** 4 | **Initiative:** 7 *(Steady)*
 **Primary:** WEAKEST | **Secondary:** ISOLATIONIST
 
 | Roll | Damage | Effect |
@@ -224,7 +224,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"The jotnar do not raid for gold. They raid to remind us we are small."*
 
-**Health:** 28 | **Move:** 3
+**Health:** 28 | **Move:** 3 | **Initiative:** 8 *(Steady)*
 **Primary:** ELITE | **Secondary:** WEAKEST
 
 | Roll | Damage | Effect |
@@ -249,7 +249,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Dwarves craft wonders… and guard them with their lives."*
 
-**Health:** 5 | **Move:** 3
+**Health:** 5 | **Move:** 3 | **Initiative:** 6 *(Steady)*
 **Primary:** PACK HUNTER | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -268,7 +268,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"You did not see the rune. You never see the rune."*
 
-**Health:** 9 | **Move:** 3
+**Health:** 9 | **Move:** 3 | **Initiative:** 3 *(Swift)*
 **Primary:** ISOLATIONIST | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -288,7 +288,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"He died at the anvil. He never stopped working."*
 
-**Health:** 5 | **Move:** 3
+**Health:** 5 | **Move:** 3 | **Initiative:** 5 *(Swift)*
 **Primary:** RANGED PRIORITY | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -307,7 +307,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"It has never seen light. It does not need to."*
 
-**Health:** 6 | **Move:** 4
+**Health:** 6 | **Move:** 4 | **Initiative:** 4 *(Swift)*
 **Primary:** EXHAUSTION FOCUS | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -328,7 +328,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"He was a dwarf once. Then greed became his skin, his scales, his fire."*
 
-**Health:** 30 | **Move:** 3
+**Health:** 30 | **Move:** 3 | **Initiative:** 8 *(Steady)*
 **Primary:** ELITE | **Secondary:** CLOSEST
 
 *Passive: Dragon Hide — all incoming damage reduced by 2. Negated if attacked by a hero who moved adjacent from behind this turn.*
@@ -357,7 +357,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"It was something once. Now it is only heat and hunger."*
 
-**Health:** 4 | **Move:** 3
+**Health:** 4 | **Move:** 3 | **Initiative:** 4 *(Swift)*
 **Primary:** CLOSEST | **Secondary:** EXHAUSTION FOCUS
 
 *Passive: Immune to fire terrain damage.*
@@ -378,7 +378,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Where it walks, the ground remembers."*
 
-**Health:** 6 | **Move:** 2
+**Health:** 6 | **Move:** 2 | **Initiative:** 9 *(Steady)*
 **Primary:** CLOSEST | **Secondary:** WEAKEST
 
 | Roll | Damage | Effect |
@@ -397,7 +397,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Born of flame, fed on screaming. It has never been cold."*
 
-**Health:** 5 | **Move:** 5
+**Health:** 5 | **Move:** 5 | **Initiative:** 2 *(Swift)*
 **Primary:** CLOSEST | **Secondary:** PACK HUNTER
 
 | Roll | Damage | Effect |
@@ -417,7 +417,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Surtr's dragons are ancient. These are their children — smaller, faster, just as hungry."*
 
-**Health:** 12 | **Move:** 4
+**Health:** 12 | **Move:** 4 | **Initiative:** 5 *(Swift)*
 **Primary:** RANGED PRIORITY | **Secondary:** WEAKEST
 
 *Passive: Can attack up to 3 hexes away.*
@@ -438,7 +438,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Surtr will end all worlds with fire. His kin practice on the living."*
 
-**Health:** 32 | **Move:** 4
+**Health:** 32 | **Move:** 4 | **Initiative:** 8 *(Steady)*
 **Primary:** ELITE | **Secondary:** WEAKEST
 
 | Roll | Damage | Effect |
@@ -463,7 +463,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"It died in the cold. It is still cold."*
 
-**Health:** 5 | **Move:** 3
+**Health:** 5 | **Move:** 3 | **Initiative:** 5 *(Swift)*
 **Primary:** WEAKEST | **Secondary:** CLOSEST
 
 *Passive: Cannot be pushed or repositioned by any hero ability.*
@@ -484,7 +484,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Níðhöggr's children are everywhere the roots reach. You just cannot see them yet."*
 
-**Health:** 4 | **Move:** 4
+**Health:** 4 | **Move:** 4 | **Initiative:** 6 *(Steady)*
 **Primary:** EXHAUSTION FOCUS | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -505,7 +505,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Named for the horse that pulls night across the sky. Its shadow steals what you have left."*
 
-**Health:** 6 | **Move:** 4
+**Health:** 6 | **Move:** 4 | **Initiative:** 3 *(Swift)*
 **Primary:** ELITE | **Secondary:** EXHAUSTION FOCUS
 
 | Roll | Damage | Effect |
@@ -527,7 +527,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"The mist is Niflheim's gift to those who hunt. Some of them never left."*
 
-**Health:** 11 | **Move:** 4
+**Health:** 11 | **Move:** 4 | **Initiative:** 4 *(Swift)*
 **Primary:** ISOLATIONIST | **Secondary:** WEAKEST
 
 *Passive: Invisible at start of each round. Becomes visible when it attacks. Returns to Invisible at next Monster Phase start.*
@@ -549,7 +549,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"He gnaws at the roots of everything. He has always been gnawing. He will still be gnawing when the world ends."*
 
-**Health:** 35 | **Move:** 4
+**Health:** 35 | **Move:** 4 | **Initiative:** 9 *(Steady)*
 **Primary:** CLOSEST | **Secondary:** EXHAUSTION FOCUS
 
 *Passive: Cannot be reduced below 1 HP by hero attacks alone. Only Scenario Sleeve threshold events remove him from play.*
@@ -576,7 +576,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Half alive, half rot. It remembers being a person."*
 
-**Health:** 6 | **Move:** 3
+**Health:** 6 | **Move:** 3 | **Initiative:** 7 *(Steady)*
 **Primary:** WEAKEST | **Secondary:** CLOSEST
 
 *Passive: Immune to Wound and Poison conditions.*
@@ -597,7 +597,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Oath-breakers and murderers serve eternity on the Corpse Shore. They remember what they did. They want company."*
 
-**Health:** 5 | **Move:** 3
+**Health:** 5 | **Move:** 3 | **Initiative:** 6 *(Steady)*
 **Primary:** HEALER HATE | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -616,7 +616,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Nothing remains. Not memory, not malice. Just the motion of the once-living."*
 
-**Health:** 4 | **Move:** 3
+**Health:** 4 | **Move:** 3 | **Initiative:** 8 *(Steady)*
 **Primary:** CLOSEST | **Secondary:** —
 
 *On Defeat: If not on a Cleansed hex (defined by Scenario Sleeve), respawn at 2 HP on nearest non-objective hex. Can only be truly destroyed on Cleansed hexes.*
@@ -636,7 +636,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Rán's net catches all who drown. Her collection grows every storm."*
 
-**Health:** 10 | **Move:** 3
+**Health:** 10 | **Move:** 3 | **Initiative:** 7 *(Steady)*
 **Primary:** HEALER HATE | **Secondary:** ISOLATIONIST
 
 | Roll | Damage | Effect |
@@ -658,7 +658,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Chained at Gnipahellir since the world's beginning. The chain grows thin."*
 
-**Health:** 30 | **Move:** 4
+**Health:** 30 | **Move:** 4 | **Initiative:** 5 *(Swift)*
 **Primary:** WEAKEST | **Secondary:** CLOSEST
 
 *Threshold passive: Each time Garmr reaches a threshold, his Move increases by 1 and his base damage increases by 1 permanently for this scenario.*
@@ -685,7 +685,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"His music is more beautiful than anything human hands could make. That is the problem."*
 
-**Health:** 6 | **Move:** 3
+**Health:** 6 | **Move:** 3 | **Initiative:** 4 *(Swift)*
 **Primary:** CLOSEST | **Secondary:** EXHAUSTION FOCUS
 
 | Roll | Damage | Effect |
@@ -705,7 +705,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"It looks like a hunting dog. It looks like something that might help you."*
 
-**Health:** 5 | **Move:** 4
+**Health:** 5 | **Move:** 4 | **Initiative:** 3 *(Swift)*
 **Primary:** ISOLATIONIST | **Secondary:** CLOSEST
 
 *Setup: Placed on map as an ally token. Revealed when a hero moves adjacent or at Act 2 start.*
@@ -726,7 +726,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Alone they are harmless. Together they are a storm."*
 
-**Health:** 8 | **Move:** 3
+**Health:** 8 | **Move:** 3 | **Initiative:** 2 *(Swift)*
 **Primary:** CLOSEST | **Secondary:** PACK HUNTER
 
 *On taking 3+ damage in one hit: Split into two Wisp Swarm tokens at 4 HP each. Each activates independently next round. Combined HP cannot exceed original.*
@@ -747,7 +747,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"He plays most beautifully when someone is about to drown."*
 
-**Health:** 11 | **Move:** 3
+**Health:** 11 | **Move:** 3 | **Initiative:** 5 *(Swift)*
 **Primary:** HEALER HATE | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -767,7 +767,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Once it shone brighter than the sun. Now it is darkness wearing light's clothes."*
 
-**Health:** 12 | **Move:** 4
+**Health:** 12 | **Move:** 4 | **Initiative:** 4 *(Swift)*
 **Primary:** ELITE | **Secondary:** THREAD SEEKER
 
 | Roll | Damage | Effect |
@@ -787,7 +787,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"It wore the face of an ally for three scenarios. You never suspected."*
 
-**Health:** 25 | **Move:** 4
+**Health:** 25 | **Move:** 4 | **Initiative:** 6 *(Steady)*
 **Primary:** ELITE | **Secondary:** THREAD SEEKER
 
 *Setup: Placed on map as an ally token. Revealed when a hero moves adjacent or at Act 2 start automatically.*
@@ -815,7 +815,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"The bog takes everything eventually. She just speeds up the process."*
 
-**Health:** 6 | **Move:** 3
+**Health:** 6 | **Move:** 3 | **Initiative:** 7 *(Steady)*
 **Primary:** EXHAUSTION FOCUS | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -834,7 +834,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"The gods blessed these creatures once. Whatever broke that blessing left something dangerous."*
 
-**Health:** 7 | **Move:** 5
+**Health:** 7 | **Move:** 5 | **Initiative:** 3 *(Swift)*
 **Primary:** CLOSEST | **Secondary:** BLOCKER
 
 *On Activation: Moves in a straight line — cannot change direction mid-charge. Deals 1 damage to every hero in its path.*
@@ -855,7 +855,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"When the harvest fails, something is left behind. It remembers the hunger."*
 
-**Health:** 5 | **Move:** 3
+**Health:** 5 | **Move:** 3 | **Initiative:** 6 *(Steady)*
 **Primary:** HEALER HATE | **Secondary:** EXHAUSTION FOCUS
 
 | Roll | Damage | Effect |
@@ -874,7 +874,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Do not enter her forest. Do not harm her creatures. You already did both."*
 
-**Health:** 12 | **Move:** 4
+**Health:** 12 | **Move:** 4 | **Initiative:** 5 *(Swift)*
 **Primary:** CLOSEST | **Secondary:** RANGED PRIORITY
 
 *Passive: While any hero is on a Territory hex (defined by Scenario Sleeve), all Rå stats double. Returns to normal when all heroes leave the Territory.*
@@ -896,7 +896,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Freyr's golden boar was a wonder of the forge. This is what remains when the gold is gone."*
 
-**Health:** 13 | **Move:** 5
+**Health:** 13 | **Move:** 5 | **Initiative:** 4 *(Swift)*
 **Primary:** CLOSEST | **Secondary:** BLOCKER
 
 *Passive: Cannot be pushed, pulled, or repositioned by any hero ability. Immune to Immobilize.*
@@ -917,7 +917,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Jörð is Thor's mother. The earth herself. She is patient. She is not patient anymore."*
 
-**Health:** 30 | **Move:** 3
+**Health:** 30 | **Move:** 3 | **Initiative:** 10 *(Steady)*
 **Primary:** CLOSEST | **Secondary:** BLOCKER
 
 *Passive: Cannot be pushed or repositioned. All incoming damage capped at 3 per hit (absorbs the blow).*
@@ -944,7 +944,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Something slipped through the rainbow bridge. Heimdall did not notice. That is the most frightening part."*
 
-**Health:** 5 | **Move:** 4
+**Health:** 5 | **Move:** 4 | **Initiative:** 2 *(Swift)*
 **Primary:** RANGED PRIORITY | **Secondary:** CLOSEST
 
 *On Activation: May teleport to any unoccupied hex within 4 hexes instead of moving normally.*
@@ -965,7 +965,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Odin cast him out for reasons he has forgotten. The madness filled the space where the reasons were."*
 
-**Health:** 6 | **Move:** 3
+**Health:** 6 | **Move:** 3 | **Initiative:** 6 *(Steady)*
 **Primary:** CLOSEST | **Secondary:** —
 
 *On Activation: Roll D6. On 1-3, attack closest hero. On 4-6, attack a random hero instead.*
@@ -987,7 +987,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Odin's ravens remember everything. This one remembers things it should not."*
 
-**Health:** 4 | **Move:** 5
+**Health:** 4 | **Move:** 5 | **Initiative:** 1 *(Swift)*
 **Primary:** ELITE | **Secondary:** CLOSEST
 
 | Roll | Damage | Effect |
@@ -1006,7 +1006,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Odin chose him. Something unchoose him. He is still fighting — just for the wrong side."*
 
-**Health:** 13 | **Move:** 3
+**Health:** 13 | **Move:** 3 | **Initiative:** 8 *(Steady)*
 **Primary:** BLOCKER | **Secondary:** WEAKEST
 
 *Passive: Reduce incoming damage by 1. If the Fallen Einherjar has not moved this round, reduce by 2 instead.*
@@ -1028,7 +1028,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"She was a Valkyrie who refused her orders. She still chooses the slain. Her choices are her own now."*
 
-**Health:** 12 | **Move:** 5
+**Health:** 12 | **Move:** 5 | **Initiative:** 3 *(Swift)*
 **Primary:** ELITE | **Secondary:** WEAKEST
 
 | Roll | Damage | Effect |
@@ -1047,7 +1047,7 @@ Maximum 10 rows. Miss (1-5) is always a clean miss. Effects scale upward through
 
 *"Loki is bound beneath the mountains. Most of him. This piece slipped free when the chains weakened."*
 
-**Health:** 28 | **Move:** 4
+**Health:** 28 | **Move:** 4 | **Initiative:** 5 *(Swift)*
 **Primary:** ELITE | **Secondary:** THREAD SEEKER
 
 *Passive (Trickster Form): Cannot be targeted by direct attacks unless a hero first spends 1 Fate Token to see through the Shade's deceptions. Otherwise all attacks miss automatically.*

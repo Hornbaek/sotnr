@@ -180,3 +180,46 @@ This creates a genuine tactical decision — high-initiative cards are your stro
 | Act 2 → Act 3 | 1 Exhaustion Token per hero |
 
 > **Scenario Sleeve override:** The transition strip can suppress either or both recoveries. A suppression icon means no recovery at that boundary — always narratively motivated.
+
+---
+
+## Terrain
+
+The hex grid map uses two distinct terrain types, plus standard open ground. A hex can be both Elevated and Difficult simultaneously.
+
+| Terrain | Visual Marker | Movement Cost | Combat Effect |
+|---|---|---|---|
+| **Open** | No marker | 1 hex per move point | Standard |
+| **Difficult** | Hatched pattern | 2 move points per hex | No combat effect |
+| **Elevated** | Raised border / shaded | 1 move point per hex | Grants Advantage on attacks against lower ground |
+
+**Difficult terrain** represents mud, water, dense undergrowth, rubble — anything that slows movement without granting a height advantage.
+
+**Elevated terrain** represents higher ground — mounds, rocks, raised platforms. Attacking from elevated to lower-elevation grants Advantage. Attacking from lower to elevated grants Disadvantage.
+
+**Both:** A hex can be both Elevated and Difficult (e.g. a rocky slope). Apply both effects.
+
+---
+
+## Line of Sight
+
+Line of Sight (LoS) determines whether a hero or monster can target another figure with a ranged attack or ability.
+
+**Draw a line from the centre of the attacker's hex to the centre of the target's hex. Then apply these rules:**
+
+| Situation | Result |
+|---|---|
+| Line passes through an obstacle hex | **Blocked** — no LoS |
+| Line passes along the shared edge of two hexes (edge case) | **Obscured** — LoS exists but attack rolls at Disadvantage |
+| Attacker is Elevated, line passes over one adjacent ground-level obstacle | **Clear** — elevated position sees over it |
+| Attacker and target are in adjacent hexes | **Always clear** — adjacent hexes always have LoS regardless of other terrain |
+
+**Key principle:** LoS is checked at the moment of the action. Movement during a turn does not retroactively affect LoS from previous actions.
+
+---
+
+## Map Layout
+
+The hex grid map shows **terrain only** — elevated hexes, difficult terrain, obstacles, and named terrain features (streams, shrines, etc.). Monster and hero starting positions are **not** marked on the map itself.
+
+Starting positions, monster spawns, and objective hexes are all printed on the **Scenario Sleeve** for that encounter. The map is a reusable player board; the sleeve provides the encounter-specific setup.

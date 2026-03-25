@@ -1,13 +1,18 @@
 # Shadows of the Nine Realms — Quick Reference
 
-## Turn Order
+## Round Structure — Swift/Steady Phase
 
-**1. HERO PHASE**
-Players take turns (any order, lowest initiative first). Play 2 cards — Top action + Bottom action, in any order.
+**PHASE 1 — SWIFT MONSTERS (Initiative 1-5)**
+Activates before heroes. Lowest Initiative first. Ties broken by spawn order.
 
-**2. MONSTER PHASE**
-Each monster activates in spawn order (1-4):
-Target → Move → Attack → Special Ability
+**PHASE 2 — HERO PHASE**
+All heroes take their turns in any order the group agrees.
+Play 2 cards per turn — one TOP action, one BOTTOM action.
+
+**PHASE 3 — STEADY MONSTERS (Initiative 6-10)**
+Activates after all heroes. Lowest Initiative first. Ties broken by spawn order.
+
+Each Monster Card shows its Initiative value and [SWIFT] or [STEADY] label.
 
 ---
 
@@ -27,6 +32,31 @@ Target → Move → Attack → Special Ability
 | 1-4 | 7-14 | 15-19 | 20 |
 | 5-8 | 7-13 | 14-19 | 20 |
 | 9 | 7-12 | 13-19 | 20 |
+
+---
+
+## Terrain
+
+| Terrain | Movement Cost | Combat Effect |
+|---|---|---|
+| Open | 1 per hex | Standard |
+| Difficult (hatched) | 2 per hex | None |
+| Elevated (raised border) | 1 per hex | Attacker gains Advantage vs lower ground |
+
+A hex can be both Elevated and Difficult simultaneously. Apply both effects.
+
+---
+
+## Line of Sight
+
+Draw a line from attacker centre to target centre:
+
+| Situation | Result |
+|---|---|
+| Line through obstacle hex | Blocked — no LoS |
+| Line along shared hex edge | Obscured — Disadvantage on attack |
+| Elevated attacker, line over adjacent ground obstacle | Clear — height sees over it |
+| Adjacent hexes | Always clear — LoS regardless |
 
 ---
 

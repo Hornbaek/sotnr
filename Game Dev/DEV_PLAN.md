@@ -25,6 +25,11 @@
 - Scenario Sleeve specification (front/back layout, seven zones, transition strips)
 - Legacy Card interaction rules (15-word constraint, later card wins, Threat Chain, compounding)
 - Monster AI edge cases (Universal Fallback, dual keywords, Threat Chain, committed movement)
+- **Swift/Steady Phase system** — three-phase round structure. Monsters with Initiative 1-5 are Swift (activate before heroes); monsters with Initiative 6-10 are Steady (activate after heroes). Initiative values assigned to all 48 monsters.
+- **Line of Sight** — fully defined: through obstacle = blocked, along edge = obscured (Disadvantage), elevated sees over one adjacent ground obstacle, adjacent hexes always have LoS.
+- **Terrain clarification** — Difficult (movement cost 2, no combat effect) vs Elevated (movement cost 1, grants Advantage on attacks downward) now clearly distinct. A hex can be both.
+- **Map layout rule** — map shows terrain only. Monster and hero starting positions printed on Scenario Sleeve only.
+- **Numbering system** — all game entities (scenarios, characters, monsters, items, etc.) assigned unique IDs with category-readable prefixes. Defined in playtest kit chat.
 
 ### ❌ Cut
 - **Saga Event system** — 12 cards + dedicated D6 removed from design and component list. Surprise and variety are fully handled by the Victorious/Besieged branching on the Scenario Sleeve. Scenario designers should incorporate unexpected moments into Act outcome text rather than a separate card system. Simpler, tighter, more portable.
@@ -287,3 +292,6 @@ The second panel is only needed at setup and between sessions — it folds back 
 - What is the maximum number of scenario sleeves a realm campaign pack can contain, given the book-box capacity? (affects Phase 5, 7)
 - Small-pool class (Ulfhednar) cross-realm bonus after Mastery Pool completion — what form should this take? (affects Phase 2)
 - Grand campaign map: dry-erase surface or physical tokens/stickers for tracking? (affects Phase 7)
+- **Swift/Steady initiative values for ability cards** — currently hero initiative is used only for turn ordering and rest value. If future playtesting reveals the Swift/Steady split needs to apply to heroes too (Option A — full interleave), all ability card initiative values would need recalibrating. Flag for Phase 6 playtesting. (affects Phase 2, 6)
+- **JSON schema extension** — existing sotnr-card-schema.json needs: scenarios, equipment/consumables, legacy cards, and the new ID numbering system + initiative values on monsters. (affects Phase 7)
+- **Scenario cover images** — placeholder noted in playtest kit. Needs actual art or illustrated placeholders for polished layout version. (affects Phase 7)

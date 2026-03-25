@@ -79,6 +79,21 @@ Bosses ignore difficult terrain entirely and may move through hero hexes freely.
 
 ---
 
+## Monster Initiative — Swift and Steady
+
+Every Monster Card has an **Initiative value** (1-10) printed on the front. This determines when the monster activates within the round:
+
+| Initiative | Phase | Activates |
+|---|---|---|
+| 1-5 | **Swift** | Before all heroes (Phase 1) |
+| 6-10 | **Steady** | After all heroes (Phase 3) |
+
+Within each phase, monsters activate in Initiative order (lowest first). Ties broken by spawn order.
+
+This creates meaningful tactical decisions each round — Swift monsters must be anticipated, while Steady monsters give heroes the first-move advantage.
+
+---
+
 ## The Monster AI Sequence
 
 Every monster follows this exact sequence each activation. Five steps, always in this order:
@@ -86,7 +101,7 @@ Every monster follows this exact sequence each activation. Five steps, always in
 1. **Identify Primary keyword target** — apply keyword, identify valid targets
 2. **Apply Secondary keyword if tied** — narrow to one target
 3. **Apply Threat Chain if still tied** — resolve to exactly one target
-4. **Move toward target** — shortest path, full Speed, committed
+4. **Move toward target** — shortest path, full Speed, committed. Respects Line of Sight and terrain rules.
 5. **Attack if in range** — roll D20, consult back-of-card Dice Table. Damage and all special effects are in the table. Apply whatever the roll result specifies.
 
 > **Note:** Special abilities are not listed separately on the card — they are built into the Dice Table on the back. Each roll result may include zero, one, or multiple effects alongside damage. Some monsters also have permanent **Passive** abilities noted on the front of the card.
