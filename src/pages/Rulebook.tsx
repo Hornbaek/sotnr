@@ -585,10 +585,11 @@ const Rulebook = () => {
 
             {/* QUICK REFERENCE */}
             <TabsContent value="reference" className="space-y-6">
-              <SectionCard title="Turn Order">
+              <SectionCard title="Round Structure">
                 <div className="space-y-2 text-sm text-foreground/80">
-                  <p><span className="font-bold text-primary">1. Hero Phase:</span> Play 2 cards — Top + Bottom action, any order.</p>
-                  <p><span className="font-bold text-primary">2. Monster Phase:</span> Target → Move → Attack (dice table)</p>
+                  <p><span className="font-bold text-primary">Phase 1 — Swift Monsters:</span> Initiative 1-5 activate before heroes.</p>
+                  <p><span className="font-bold text-primary">Phase 2 — Hero Phase:</span> Play 2 cards — Top + Bottom action, any order.</p>
+                  <p><span className="font-bold text-primary">Phase 3 — Steady Monsters:</span> Initiative 6-10 activate after heroes.</p>
                 </div>
               </SectionCard>
 
