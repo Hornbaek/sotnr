@@ -126,12 +126,48 @@ const Rulebook = () => {
               <SectionCard title="Setup (Under 5 Minutes)">
                 <ol className="list-decimal list-inside space-y-2 text-sm text-foreground/80">
                   <li>Open the book-box. Slide the Scenario Sleeve over the left half.</li>
-                  <li>Read the Scenario Sleeve — front (Acts, rules) and back (transitions).</li>
+                  <li>Read the Scenario Sleeve — <span className="font-bold">front</span> (Acts, rules) <span className="font-bold">and back</span> (transitions, special rules).</li>
                   <li>Check active Legacy Cards in the spine slots.</li>
                   <li>Each player chooses a hero, sets XP slider, places miniature on starting hex.</li>
+                  <li><span className="font-bold text-primary">Select Opening Hand</span> — each player selects cards from their pool up to their hand size.</li>
                   <li>Place monster tokens on indicated hexes.</li>
                   <li>Distribute tokens — Fate, Exhaustion, Loot, XP.</li>
                 </ol>
+                <p className="text-xs text-muted-foreground mt-3 italic">First game recommendation: Start with Einherjar, Valkyrie, and Seiðr for a balanced party.</p>
+              </SectionCard>
+
+              <SectionCard title="Card Selection">
+                <div className="space-y-2 text-sm text-foreground/80">
+                  <p>At the <span className="font-bold text-primary">start of each Act</span>, select your hand from your card pool (up to your class hand size). This is your toolkit for the Act.</p>
+                  <p>Played cards go to your discard pile. When your deck is empty, shuffle your discard back in (gaining 1 Exhaustion).</p>
+                  <p>At each Act transition, <span className="font-bold">all played cards return to hand</span> — a full reset.</p>
+                  <p className="text-xs text-muted-foreground italic">Note: The Scenario Sleeve's transition strip can suppress recovery with suppression icons — always narratively motivated.</p>
+                </div>
+              </SectionCard>
+
+              <SectionCard title="Terrain">
+                <TableBlock
+                  headers={["Terrain", "Movement Cost", "Combat Effect"]}
+                  rows={[
+                    ["Open", "1 move point per hex", "Standard"],
+                    ["Difficult", "2 move points per hex", "No combat effect"],
+                    ["Elevated", "1 move point per hex", "Advantage attacking lower ground; Disadvantage attacking upward"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">A hex can be both Elevated and Difficult (e.g. a rocky slope) — apply both effects.</p>
+              </SectionCard>
+
+              <SectionCard title="Line of Sight">
+                <TableBlock
+                  headers={["Situation", "Result"]}
+                  rows={[
+                    ["Line passes through obstacle hex", "Blocked — no LoS"],
+                    ["Line passes along shared edge of two hexes", "Obscured — LoS exists but attack at Disadvantage"],
+                    ["Attacker Elevated, line passes over one ground-level obstacle", "Clear — elevated position sees over it"],
+                    ["Adjacent hexes", "Always clear — regardless of other terrain"],
+                  ]}
+                />
+                <p className="text-xs text-muted-foreground mt-2">LoS is checked at the moment of the action. Movement during a turn does not retroactively affect LoS.</p>
               </SectionCard>
             </TabsContent>
 
