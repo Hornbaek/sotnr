@@ -69,10 +69,13 @@ const Rulebook = () => {
 
             {/* HOW TO PLAY */}
             <TabsContent value="how-to-play" className="space-y-6">
-              <SectionCard title="The Round Structure">
+              <SectionCard title="The Round Structure — Swift & Steady Initiative">
                 <div className="space-y-3 text-sm text-foreground/80">
-                  <p><span className="font-bold text-primary">1. Hero Phase</span> — Players take turns in any order (lowest initiative first). Play two ability cards — one for its Top action, one for its Bottom action.</p>
-                  <p><span className="font-bold text-primary">2. Monster Phase</span> — Each monster activates in spawn order and follows the full Monster AI sequence.</p>
+                  <p>Each round has <span className="font-bold text-primary">three phases</span>, determined by monster Initiative values printed on their cards:</p>
+                  <p><span className="font-bold text-primary">Phase 1 — Swift Monsters</span> (Initiative 1-5): These monsters activate <span className="font-bold">before</span> all heroes. Lowest Initiative first.</p>
+                  <p><span className="font-bold text-primary">Phase 2 — Hero Phase</span>: Players take turns in any order. Play two ability cards — one for its Top action, one for its Bottom action.</p>
+                  <p><span className="font-bold text-primary">Phase 3 — Steady Monsters</span> (Initiative 6-10): These monsters activate <span className="font-bold">after</span> all heroes. Lowest Initiative first.</p>
+                  <p className="text-xs text-muted-foreground italic">Swift monsters must be anticipated. Steady monsters give heroes first-move advantage. This creates meaningful tactical decisions each round.</p>
                 </div>
               </SectionCard>
 
