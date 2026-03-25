@@ -75,7 +75,7 @@ const heroClasses = [
     mechanic: "Two-State",
     icon: Flame,
     image: ulfhednarImg,
-    signature: "Beast Within",
+    signature: "Odin's Wolf",
     description: "Wolf-pelt warriors who channel the beast's fury for devastating results.",
     health: 12, speed: "4/6", poolSize: 6, handSize: 6,
   },
